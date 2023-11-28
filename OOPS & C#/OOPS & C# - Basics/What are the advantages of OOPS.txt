@@ -1,0 +1,18 @@
+Question - What are the advantages of OOPS?
+
+1.	Modularity:
+•	Each object represents a specific entity or concept, and changes made to one object do not affect others.
+2.	Reusability:
+•	Classes and objects can be reused in different parts of a program or in different projects, reducing redundancy and saving development time. 
+3.	Maintainability:
+•	Due to modularity and encapsulation, OOP code is easier to maintain and update.
+4.	Flexibility:
+•	New classes and objects can be easily added without modifying existing code, as long as they adhere to the defined interfaces.
+5.	Readability and Understandability:
+•	OOP code is often more readable and understandable than procedural code.
+6.	Encapsulation and Information Hiding:
+•	Encapsulation hides the internal details of objects and restricts access to their internal state. Information hiding helps in managing the complexity of large systems by exposing only what is necessary for external interaction.
+7.	Polymorphism:
+•	Polymorphism allows objects to be treated as instances of their parent class, providing a common interface for different types of objects.
+8.	Improved Problem Solving:
+•	The ability to represent complex systems using objects, each with its own characteristics and behaviors, aligns well with how humans conceptualize and understand the world.
