@@ -1,0 +1,64 @@
+Question - What are namespaces?
+
+A namespace is a way to organize and group related code elements, 
+such as classes, structs, interfaces, Enums, and delegates, into a named container.
+Namespaces provide a hierarchical organization to avoid naming conflicts and to make the code more modular and manageable.
+They help in organizing code into logical units and prevent naming collisions between different parts of a program.
+
+
+Here's a brief overview of how namespaces work in C#:
+1.	Declaration:
+•	A namespace is declared using the namespace keyword followed by the namespace name.
+    This declaration usually appears at the beginning of a C# file.
+    
+    namespace MyNamespace
+    {
+	    // Code element go here
+    }
+
+2.	Usage:
+•	Once a namespace is declared, you can use it to organize your code elements.
+    You include the namespace declaration at the top of your file,
+    and then you can reference the types within that namespace without fully qualifying their names.
+
+    using MyNamespace;
+    {
+        class Program
+        {
+	        static void Main()
+	        {
+    		    MyClass myObject = new MyClass();
+	        }
+        }
+    }
+    
+In this example,
+MyClass is part of the MyNamespace namespace, and by using the using directive, you can refer to MyClass without explicitly specifying MyNamespace.MyClass.
+
+
+3.	Nested Namespaces:
+•	Namespaces can be nested within other namespaces, creating a hierarchical structure. 
+    This allows for further organization and categorization of code.
+    namespace OuterNamespace
+    {
+	    namespace InnerNamespace
+	    {
+		    // Code elements go here
+	    }
+    }
+
+
+4.	System Namespace:
+•	The System namespace is a fundamental namespace in C# that contains many commonly used types. 
+    It includes basic types like String, Console, Math, and more. 
+    You don't need to explicitly include the System namespace in your code, as it is automatically referenced.
+    class Program
+    {
+	    static void Main()
+	    {
+		    Console.WriteLine(“Hello World!”);
+	    }
+    } 
+
+Namespaces help in avoiding naming conflicts, improving code organization, and making it easier to understand the structure of a project.
+They are an essential part of C# programming, especially in larger projects where maintaining a clear and organized code structure is crucial.
