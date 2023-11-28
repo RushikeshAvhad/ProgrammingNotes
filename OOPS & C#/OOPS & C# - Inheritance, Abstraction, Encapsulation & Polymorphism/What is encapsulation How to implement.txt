@@ -1,0 +1,63 @@
+Question - What is encapsulation? How to implement encapsulation in real applications?
+
+Encapsulation in C# is a fundamental object-oriented programming (OOP) concept that involves bundling the data (attributes or fields) and 
+methods (functions or properties) that operate on the data into a single unit known as a class. 
+It helps in hiding the internal details of an object and controlling access to its state from external code. 
+In C#, encapsulation is implemented using access modifiers and properties.
+
+Here's how you can implement encapsulation in C#:
+public class Car
+{
+    // Private fields to encapsulate the internal state
+    private string model;
+    private int year;
+
+    // Public properties to provide controlled access to the internal state
+    // Property for the 'model' field
+    public string Model
+    {
+        get { return model; }
+        set
+        {
+            // Additional logic, such as validation, can be added here
+            model = value;
+        }
+    }
+
+    // Property for the 'year' field
+    public int Year
+    {
+        get { return year; }
+        set
+        {
+            // Additional logic, such as validation, can be added here
+            year = value;
+        }
+    }
+
+    // Other methods can be added to perform operations on the object
+    public void Start()
+    {
+        Console.WriteLine("Car started!");
+    }
+}
+In this example:
+The Car class has private fields (model and year) that are not directly accessible from outside the class.
+Properties (Model and Year) are used to provide controlled access to these private fields. 
+The get accessor retrieves the value, and the set accessor allows for setting the value while encapsulating any additional logic.
+The Start method is an example of an operation that can be performed on the object.
+Usage of the Car class:
+class Program
+{
+    static void Main()
+    {
+        Car myCar = new Car();
+        // Accessing properties
+        myCar.Model = "Toyota";
+        myCar.Year = 2022;
+        // Accessing methods
+        myCar.Start();
+        // Retrieving property values
+        Console.WriteLine($"Model: {myCar.Model}, Year: {myCar.Year}");
+    }
+}
