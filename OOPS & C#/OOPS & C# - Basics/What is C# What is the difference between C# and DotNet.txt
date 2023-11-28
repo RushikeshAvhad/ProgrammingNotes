@@ -1,0 +1,18 @@
+C#
+1.  C# is a programming language developed by Microsoft as part of the .NET initiative.
+2.  It is a modern, object-oriented programming language designed for building Windows applications and web applications.
+3.  C# is often used for developing software on the Microsoft platform,
+    but it can also be used for cross-platform development using frameworks like MAUI.
+
+
+.NET
+1.  .NET, on the other hand, is a broader platform that includes a runtime environment (Common Language Runtime or CLR),
+    a set of libraries, and a compilation system.
+2.  .NET supports multiple programming languages, and C# is one of the primary language used with the .NET framework.
+3.  Other languages that can be used with .NET include VB.NET (Visual Basic .NET), F# (functional programming language), and more.
+
+Difference
+C# is a programming language,
+while .NET is a broader platform that includes the runtime and libraries that support multiple languages.
+C# is often associated with .NET because it was designed specifically for use with the .NET framework,
+and the two are commonly used together in software development.
