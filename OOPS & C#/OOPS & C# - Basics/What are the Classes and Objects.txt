@@ -1,0 +1,16 @@
+Question - What are the classes and objects?
+
+Class:
+A class is a blueprint or template for creating objects.
+It defines a data type by specifying the attributes (data members) and behaviors (methods or functions) that objects of the class will have.
+The class serves as a model from which objects are created.
+
+Object:
+An object is an instance of a class.
+It is a concrete realization of the attributes and behavior defined by a class.
+Objects are created from classes, and each object has its own unique set of attribute values.
+Objects can interact with each other by invoking each other's methods.
+
+
+Classes and objects are fundamental concepts in OOP,
+providing a way to model and organize code based on real-world entities and their interactions.
