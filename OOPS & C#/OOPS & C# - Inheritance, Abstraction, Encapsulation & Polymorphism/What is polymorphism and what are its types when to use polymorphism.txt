@@ -1,0 +1,66 @@
+Question - What is Polymorphism and what are its types? When to use Polymorphism?
+
+In C#, 
+polymorphism is a fundamental concept in object-oriented programming,
+that allows objects of different types to be treated as objects of a common type.
+It enables flexibility, code reuse, and extensibility by providing a mechanism for using a single interface to represent different types of objects.
+
+Types of Polymorphism in C#:
+1.	Compile-time Polymorphism (Static Binding or Early Binding):
+•	Method Overloading: 
+    This occurs when multiple methods in the same class have the same name but differ in the number or types of their parameters.
+        
+    public class Calculator
+    {
+	    public int Add(int a, int b)
+	    {
+		    return a + b;
+	    }
+	
+	    public double Add(double a, double b)
+	    {
+		    return a + b;
+        }
+    }
+
+2.	Runtime Polymorphism (Dynamic Binding or Late Binding):
+•	Method Overriding: 
+    This occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. 
+    The decision on which method to call is made at runtime.
+
+    public class Animal
+    {
+	    public virtual void MakeSound()
+	    {
+		    Console.WriteLine(“Some generic sound”);
+	    }
+    }
+
+    public  class Dog : Animal
+    {
+	    public override void MakeSound()
+	    {
+		    Console.WriteLine(“Bark”);
+	    }
+    } 
+
+
+When to Use Polymorphism in C#:
+1.	Code Reusability: 
+    Polymorphism allows for the reuse of code by treating objects of different types through a common interface, reducing redundancy.
+2.	Flexibility and Extensibility:
+    Polymorphism provides flexibility by allowing code to work with objects of different types,
+    and it makes it easier to extend your code with new classes.
+3.	Method Overloading: 
+    When you want to provide multiple methods with the same name but different parameter types or numbers of parameters.
+1.	Method Overriding:
+    When you want to allow subclasses to provide their specific implementation of a method defined in a superclass.
+2.	Interfaces and Abstract Classes:
+    Polymorphism is frequently used with interfaces and abstract classes,
+    enabling the implementation of multiple classes that adhere to a common contract.
+
+In C#, the virtual keyword is used to declare a method in a base class that can be overridden in derived classes, 
+and the override keyword is used in the derived class to indicate that a method is intended to override a virtual method in the base class.
+Additionally, the abstract keyword is used in abstract classes to declare abstract methods, 
+which must be implemented by derived classes. 
+Interfaces also play a crucial role in achieving polymorphism in C#.
