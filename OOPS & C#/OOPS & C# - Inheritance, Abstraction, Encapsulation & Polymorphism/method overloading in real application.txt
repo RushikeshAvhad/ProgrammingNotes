@@ -1,0 +1,98 @@
+Question - When should you use method overloading in real application?
+
+Method overloading in C#, or any other programming language, 
+is a technique that allows you to define multiple methods with the same name but different parameter lists within the same class or scope. 
+Knowing when to use method overloading depends on the specific requirements and design considerations of your application. 
+
+Here are some scenarios where method overloading is commonly used in real applications in C#:
+1.	Performing Similar Operations with Different Types:
+•	When you want to perform a similar operation on different types of input data, 
+    you can use method overloading to create a more intuitive API.
+
+csharpCopy code
+public class MathOperations 
+{ 
+    public int Add(int a, int b) 
+    { 
+        return a + b; 
+    } 
+    public double Add(double a, double b) 
+    {
+        return a + b; 
+    }
+} 
+
+•	In this example, you can add integers or doubles using the same method name.
+
+
+2.	Handling Different Number of Parameters:
+•	When a method can be called with a varying number of parameters, 
+    method overloading provides a clean way to handle different cases.
+
+csharpCopy code
+public class Calculator 
+{ 
+    public int Add(int a, int b) 
+    { 
+        return a + b; 
+    }
+    public int Add(int a, int b, int c) 
+    { 
+        return a + b + c; 
+    }
+} 
+•	Here, the Add method can handle two or three integers.
+
+
+3.	Providing Default Values with Optional Parameters:
+•	Method overloading can be used to provide default values using optional parameters. 
+    This allows for backward compatibility without breaking existing code.
+
+csharpCopy code
+public class Example 
+{ 
+    public void PrintValues(int a, double b = 0.0) 
+    { 
+        Console.WriteLine($"int, double: {a}, {b}");
+    } 
+    public void PrintValues(double a, int b = 0) 
+    { 
+        Console.WriteLine($"double, int: {a}, {b}"); 
+    } 
+}
+•	In this example, you can omit the optional parameters when invoking the methods.
+
+
+4.	Enhancing Readability and Expressiveness:
+•	Method overloading can make code more readable and expressive by providing multiple ways to call a method based on different scenarios.
+
+csharpCopy code
+public class FileHandler 
+{ 
+    public void ReadFile(string filePath) 
+    { 
+        // Read file implementation 
+    } 
+    public void ReadFile(string filePath, int bufferSize) 
+    { 
+        // Read file with specified buffer size 
+    }
+} 
+•	Here, you can choose to read a file with or without specifying a buffer size.
+
+5.	Avoiding Code Duplication:
+•	Method overloading helps in avoiding code duplication by consolidating similar operations under a common method name.
+
+csharpCopy code
+public class StringManipulator 
+{ 
+    public string Concatenate(string str1, string str2) 
+    { 
+        return str1 + str2; 
+    }
+    public string Concatenate(string str1, string str2, string str3) 
+    { 
+        return str1 + str2 + str3; 
+    }
+} 
+•	Here, the Concatenate method can handle different numbers of input strings.
