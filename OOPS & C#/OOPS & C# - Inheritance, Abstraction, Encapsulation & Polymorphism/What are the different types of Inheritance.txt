@@ -1,0 +1,118 @@
+Question - What are the different Types of Inheritance?
+
+
+Inheritance in object-oriented programming can be categorized into several types based on how classes inherit from one another.
+
+The main types of inheritance are:
+1.	Single Inheritance:
+•	Single inheritance is a type of inheritance where a class can inherit from only one base class.
+    In other words, a derived class can have only one immediate parent class.
+    
+    // Single Inheritance Example
+    public class Animal
+    {
+	    public void Eat()
+	    {
+		    Console.WriteLine(“Animal is eating”);
+	    }
+    }
+
+    public class Dog : Animal
+    {
+	    public void Bark()
+	    {
+		    Console.WriteLine(“Dog is Barking.”);
+            }
+    }
+
+
+2.	Multiple Inheritance (Through Interfaces):
+•	Multiple inheritance refers to a situation where a class can inherit from more than one interface. 
+    C# does not support multiple inheritance through classes (a class cannot directly inherit from more than one class), 
+    but it does support multiple inheritance through interfaces.
+
+    // Multiple Inheritance (Through Interfaces) Example
+    public interface IWalkable
+    {
+	    void Walk();
+    }
+
+    public interface IFlyable
+    {
+	    void Fly();
+    }
+
+    public class Bird : IWalkable, IFlyable
+    {
+	    public void Walk()
+	    {
+		    Console.WriteLine(“Bird is walking”);
+	    }
+    
+	    Public void Fly()
+	    {
+		    Console.WriteLine(“Bird is flying”);
+	    }
+    } 
+
+
+3.	Multilevel Inheritance:
+•	Multilevel inheritance involves a chain of inheritance where a derived class serves as the base class for another class.
+    It forms a hierarchy of classes.
+    
+    // Multiple Inheritance Example
+    public class Animal
+    {
+    	public void Eat()
+	    {
+		    Console.WriteLine(“Animal is eating”);
+	    }
+    }
+
+    public class Mammal : Animal
+    {
+	    public void Breathe()
+	    {
+		    Console.WriteLine(“Mammal is breathing.”);
+	    }
+    }
+
+    public class Dog : Mammal
+    {
+	    public void Bark()
+	    {
+		    Console.WriteLine(“Dog is barking.”);
+	    }
+    }
+
+
+4.	Hierarchical Inheritance:
+•	Hierarchical inheritance involves multiple classes inheriting from a single base class.
+    It forms a hierarchy where multiple derived classes share a common base class.
+    
+    // Hierarchical Inheritance Example
+    public class Animal
+    {
+	    public void Eat()
+	    {
+		    Console.WriteLine(“Animal is eating.”);
+	    }
+    }
+
+    public class Lion : Animal
+    {
+	    public void Roar()
+	    {
+    		Console.WriteLine(“Lion is roaring”);
+    	}
+    }
+
+    public class Elephant : Animal
+    {
+	    public void Trumpet()
+	    {
+		    Console.WriteLine(“Elephant is trumpeting”);
+	    }
+    }
+     
+These are some common types of inheritance in object-oriented programming. Each type has its use cases, advantages, and considerations.
