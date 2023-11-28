@@ -1,0 +1,76 @@
+Question - What is method overloading? In how many ways a method can be overloaded?
+
+Method Overloading in C# is a feature that allows a class to have multiple methods with the same name but different parameter lists
+within the same scope.
+Overloaded methods must differ in the number or type of their parameters.
+The compiler determines which method to call based on the arguments provided during the method invocation.
+
+Ways a Method Can Be Overloaded in C#:
+1.	Number of Parameters:
+•	Methods can be overloaded based on the number of parameters.
+
+csharpCopy code
+public class Calculator 
+{ 
+    public int Add(int a, int b) 
+    { 
+        return a + b; 
+    } 
+    public int Add(int a, int b, int c) 
+    { 
+        return a + b + c; 
+    } 
+}
+
+2.	Data Types of Parameters:
+•	Methods can be overloaded based on the data types of their parameters.
+
+csharpCopy code
+public class Converter 
+{ 
+    public double ConvertToDouble(int value) 
+    { 
+        return (double)value; 
+    }
+    public string ConvertToString(double value) 
+    { 
+        return value.ToString(); 
+    }
+}
+
+3.	Order of Parameters:
+•	Methods can be overloaded by having the same parameters in a different order.
+
+csharpCopy code
+public class Example
+{
+    public void PrintValues(int a, double b)
+    {
+        Console.WriteLine($"int, double: {a}, {b}");
+    }
+    public void PrintValues(double a, int b)
+    {
+        Console.WriteLine($"double, int: {a}, {b}");
+    }
+}
+
+4.	Optional Parameters:
+•	C# allows method overloading using optional parameters, where you can provide default values for parameters.
+
+csharpCopy code
+public class Example 
+{ 
+    public void PrintValues(int a, double b = 0.0)
+    { 
+        Console.WriteLine($"int, double: {a}, {b}"); 
+    }
+    public void PrintValues(double a, int b = 0)
+    { 
+        Console.WriteLine($"double, int: {a}, {b}"); 
+    }
+}
+
+•	When invoking these methods, you can omit the optional parameters, and the default values will be used.
+Method overloading is a powerful feature that allows developers to create more expressive and flexible APIs. 
+It enhances the readability of the code by providing multiple ways to perform similar operations with different input scenarios.
+
