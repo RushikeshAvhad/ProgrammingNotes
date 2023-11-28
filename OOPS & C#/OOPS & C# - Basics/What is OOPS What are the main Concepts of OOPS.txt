@@ -1,0 +1,22 @@
+What is OOPS? What are the main concepts of OOPS?
+
+OOPS stands for Object-Oriented Programming.
+It is a programming paradigm that uses the concept of "objects" to organize and structure code.
+
+The main concepts of OOP include:
+1.	Classes and Objects:
+•	Class: A blueprint or template for creating objects.
+•	Object: An instance of a class.
+
+2.	Encapsulation:
+•	Encapsulation is the bundling of data (attributes) and methods that operate on the data into a single unit or class. 
+
+3.	Inheritance:
+•	Inheritance is a mechanism that allows one class to inherit the properties and behavior of another class.
+
+4.	Polymorphism:
+•	Polymorphism allows objects of different classes to be treated as objects of a common base class.
+    Polymorphism can manifest in two forms: compile-time (method overloading) and runtime (method overriding).
+    
+5.	Abstraction:
+•	It is the process of hiding the complex reality while exposing only the necessary and relevant features of an object.
