@@ -1,0 +1,78 @@
+Question - What are the types of Classes in C#?
+
+In C#, classes can be categorized into different types based on their roles and purposes.
+
+Here are some common types of classes in C#:
+1.	Normal (or Regular) Classes:
+•	These are the most common type of classes in C#.
+    They are used to define objects with attributes and behaviors. 
+    Instances of normal classes can be created, and they can have fields, properties, methods, and events.
+    example,
+
+		public class Car
+		{
+			public string Model { get; set; }
+			public int Year {get; set; }
+	
+			public void Start()
+			{
+				Console.WriteLine(“Car engine started”);
+            }
+		}
+
+2.	Abstract Classes:
+•	Abstract classes cannot be instantiated on their own and are meant to be used as base classes for other classes.
+    They can include abstract methods (methods without implementation) that must be implemented by derived classes.
+    Abstract classes can also have normal methods with implementations.
+
+    public abstract class Shape
+    {
+		public abstract double Area(); // Abstract method without implementation
+		
+		public void Display()
+		{
+			Console.WriteLine(“Displaying shape”);
+		}
+    }
+
+3.	Static Classes:
+•	Static classes cannot be instantiated, and all members of a static class must be static. 
+    They are often used to create utility classes that contain only static members, such as helper methods or constants.
+    You cannot create an instance of a static class, and members of a static class can be accessed using the class name.
+    
+    public static class MathUtility
+    {
+	    public static int Add(int a, int b)
+	    {
+		    return a + b;
+	    }
+    }
+
+
+4.	Sealed Classes:
+•	Sealed classes cannot be inherited. 
+    They are often used when you want to prevent further derivation of a class.
+    Sealed classes cannot be used as a base class.
+
+    public sealed class FinalClass
+    {
+	    // Class members
+    }
+
+5.	Partial Classes:
+•	Partial classes allow the definition of a class to be split across multiple files.
+    Each part of the partial class is identified with the partial keyword.
+    This is useful in large projects where different developers can work on different parts of a class without interfering with each other.
+    
+    // File 1
+    public partial class Employee
+    {
+	    // Part 1 of the class
+    }
+
+    // File 2
+    public partial class Employee
+    {
+	    // Part 2 of the class
+    }
+
