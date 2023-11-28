@@ -1,0 +1,66 @@
+Question - What is Inheritance? When to use Inheritance?
+
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows,
+a new class (called a subclass or derived class or child class) to inherit the characteristics and behavior of an
+existing class (called a superclass or base class or parent class).
+Inheritance establishes a "is-a" relationship between the derived class and the base class,
+implying that the derived class is a specialized version of the base class.
+
+
+When to use Inheritance:
+1.	Code Reusability:
+•	Inheritance promotes code reuse.
+    When common attributes and behavior exist among different classes, you can factor them into a base class,
+    reducing redundancy and making the code more maintainable.
+2.	Polymorphism:
+•	Inheritance facilitates polymorphism, allowing objects of derived classes to be treated as objects of the base class.
+    This can simplify code and make it more flexible.
+3.	Modelling Real-world Relationships:
+•	Inheritance is often used to model relationships that naturally exist in the real world.
+    For example, a Car class might inherit from a more general Vehicle class.
+4.	Extending Functionality:
+•	Derived classes can extend or specialize the functionality of the base class.
+    New methods or attributes can be added to the derived class without modifying the base class.
+5.	Organizing Code:
+•	Inheritance helps in organizing code in a hierarchical and modular manner.
+    It makes the codebase more comprehensible and scalable, especially in large projects.
+
+
+
+1.	Base Class (Parent Class):
+•	The class whose properties and behavior are inherited is called the base class.
+    It serves as a template for the derived classes.
+
+2.	Derived Class (Child Class):
+•	The class that inherits from another class is called the derived class.
+    It inherits the attributes and methods of the base class and can also have additional or overridden members.
+
+3.	Syntax in C#:
+•	In C#, you use the : symbol to denote inheritance. 
+
+Here's a simple example:
+// Base Class
+public class Animal
+{
+	public void Eat()
+	{
+		Console.WriteLine(“Animal is eating.”);
+	}
+}
+
+// Derived Class
+public class Dog : Animal
+{
+	public void Bark()
+	{
+		Console.WriteLine(“Dog is barking.”);
+	}
+} 
+
+4.	Access to Members:
+•	A derived class inherits both the public and protected members of the base class.
+    Private members are not directly accessible in the derived class.
+
+5.	Types of Inheritance:
+•	C# supports both single and multiple inheritance through interfaces. 
+    However, C# does not support multiple inheritance through classes (a class cannot directly inherit from more than one class).
