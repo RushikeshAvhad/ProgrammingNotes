@@ -1,0 +1,35 @@
+Question - If two method have the same name except return type, then methods are overloaded?
+
+No, 
+if two methods have the same name and the same parameter types,
+but differ only in their return type, they are not considered overloaded in C#.
+Overloading methods requires a difference in the method signature, which includes the number or types of parameters.
+
+In C#, the return type alone is not sufficient to differentiate between overloaded methods. 
+The method signature is determined by the combination of the method name and its parameter types. 
+If you attempt to define two methods with the same name and the same parameter types but with different return types,
+you will get a compilation error.
+
+Here's an example to illustrate the point:
+csharpCopy code
+public class Example 
+{ 
+    // This will result in a compilation error 
+    // Two methods with the same name and parameter types but different return types are not allowed. 
+    public int Calculate(int a, int b) 
+    { 
+        return a + b; 
+    } 
+    public double Calculate(int a, int b) 
+    { 
+        return a + b + 0.5; 
+        // Different return type 
+    }
+}
+
+In the example above, 
+the compiler will generate an error because the two methods Calculate have the same name and parameter types (int and int),
+but they differ in return type (int in the first method and double in the second method).
+If you want to overload methods,
+you need to vary the method signature by changing the number or types of parameters. 
+Return type alone does not contribute to method overloading.
