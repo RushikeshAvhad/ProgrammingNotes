@@ -1,0 +1,67 @@
+Question - What is the difference between Overloading and Overriding?
+
+In C#, both overloading and overriding are concepts related to methods in object-oriented programming.
+
+Let's explore the differences between overloading and overriding in C#:
+
+Overloading:
+1.	Definition:
+•	Overloading involves defining multiple methods in the same class with the same name but different parameter lists.
+2.	Method Signature:
+•	Overloaded methods must differ in the number or types of their parameters.
+3.	Return Type:
+•	Overloaded methods can have the same or different return types.
+4.	Inheritance:
+•	Overloading is not dependent on inheritance. It can occur within the same class or in derived classes.
+5.	Compile-time Polymorphism:
+•	Overloading is an example of compile-time polymorphism (static binding). The decision on which method to call is made at compile-time.
+6.	Example:
+csharpCopy code
+public class Calculator 
+{ 
+    public int Add(int a, int b) 
+    { 
+        return a + b; 
+    }
+    public double Add(double a, double b)
+    { 
+        return a + b;
+    } 
+}
+
+
+Overriding:
+1.	Definition:
+•	Overriding involves providing a specific implementation for a method in a derived class that is already defined in its base class.
+2.	Method Signature:
+•	Overridden methods must have the same method signature (name, return type, and parameter types) as the method in the base class.
+3.	Return Type:
+•	Overridden methods must have the same return type as the method in the base class.
+4.	Inheritance:
+•	Overriding is dependent on inheritance. It occurs in a derived class that inherits from a base class.
+5.	Runtime Polymorphism:
+•	Overriding is an example of runtime polymorphism (dynamic binding). The decision on which method to call is made at runtime.
+6.	Example:
+csharpCopy code
+public class Animal 
+{ 
+    public virtual void MakeSound() 
+    { 
+        Console.WriteLine("Some generic sound");
+    } 
+} 
+public class Dog : Animal
+{ 
+    public override void MakeSound() 
+    {
+        Console.WriteLine("Bark!"); 
+    } 
+}
+
+•	Overloading is about having multiple methods with the same name but different parameter lists in the same class.
+•	Overriding is about providing a specific implementation for a method in a derived class that is already defined in its base class.
+
+Both overloading and overriding contribute to the flexibility and polymorphism in C# programming,
+but they serve different purposes.
+Overloading is used for providing multiple ways to perform similar operations, 
+while overriding is used for providing specific implementations in derived classes to achieve runtime polymorphism.
