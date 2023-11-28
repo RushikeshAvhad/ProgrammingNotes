@@ -1,0 +1,22 @@
+Question - How to prevent a class from being inherited?
+
+In C#, you can prevent a class from being inherited by using the sealed modifier. 
+When you mark a class as sealed, it means that it cannot be used as a base class for other classes, 
+and it cannot be inherited.
+
+Here's an example:
+sealed class SealedClass
+
+{
+	// Class members & Methods go here
+}
+
+In this example, 
+the SealedClass is marked as sealed, which prevents other classes from inheriting from it.
+If you try to derive a class from SealedClass, the compiler will generate an error.
+
+// This will result in a compilation error 
+class AnotherClass : SealedClass 
+{
+ 	// Class members and methods for AnotherClass 
+} 
