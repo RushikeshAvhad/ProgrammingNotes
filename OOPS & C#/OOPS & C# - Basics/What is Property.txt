@@ -1,0 +1,44 @@
+Question - What is Property?
+
+In C#, a property is a member of a class that provides a flexible way to read from, write to, or compute the value of a private field.
+It is a way to expose the internal state of a class while encapsulating the implementation details.
+Properties are used to control access to class fields and can include logic for validation or computation.
+A property in C# is defined using the get and set accessors.
+The get accessor is used to retrieve the value of the property, and the set accessor is used to assign a value to the property.
+
+Here's a simple example:
+public class Person
+{
+	// Private fiend
+	private string _name;
+
+	// Property with get and set accessors
+	public string Name
+	{
+		get
+		{
+			return __name;
+		}
+		set 
+		{
+			_name = value;
+		}
+	}
+}
+
+In this example,
+the Person class has a property called Name, backed by a private field _name.
+The get accessor returns the value of _name, and the set accessor allows you to assign a new value to _name.
+
+C# also supports an auto-implemented property syntax, which simplifies the declaration of properties when no additional logic is needed,
+in the get and set accessors.
+Using auto-implemented properties, the compiler automatically generates the backing field.
+Here's an example:
+public class Person
+{
+	// Auto-implemented property
+	public string Name { get; set; }
+}
+In this case, the Name property has both get and set accessors, and the compiler generates the backing field for you.
+Properties are commonly used to expose the state of an object, enforce encapsulation, and provide a way to control access to the internal data of a class.
+They play a crucial role in creating classes with well-defined interfaces and maintaining a clean separation between the public interface and the implementation details.
