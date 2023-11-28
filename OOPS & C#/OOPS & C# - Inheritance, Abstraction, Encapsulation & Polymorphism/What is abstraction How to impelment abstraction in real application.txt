@@ -1,0 +1,16 @@
+Question - What is abstraction? How to implement abstraction in real application?
+
+Abstraction is a fundamental concept in computer science and software engineering,
+that involves simplifying complex systems by modeling classes based on their essential properties and behaviors,
+while hiding the irrelevant details.
+It is a way to manage complexity by focusing on the essential aspects of an object or system, and ignoring the non-essential details.
+
+In programming, 
+abstraction is typically implemented using abstract classes and interfaces. 
+
+Here are some key concepts related to abstraction and how to implement them in real applications:
+1.	Abstract Classes:
+•	An abstract class is a class that cannot be instantiated on its own and often contains abstract methods (methods without a body) 
+    that must be implemented by its concrete subclasses.
+•	Abstract classes can also have concrete methods that provide a default implementation, 
+    which can be overridden by subclasses.
