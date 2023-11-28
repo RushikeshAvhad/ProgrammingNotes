@@ -1,0 +1,113 @@
+Question - Use of Overriding? When should I override the methods in real applications?
+
+Method overriding is a powerful object-oriented programming concept 
+that allows a subclass to provide a specific implementation for a method that is already defined in its superclass. 
+In C#, method overriding is achieved by using the override keyword. 
+
+Here are some common scenarios and use cases for method overriding in real applications:
+1.	Polymorphism:
+•	Overriding is a key mechanism for achieving polymorphism, specifically runtime polymorphism. 
+    When you have a reference to a base class, and it points to an object of a derived class, 
+    calling an overridden method on that reference invokes the specific implementation in the derived class.
+
+csharpCopy code
+public class Animal 
+{ 
+    public virtual void MakeSound() 
+    { 
+        Console.WriteLine("Some generic sound"); 
+    } 
+} 
+public class Dog : Animal 
+{ 
+    public override void MakeSound() 
+    { 
+        Console.WriteLine("Bark!"); 
+    }
+}
+
+2.	Specialized Behavior:
+•	Overriding allows you to provide specialized behavior in derived classes. 
+    For example, if you have a generic Shape class with a method Draw, 
+    you can override the Draw method in specific shape classes like Circle or Rectangle to provide the appropriate drawing behavior.
+
+csharpCopy code
+public class Shape 
+{ 
+    public virtual void Draw() 
+    { 
+        Console.WriteLine("Drawing a generic shape"); 
+    } 
+} 
+public class Circle : Shape 
+{ 
+    public override void Draw() 
+    { 
+        Console.WriteLine("Drawing a circle"); 
+    }
+}
+
+3.	Maintainability and Extensibility:
+•	Method overriding enhances maintainability and extensibility by allowing you to add new functionality in derived classes 
+    without modifying the existing code in the base class. 
+    This follows the Open/Closed Principle (OCP) of SOLID principles.
+
+csharpCopy code
+public class Employee 
+{ 
+    public virtual void CalculateSalary() 
+    { 
+        // Base salary calculation logic 
+    }
+} 
+public class Manager : Employee 
+{ 
+    public override void CalculateSalary() 
+    { 
+        // Manager-specific salary calculation logic 
+    }
+}
+
+4.	Framework Design:
+•	In framework design, 
+    method overriding is often used to allow users of the framework to provide their custom implementations for specific operations. 
+    For example,
+    in ASP.NET, developers can override methods like OnInit or OnLoad to add custom initialization logic in their web pages.
+
+csharpCopy code
+public class WebPage 
+{ 
+    public virtual void OnInit() 
+    {
+        // Default initialization logic
+    }
+}
+public class CustomPage : WebPage 
+{ 
+    public override void OnInit() 
+    {
+        // Custom initialization logic for this page
+    }
+}
+
+5.	Interfaces and Abstract Classes:
+•	Interfaces and abstract classes often use method signatures without implementations. 
+    Implementing classes are then required to provide concrete implementations by overriding these methods.
+
+csharpCopy code
+public interface ILogger 
+{ 
+    void LogMessage(string message); 
+} 
+public class ConsoleLogger : ILogger 
+{ 
+    public void LogMessage(string message) 
+    { 
+        Console.WriteLine(message);
+    }
+}
+
+
+method overriding is valuable in scenarios where you need to provide specialized behavior in derived classes,
+achieve polymorphism, enhance maintainability, and allow for extensibility in a framework or system. 
+
