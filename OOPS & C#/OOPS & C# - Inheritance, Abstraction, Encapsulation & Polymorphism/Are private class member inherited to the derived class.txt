@@ -1,0 +1,46 @@
+Question - Are the private class members inherited to the derived class?
+
+No,
+private class members are not inherited by derived classes in C#.
+Inheritance in C# involves the accessibility of members, and private members are not accessible outside the class in which they are declared.
+
+Here's an example to illustrate this:
+public class BaseClass 
+{ 
+ 	private int privateField = 42; 
+ 	public void DisplayPrivateField() 
+ 	{ 
+ 		Console.WriteLine(privateField); 
+ 	} 
+}
+
+public class DerivedClass : BaseClass 
+{ 
+ 	// The DerivedClass cannot access privateField directly 
+ 	// If you try to uncomment the line below, it will result in a compilation error: 
+ 	// privateField is inaccessible due to its protection level 
+ 	// privateField = 10; 
+ 	public void DisplayPrivateFieldFromDerived() 
+ 	{
+ 		// The derived class can access private members of the base class 
+ 		// through public or protected methods. 
+ 		DisplayPrivateField(); 
+ 	} 
+}
+ 
+class Program 
+{ 
+ 	static void Main() 
+ 	{ 
+ 		DerivedClass derivedObject = new DerivedClass(); 
+ 		// This will work because DisplayPrivateField is a public method 
+ 		// in the BaseClass that internally accesses the private field. 
+ 		derivedObject.DisplayPrivateFieldFromDerived(); 
+ 	} 
+}
+
+In this example, privateField is a private member of BaseClass.
+The DerivedClass cannot directly access or inherit this private field.
+However, it can access it through public or protected methods defined in the base class, as demonstrated by the DisplayPrivateFieldFromDerived method.
+Private members are not inherited, and they are not directly accessible in derived classes.
+Access to private members is typically controlled through public methods or properties provided by the base class.
