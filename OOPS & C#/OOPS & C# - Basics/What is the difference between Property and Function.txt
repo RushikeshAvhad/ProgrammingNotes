@@ -1,0 +1,55 @@
+Question - What is the difference between Property and Function?
+
+Properties and functions (or methods) serve different purposes in object-oriented programming,
+although they both allow you to encapsulate behavior within a class. 
+
+Here are the key differences between properties and functions in C#:
+1.	Purpose:
+•	Property: Properties are primarily used to expose the state of an object. 
+    They provide a way to get or set the value of private fields within a class. 
+    Properties are often used for data access and manipulation.
+•	Function (Method): Functions or methods, on the other hand, are used to define behavior or actions that an object can perform.
+    They encapsulate a sequence of statements that can be executed when the method is called.
+
+2.	Access:
+•	Property: Properties are accessed using a syntax similar to fields, using the dot notation (object.Property).
+    They can have a get accessor (for reading the value) and a set accessor (for writing the value).
+•	Function (Method): Methods are called using the method invocation syntax (object.Method()).
+
+3.	Usage:
+•	Property: Properties are often used for simple data access and modification.
+    They are frequently employed when you want to expose the state of an object while encapsulating the implementation details.
+•	Function (Method): Functions or methods are used to encapsulate complex behavior or computations. 
+    They are employed when you want to perform a series of operations, calculations, or actions.
+
+4.	Syntax:
+•	Property: Properties have a specific syntax with get and set accessors. 
+    The syntax is concise, especially when using auto-implemented properties.
+•	Function (Method): Functions or methods have their own syntax, which includes a method signature, a return type (if any),
+    and a method body containing the executable code.
+
+
+Here's an example to illustrate the differences:
+public class Example
+{
+	// Property
+	private int _value;
+	
+	public int Value
+	{
+		get { return _value; }
+		set { _value = value: }
+	}
+	
+	// Method
+	public void Increament()
+	{
+		_value++;
+	}
+}
+
+In this example, Value is a property that exposes the internal state of the object, 
+and Increment is a method that performs an action on the object.
+
+Properties are typically used for data access and modification,
+while functions or methods are used for encapsulating behavior and actions
