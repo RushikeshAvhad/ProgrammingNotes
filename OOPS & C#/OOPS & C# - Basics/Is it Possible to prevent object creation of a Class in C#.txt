@@ -1,0 +1,65 @@
+Question - Is it possible to prevent object creation of a class in C#?
+
+Yes,
+it is possible to prevent the creation of objects of a class in C# by using the private constructor or by making the class itself
+abstract or static.
+
+
+Here's how you can achieve this:
+1.	Private Constructor:
+•	If you make the constructor of a class private, it becomes inaccessible from outside the class.
+    As a result, objects cannot be created directly using the new keyword.
+    This pattern is commonly used for utility classes that only contain static members.
+
+    public class NoObjectCreation
+    {
+	    // Private constructor
+	    private NoObjectCreation()
+	    {
+		    // Constructor logic, if any
+	    }
+	
+	    // Static method to perform operations
+	    public static void DoSomething()
+	    {
+		    Console.WriteLine(“Doing Something”);
+	    }
+    }
+
+In this example,
+you cannot create an instance of NoObjectCreation using new NoObjectCreation().
+Instead, you can call the static method DoSomething directly.
+
+
+2.	Abstract Class:
+•	An abstract class can also prevent direct instantiation.
+    If a class is declared abstract, it cannot be instantiated directly,
+    and you need to create a derived class that provides implementations for any abstract members.
+
+    public abstract class NoObjectCreationAbstract
+    {
+	    // Abstract method that must be implemented by derived classes
+	    public abstract void DoSomething();
+    }
+
+In this example, 
+you cannot create an instance of NoObjectCreationAbstract directly.
+You need to create a derived class and provide an implementation for the abstract method.
+
+
+3.	Static Class:
+•	A static class can also prevent object creation because all members of a static class must be static, including the constructor.
+    Static classes cannot be instantiated, and their members can be accessed directly using the class name.
+    
+    public static class NoObjectCreationStatic
+    {
+	    // Static method to perform operations
+	    public static void DoSomething()
+	    {
+		    Console.WriteLine(“Doing Something”);
+	    }
+    }
+
+In this example,
+you cannot create an instance of NoObjectCreationStatic using new NoObjectCreationStatic().
+Instead, you can call the static method DoSomething directly.
