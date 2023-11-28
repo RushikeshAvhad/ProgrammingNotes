@@ -1,0 +1,62 @@
+Question - Does C# Support Multiple Inheritance?
+
+C# does not support multiple inheritance for classes.
+This means that a class in C# cannot directly inherit from more than one class.
+This design decision was made to avoid the complications and ambiguities that can arise from multiple inheritance,
+such as the diamond problem.
+
+However, C# supports multiple inheritance through interfaces.
+An interface is a contract that defines a set of methods and properties that a class must implement.
+A class can implement multiple interfaces, effectively achieving a form of multiple inheritance for behavior.
+
+Here's an example of how multiple inheritance is achieved through interfaces in C#:
+
+csharp
+Copy code
+// Interface 1
+public interface IShape
+{
+    void Draw();
+}
+
+// Interface 2
+public interface IMovable
+{
+    void Move();
+}
+
+// Class implementing both interfaces
+public class Circle : IShape, IMovable
+{
+    public void Draw()
+    {
+        Console.WriteLine("Drawing a circle");
+    }
+
+    public void Move()
+    {
+        Console.WriteLine("Moving the circle");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Create an instance of the class
+        Circle myCircle = new Circle();
+
+        // Call methods from both interfaces
+        myCircle.Draw();
+        myCircle.Move();
+    }
+}
+In this example, 
+the Circle class implements both the IShape and IMovable interfaces, 
+effectively inheriting behavior from both. 
+While C# doesn't support multiple inheritance for classes, 
+using interfaces allows for achieving similar functionality in a more controlled and flexible way.
+
+It's important to note that C# 8.0 and later versions introduce the concept of default interface methods, 
+providing a way to include method implementations in interfaces. This feature enhances the flexibility of interfaces,
+making it easier to add new methods to interfaces without breaking existing implementations.
