@@ -1,0 +1,30 @@
+Question - What is difference between abstraction and encapsulation?
+
+Abstraction and encapsulation are both fundamental principles of object-oriented programming (OOP) 
+but they address different aspects of software design.
+
+1.	Abstraction:
+•	Definition: Abstraction is the process of simplifying complex systems by modeling classes based on their essential properties and behaviors. while ignoring or hiding the irrelevant details.
+•	Focus: It focuses on the concept of creating abstract representations that capture the essential features of an object while hiding the implementation details.
+•	Key Points:
+•	Abstraction involves defining abstract classes and interfaces.
+•	It allows you to represent the essential features of an object, emphasizing what an object does rather than how it achieves its functionality.
+•	Abstraction is more about providing a clear and concise view of the system's functionality at a higher level.
+•	It is often associated with defining abstract classes, abstract methods, and interfaces in programming languages.
+
+2.	Encapsulation:
+•	Definition: Encapsulation is the bundling of data (attributes) and methods (functions) that operate on the data into a single unit known as a class. It involves hiding the internal details of an object and protecting its state from external interference.
+•	Focus: It focuses on restricting access to certain parts of an object and preventing the accidental modification of its internal state.
+•	Key Points:
+•	Encapsulation involves using access modifiers (e.g., private, protected, public) to control the visibility of class members (fields and methods).
+•	It helps in data hiding by making the internal state of an object private, and external code can only interact with the object through well-defined interfaces (e.g., methods, properties).
+•	Encapsulation is about bundling the data and methods that operate on the data together, providing a clear and controlled interface for interacting with objects.
+•	It enhances the security and maintainability of the code by preventing direct access to internal details.
+•	Abstraction is about modeling classes based on essential properties and behaviors, emphasizing what an object does.
+•	Encapsulation is about bundling data and methods together and controlling access to the internal details of an object, emphasizing how an object achieves its functionality.
+
+While abstraction and encapsulation are related and often used together, 
+they address different concerns in the design of object-oriented systems. 
+
+Abstraction helps in managing complexity by focusing on essential features, 
+while encapsulation helps in creating well-defined and secure interfaces for interacting with objects.
