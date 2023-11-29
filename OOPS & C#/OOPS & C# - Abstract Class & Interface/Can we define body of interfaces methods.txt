@@ -1,0 +1,36 @@
+Question - Can we define body of interfaces methods?
+
+In C#, interface methods are, by default, abstract and do not contain a method body.
+The purpose of an interface is to define a contract or a set of method signatures that implementing classes must adhere to.
+
+
+Here's an example of a simple interface without method bodies:
+csharpCopy code
+public interface ILogger 
+{ 
+    void LogMessage(string message);
+    void LogError(string errorMessage); 
+}
+
+In the above example, 
+ILogger is an interface with two method signatures, LogMessage and LogError.
+However, there are no method bodies provided within the interface. 
+Implementing classes are required to provide the actual implementation for these methods.
+Starting from C# 8.0, you can use default interface methods to provide a default implementation for a method within an interface. 
+This feature allows you to include method bodies in interfaces, but implementing classes can still override these methods if needed. 
+Here's an example:
+csharpCopy code
+public interface ILogger
+{
+    void LogMessage(string message);
+    void LogError(string errorMessage)
+    {
+        Console.WriteLine($"Error: {errorMessage}");
+    }
+}
+
+In the above example, LogError is a default interface method with a provided method body. 
+Implementing classes that do not override this method will use the default implementation. 
+However, implementing classes can still provide their own implementation if needed.
+It's important to note that default interface methods are available starting from C# 8.0, and you need to be using a compatible version of the language and compiler to utilize this feature. 
+If you are working with an older version of C#, interface methods can only be abstract, and the implementing classes are required to provide the method bodies.
