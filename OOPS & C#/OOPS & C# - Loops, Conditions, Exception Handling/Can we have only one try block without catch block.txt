@@ -1,0 +1,6 @@
+Question - Can we have only “Try” block without “Catch” block?
+
+Yes, in C#, you can have a try block without a corresponding catch block. 
+This is a valid construct and is often used when you want to execute a piece of code that might throw exceptions, 
+but you don't want to handle those exceptions within the same method. 
+Instead, you might handle the exceptions at a higher level or allow them to propagate up the call stack.
