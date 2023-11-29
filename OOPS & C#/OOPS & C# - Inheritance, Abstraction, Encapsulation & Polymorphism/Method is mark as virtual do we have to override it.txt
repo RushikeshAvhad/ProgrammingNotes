@@ -1,0 +1,62 @@
+Question - Method is Marked as Virtual, do we have to Override it from the child class?
+
+In C#, 
+when a method is marked as virtual in a base class, 
+it means that the method is designed to be overridden in derived classes. However, it is not mandatory for derived classes to override a virtual method. A virtual method provides the option for a derived class to provide its own implementation, but it doesn't enforce that every derived class must override it.
+
+Here's a brief explanation:
+1.	Virtual Method in Base Class:
+•	A virtual method in a base class is marked with the virtual keyword.
+
+csharpCopy code
+public class Animal 
+{ 
+    public virtual void MakeSound() 
+    { 
+        Console.WriteLine("Some generic sound"); 
+    }
+}
+
+2.	Option to Override:
+•	The virtual keyword indicates that the method can be overridden in a derived class,
+    but it doesn't require it.
+    A derived class has the option to provide its own implementation by using the override keyword.
+
+    csharp code
+    public class Dog : Animal
+    { 
+        public override void MakeSound() 
+        { 
+            Console.WriteLine("Bark!"); 
+        } 
+    }
+
+3.	Not Overriding the Virtual Method:
+•	It's perfectly valid for a derived class not to override a virtual method.
+    If a derived class doesn't provide its own implementation, 
+    it will inherit and use the base class's implementation.
+
+    csharpCopy code
+    public class Cat : Animal 
+    { 
+        // The MakeSound method is not overridden 
+    }
+
+4.	Calling the Base Class Implementation:
+•	If a derived class chooses not to override a virtual method, 
+    it can still call the base class's implementation using the base keyword.
+    csharpCopy code
+    public class Cat : Animal 
+    { 
+        public void SomeMethod() 
+        { 
+            // Call the base class's implementation 
+            base.MakeSound();
+        } 
+    }
+
+In summary, 
+while marking a method as virtual in a base class allows derived classes to override it, 
+it doesn't mandate that every derived class must provide its own implementation. 
+The decision to override a virtual method depends on the specific requirements of the derived class. 
+If a derived class doesn't override the virtual method, it inherits and uses the base class's implementation.
