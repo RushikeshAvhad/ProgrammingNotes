@@ -1,0 +1,10 @@
+Question - What is the difference between “throw” and “throw ex”?
+
+In C#, both throw ex and throw are used to throw exceptions, but they behave differently in the context of exception handling.
+
+When you use throw ex, you are re-throwing the original exception caught in the catch block. 
+This means that the call stack information, including the point where the original exception was thrown, is preserved. 
+This can be useful for debugging, as it provides more information about the origin of the exception.
+
+When you use throw without an argument (throw;), you are re-throwing the original exception without resetting the call stack. 
+This means that the exception retains its original source information, making it easier to trace back to where it was initially thrown.
