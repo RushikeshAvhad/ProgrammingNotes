@@ -1,0 +1,22 @@
+Question - What is Boxing and Unboxing? Where to use them in real application?
+
+•	Boxing:
+•	Boxing is the process of converting a value type (e.g., int, float, struct) to an object reference.
+    When a value type is boxed, a new object is created on the heap, and the value is copied into that object. 
+    The result is a reference type that can be used in a context that requires an object.
+
+•	Unboxing:
+•	Unboxing is the process of converting an object reference back to a value type.
+    It is the reverse operation of boxing. 
+    Unboxing involves extracting the value from the object on the heap and assigning it to a value type variable.
+
+Where to Use Boxing and Unboxing:
+1. Collections of Mixed Types: 
+    Boxing is often used when you need to store value types in collections that expect objects, 
+    such as ArrayList or List<object>. 
+    Since these collections store objects, value types need to be boxed before being added to the collection.
+2. Working with Reflection:
+    When working with reflection, which deals with types and objects at runtime, 
+    boxing and unboxing may be encountered in scenarios where you dynamically create or manipulate objects.
+3. Value Types in Frameworks that Expect Objects: 
+    Some frameworks or APIs may expect parameters or properties to be of type object, requiring boxing when passing value types.
