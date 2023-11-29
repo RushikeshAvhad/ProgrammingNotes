@@ -1,0 +1,153 @@
+Question - When to use Interface and When Abstract class in real application?
+
+Choosing between interfaces and abstract classes in C# depends on the specific requirements and design goals of your application. 
+Both interfaces and abstract classes serve different purposes, and the decision should be based on the characteristics and needs of your classes.
+
+Here are some considerations when to use an interface and when to use an abstract class:
+Use an Interface When:
+1.	Multiple Inheritance is Required:
+•	If you need a class to inherit from multiple sources, use interfaces.
+    C# supports multiple interface inheritance, but a class can only inherit from a single abstract class.
+
+csharpCopy code
+public interface IShape 
+{ 
+    void Draw(); 
+} 
+public interface IResizable 
+{ 
+    void Resize(); 
+}
+public class Square : IShape, IResizable 
+{ 
+    public void Draw() 
+    { 
+        // Implementation 
+    } 
+    public void Resize() 
+    { 
+        // Implementation 
+    } 
+} 
+
+2.	Contractual Obligations:
+•	When you want to define a contract that multiple unrelated classes should adhere to. 
+    Interfaces specify a set of methods, properties, and events without providing any implementation.
+
+    csharpCopy code
+    public interface ILogger 
+    { 
+        void LogMessage(string message); 
+    }
+
+3.	Enforcing Common Behavior:
+•	If you want to enforce a common behavior across different classes without providing a base implementation.
+
+    csharpCopy code
+    public interface IShape 
+    { 
+        double CalculateArea(); 
+    }
+
+4.	Loose Coupling:
+•	When you want to achieve loose coupling between classes. 
+    Interfaces allow classes to interact without being dependent on the internal details of each other.
+    csharpCopy code
+    public interface IDataRepository 
+    { 
+        void SaveData(object data);
+        object RetrieveData();
+    } 
+
+Use an Abstract Class When:
+1.	Common Implementation is Needed:
+•	If you want to provide a common base implementation for multiple derived classes, 
+    use an abstract class. 
+    Abstract classes can include both abstract (unimplemented) and concrete (implemented) members.
+    
+    csharpCopy code
+    public abstract class Shape 
+    { 
+        public abstract void Draw();
+        public void Resize() 
+        { 
+            // Common implementation for resizing 
+        } 
+    } 
+    public class Circle : Shape 
+    { 
+        public override void Draw() 
+        { 
+            // Implementation for drawing a circle 
+        } 
+    }
+
+2.	Shared Code and Fields:
+•	When you need to share common code, fields, or properties among derived classes.
+    
+    csharpCopy code
+    public abstract class Animal 
+    { 
+        protected string name;
+        public Animal(string name) 
+        { 
+            this.name = name; 
+        }
+        public abstract void MakeSound();
+    } 
+    public class Dog : Animal 
+    { 
+        public Dog(string name) : base(name) 
+        { 
+
+        } 
+        public override void MakeSound() 
+        { 
+            Console.WriteLine("Bark!"); 
+        } 
+    }
+
+3.	Constructor Logic:
+•	When you want to define a constructor in the base class that initializes common fields or performs common initialization logic.
+    csharpCopy code
+    public abstract class Shape 
+    { 
+        protected int x; 
+        protected int y; 
+        
+        public Shape(int x, int y) 
+        { 
+            this.x = x; 
+            this.y = y;
+        } 
+        public abstract void Draw();
+    } 
+
+4.	Partial Implementation:
+•	If you want to provide a partial implementation and allow derived classes to override specific methods while inheriting others.
+    
+    csharpCopy code
+    public abstract class Vehicle 
+    { 
+        public void StartEngine()
+        { 
+            Console.WriteLine("Engine started");
+        } 
+        public abstract void Drive();
+    } 
+    public class Car : Vehicle 
+    { 
+        public override void Drive()
+        { 
+            Console.WriteLine("Car is moving"); 
+        } 
+    }
+
+Summary:
+•	Interfaces: 
+    Use interfaces when you want to define a contract, support multiple inheritance, enforce common behavior without implementation, and achieve loose coupling.
+•	Abstract Classes: 
+    Use abstract classes when you want to provide a common base implementation, share code and fields among derived classes, define constructors,
+    and allow for partial implementation with method overrides.
+
+
