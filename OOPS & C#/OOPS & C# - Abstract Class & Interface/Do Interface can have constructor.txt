@@ -1,0 +1,11 @@
+Question - Do Interface can have Constructor?
+
+In C#, interfaces cannot have constructors.
+The purpose of an interface is to define a contract that classes must adhere to,
+specifying a set of method signatures, properties, events, or indexers.
+An interface is not intended to contain any implementation details, including constructors.
+
+If you need to initialize members or perform some kind of setup when an implementing class is instantiated, 
+you should use a constructor in the implementing class, not in the interface.
+Interfaces are focused on defining a contract, and the responsibility for providing a constructor (and its implementation) lies with the classes that implement the interface. 
+The absence of constructors in interfaces encourages a separation of concerns and a cleaner design by contract.
