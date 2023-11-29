@@ -1,0 +1,78 @@
+Question - Can you create an Instance of an Abstract class or Interface?
+
+In C#, you cannot create an instance of an abstract class or an interface directly. 
+
+Let's look at each case separately:
+Abstract Class:
+An abstract class is a class that cannot be instantiated on its own. 
+It is meant to be a base class for derived classes.
+Abstract classes can contain abstract methods (methods without an implementation) and concrete methods (methods with an implementation).
+
+csharpCopy code
+public abstract class Shape 
+{ 
+    public abstract void Draw(); 
+    public void Resize() 
+    { 
+        Console.WriteLine("Resizing the shape"); 
+    } 
+}
+
+You cannot create an instance of Shape directly:
+
+csharpCopy code
+// This will result in a compilation error 
+Shape shape = new Shape(); 
+// Error: Cannot create an instance of the abstract class or interface 'Shape' 
+
+You can, however, create instances of classes that inherit from the abstract class:
+
+csharpCopy code
+public class Circle : Shape 
+{ 
+    public override void Draw() 
+    { 
+        Console.WriteLine("Drawing a circle"); 
+    }
+} 
+// Creating an instance of the derived class
+Shape circle = new Circle(); 
+circle.Draw(); 
+// Calls the overridden Draw method in the Circle class 
+
+
+Interface:
+An interface is a contract that defines a set of methods, properties, events, or indexers that a class must implement. 
+Like abstract classes, you cannot create an instance of an interface directly.
+
+csharpCopy code
+public interface ILogger 
+{ 
+    void LogMessage(string message); 
+}
+
+You cannot create an instance of ILogger directly:
+
+csharpCopy code
+// This will result in a compilation error 
+ILogger logger = new ILogger(); 
+// Error: Cannot create an instance of the abstract class or interface 'ILogger' 
+You can create instances of classes that implement the interface:
+
+csharpCopy code
+public class ConsoleLogger : ILogger 
+{ 
+    public void LogMessage(string message) 
+    { 
+        Console.WriteLine(message); 
+    } 
+} 
+// Creating an instance of the class that implements the interface 
+ILogger consoleLogger = new ConsoleLogger();
+consoleLogger.LogMessage("Logging a message"); 
+// Calls the LogMessage method in the ConsoleLogger class 
+
+In summary, 
+abstract classes and interfaces serve as blueprints for classes that inherit from them. 
+While you cannot create instances of the abstract class or interface directly,
+you can create instances of classes that inherit from the abstract class or implement the interface.
