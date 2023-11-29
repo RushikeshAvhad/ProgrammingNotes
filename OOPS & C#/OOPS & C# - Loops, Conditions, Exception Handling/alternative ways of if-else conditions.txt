@@ -1,0 +1,19 @@
+Question - What are the alternative ways of if-else conditions? When to use what?
+
+In C#, if-else conditions are the standard way to make decisions in your code. 
+However, there are alternative ways and constructs that you can use based on the complexity and readability requirements of your code.
+
+1. Ternary Operator (? :):
+    The ternary operator is a concise way to express a simple conditional statement in a single line.
+    It has the form 
+    condition ? true_expression : false_expression.
+    When to use:
+    Use the ternary operator when you have a simple condition and the expressions are short.
+    It enhances code readability for simple decisions.
+
+2. Switch Statement:
+    The switch statement allows you to select one of many code blocks to be executed. 
+    It is useful when you have multiple conditions to check against the same variable.
+    When to use:
+    Use the switch statement when you have multiple conditions to check against the same variable.
+    It enhances code readability and maintainability in such scenarios.
