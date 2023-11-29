@@ -1,0 +1,18 @@
+Question - What is default access modifier in a class?
+
+In C#, 
+the default access modifier for a class is internal. 
+If you declare a class without specifying an access modifier, it is considered internal by default. 
+This means that the class is accessible within the same assembly but not from outside assemblies.
+
+Here's an example:
+csharpCopy code
+// This class is internal by default 
+class MyClass 
+{ 
+    // Members of the class 
+}
+
+In the example above, 
+MyClass is implicitly marked as internal because no access modifier is specified.
+If this class is part of an assembly, it can be accessed by other types within the same assembly but not from types in external assemblies.
