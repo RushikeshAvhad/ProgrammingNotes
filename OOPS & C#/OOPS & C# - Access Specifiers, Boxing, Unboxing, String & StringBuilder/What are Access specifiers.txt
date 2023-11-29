@@ -1,0 +1,22 @@
+Question - What are Access Specifiers?
+
+Access specifiers, also known as access modifiers, 
+are keywords in object-oriented programming languages that define the visibility and accessibility of classes,
+methods, fields, and other members within a program. 
+
+Access specifiers determine how the elements of a class can be accessed by other classes or code outside the current class.
+
+In C#, there are four primary access specifiers:
+1.	public:
+•	Members declared as public are accessible from any other class or assembly. 
+    This is the least restrictive access level.
+2.	private:
+•	Members declared as private are only accessible within the same class. 
+    This is the most restrictive access level.
+3.	protected:
+•	Members declared as protected are accessible within the same class and by derived classes. 
+    It restricts access from outside the class.
+4.	internal:
+•	Members declared as internal are accessible within the same assembly but not from outside assemblies.
+5.	protected internal:
+•	Allows access within the same assembly or by derived classes.
