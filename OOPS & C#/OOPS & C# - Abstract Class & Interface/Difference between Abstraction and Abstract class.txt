@@ -1,0 +1,9 @@
+Question - What is the difference between Abstraction and Abstract class?
+
+Abstraction:
+Abstraction is a fundamental concept in object-oriented programming that involves simplifying complex systems by modeling classes based on essential characteristics and behaviors, 
+while ignoring or hiding unnecessary details.
+
+Abstract Class:
+An abstract class is a class in C# that cannot be instantiated directly.
+It is marked with the abstract keyword and may contain abstract (unimplemented) and concrete (implemented) members, such as methods, properties, and fields.
