@@ -1,0 +1,16 @@
+Question - When to use finally in real application?
+
+The finally block in C# is used to define a block of code that will be executed regardless of whether an exception occurs or not. 
+It is often used for cleanup operations, resource release, or finalization tasks.
+
+Here are some scenarios in real applications where the finally block is useful:
+1.	Resource Cleanup:
+•	Use the finally block to ensure that resources, such as file handles, database connections, or network connections, are properly released or closed, even if an exception occurs.
+2.	Database Operations:
+•	When working with database connections, use the finally block to close the connection and release resources. This ensures that the connection is closed regardless of the success or failure of database operations.
+3.	File Operations:
+•	When performing file operations, such as reading or writing to files, use the finally block to ensure that file handles are closed, and resources are released.
+4.	Cleanup Tasks:
+•	For any cleanup or finalization tasks that need to be performed, such as releasing memory, closing connections, or logging, use the finally block to guarantee that these tasks are executed.
+5.	Release Unmanaged Resources:
+•	When dealing with unmanaged resources, such as those obtained through interop with native libraries or COM components, use the finally block to release these resources.
