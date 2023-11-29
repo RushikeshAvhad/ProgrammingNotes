@@ -1,0 +1,11 @@
+Question - What is the difference between Finally and Finalize?
+
+finally:
+The finally block is part of the exception handling mechanism in C#. 
+It is used within a try-catch structure to define a block of code that will be executed regardless of whether an exception is thrown or not. 
+The finally block is optional, but if present, the code within it will be executed whether an exception occurs or not.
+
+Finalize:
+Finalize is a method provided by the .NET Framework for automatic memory management using the garbage collector.
+It is not directly called by the developer but is invoked by the garbage collector when an object is being reclaimed. 
+The Finalize method is a member of the System.Object class and can be overridden in a user-defined class to provide custom cleanup operations before an object is destroyed.
