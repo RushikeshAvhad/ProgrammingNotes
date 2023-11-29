@@ -1,0 +1,12 @@
+Question - Is Boxing and Unboxing good for performance?
+
+Boxing and unboxing in C# can have a performance impact, and in performance-critical scenarios,
+it's generally advisable to be mindful of these operations and consider alternatives.
+The performance considerations stem from the fact that boxing involves creating a new object on the heap,
+and unboxing involves extracting a value from an object on the heap.
+
+while boxing and unboxing provide flexibility in certain scenarios, they can have performance implications.
+It's crucial to be aware of these implications, especially in performance-critical code.
+
+Whenever possible, consider using alternatives that minimize or eliminate the need for explicit boxing and unboxing,
+such as generic collections and appropriate use of value types.
