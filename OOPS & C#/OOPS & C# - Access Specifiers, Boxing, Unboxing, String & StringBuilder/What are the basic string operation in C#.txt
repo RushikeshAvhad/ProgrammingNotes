@@ -1,0 +1,24 @@
+Question - What are the basic string operations in C#?
+
+1. Concatenation: 
+    You can concatenate strings using the + operator or the String.Concat method. 
+2. Interpolation:
+    String interpolation allows you to embed expressions directly in string literals. 
+3. Substring:
+    Extract a portion of a string using the Substring method. 
+4. Length:
+    Get the length of a string using the Length property. 
+5. ToUpper and ToLower: 
+    Convert a string to uppercase or lowercase. 
+6. Trim: 
+    Remove leading and trailing whitespaces from a string using Trim. 
+7. Replace: 
+    Replace occurrences of a substring with another string using Replace. 
+8. Split: 
+    Split a string into an array of substrings using a specified delimiter. 
+9. Indexing: 
+    Access individual characters in a string using indexing. 
+10. Comparisons: 
+    Compare strings using methods like Equals or CompareTo. 
+11. StartsWith and EndsWith: 
+    Check if a string starts or ends with a specific substring.
