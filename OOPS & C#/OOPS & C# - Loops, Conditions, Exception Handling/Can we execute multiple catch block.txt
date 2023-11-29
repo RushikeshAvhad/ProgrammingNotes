@@ -1,0 +1,10 @@
+Question - Can we execute multiple catch blocks?
+
+In C#, only one catch block is executed for a given exception.
+Once an exception is caught by the first catch block that matches its type, the control immediately transfers to that block, 
+and subsequent catch blocks are skipped. 
+This behavior is consistent with the flow of execution in the catch blocks.
+It's important to order the catch blocks from the most specific exception types to the more general ones. 
+This ensures that more specific exceptions are caught and handled before more general catch blocks. 
+If you reverse the order, putting a more general catch block before a more specific one,
+the specific catch block will never be reached because the more general catch block will match the exception first.
