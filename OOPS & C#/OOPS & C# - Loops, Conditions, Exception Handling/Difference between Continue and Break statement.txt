@@ -1,0 +1,13 @@
+Question - What is the difference between Continue and Break Statement?
+
+In C#, break and continue are control flow statements used within loops to alter the normal flow of execution.
+
+break Statement:
+The break statement is used to exit a loop prematurely.
+When encountered, the break statement terminates the loop immediately, and control is transferred to the statement
+break is commonly used when a loop needs to be terminated prematurely based on a specific condition.
+
+continue Statement:
+The continue statement is used to skip the rest of the current iteration and jump to the next iteration of the loop. 
+It does not terminate the entire loop but skips the remaining code in the current iteration.
+continue is commonly used when you want to skip a specific iteration of the loop based on a certain condition without terminating the entire loop.
