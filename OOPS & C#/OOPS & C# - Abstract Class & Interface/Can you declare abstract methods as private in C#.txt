@@ -1,0 +1,8 @@
+Question - Can you declare abstract methods as private in C#?
+
+In C#, abstract methods cannot be declared as private.
+The accessibility modifier for abstract methods in C# must be at least as accessible as the containing abstract class or interface.
+This means that abstract methods in an abstract class or interface cannot have less restrictive access modifiers than the containing class or interface.
+
+Abstract methods are meant to be implemented by derived classes, and making them private would prevent any derived class from providing an implementation, which defeats the purpose of abstraction. 
+Therefore, abstract methods in C# are typically declared with at least internal, protected, or public accessibility, depending on the intended visibility within the inheritance hierarchy.
