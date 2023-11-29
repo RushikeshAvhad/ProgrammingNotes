@@ -1,0 +1,22 @@
+Question - When to use String and when StringBuilder in real application?
+
+
+Use String when:
+1.	Immutable Content:
+•	If the content of the string is mostly fixed and doesn't change frequently, using the String class is appropriate.
+2.	Few Modifications:
+•	If you are performing a limited number of string operations and the content is not frequently modified, 
+    using the String class is straightforward and sufficient.
+3.	Readability and Simplicity:
+•	When the code involves simple string concatenation and readability is a priority, 
+    using the String class directly can make the code more straightforward.
+
+Use StringBuilder when:
+1.	Frequent Modifications:
+•	If the content of the string needs to be modified frequently, especially in loops or dynamic scenarios, 
+    using StringBuilder can be more efficient and result in better performance.
+2.	Looping or Iterative Operations:
+•	In scenarios where strings are constructed in loops, StringBuilder is more efficient because it avoids the creation of multiple string objects.
+3.	Performance is a Concern:
+•	If your application involves extensive string manipulations and performance is critical, 
+    using StringBuilder can help minimize memory allocations and improve efficiency.
