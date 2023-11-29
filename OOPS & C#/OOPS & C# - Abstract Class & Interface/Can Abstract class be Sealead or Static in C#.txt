@@ -1,0 +1,6 @@
+Question - Can abstract class be sealed or static in C#?
+
+In C#, an abstract class can neither be sealed nor static. 
+
+abstract classes in C# cannot be sealed or static because,
+these modifiers conflict with the fundamental principles and intended use of abstract classes.
