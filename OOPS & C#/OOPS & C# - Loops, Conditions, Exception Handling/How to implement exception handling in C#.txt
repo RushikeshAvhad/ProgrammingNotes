@@ -1,0 +1,20 @@
+Question - How to implement Exception handling in C#?
+
+Exception handling in C# is a way to gracefully manage runtime errors and unexpected situations in your code. 
+It involves using try, catch, finally, and optionally throw blocks. 
+
+Here's a basic structure for implementing exception handling in C#:
+Explanation of the components:
+1.	try Block:
+•	The try block contains the code that might throw an exception.
+    If an exception occurs within this block, the runtime searches for a corresponding catch block to handle the exception.
+2.	catch Blocks:
+•	Each catch block specifies a type of exception that it can handle.
+    If an exception of that type occurs in the try block, the corresponding catch block is executed.
+    You can have multiple catch blocks to handle different types of exceptions.
+3.	finally Block:
+•	The finally block contains code that is guaranteed to execute, whether an exception occurs or not.
+    This block is optional, and you can omit it if you don't need specific cleanup or finalization code.
+4.	throw Statement:
+•	The throw statement is used to manually throw an exception.
+    You can use this statement to create custom exceptions or to propagate exceptions that you catch.
