@@ -1,0 +1,7 @@
+Question - Does Abstract class support multiple Inheritance?
+
+In C#, an abstract class supports single inheritance only.
+This means that a class can inherit from only one abstract class.
+Unlike some other object-oriented programming languages that support multiple inheritance, C# chooses to avoid the complexities and ambiguities associated with it.
+If you need to achieve functionality similar to multiple inheritance, you can use interfaces in combination with abstract classes.
+While an abstract class provides a common base implementation, interfaces allow a class to declare multiple contracts.
