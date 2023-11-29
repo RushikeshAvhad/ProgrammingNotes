@@ -1,0 +1,18 @@
+Question - What are the Loop types in C#? When to use what in real applications?
+
+In C#, there are several types of loops that allow you to repeatedly execute a block of code. 
+
+The common loop types in C# include:
+1.	for Loop:
+•	The for loop is used when you know the number of iterations in advance.
+    It consists of an initialization, a condition, and an increment or decrement expression.
+    Use the for loop when the number of iterations is known and you need precise control over the loop variables.
+2.	while Loop:
+•	The while loop is used when the number of iterations is not known in advance, and the loop continues as long as a specified condition is true.
+    Use the while loop when the number of iterations is not predetermined, and the loop continues based on a specific condition.
+3.	do-while Loop:
+•	The do-while loop is similar to the while loop, but it guarantees that the loop body is executed at least once, as the condition is checked after the loop body.
+    Use the do-while loop when you want to ensure that the loop body is executed at least once, regardless of the initial condition.
+4.	foreach Loop:
+•	The foreach loop is used to iterate over elements in a collection, such as arrays, lists, or other enumerable types.
+    Use the foreach loop when iterating over elements in a collection, and you don't need to track an index explicitly.
