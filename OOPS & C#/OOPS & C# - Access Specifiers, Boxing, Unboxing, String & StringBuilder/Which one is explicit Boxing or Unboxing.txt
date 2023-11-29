@@ -1,0 +1,12 @@
+Question - Which one is explicit Boxing or Unboxing?
+
+The terms "explicit boxing" and "explicit unboxing" refer to specific operations in C# when converting between value types and reference types. 
+
+
+Explicit Boxing: 
+Explicit boxing is the process of manually converting a value type to an object reference using a cast or the object keyword. 
+This operation is explicit because the developer is explicitly indicating the conversion.
+
+Explicit Unboxing: 
+Explicit unboxing is the process of manually converting an object reference back to a value type using a cast. 
+This operation is explicit because the developer is explicitly indicating the conversion.
