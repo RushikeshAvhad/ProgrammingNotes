@@ -1,0 +1,77 @@
+Question - What is the difference between Method Overriding and Method Hiding?
+
+In C#, 
+method overriding and method hiding are two different concepts related to polymorphism and inheritance.
+
+Let's explore the differences between method overriding and method hiding:
+Method Overriding:
+1.	Definition:
+•	Method overriding involves providing a specific implementation for a method in a derived class that is already defined in its base class.
+2.	Use of override Keyword:
+•	To override a method, you use the override keyword in the derived class.
+3.	Signature Matching:
+•	The overridden method in the derived class must have the same method signature (name, return type, and parameter types) as the method in the base class.
+4.	Polymorphism:
+•	Overriding is a way to achieve runtime polymorphism. The decision on which method to call is made at runtime.
+5.	Example:
+csharpCopy code
+public class Animal 
+{ 
+    public virtual void MakeSound() 
+    { 
+        Console.WriteLine("Some generic sound"); 
+    } 
+} 
+public class Dog : Animal 
+{ 
+    public override void MakeSound() 
+    { 
+        Console.WriteLine("Bark!");
+    }
+}
+
+Method Hiding (New Keyword):
+1.	Definition:
+•	Method hiding involves defining a new method in a derived class with the same name as a method in its base class, effectively hiding the base class's method.
+2.	Use of new Keyword:
+•	To hide a method, you use the new keyword in the derived class.
+3.	Signature Matching:
+•	The hidden method in the derived class may or may not have the same method signature as the method in the base class.
+4.	Static or Instance:
+•	Method hiding can be applied to both static and instance methods.
+5.	Shadowing:
+•	Method hiding is sometimes referred to as "method shadowing" because it creates a new version of the method that shadows the base class's method.
+6.	Example:
+csharpCopy code
+public class Shape 
+{ 
+    public void Draw() 
+    { 
+        Console.WriteLine("Drawing a shape"); 
+    } 
+} 
+public class Circle : Shape 
+{ 
+    public new void Draw() 
+    { 
+        Console.WriteLine("Drawing a circle"); 
+    } 
+}
+
+Key Differences:
+•	Use of Keywords:
+•	Method overriding uses the override keyword, while method hiding uses the new keyword.
+•	Inheritance:
+•	Method overriding is part of the inheritance mechanism and relies on the relationship between base and derived classes. 
+    Method hiding is not necessarily tied to inheritance.
+•	Polymorphism:
+•	Method overriding is a way to achieve polymorphism, allowing a derived class to provide a specialized implementation. 
+    Method hiding is not polymorphic; the choice of which method to call is determined at compile-time.
+•	Intent:
+•	Method overriding is used when you want to provide a new implementation for an existing method in a derived class. 
+    Method hiding is used when you want to create a new method in a derived class with the same name as a method in the base class.
+
+In summary,
+method overriding and method hiding serve different purposes.
+Overriding is about providing a specific implementation in a derived class,
+while hiding is about creating a new method in a derived class with the same name as a method in the base class, effectively hiding the base class's method.
