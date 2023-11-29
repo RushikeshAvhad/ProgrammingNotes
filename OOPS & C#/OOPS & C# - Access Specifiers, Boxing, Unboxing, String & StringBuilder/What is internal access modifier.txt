@@ -1,0 +1,55 @@
+Question - What is internal access modifier? Show example.
+
+In C#, 
+the internal access modifier is used to specify that a class, method, property, or other member is only accessible within the same assembly. 
+Members marked as internal can be accessed by any code within the same assembly but are not accessible from outside assemblies.
+
+Here's an example to illustrate the use of the internal access modifier:
+
+csharpCopy code
+
+// Assembly A
+// File: MyClass.cs
+
+using System;
+namespace AssemblyA
+{
+    internal class InternalClass
+    {
+        internal void InternalMethod()
+        {
+            Console.WriteLine("This is an internal method.");
+        }
+    }
+}
+In this example, 
+the InternalClass class and its InternalMethod method are marked as internal. 
+This means they can be accessed by other classes within the same assembly (AssemblyA), but they cannot be accessed from outside assemblies.
+
+Now, let's create another assembly (AssemblyB) and try to access the InternalClass from there:
+
+csharp
+Copy code
+// Assembly B
+// File: AnotherClass.cs
+
+using AssemblyA;
+namespace AssemblyB
+{
+    public class AnotherClass
+    {
+        public void TryAccessInternalClass()
+        {
+            // Attempting to create an instance of InternalClass from another assembly will result in a compilation error.
+            // InternalClass internalInstance = new InternalClass(); // Compilation error
+            // internalInstance.InternalMethod(); // Compilation error
+        }
+    }
+}
+In this example, 
+the AnotherClass in AssemblyB attempts to create an instance of InternalClass and call its InternalMethod. 
+However, this will result in compilation errors because these members are marked as internal and are not accessible from outside the AssemblyA.
+
+The internal access modifier is useful for encapsulating implementation details within an assembly,
+while still allowing access to those details within the same assembly. 
+It helps in maintaining a clear separation of concerns and promoting a clean architecture within the assembly.
