@@ -1,0 +1,75 @@
+Question - What is the difference between an Abstract class and an Interface?
+
+In C#, both abstract classes and interfaces are used to define contracts for classes to implement, 
+but they have some key differences in terms of their features and usage.
+
+Here are the main differences between an abstract class and an interface:
+Abstract Class:
+1.	Definition:
+•	An abstract class is a class that cannot be instantiated on its own and may contain abstract (unimplemented) and concrete (implemented) members.
+2.	Instantiation:
+•	You cannot create an instance of an abstract class using the new keyword. 
+    It is meant to be used as a base class for derived classes.
+3.	Members:
+•	Abstract classes can have both abstract methods (methods without an implementation) and concrete methods (methods with an implementation).
+4.	Access Modifiers:
+•	Abstract classes can have access modifiers on their members (public, private, protected, etc.).
+5.	Fields:
+•	Abstract classes can have fields (variables).
+6.	Constructor:
+•	Abstract classes can have constructors.
+7.	Single Inheritance:
+•	A class can inherit from only one abstract class.
+8.	Use of abstract Keyword:
+•	The abstract keyword is used to define abstract methods.
+
+csharpCopy code
+public abstract class Shape 
+{ 
+    public abstract void Draw();
+
+    public void Resize()
+    { 
+        Console.WriteLine("Resizing the shape"); 
+    }
+}
+
+Interface:
+1.	Definition:
+•	An interface is a contract that defines a set of methods and properties that a class must implement.
+2.	Instantiation:
+•	You cannot create an instance of an interface.
+    It is meant to be implemented by classes.
+3.	Members:
+•	Interfaces can only have method signatures, properties, events, and indexers.
+    All members are abstract and do not have an implementation.
+4.	Access Modifiers:
+•	All members of an interface are public and cannot have access modifiers.
+5.	Fields:
+•	Interfaces cannot have fields (variables).
+6.	Constructor:
+•	Interfaces do not have constructors.
+7.	Multiple Inheritance:
+•	A class can implement multiple interfaces.
+8.	Use of interface Keyword:
+•	The interface keyword is used to define interfaces.
+
+csharpCopy code
+public interface IDrawable 
+{ 
+    void Draw();
+}
+
+
+Choosing Between Abstract Class and Interface:
+
+•	Use an Abstract Class When:
+•	You want to provide a common base implementation for multiple derived classes.
+•	You need to use fields or non-public members in the base class.
+•	You want to define a constructor in the base class.
+
+•	Use an Interface When:
+•	You want to define a contract for multiple unrelated classes.
+•	You need to support multiple inheritance.
+•	You want to enforce a common set of method signatures without providing any implementation.
+
