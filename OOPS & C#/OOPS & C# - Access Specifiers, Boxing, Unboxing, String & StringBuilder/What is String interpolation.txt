@@ -1,0 +1,11 @@
+Question - What is String Interpolation in C#?
+
+String interpolation in C# is a feature that allows you to embed expressions directly into string literals, 
+making the process of creating formatted strings more concise and readable. 
+It simplifies the concatenation of strings with variables, eliminating the need for explicit string concatenation operators (+) or methods 
+like String.Format.
+String interpolation is achieved by prefixing a string literal with the $ symbol,
+and expressions within curly braces {} are evaluated and replaced with their values at runtime.
+String interpolation is a concise and expressive way to create formatted strings, 
+and it's widely used in modern C# code. 
+It improves code readability and reduces the likelihood of formatting errors compared to traditional string concatenation or String.Format methods.
