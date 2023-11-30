@@ -1,0 +1,7 @@
+Question - What is IEnumerable in C#?
+
+IEnumerable is an interface in C# that belongs to the System.Collections namespace. 
+It represents a collection of objects that can be enumerated (iterated) one at a time. 
+The primary purpose of IEnumerable is to provide a standard way for iterating over a collection without exposing the underlying details of how the iteration is implemented.
+The IEnumerable interface is crucial for supporting the foreach loop in C#. 
+When a class or collection implements IEnumerable, it allows instances of that class to be used in a foreach loop.
