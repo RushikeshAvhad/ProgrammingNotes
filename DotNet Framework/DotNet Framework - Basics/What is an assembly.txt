@@ -1,0 +1,16 @@
+Question - What is an assembly ? What are the different types of assembly in .NET?
+
+In .NET, an assembly is the fundamental unit of deployment, versioning, and security. 
+It is a logical grouping of one or more files, typically containing compiled code (in the form of Intermediate Language or IL), metadata, and resources needed to execute a program or a module.
+Assemblies play a crucial role in the .NET runtime environment, providing a standardized way to package and deploy code.
+
+There are two main types of assemblies in .NET:
+
+1. Private Assemblies:
+A private assembly is intended to be used by a single application and is stored in the application's directory or a subdirectory.
+Each application has its own copy of the assembly, and the assembly is not shared with other applications.
+
+2. Shared Assemblies (or Strong-Named Assemblies):
+A shared assembly is intended to be shared by multiple applications.
+It is identified by a strong name, which includes the assembly's identity, version, culture, and a cryptographic hash of the assembly's contents. 
+Shared assemblies are usually stored in the Global Assembly Cache (GAC).
