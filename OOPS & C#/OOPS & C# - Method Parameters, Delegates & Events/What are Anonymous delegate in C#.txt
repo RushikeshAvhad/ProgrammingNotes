@@ -1,0 +1,8 @@
+Question - What are Anonymous delegates in C#?
+
+In C#, an anonymous delegate is a delegate without a named method.
+It allows you to create a delegate and define its code inline, directly at the point where it is used.
+Anonymous delegates are often used for short, one-time operations, such as event handlers or simple callbacks, where creating a separate named method may seem unnecessary.
+While anonymous delegates provide a concise way to define delegate logic inline, they have been largely superseded by lambda expressions in modern C# versions. 
+Lambda expressions provide a more succinct syntax for defining inline delegate logic and have additional features, such as capturing variables in a more natural way.
+In many cases, you may find lambda expressions to be a more readable and expressive alternative to anonymous delegates
