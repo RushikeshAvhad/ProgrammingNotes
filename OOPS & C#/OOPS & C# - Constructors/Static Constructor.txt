@@ -1,0 +1,5 @@
+Question - What is Static Constructor? What is the use in real applications?
+
+a static constructor is a special type of constructor that is used to initialize the static members of a class.
+It is called automatically before any static members (fields, properties, or methods) are accessed or any static methods are called. 
+A static constructor does not take any parameters, and its primary purpose is to perform one-time initialization tasks for the class.
