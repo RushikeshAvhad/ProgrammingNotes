@@ -1,0 +1,6 @@
+Question - If base and child both the class have constructor, which will be called first?
+
+When you create an instance of a derived class (child class) that has a constructor,
+the base class constructor is called first,
+followed by the constructor of the derived class.
+This is known as constructor chaining.
