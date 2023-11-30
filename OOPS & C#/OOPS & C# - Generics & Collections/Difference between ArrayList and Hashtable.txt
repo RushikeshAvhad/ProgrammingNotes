@@ -1,0 +1,13 @@
+Question - What is difference between ArrayList and Hashtable?
+
+ArrayList: 
+    ArrayList is used to store and manipulate a dynamic array of objects.
+    AarrayList stores a list of objects, and elements are accessed by their index.
+    It is not generic, which means it can store any type of object, and casting is required when retrieving elements.
+    It maintains the order of elements as they are added.
+
+Hashtable:
+    Hashtable is used to store key-value pairs, similar to a dictionary.
+    Hashtable stores key-value pairs, where each key must be unique, and values can be retrieved using their corresponding keys.
+    It does not guarantee any specific order of the elements.
+
