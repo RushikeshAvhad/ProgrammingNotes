@@ -1,0 +1,13 @@
+Question - What is default Constructor?
+
+In C#, 
+a default constructor is a special type of constructor that is automatically provided by the compiler if a class doesn't explicitly define any constructor. 
+A default constructor has no parameters, and its purpose is to initialize the object's state with default values.
+The default constructor is called when an instance of the class is created without providing any explicit arguments.
+It ensures that the object is in a valid state by setting initial values for its fields or properties.
+If a class does not have any constructor defined, the compiler automatically generates a default constructor.
+When you create an instance of the class, the default constructor is called implicitly:
+If you explicitly define any constructor in a class, the compiler does not generate a default constructor unless you explicitly include it in your code. 
+
+Default constructors are essential for ensuring that objects are initialized properly, especially when instances of a class are created without specifying explicit values. 
+They help maintain the integrity and consistency of the object's state.
