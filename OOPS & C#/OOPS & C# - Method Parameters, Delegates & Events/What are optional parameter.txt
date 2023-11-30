@@ -1,0 +1,5 @@
+Question - What are Optional Parameters in a method?
+
+Optional parameters in a method allow you to specify default values for some or all of the parameters.
+This means that when you call the method, you can omit arguments for the optional parameters, and the default values will be used.
+Optional parameters provide a way to define methods with flexible argument lists, and they were introduced in C# 4.0.
