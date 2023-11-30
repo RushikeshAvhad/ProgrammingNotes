@@ -1,0 +1,5 @@
+Question - What is Enum keyword used for?
+
+In C#, the enum keyword is used to declare an enumeration, which is a distinct type consisting of a set of named integer constants.
+Enumerations provide a way to create a named set of related named constants, making code more readable and self-explanatory. 
+Enumerations are often used to represent sets of values that are logically related or represent a fixed set of options.
