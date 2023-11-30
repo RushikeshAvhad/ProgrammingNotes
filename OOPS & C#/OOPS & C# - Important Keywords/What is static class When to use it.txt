@@ -1,0 +1,12 @@
+Question - What is 'Static' class? When to use it?
+
+A Static class is a class that cannot be instantiated, and all its members (fields, properties, methods) are static.
+The static keyword is used to declare a class as static.
+Static classes are typically used to organize utility methods, constants or other members that do not require instance-specific data.
+
+When to use a static class:
+Use static classes to group related utility or helper methods that do not require instance-specific data.
+If you have application-wide constants or readonly fields, a static class can be a suitable container.
+When defining extension methods, they must be placed in a static class.
+While not always recommended, a static class can be used to implement a singleton pattern if you want to ensure a single instance of the class.
+
