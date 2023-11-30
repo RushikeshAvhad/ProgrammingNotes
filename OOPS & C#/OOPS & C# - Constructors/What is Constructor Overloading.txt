@@ -1,0 +1,12 @@
+Question - What is Constructor Overloading?
+
+Constructor overloading in C# refers to the practice of defining multiple constructors for a class, each with a different parameter list.
+Each overloaded constructor provides an alternative way to instantiate an object of the class by accepting different combinations of parameters.
+
+Example – 
+1.  Default Constructor
+    (Constructor without parameters).
+2.  Parameterize Constructor 
+    (Constructor with One Parameter)
+3.  Parameterize Constructor 
+    (Constructor with two Parameter)
