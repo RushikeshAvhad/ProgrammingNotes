@@ -1,0 +1,6 @@
+Question - What is "this" keyword in C#? When to use it in real application?
+
+In C#, 
+the this keyword is a reference to the current instance of the class.
+It is used to differentiate between instance variables (fields, properties) and parameters with the same name in a class or struct.
+The this keyword helps resolve ambiguity and makes it clear that you are referring to an instance member rather than a local variable or parameter.
