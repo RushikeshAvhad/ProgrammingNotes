@@ -1,0 +1,7 @@
+Question - What is the difference between "Readonly" and "Constant" variable?
+
+both 'readonly' and 'const' are used to create variables that cannot be modified after they have been assigned a value.
+'const' variables must be initialized at the time of declaration.
+'readonly' variables can be initialized at the time of declaration or within the constructor of the class.
+'readonly' is suitable when you want a variable to be initialized at runtime, and its value may vary between different instances of the type.
+
