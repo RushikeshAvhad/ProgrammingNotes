@@ -1,0 +1,6 @@
+Question - What is destructor?
+
+In C#, 
+a destructor is a special method in a class that is used to clean up resources held by an object before it is destroyed or garbage-collected.
+It is the counterpart to a constructor, which is used for initializing an object.
+A destructor is defined using the tilde (~) followed by the class name and is called automatically when an object is no longer reachable and is being finalized by the garbage collector.
