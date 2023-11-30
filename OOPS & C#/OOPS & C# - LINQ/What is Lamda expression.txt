@@ -1,0 +1,13 @@
+Question - What is the lamda expression ?  What is the use in real applications?
+
+Lambda expressions in C# are a concise way to represent anonymous methods or functions.
+They provide a shorthand syntax for writing functions in a more compact form, especially for short-lived operations.
+Lambda expressions are often used in LINQ queries, event handling, and functional programming scenarios.
+
+Use Cases in Real Applications:
+1.	LINQ Queries:
+•	Lambda expressions are commonly used in LINQ queries for specifying conditions, projections, and ordering.
+2.	Event Handling:
+•	Lambda expressions are often used for defining event handlers in a more concise way.
+3.	Asynchronous Programming:
+•	In asynchronous programming, lambda expressions are used with asynchronous delegates and tasks.
