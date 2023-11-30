@@ -1,0 +1,6 @@
+Question - What is Parameterize Constructor?
+
+In C#, 
+a parameterized constructor is a type of constructor that accepts parameters during its declaration. 
+Unlike a default constructor, which has no parameters, a parameterized constructor allows you to pass values to initialize the object's state when an instance of the class is created.
+The main purpose of a parameterized constructor is to enable you to provide specific values at the time of object creation, allowing for more flexibility and customization of object initialization.
