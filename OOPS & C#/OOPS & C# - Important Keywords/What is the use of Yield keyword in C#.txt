@@ -1,0 +1,8 @@
+Question - What is the use of Yield keyword in C#?
+
+The yield keyword in C# is used in the context of iterator methods to create an iterator block.
+Iterator methods enable you to iterate over a sequence of values without the need to create an explicit collection.
+The yield keyword is particularly useful when working with large data sets or when you want to generate values on-the-fly.
+The primary purpose of the yield keyword is to simplify the implementation of iterators. 
+An iterator is a method, property, or indexer that contains a yield statement.
+When the iterator is called, the yield statement is used to produce a sequence of values one at a time, and the state of the iterator is preserved between calls.
