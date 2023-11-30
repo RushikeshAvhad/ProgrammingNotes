@@ -1,0 +1,15 @@
+Question - What are named parameters in a method?
+
+Named parameters in a method allow you to explicitly specify the names of parameters when calling the method.
+Named parameters are a helpful feature, especially in situations where a method has many parameters, optional parameters, or when you want to make the method call more self-explanatory. 
+They can enhance the clarity of code, improve maintainability and reduce the chance of errors due to parameter misalignment.
+
+syntax
+public void DisplayPersonInfo(string name, int age)
+{
+    // Method Implementation
+}
+
+// Usage Example with named Parameters
+DisplayPersonInfo(name: “John”, city: “New York”, age: 30);
+
