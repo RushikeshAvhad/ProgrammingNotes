@@ -1,0 +1,46 @@
+Question - What are the important components of .NET Framework?
+
+The .NET Framework is a comprehensive platform developed by Microsoft for building and running various types of applications.
+It includes several important components that work together to provide a robust and versatile development environment.
+
+components of the .NET Framework:
+1.	Common Language Runtime (CLR):
+•	It provides the execution environment for .NET applications.
+    It handles memory management, code execution, security, and other runtime services.
+2.	Base Class Library (BCL):
+•	The BCL is a collection of reusable classes, interfaces, and value types that provide core functionality for .NET applications.
+    It includes classes for data structures, file I/O, networking, security, and more.
+3.	Framework Class Library (FCL):
+•	The FCL is an extension of the BCL and provides additional functionality specific to application development, including Windows Forms, ASP.NET for web development, ADO.NET for data access, and more.
+4.	ASP.NET:
+•	ASP.NET is a web development framework for building dynamic web applications and services.
+    It supports the development of web forms, MVC patterns, and Web API for building RESTful services.
+5.	ADO.NET:
+•	ADO.NET is a set of classes for data access.
+    It provides a way to interact with databases, perform CRUD (Create, Read, Update, Delete) operations, and manage database connections.
+6.	Windows Presentation Foundation (WPF):
+•	WPF is a UI framework for building Windows desktop applications.
+    It enables the creation of rich, interactive user interfaces with features like data binding, styling, and animation.
+7.	Windows Communication Foundation (WCF):
+•	WCF is a framework for building and consuming distributed services.
+    It allows developers to create and consume services using various protocols, including HTTP, TCP, and MSMQ.
+8.	Windows Workflow Foundation (WF):
+•	WF is a framework for building workflow-enabled applications.
+    It provides a set of tools and APIs for defining, executing, and managing workflows.
+9.	Language Integrated Query (LINQ):
+•	LINQ is a set of language features that enable querying data using a SQL-like syntax directly within C# or VB.NET code.
+    It provides a unified way to query various data sources, including collections, databases, and XML.
+10.	Entity Framework:
+•	Entity Framework is an object-relational mapping (ORM) framework that simplifies database interactions. 
+    It allows to work with databases using .NET objects.
+11.	Common Type System (CTS):
+•	CTS defines how types are declared, used, and managed in the. 
+    It ensures type compatibility across languages that target the .NET platform.
+12.	Common Intermediate Language (CIL):
+•	CIL, also known as Microsoft Intermediate Language (MSIL), is an intermediate language that the .NET languages are compiled into. 
+    It is executed by the CLR.
+13.	Global Assembly Cache (GAC):
+•	The GAC is a centralized repository for storing and managing shared assemblies (libraries) that multiple applications can use.
+    It helps in versioning and avoids version conflicts.
+14.	Visual Studio:
+•	While not part of the .NET Framework itself, Visual Studio is the primary integrated development environment (IDE) used for creating, debugging, and deploying .NET applications.
