@@ -1,0 +1,16 @@
+Question - What are the differences between Events and Delegates?
+
+both events and delegates are related concepts used for implementing the Observer design pattern, enabling the implementation of event-driven programming.
+
+However, they serve different roles in the programming model.
+
+Delegates
+•	A delegate is a type-safe function pointer that holds references to methods with a specific signature.
+•	Delegates define the method signature they can reference, including the return type and parameter types.
+•	Delegates are used to create method references, invoke methods indirectly, and implement callback mechanisms.
+•	They provide a way to encapsulate and pass methods as parameters.
+
+Events
+•	An event is a higher-level abstraction built on top of delegates.
+•	Events provide a way to enable and respond to notifications when something significant happens in an object.
+•	Events are used to implement the observer pattern, where an object (the subject) notifies a list of dependents (observers) when its state changes.
