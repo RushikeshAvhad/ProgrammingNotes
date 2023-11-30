@@ -1,0 +1,18 @@
+Question - Difference between Pass by value and Pass by Reference?
+
+In C#, when you pass a parameter to a method, you can pass it by value or by reference.
+
+
+Pass by Value:
+1.	What happens:
+•	When you pass a parameter by value, a copy of the actual value is passed to the method. 
+    Any changes made to the parameter inside the method do not affect the original variable.
+2.	Syntax:
+•	Parameters are passed by value by default in C#.
+
+Pass by Reference:
+1.	What happens:
+•	When you pass a parameter by reference, the memory address (reference) of the actual variable is passed to the method.
+    Any changes made to the parameter inside the method directly affect the original variable.
+2.	Syntax:
+•	You use the ref keyword when defining the method parameter and when calling the method.
