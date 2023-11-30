@@ -1,0 +1,12 @@
+Question - What are delegates in C#? When to use delegates in real applications?
+
+A delegate is a type that represents references to methods with a specific signature.
+It is similar to a function pointer in C or C++.
+Delegates allow you to treat methods as first-class objects, enabling you to pass methods as parameters, return them from methods, and store them in data structures.
+
+
+Use Cases for Delegates:
+Delegates are commonly used for implementing event handling in C#.: 
+Delegates are useful for implementing callback mechanisms where a method can be passed as an argument to another method.
+Delegates are essential for working with LINQ (Language Integrated Query) and functional programming features in C#.
+Delegates are used in asynchronous programming, especially with the BeginInvoke and EndInvoke methods.
