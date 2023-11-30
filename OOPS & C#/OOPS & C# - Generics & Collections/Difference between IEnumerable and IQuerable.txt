@@ -1,0 +1,8 @@
+Question - What is the difference between IEnumerable and IQuerable?
+
+IEnumerable is a fundamental interface for working with in-memory collections (e.g., arrays, lists, etc.).
+It provides a simple iterator (IEnumerator) that allows you to traverse the elements of a collection sequentially.
+
+IQueryable is designed for querying data from external data sources (e.g., databases, web services) in a way that allows for deferred execution and optimization of queries.
+It extends IEnumerable and introduces additional functionality to support querying with expression trees.
+
