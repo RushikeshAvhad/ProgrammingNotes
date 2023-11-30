@@ -1,0 +1,4 @@
+Question - Can we create Object of a class with private constructor in C#?
+
+Yes, you can create an object of a class with a private constructor from within the same class. 
+This is often used in scenarios like the Singleton pattern, where you want to control the instantiation of the class and ensure that only one instance is created
