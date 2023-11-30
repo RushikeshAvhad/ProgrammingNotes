@@ -1,0 +1,10 @@
+Question - What is difference between "out" and "ref" parameters?
+
+Both ref and out parameters allow methods to modify the value of the argument and have the changes reflected outside the method.
+
+ref parameters require the variable to be initialized before the method call,
+while out parameters do not.
+
+ref parameters allow two-way communication, passing the initial value to the method and reflecting any changes back to the calling code.
+
+out parameters are designed for one-way communication, where the initial value is not used by the method, and the method must assign a value to the parameter before it returns.
