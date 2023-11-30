@@ -1,0 +1,11 @@
+Question - What are extension methods? When to use them?
+
+Extension methods in C# allow you to add new methods to existing types without modifying their source code. 
+They are powerful feature that enhances the expressiveness of your code and promotes clean, readable, and modular design.
+Extension methods are defined as static methods in static classes.
+The first parameter of an extension method specifies the type that it extends, preceded by this keyword.
+
+Use extension methods to add functionality to existing types from the .NET framework or other libraries.
+Use extension methods to improve the readability of your code by organizing related functionality into modular, self-contained units.
+Use extension methods to enable method chaining, where multiple operations can be performed in sequence in a fluent and expressive manner.
+
