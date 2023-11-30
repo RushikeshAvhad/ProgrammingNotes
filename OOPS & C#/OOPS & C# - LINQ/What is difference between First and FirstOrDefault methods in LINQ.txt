@@ -1,0 +1,20 @@
+Question - What is difference between First and FirstOrDefault methods in LINQ ?
+
+In LINQ, both the First and FirstOrDefault methods are used to retrieve the first element from a sequence that satisfies a specified condition. 
+
+However, there is a key difference between the two:
+1. First Method:
+•	Usage:
+•	First is used to return the first element that satisfies the specified condition in a sequence.
+•	Behavior:
+•	If no matching element is found, First will throw an InvalidOperationException.
+    This method assumes that at least one element should exist in the sequence to satisfy the condition.
+
+2. FirstOrDefault Method:
+•	Usage:
+•	FirstOrDefault is used to return the first element that satisfies the specified condition in a sequence,
+    or a default value if no such element is found.
+•	Behavior:
+•	If no matching element is found, FirstOrDefault will return the default value for the element type 
+    (e.g., null for reference types, 0 for numeric types) instead of throwing an exception.
+    This method is useful when it's acceptable for the sequence to be empty.

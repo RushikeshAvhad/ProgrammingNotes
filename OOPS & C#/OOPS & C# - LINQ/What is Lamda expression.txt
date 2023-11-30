@@ -1,4 +1,4 @@
-Question - What is the lamda expression ?  What is the use in real applications?
+Question - What is the lambda expression ?  What is the use in real applications?
 
 Lambda expressions in C# are a concise way to represent anonymous methods or functions.
 They provide a shorthand syntax for writing functions in a more compact form, especially for short-lived operations.
