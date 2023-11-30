@@ -1,0 +1,11 @@
+Question - What is the difference between "is" and "as" operator?
+
+In C#, 
+the "is" and "as" operators are used for type checking and type casting, respectively.
+The "is" operator is used for type checking.
+It determines whether an object is of a specified type or a type derived from that specified type.
+It returns a boolean value (true or false) based on whether the object is compatible with the specified type.
+
+The "as" operator is used for explicit type casting.
+It attempts to cast an object to a specified type, and if the cast is successful, it returns the object of the specified type;
+otherwise, it returns null.
