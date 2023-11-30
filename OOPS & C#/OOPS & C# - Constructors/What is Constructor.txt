@@ -1,0 +1,21 @@
+Question - What is Constructor? When to use Constructor in real applications?
+
+A constructor in C# is a special method in a class that is automatically called when an instance of the class is created. 
+It has the same name as the class and is used to initialize the object's state and perform any necessary setup.
+Constructors play a crucial role in the object-oriented programming (OOP) paradigm, providing a means to ensure that an object is properly initialized before it is used.
+A constructor has the same name as the class it belongs to.
+Constructors do not have a return type, not even void. 
+They are implicitly assumed to return an instance of the class.
+Constructors contain initialization code that sets the initial state of an object.
+A constructor with no parameters is called a default constructor. 
+It is automatically provided by the compiler if no constructors are explicitly defined in the class.
+Constructors can accept parameters, allowing you to pass values at the time of object creation.
+
+When to Use Constructors in Real Applications:
+Constructors are used to initialize the state of an object, setting its initial values or configuring its properties.
+Constructors are commonly used in dependency injection to pass dependencies to a class at the time of instantiation.
+Constructors are used for resource allocation, such as opening connections, acquiring handles, or initializing data structures.
+When there is specific logic that needs to be executed at the time of object creation, constructors provide a suitable place for such custom initialization.
+In real applications, constructors are fundamental for ensuring that objects are in a valid and usable state when created. 
+They enable the encapsulation of initialization logic, making code more organized, maintainable, and robust.
+Constructors are essential for the proper functioning of classes in an object-oriented system.
