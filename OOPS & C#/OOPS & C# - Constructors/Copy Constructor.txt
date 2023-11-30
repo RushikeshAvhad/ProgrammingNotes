@@ -1,0 +1,4 @@
+Question - What is Copy Constructor?
+
+A copy constructor is a constructor that creates a new object by copying the values of an existing object of the same type.
+In C#, which is an object-oriented programming language, you need to define your own copy constructor if you want to provide a way to create a new object with the same state as an existing object.
