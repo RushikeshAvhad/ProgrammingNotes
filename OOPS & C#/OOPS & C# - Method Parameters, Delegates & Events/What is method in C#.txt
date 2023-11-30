@@ -1,0 +1,5 @@
+Question - What is Method in C#?
+
+A method is a block of code within a class or struct that performs a specific task or operation. 
+Methods are one of the fundamental building blocks of a C# program, 
+allowing you to organize and structure your code by encapsulating functionality into discrete units.
