@@ -1,0 +1,7 @@
+Question - What are Multicast delegates?
+
+A multicast delegate in C# is a type of delegate that can hold references to multiple methods. 
+When a multicast delegate is invoked, it calls all the methods that it references in the order in which they were added. 
+Multicast delegates provide a way to combine multiple methods into a single delegate instance, allowing for the convenient invocation of multiple methods through a single delegate.
+Multicast delegates are commonly used in scenarios where multiple subscribers need to be notified of an event or when a single delegate needs to represent multiple methods that contribute to a specific functionality.
+They are a fundamental part of event handling in C# and play a crucial role in implementing observer patterns and event-driven programming.
