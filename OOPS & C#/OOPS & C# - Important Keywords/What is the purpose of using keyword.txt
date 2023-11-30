@@ -1,0 +1,8 @@
+Question - What is the purpose of using keyword in C#?
+
+The using keyword is commonly used to import namespaces in C#.
+This allows you to use types from those namespaces without having to fully qualify the type names.
+The using statement is used for resource management, especially for types that implement the IDisposable interface.
+It ensures that the Dispose method of the object is called when the code block is exited.
+The using directive can also be used to import static members of a class.
+This allows you to use static members without explicitly specifying the class name.
