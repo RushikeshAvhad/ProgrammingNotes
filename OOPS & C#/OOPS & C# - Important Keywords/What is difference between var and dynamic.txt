@@ -1,0 +1,12 @@
+Question - What is difference between 'var' and 'dynamic' in C#?
+
+var:
+    The var keyword is used for implicitly typed local variables, and the type of the variable is determined by the compiler at compile time.
+    Once the type is determined, it cannot be changed.
+var x = 10;    // Compiler infers that x is of type int
+ 
+dynamic: 
+    The dynamic keyword is used for variables whose type is determined at runtime.
+    Dynamic typing allows you to write code that defers type checking until runtime, and the type can be changed dynamically during execution.
+dynamic y = 10;    // Type is determined at runtime
+y = “Hello”;       // Type can be changed dynamically
