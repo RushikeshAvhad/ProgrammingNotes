@@ -1,0 +1,5 @@
+Question - Is it possible to inherit Enum in C#?
+
+In C#, 
+it is not possible to inherit from an enum or for an enum to inherit from another type.
+Enums are a distinct type, and they implicitly inherit from the System.Enum type, but they cannot be used as a base class for other types or inherit from another type.
