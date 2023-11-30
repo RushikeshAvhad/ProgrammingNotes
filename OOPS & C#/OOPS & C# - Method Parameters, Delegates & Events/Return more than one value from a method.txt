@@ -1,0 +1,4 @@
+Question - How to return more than one value from a method in C#?
+
+In C#,
+we can return more than one value from method using “out” parameter and using “tuple”.
