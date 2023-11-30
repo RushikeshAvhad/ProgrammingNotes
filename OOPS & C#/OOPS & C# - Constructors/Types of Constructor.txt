@@ -1,0 +1,24 @@
+Question - What are the types of Constructor?
+
+In C#, 
+Constructors can be categorized into several types based on their characteristics and usage.
+
+The main types of constructors are:
+1. Default Constructor:
+•	A default constructor is a constructor with no parameters. 
+    It is automatically provided by the compiler if no constructors are explicitly defined in the class.
+2. Parameterized Constructor:
+•	A parameterized constructor accepts parameters, allowing you to pass values at the time of object creation.
+3. Copy Constructor:
+•	A copy constructor creates a new object by copying the properties or values of an existing object. 
+    It is used to clone an object.
+4. Static Constructor:
+•	A static constructor is used to initialize static members of a class. 
+    It is called only once, before any static members are accessed or any static methods are called.
+•	Static constructors do not take any access modifiers, and you cannot have parameters for a static constructor.
+5. Private Constructor:
+•	A private constructor is used to prevent the instantiation of a class from outside the class itself.
+    It is often used in the implementation of singleton patterns.
+6. Chained Constructor (Constructor Overloading):
+•	Chained constructors allow a constructor to call another constructor within the same class. 
+    This is known as constructor overloading.
