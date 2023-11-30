@@ -1,0 +1,5 @@
+Question - Can we have parameters or access modifiers in static constructor?
+
+a static constructor does not allow parameters or access modifiers.
+The static constructor is automatically called by the runtime before any static members of the class are accessed or any static methods are called. 
+It is implicitly private and parameterless, and you cannot explicitly define access modifiers or parameters for it.
