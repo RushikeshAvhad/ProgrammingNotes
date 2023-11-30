@@ -1,0 +1,76 @@
+Question - What is Params keyword? When to use params keyword in real application?
+
+
+the params keyword allows a method to accept a variable number (n – Number) of parameters of a specified type.
+It is particularly useful when you want to create methods that can accept a variable (n) number of arguments without having to explicitly define an array or a collection in the method signature. 
+The params keyword must be followed by an array type.
+
+Here's the basic syntax:
+public void MyMethod(params int[] numbers)
+{ 
+    // Method implementation 
+} 
+
+In this example,
+MyMethod can accept any number of integer parameters, and the parameters are treated as an array inside the method.
+
+
+Usage scenarios for the params keyword in real applications include:
+Varied Number of Arguments:
+    When a method needs to handle a varied number of arguments without forcing the caller to create an array explicitly.
+
+    public int Sum(params int[] numbers)
+    {
+        int result = 0;
+        foreach (int num in numbers)
+        {
+            result += num;
+        }
+        return result;
+    }
+
+    //   Usage:
+    int sum = Sum(1,2,3,4,5);
+
+Improved Readability:
+When using the params keyword, the method invocation can be more readable, and the caller doesn't need to create an array explicitly.
+
+    public void LogMessages(params string[] messages) 
+    { 
+        foreach (string msg in messages) 
+        { 
+            Console.WriteLine(msg); 
+        } 
+    } 
+
+    // Usage:
+    LogMessages(“Error: File not found.”, “Warning:Low disk space.”);
+ 
+Overloaded Methods:
+When defining overloaded methods, where one version of the method accepts a fixed number of parameters and another version uses the params keyword for variable arguments.
+
+public int Add(int a, int b) 
+{ 
+       return a + b; 
+} 
+
+public int Add(params int[] numbers) 
+{ 
+          int sum = 0; 
+          foreach (int num in numbers) 
+         { 
+                 sum += num; 
+          } 
+         return sum; 
+} 
+In this case, the second Add method can accept any number of integer parameters.
+It's important to note that when using params, the parameter array must be the last parameter in the method signature, and a method can have only one params parameter. 
+Additionally, when calling a method with params, you can pass individual arguments, an array, or a combination of both.
+
+public void ExampleMethod(string prefix, params int[] numbers) 
+{ 
+            // Method implementation 
+} 
+// Usage examples:
+ExampleMethod(“Numbers: “, 1, 2, 3, 4);
+ExampleMethod(“Numbers: “, new int[] { 1, 2, 3, 4});
