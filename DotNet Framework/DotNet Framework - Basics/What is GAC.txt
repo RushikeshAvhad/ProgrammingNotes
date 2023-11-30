@@ -1,0 +1,26 @@
+Question - What is GAC?
+
+GAC stands for the Global Assembly Cache in the context of the .NET framework. 
+The Global Assembly Cache is a machine-wide repository for .NET assemblies that are specifically designated to be shared by multiple applications on the same computer.
+Assemblies in the GAC are typically shared among multiple applications to promote code reusability, versioning, and to avoid duplication of the same assembly across different applications.
+
+Key points about the Global Assembly Cache (GAC):
+The primary purpose of the GAC is to provide a central location for storing and sharing assemblies that are intended to be used by multiple applications on the same machine.
+Assemblies placed in the GAC are considered shared assemblies. Shared assemblies are accessible to multiple applications, and they can be referenced by applications during runtime.
+The GAC supports versioning of assemblies. Different versions of the same assembly can coexist in the GAC, and applications can reference a specific version of an assembly if needed.
+Assemblies in the GAC must be strong-named, which means they are signed with a cryptographic key to ensure their integrity and uniqueness.
+The GAC is located in the Windows directory under the assembly subdirectory. The typical path to the GAC is C:\Windows\assembly on Windows systems prior to Windows 7, and %windir%\Microsoft.NET\assembly on Windows 7 and later.
+The .NET Framework provides tools like the Global Assembly Cache tool (gacutil.exe) that allow developers to install, uninstall, and manage assemblies in the GAC.
+bash
+gacutil /i MyAssembly.dll     # Install an assembly into the GAC
+gacutil /u MyAssembly        # Uninstall an assembly from the GAC
+
+Policy files can be associated with assemblies in the GAC to redirect applications to use a specific version of an assembly.
+The GAC is commonly used for storing shared libraries, third-party components, and system-level libraries that need to be accessed by multiple applications on the same machine.
+
+Using the GAC can be beneficial in scenarios where:
+Multiple applications on the same machine need to share and reference the same version of an assembly.
+Versioning and updates to shared assemblies need to be managed centrally.
+There is a need to avoid the overhead of deploying the same assembly with each application.
+
+It's important to note that the GAC is not intended for every assembly, and most assemblies are deployed with the application itself. The GAC is typically reserved for assemblies that are truly meant to be shared across multiple applications on the same machine.
