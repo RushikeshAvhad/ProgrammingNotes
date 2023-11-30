@@ -1,0 +1,34 @@
+Question - What are collections in C# and what are their types?
+
+In C#, a collection is a group of objects or elements that are stored together. 
+Collections provide a convenient way to work with sets of data, and they are part of the .NET Framework's base class library. 
+
+There are various types of collections in C#, and they are categorized into two main groups: non-generic and generic collections.
+
+Non-Generic Collections:
+1.	ArrayList:
+•	ArrayList is a dynamic array that can store elements of different data types. 
+    It automatically grows as needed.
+2.	HashTable:
+•	HashTable stores key/value pairs and allows you to access values using their associated keys. 
+    It is replaced by the generic Dictionary<TKey, TValue> in modern code.
+3.	Queue:
+•	Queue represents a first-in, first-out (FIFO) collection of objects.
+4.	Stack:
+•	Stack represents a last-in, first-out (LIFO) collection of objects.
+
+Generic Collections:
+1.	List<T>:
+•	List<T> is a dynamic array that stores elements of a specified data type. 
+    It provides a flexible and efficient way to work with collections.
+2.	Dictionary<TKey, TValue>:
+•	Dictionary<TKey, TValue> stores key/value pairs. 
+    It provides fast access to values based on their associated keys.
+3.	Queue<T>:
+•	Queue<T> represents a first-in, first-out (FIFO) collection of objects of a specified data type.
+4.	Stack<T>:
+•	Stack<T> represents a last-in, first-out (LIFO) collection of objects of a specified data type.
+5.	HashSet<T>:
+•	HashSet<T> stores unique elements and is useful for determining membership, intersection, and union.
+6.	LinkedList<T>:
+•	LinkedList<T> represents a doubly linked list, allowing efficient insertion and removal operations.
