@@ -1,0 +1,91 @@
+Question - What is difference between IEnumerable and IEnumerator in C#?
+
+
+IEnumerable and IEnumerator are interfaces in C# that are related to the implementation of iterators, 
+which allow you to iterate over a collection of items. 
+
+
+IEnumerable Interface:
+Purpose:
+    IEnumerable is the base interface for all non-generic collections that can be enumerated.
+Members:
+    It declares a single method: GetEnumerator(), which returns an IEnumerator interface.
+Use Case:
+    IEnumerable is used when you want to create a collection that can be iterated over using a foreach loop.
+
+Example:
+public class MyCollection : IEnumerable
+{
+    private int[] data = { 1, 2, 3, 4, 5 };
+
+    public IEnumerator GetEnumerator()
+    {
+        return new MyEnumerator(data);
+    }
+}
+
+
+IEnumerator Interface:
+Purpose:
+    IEnumerator is responsible for iterating over a collection.
+Members:
+    IEnumerator interface declares the following members:
+Current: 
+    Gets the current element in the collection.
+MoveNext(): 
+    Advances the enumerator to the next element of the collection.
+Reset(): 
+    Resets the enumerator to its initial position.
+Use Case:   
+    IEnumerator is used when you want to define your custom iterator logic for a collection.
+
+
+Example:
+public class MyEnumerator : IEnumerator
+{
+    private int[] data;
+    private int position = -1;
+
+    public MyEnumerator(int[] data)
+    {
+        this.data = data;
+    }
+
+    public object Current
+    {
+        get { return data[position]; }
+    }
+
+    public bool MoveNext()
+    {
+        position++;
+        return (position < data.Length);
+    }
+
+    public void Reset()
+    {
+        position = -1;
+    }
+}
+
+Key Differences:
+Responsibility:
+    IEnumerable is responsible for returning an IEnumerator that can iterate over a collection.
+    IEnumerator is responsible for the actual iteration logic, maintaining the state of the enumerator and providing access to the current element.
+GetEnumerator Method:
+    IEnumerable declares the GetEnumerator method, which returns an object of type IEnumerator.
+    IEnumerator doesn't have a GetEnumerator method; it focuses on the iteration itself.
+Usage:
+    You typically interact with IEnumerable when using a foreach loop to iterate over a collection.
+    You interact with IEnumerator when you want to implement custom iteration logic or when working with the IEnumerator directly.
+
+In summary, 
+IEnumerable is used to expose an IEnumerator for a collection,
+while IEnumerator is used to define the actual logic for iterating over the elements of a collection. 
+These interfaces work together to provide a standard way of iterating through collections in C#.
+
+
+
+
+
+
