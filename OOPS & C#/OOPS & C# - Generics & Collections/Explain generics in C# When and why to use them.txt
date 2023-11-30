@@ -1,0 +1,79 @@
+Question - Explain Generics in C#? When and Why to use them?
+
+Generics in C# provide a powerful way to create classes, structures, interfaces, and methods that work with any data type. 
+They allow you to write code without specifying the data type it will operate on, making your code more flexible and reusable. 
+Generics are particularly useful when you want to create components (like classes or methods) that can work with different data types without sacrificing type safety.
+
+Here's a brief explanation of generics in C#:
+
+Generic Classes and Structures:
+
+You can create a generic class or structure by specifying one or more type parameters. 
+These parameters act as placeholders for the actual data types that the class or structure will work with.
+
+csharp
+Copy code
+public class GenericClass<T>
+{
+    private T data;
+
+    public GenericClass(T value)
+    {
+        data = value;
+    }
+
+    public T GetData()
+    {
+        return data;
+    }
+}
+In this example, T is a type parameter.
+
+Generic Methods:
+
+You can also create generic methods within non-generic classes.
+The method's type parameters are declared within angle brackets (<>) just like with classes.
+
+csharp
+Copy code
+public T GenericMethod<T>(T value)
+{
+    // do something with value
+    return value;
+}
+Constraints:
+
+You can apply constraints to type parameters to restrict the types that can be used. 
+For example, you might want to ensure that the generic type implements a specific interface or has a parameterless constructor.
+
+csharp
+Copy code
+public class GenericClass<T> where T : IComparable
+{
+    // Code here
+}
+
+Benefits and Use Cases:
+Code Reusability: 
+    Generics allow you to write code that can be used with different data types without duplicating the logic.
+Type Safety:
+    Since the data type is specified at compile-time, you get the benefits of type checking, preventing runtime type errors.
+Performance:
+    Generics can be more efficient than using non-generic counterparts, as they avoid the need for boxing and unboxing operations.
+Collections: 
+    The .NET framework heavily utilizes generics in collections such as List<T>, Dictionary<K, V>, etc., 
+    providing type-safe and efficient data structures.
+Algorithm Abstraction: When implementing algorithms, generics can be used to create methods or classes that work with a variety of data types.
+
+
+Example:
+csharpCopycode
+// Using the generic class
+GenericClass<int> intInstance = new GenericClass<int>(10);
+int value = intInstance.GetData();
+
+// Using the generic method
+string result = GenericMethod("Hello, Generics!");
+
+Generics are a fundamental feature in C# that enhances code flexibility, reusability, and type safety.
+They are commonly used in scenarios where you want to write components that are not tied to a specific data type and can be applied to a wide range of situations.
