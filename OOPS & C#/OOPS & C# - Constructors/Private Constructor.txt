@@ -1,0 +1,19 @@
+Question - What is Private Constructor? What is the use?
+
+A private constructor is a constructor declared with the private access modifier in a class.
+It means that the constructor can only be accessed or invoked from within the same class.
+Private constructors are often used for specific purposes in the context of object-oriented programming.
+
+Here are some common use cases for private constructors:
+1.  Singleton Pattern:
+    In the Singleton pattern, a class is designed to have only one instance, and a private constructor ensures that no external code can create multiple instances of the class.
+2.  Utility Classes:
+    Classes containing only static methods and properties (often referred to as utility classes) may have a private constructor to prevent instantiation of the class. 
+3.  Factory Methods:
+    Private constructors are sometimes used in conjunction with public factory methods to control object creation.
+ 4. Internal Initialization:
+    This helps encapsulate the initialization details from external code.
+
+
+a private constructor allows control over how instances of a class are created and is often used in conjunction with patterns or practices that enforce specific object creation behaviors. 
+It can help ensure that certain constraints or rules are followed, such as having a single instance (Singleton), preventing instantiation of utility classes, controlling object creation through factory methods, or performing internal initialization logic.
