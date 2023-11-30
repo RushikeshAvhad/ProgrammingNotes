@@ -1,0 +1,5 @@
+Question - Can you use Using keyword with other classes apart from DB Connection?
+
+Yes, the using keyword in C# is not limited to database connections.
+It is a versatile construct that is primarily used for two main purposes:
+namespace import and resource management.
