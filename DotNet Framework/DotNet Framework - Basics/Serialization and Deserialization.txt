@@ -1,0 +1,51 @@
+Question - Serialization and Deserialization? What are the types of Serialization?
+
+
+Serialization:
+    Serialization is the process of converting an object or a data structure into a format that can be easily stored or transmitted.
+    The primary purpose of serialization is to persistently store the state of an object or to send it across a network.
+    In C#, serialization is often used in scenarios such as saving and loading data, transmitting data over a network,
+    or storing data in a database.
+
+Deserialization:
+    Deserialization is the reverse process of serialization.
+    It involves reconstructing the object or data structure from the serialized format.
+    Deserialization is crucial for retrieving the original state of an object after it has been serialized.
+
+
+Types of Serialization in C#:
+
+1.	Binary Serialization:
+•	Description: Binary serialization converts objects into a binary format, making it efficient for both storage and transmission.
+•	Namespace: System.Runtime.Serialization.Formatters.Binary
+•	Example:
+using (FileStream fs = new FileStream(“data.bin”, FileMode.Create))
+{
+	BinaryFormatter formatter = new BinaryFormatter();
+	formatter.Serialize(fs, myObject);
+}
+
+2.	XML Serialization:
+•	Description: XML serialization converts objects into an XML format. 
+    It is human-readable and can be used for cross-platform communication.
+•	Namespace: System.Xml.Serialization
+•	Example:
+using (StramWriter writer = new StreamWriter(“data.xml”))
+{
+	XmlSerializer serializer = new XmlSerializer(typeof(MyObject));
+	serializer.Serialize(writer, myObject);
+} 
+
+3.	JSON Serialization:
+•	Description: JSON serialization converts objects into a JSON (JavaScript Object Notation) format. 
+    It is widely used for web communication and is human-readable.
+•	Namespace: System.Text.Json (introduced in .NET Core and later)
+string jsonString = JsonSerializer.Serialize(myObject); 
+•	Namespace: Newtonsoft.Json (popular third-party library for older versions of .NET)
+string jsonString = JsonConvert.SerializeObject(myObject); 
+
+4.	DataContract Serialization:
+•	Description: 
+    DataContract serialization is part of the Windows Communication Foundation (WCF) and uses the DataContract and
+    DataMember attributes for fine-grained control over the serialization process.
+•	Namespace: System.Runtime.Serialization
