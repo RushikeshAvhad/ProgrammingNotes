@@ -1,0 +1,21 @@
+Question - What is Reflection?
+
+Reflection refers to the ability of a program to inspect and interact with the structure, metadata, and behavior of types at runtime.
+Reflection allows a program to examine its own structure and analyze the types it is working with.
+
+Key aspects of reflection in C#:
+Type Information:
+    Reflection enables the retrieval of type information at runtime.
+    This includes details such as class names, methods, properties, fields, events, and other metadata associated with types.
+Dynamically Loading Types:
+    Reflection allows the dynamic loading of types and assemblies at runtime.
+    This means that you can work with types that were not known at compile time.
+Creating Instances Dynamically:
+    Reflection provides the ability to create instances of types dynamically, even when the type is not known until runtime.
+Inspecting and Modifying Members:
+    Reflection allows the inspection and modification of members (fields, properties, methods, etc.) of types at runtime.
+Accessing Attributes:
+    Attributes are metadata annotations that can be applied to types, methods, properties, and other program entities.
+    Reflection enables the retrieval of attribute information at runtime.
+Working with Assemblies:
+    Reflection allows the inspection of assemblies, including loading and examining the types contained within an assembly.
