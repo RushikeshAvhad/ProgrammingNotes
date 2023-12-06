@@ -1,0 +1,22 @@
+Question - What is difference between "Dispose" and "Finaliza"?
+
+Dispose Method:
+The Dispose method is part of the IDisposable interface in C#. 
+It is used to release and clean up unmanaged resources explicitly. 
+The primary purpose is to allow an object to release resources before the object is reclaimed by the garbage collector.
+
+Finalize Method (Destructor):
+The Finalize method is a destructor in C# that is automatically called by the garbage collector before reclaiming the memory occupied by an object. 
+It's part of the System.Object class and is used for cleanup operations before an object is garbage-collected.
+
+
+
+Key Differences:
+Dispose is called explicitly by the developer when an object is no longer needed.
+Finalize is called automatically by the garbage collector before reclaiming the memory.
+Dispose is typically called at a known point in the code, providing more control over when resources are released.
+Finalize is invoked by the garbage collector, and the timing is not predictable.
+Dispose is specifically designed for explicit resource cleanup, especially for managing unmanaged resources.
+Finalize is a general-purpose cleanup mechanism but is not guaranteed to be called promptly.
+Dispose is often used in conjunction with the using statement to ensure timely and deterministic cleanup.
+Finalize is less commonly used directly, and relying on it as the sole mechanism for resource cleanup is discouraged.
