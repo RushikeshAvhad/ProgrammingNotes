@@ -1,0 +1,14 @@
+Question - What is the difference between Synchronous and Asynchronous Programming?
+
+
+Synchronous Programming:
+1.	Blocking Nature:
+•	Definition: In synchronous programming, operations are performed sequentially, one after the other.
+•	Blocking: When an operation is initiated, the program is typically blocked, and the control flow waits for the operation to complete before moving on to the next one.
+•	Advantages: The code tends to have a straightforward and predictable flow, making it easier to understand and debug.
+•	Disadvantages: It may lead to inefficiencies, especially in scenarios where waiting for an operation to complete is not the most productive use of time.
+
+Asynchronous Programming:
+1.	Non-Blocking Nature:
+•	Definition: In asynchronous programming, operations are initiated, but the program does not wait for them to complete. Instead, it continues with other tasks.
+•	Non-Blocking: The control flow is not halted, allowing the program to perform other operations while waiting for the asynchronous operation to finish.
