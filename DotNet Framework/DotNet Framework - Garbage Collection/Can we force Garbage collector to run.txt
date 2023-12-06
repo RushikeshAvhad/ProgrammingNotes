@@ -1,0 +1,10 @@
+Question - Can we force Garbage Collector to run?
+
+
+Yes, you can request the garbage collector to run explicitly using the GC.Collect method.
+However, it's important to note that manually forcing garbage collection is generally not recommended in most scenarios.
+The garbage collector in .NET is designed to operate automatically and efficiently manage memory without manual intervention.
+Explicitly triggering garbage collection can lead to suboptimal performance and should be used judiciously.
+The GC.Collect method is part of the System.GC class,
+which provides a set of static methods for interacting with the garbage collector. 
+The Collect method is used to request garbage collection for all generations.
