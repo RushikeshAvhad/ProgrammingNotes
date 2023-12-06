@@ -1,0 +1,5 @@
+Explain Multithreading?
+
+Multithreading is a programming concept that involves the simultaneous execution of multiple threads within a single program.
+A thread is the smallest unit of execution within a process,
+and multithreading allows a program to perform multiple tasks concurrently, taking advantage of modern multi-core processors.
