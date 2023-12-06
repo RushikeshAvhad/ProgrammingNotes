@@ -1,0 +1,12 @@
+Question - What is Difference between "Finalize" and "Finally" Methods?
+
+
+Finalize Method:
+The Finalize method is a special method in C# that serves as a destructor for a class.
+It is automatically called by the garbage collector before an object is reclaimed,
+providing an opportunity for the object to perform cleanup operations.
+
+Finally Block:
+The finally block is part of a try-catch-finally statement structure in C#.
+The code within the finally block is executed whether an exception is thrown or not.
+It is used to ensure that certain cleanup or finalization steps are performed regardless of whether an exception occurred.

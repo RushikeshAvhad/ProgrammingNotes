@@ -1,4 +1,4 @@
-Question - What is difference between "Dispose" and "Finaliza"?
+Question - What is difference between "Dispose" and "Finalize"?
 
 Dispose Method:
 The Dispose method is part of the IDisposable interface in C#. 
