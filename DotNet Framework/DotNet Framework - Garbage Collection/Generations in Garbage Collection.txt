@@ -1,0 +1,19 @@
+Question - What are Generations in garbage collection?
+
+
+Generational garbage collection is a memory management strategy used by modern garbage collectors to improve the efficiency of reclaiming memory.
+In this approach, objects are categorized into different "generations" based on their age, and garbage collection is performed more frequently on younger generations.
+The goal is to take advantage of the observation that many objects become unreachable shortly after being created.
+In the context of generational garbage collection, the most common generations are:
+
+Young Generation (Generation 0):
+The young generation contains newly created objects.
+Many objects in this generation are short-lived and become unreachable quickly.
+Garbage collection is performed more frequently in the young generation.
+
+Intermediate Generation (Generation 1):
+The intermediate generation typically contains objects that have survived one or more garbage collection cycles in the young generation. 
+
+Old Generation (Generation 2 or Tenured Generation):
+The old generation contains long-lived objects that have survived multiple garbage collection cycles.
+Objects in this generation are expected to be relatively stable and may persist for the entire duration of the program.
