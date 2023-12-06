@@ -1,0 +1,7 @@
+Question - What is Garbage Collection (GC)?
+
+
+Garbage Collection (GC) is an automatic memory management process used by modern programming languages,
+including C#, Java, and others, to reclaim memory occupied by objects that are no longer in use by the program.
+The main purpose of garbage collection is to automatically identify and free up memory that is no longer reachable or referenced by the program,
+preventing memory leaks and improving the overall efficiency of memory usage.
