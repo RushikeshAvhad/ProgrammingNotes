@@ -1,0 +1,9 @@
+Question - What is the difference between Process and Thread?
+
+Process: 
+A process is an independent program that runs in its own memory space and has its own resources.
+It is an independent unit of execution and is isolated from other processes.
+
+Thread:
+A thread is a lightweight unit of execution within a process.
+Threads share the same resources, including memory space, with other threads in the same process.
