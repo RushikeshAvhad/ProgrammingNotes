@@ -1,0 +1,30 @@
+Question - Difference between Threads and Tasks? Advantages of Task over Threads?
+
+
+Threads:
+Threads represent the smallest unit of execution in a process.
+Threads are managed by the operating system or the common language runtime (CLR).
+Threads are created using the Thread class from the System.Threading namespace.
+Thread myThread = new Thread(myMethod); 
+Threads provide low-level control over the execution of code.
+They can be foreground or background threads.
+Developers need to manually handle synchronization using constructs like locks to avoid race conditions when multiple threads access shared resources.
+
+Tasks:
+Tasks are a higher-level abstraction introduced in the Task Parallel Library (TPL) in .NET.
+They are built on top of threads and provide a more abstract and convenient way to work with parallelism.
+Tasks are created using the Task class from the System.Threading.Tasks namespace.
+Task myTask = Task.Run(() => MyMethod()); 
+Tasks provide a higher-level abstraction that simplifies concurrent programming.
+They can be controlled using methods like Wait, ContinueWith, and WhenAll.
+Tasks automatically handle synchronization and are generally easier to work with in terms of managing shared resources.
+They use the concept of continuations and the async/await pattern for asynchronous programming.
+
+
+Advantages of Tasks over Threads:
+Tasks provide a higher-level abstraction, making it easier to express parallelism and asynchronous operations without dealing with low-level details.
+Tasks can be composed more easily using continuation tasks, which execute based on the completion of other tasks.
+Tasks support cancellation through the use of cancellation tokens, making it simpler to cancel long-running operations.
+Tasks provide improved error handling through the Task.Exception property and the AggregateException class, making it easier to handle exceptions in asynchronous code.
+Tasks seamlessly integrate with asynchronous programming using the async/await pattern, making it more convenient to write asynchronous code.
+The Task Parallel Library (TPL) can manage and optimize the underlying threads more efficiently than manually managing threads, potentially leading to better performance.
