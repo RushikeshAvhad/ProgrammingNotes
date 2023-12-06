@@ -1,0 +1,6 @@
+Question - What is Windows Services?
+
+Windows Services are commonly used for background tasks, server processes,
+and automated functionality that needs to run independently of user sessions.
+They are a fundamental part of Windows operating systems and provide a reliable mechanism for running background tasks 
+and system services.
