@@ -1,0 +1,14 @@
+Question - What is the Role of Async and Await?
+
+
+Role of async and await:
+1.	Asynchronous Programming:
+•	Asynchronous programming allows the execution of code to continue while waiting for an asynchronous operation 
+    (such as I/O or a network request) to complete.
+2.	Non-Blocking Execution:
+•	When the await keyword is encountered in an asynchronous method, it yields control back to the calling method,
+    allowing the calling method to execute other tasks while waiting for the asynchronous operation to complete.
+    This results in non-blocking execution.
+3.	Avoiding Callback Hell:
+•	Prior to the introduction of async and await, asynchronous code often involved nesting callbacks (callback hell).
+    async and await make asynchronous code more readable and maintainable by allowing a linear flow of code.
