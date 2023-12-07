@@ -1,0 +1,26 @@
+Question - What are Triggers and types of triggers?
+
+
+A trigger is a set of instructions or procedures that are automatically executed (triggered).
+Triggers are often used to enforce business rules, maintain data integrity, or automate complex database actions.
+The events that can activate a trigger include INSERT, UPDATE, DELETE, or a combination of these operations.
+
+Here are the main types of triggers:
+1. DML Triggers (Data Manipulation Language Triggers):
+    Associated with data manipulation language (DML) operations such as INSERT, UPDATE, and DELETE.
+2. DML Trigger Timing:
+    BEFORE Triggers: Executed before the triggering event.
+    AFTER Triggers: Executed after the triggering event.
+3. INSTEAD OF Triggers:
+    Typically associated with views rather than tables.
+    Replaces the standard action of the triggering event (e.g., instead of an update, perform a different action).
+4. DML Trigger Scope:
+    ROW Triggers: Fired once for each affected row.
+    STATEMENT Triggers: Fired once for each triggering statement, regardless of the number of rows affected.
+5. Nested Triggers:
+    FIRE_TRIGGERS Option: Specifies whether other triggers can be fired in response to the trigger's actions.
+    ALLOW/NONE Option: Determines if nested triggers are allowed.
+6. Logon/Logoff Triggers:
+    Fired when a user logs on or logs off from a SQL Server instance.
+    Auditing user logins and logouts.
+    Enforcing security policies.
