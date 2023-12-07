@@ -1,0 +1,16 @@
+Question - What is the difference between Primary key and Unique key?
+
+
+Primary Key:
+Must contain unique values, and no two rows in the table can have the same primary key value.
+Does not allow null values.
+Every record in the table must have a value in the primary key column(s).
+Each table can have only one primary key.
+It is often associated with the main identifier for a table.
+automatically creates a clustered index on the primary key column(s) to optimize data retrieval.
+
+Unique Key:
+Requires that values in the specified column(s) are unique.
+Allows null values. However, if a column has a unique key constraint, only one null value is allowed.
+Multiple unique keys can exist in a single table.
+May or may not automatically create an index.
