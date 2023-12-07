@@ -1,0 +1,24 @@
+Question - What is a Constraint in SQL? What are its types.
+
+
+A constraint is a rule or condition applied to a column or a set of columns in a table to ensure the accuracy,
+integrity, and reliability of the data stored in the database.
+Constraints help define the relationships between tables and maintain the consistency of the data. 
+
+Primary Key Constraint:
+Ensures that a column or a set of columns uniquely identifies each record in a table.
+
+Unique Constraint:
+Ensures that all values in a column or a set of columns are unique.
+
+Foreign Key Constraint:
+Establishes a link between two tables by referencing the primary key of one table in another table.
+
+Check Constraint:
+Enforces a condition that must be true for each row in a table.
+
+Not Null Constraint:
+Ensures that a column cannot contain null values.
+
+Default Constraint:
+Specifies a default value for a column when one is not provided in an INSERT statement.
