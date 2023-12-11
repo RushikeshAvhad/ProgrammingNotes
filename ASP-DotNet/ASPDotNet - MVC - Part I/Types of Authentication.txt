@@ -1,0 +1,31 @@
+Question - What are the types of Authentication in ASP.NET MVC?
+
+
+1. Forms Authentication:
+    Uses HTML forms to collect user credentials (e.g., username and password).
+
+2. Windows Authentication:
+    Relies on the Windows operating system for authentication.
+    Users are authenticated based on their Windows credentials.
+
+3. OAuth and OpenID Connect:
+    Standardized protocols for third-party authentication.
+    Allows users to log in using credentials from external identity providers (e.g., Google, Facebook).
+
+4. Token-based Authentication:
+    Involves the use of tokens, such as JSON Web Tokens (JWT), for authentication.
+    Tokens are issued upon successful authentication and are included in subsequent requests for authorization.
+    Stateless and scalable, suitable for use in Web APIs.
+
+5. Cookie Authentication:
+    Uses cookies to persist authentication information.
+    A cookie is issued to the client upon successful authentication, and subsequent requests include the cookie for authentication.
+
+6. API Key Authentication:
+    Involves the use of API keys for authenticating requests to an API.
+    Each client is assigned a unique API key that must be included in the request headers.
+    Suitable for securing Web APIs.
+    
+7. External Authentication (Social Logins):
+    Allows users to log in using accounts from external identity providers (e.g., Google, Facebook, Microsoft). 
+    Reduces the need for users to create new accounts for each application.
