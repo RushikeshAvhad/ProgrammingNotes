@@ -1,0 +1,22 @@
+Question - What are the types of joins in SQL Server?
+
+
+In SQL Server,
+there are several types of joins that allow you to combine rows from two or more tables based on a related column.
+
+The most common types of joins are:
+1. INNER JOIN:
+    The INNER JOIN keyword selects records that have matching values in both tables.
+2. LEFT JOIN (or LEFT OUTER JOIN):
+    The LEFT JOIN keyword returns all records from the left table, and the matched records from the right table.
+3. RIGHT JOIN (or RIGHT OUTER JOIN):
+    The RIGHT JOIN keyword returns all records from the right table, and the matched records from the left table.
+4. FULL JOIN (or FULL OUTER JOIN):
+    The FULL JOIN keyword returns all records when there is a match in either the left or the right table records.
+5. CROSS JOIN:
+    The CROSS JOIN keyword returns the Cartesian product of the two tables,
+    i.e., all possible combinations of rows.
+    It does not require a matching condition.
+6. SELF JOIN:
+    A self-join occurs when a table is joined with itself.
+    It is useful for hierarchical data or when relating records within the same table.
