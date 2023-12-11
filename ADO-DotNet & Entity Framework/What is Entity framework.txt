@@ -1,0 +1,7 @@
+Question - What is Entity Framework?
+
+
+Entity Framework (EF) is an object-relational mapping (ORM) framework for .NET applications.
+It simplifies the process of interacting with relational databases by allowing developers to work with database objects in a more natural,
+object-oriented way.
+Entity Framework is part of the Microsoft .NET ecosystem and is commonly used in conjunction with ASP.NET for building data-driven web applications.
