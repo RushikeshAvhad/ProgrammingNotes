@@ -1,0 +1,15 @@
+Question - What is the difference between Clustered and Non-Clustered Index?
+
+
+Clustered Index:
+    A clustered index determines the physical order of data rows in a table.
+    The rows in the table are stored on disk in the same order as the index.
+    There can be only one clustered index per table,
+    as the physical order of rows can only be based on one column or a combination of columns.
+    When a table has a clustered index, the data rows are organized based on the order of the clustered index key.
+
+Non-Clustered Index:
+    A non-clustered index does not affect the physical order of the data rows on disk.
+    Instead, it creates a separate structure that holds a mapping between the index keys and the corresponding row identifiers 
+    (typically, a pointer to the actual row).
+    Multiple non-clustered indexes can be created on a table.
