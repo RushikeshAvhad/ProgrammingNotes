@@ -1,0 +1,18 @@
+Question - What is Output caching in MVC? How to Implement it?
+
+
+Output caching in ASP.NET MVC is a technique that allows you to cache the output of a controller action or an entire page,
+so that the same output doesn't need to be generated repeatedly for subsequent requests.
+This can significantly improve the performance and responsiveness of your web application by reducing the computation and data retrieval required for repeated requests.
+
+In MVC, you can implement output caching in various ways:
+1. Output Caching for an Entire Action:
+    You can apply output caching at the action level by using the OutputCache attribute.
+    This attribute can be applied to a controller action to specify how long the output should be cached.
+2. Output Caching with VaryByParam:
+    You can also vary the output cache by parameters, so that different versions of the output are cached based on different parameter values.
+3. Output Caching with VaryByCustom:
+    You can use the VaryByCustom property to specify a custom string to vary the cache. 
+    You would then need to implement the GetVaryByCustomString method in your Global.asax.cs file to provide a value for the custom string.
+4. Programmatic Output Caching:
+    You can also perform programmatic output caching within your action method using the OutputCache class.
