@@ -1,0 +1,7 @@
+Question - Explain the concept of MVC Scaffolding?
+
+
+MVC Scaffolding is a code generation framework in ASP.NET MVC that automates the creation of CRUD 
+(Create, Read, Update, Delete) functionality for a model. 
+It is a powerful tool that accelerates the development of web applications by generating standard controller actions, views, and related files 
+based on the model's structure.
