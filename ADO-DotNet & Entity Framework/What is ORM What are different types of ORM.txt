@@ -1,0 +1,23 @@
+Question - What is ORM? What are the different types of ORM?
+
+
+ORM (Object-Relational Mapping) is a programming technique that allows data to be seamlessly converted between the relational database model and the object-oriented programming model.
+It eliminates the need for developers to write complex SQL queries and manual data conversion code by automatically translating database records into objects in the application code and vice versa.
+
+There are different types of ORM
+Table Module ORM:
+    Each table in the database is represented by a class in the application code, 
+    and instances of these classes correspond to rows in the table.
+Entity-Attribute-Value (EAV) ORM:
+    Allows flexible representation of data by storing entities, attributes, and values in separate tables.
+Single Table Inheritance (STI) ORM:
+    Represents a hierarchy of classes in a single database table,
+    using a discriminator column to differentiate between different types of entities.
+Class Table Inheritance (CTI) ORM:
+    Represents a hierarchy of classes using multiple tables, with one table for the common attributes and separate tables for each subclass.
+Concrete Table Inheritance (CTI) ORM:
+    Similar to CTI, but each table in the hierarchy represents a concrete class (no common table).
+    Tables may share some columns.
+Mapped Superclass Inheritance ORM:
+    Represents a hierarchy of classes where a superclass is not persistent,
+    but it defines common properties and behaviors shared by the subclasses.
