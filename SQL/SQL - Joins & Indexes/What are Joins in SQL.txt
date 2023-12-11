@@ -1,0 +1,7 @@
+Question - What are Joins in SQL?
+
+
+In SQL,
+joins are used to combine rows from two or more tables based on a related column between them.
+Joins enable you to retrieve data that is distributed across multiple tables in a relational database.
+The most common types of joins are INNER JOIN, LEFT JOIN , RIGHT JOIN , and FULL JOIN.
