@@ -1,0 +1,6 @@
+Question - Explain attribute Based Routing in MVC?
+
+
+Attribute-based routing is a feature in ASP.NET MVC that allows developers to define routes directly on controllers and actions using attributes.
+This approach provides a more declarative and fine-grained way to specify how URLs should be mapped to controller actions,
+offering greater control and flexibility.
