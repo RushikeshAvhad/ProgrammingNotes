@@ -1,0 +1,6 @@
+Question - What is Partial view?
+
+
+A Partial View in ASP.NET MVC is a reusable and self-contained view that can be rendered within another view.
+It allows you to break down complex user interfaces into smaller, modular components, making the code more maintainable and promoting code reuse. 
+Partial Views are similar to regular views, but they are designed to be embedded or included within other views.
