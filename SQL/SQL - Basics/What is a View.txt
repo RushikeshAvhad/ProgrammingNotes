@@ -1,0 +1,10 @@
+Question - What is View?
+
+A view is a virtual table that is based on the result of a SELECT query. 
+Unlike a regular table, a view does not store the data itself; instead, it is a saved SQL query that can be treated as if it were a table.
+Views allow you to simplify complex queries, encapsulate logic, and present a subset of data to users without exposing the underlying complexity of the database structure.
+A view is defined using a SELECT statement that retrieves data from one or more tables or other views.
+Once created, a view can be referenced in other queries, just like a table.
+Views can simplify complex queries by encapsulating the logic in a reusable way.
+Views can provide a security layer by allowing users to access only specific columns or rows of a table.
+Views can abstract the underlying table structure, presenting a cleaner interface to users.
