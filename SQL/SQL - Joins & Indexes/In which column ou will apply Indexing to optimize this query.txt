@@ -1,0 +1,34 @@
+Question - In Which column you will apply the indexing to optimize this query?
+
+
+To determine which column(s) to index in order to optimize a specific query,
+you need to analyze the query itself and understand the WHERE clause, JOIN conditions, and ORDER BY clauses involved.
+The goal is to create indexes that support the filtering, joining, and sorting operations performed by the query.
+
+Here's an example query:
+
+SELECT * FROM Orders WHERE CustomerID = ‘ALFKI’ ORDER BY OrderDate DESC; 
+    In this query, there are a few considerations for indexing:
+    Filtering (WHERE Clause):
+    The CustomerID column is used in the WHERE clause for filtering.
+    Indexing this column can help accelerate the search for orders related to a specific customer.
+
+CREATE NONCLUSTERD INDEX IX_CustomerID ON Orders (CustomerID); 
+    Sorting (ORDER BY Clause):
+    The OrderDate column is used in the ORDER BY clause for sorting.
+    If this query is frequently executed, and sorting is a performance bottleneck, you may consider creating an index on the OrderDate column.
+
+CREATE NONCLUSTERED INDEX IX_OrderDate ON Orders (OrderDate DESC);
+    If the query involves ascending order, you can omit DESC or use ASC explicitly.
+
+Covering Index:
+    If the table has many columns and you want to create a covering index (an index that includes all the columns required by a query),
+    you can consider creating a composite index on both CustomerID and OrderDate.
+    This can be beneficial if you have other queries that involve both columns.
+
+CREATE NONCLUSTERED INDEX IX_CustomerID_OrderDate ON Orders (CustomerID, OrderDate DESC); 
+
+
+It's important to note that the decision on which columns to index depends on the overall workload of your database.
+Indexes can speed up read operations but may introduce overhead during write operations (inserts, updates, and deletes).
+Therefore, it's a trade-off, and you should carefully consider the read and write patterns in your application.
