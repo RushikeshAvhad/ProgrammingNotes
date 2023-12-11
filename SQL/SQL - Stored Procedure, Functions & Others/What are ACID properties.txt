@@ -1,0 +1,6 @@
+Question - What are ACID Properties?
+
+
+ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability.
+These properties are essential characteristics of transactions in database management systems.
+They ensure the reliability and consistency of transactions, even in the presence of system failures. 
