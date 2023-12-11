@@ -1,0 +1,6 @@
+Question - What is CTE in SQL Server?
+
+
+In SQL Server,
+a Common Table Expression (CTE) is a named temporary result set that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement.
+CTEs provide a way to create a complex query that can be referred to multiple times within a larger query.
