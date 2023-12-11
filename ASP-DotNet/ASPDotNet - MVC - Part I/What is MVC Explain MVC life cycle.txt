@@ -1,0 +1,30 @@
+Question - What is MVC (Model, View, Controller)? Explain MVC Life Cycle?
+
+
+MVC, which stands for Model-View-Controller, is a software architectural pattern widely used in the development of web applications.
+It separates the application logic into three interconnected components, each with a specific responsibility:
+
+1.	Model:
+    The Model represents the application's data and business logic.
+2.	View:
+    The View is responsible for presenting the data to the user and handling user interface interactions.
+3.	Controller:
+    The Controller handles user input and updates the Model and View accordingly.
+
+
+MVC Life Cycle:
+The life cycle of an MVC application typically involves the following steps:
+1.	User Interaction:
+    The user interacts with the View by entering data or triggering events (e.g., clicking a button).
+2.	Controller Processing:
+    The View forwards user input to the Controller.
+    The Controller processes the input, decides what actions to take, and updates the Model or View accordingly.
+3.	Model Update:
+    The Controller updates the Model with the changes resulting from user input.
+    If necessary, the Model notifies registered observers (such as the View) that its state has changed.
+4.	View Update:
+    The View queries the Model for updated data.
+    The View updates its display based on the new data received from the Model.
+    The updated View is presented to the user.
+5.	User Sees Updated View:
+    The user sees the updated View with the changes resulting from their input.
