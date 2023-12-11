@@ -1,0 +1,13 @@
+Question - What is Authentication and Authorization in ASP.NET MVC?
+
+
+Authentication and authorization are two fundamental concepts in web application security.
+They work together to ensure that users can access only the resources and functionalities for which they have proper permissions.
+
+Authentication:
+    is the process of verifying the identity of a user, ensuring that the user is who they claim to be.
+    In the context of ASP.NET MVC, authentication is typically performed by validating user credentials, such as a username and password.
+
+Authorization:
+    is the process of determining whether an authenticated user has the necessary permissions to perform a requested action or access a specific resource.
+    It defines what actions a user is allowed to take after their identity has been confirmed through authentication.
