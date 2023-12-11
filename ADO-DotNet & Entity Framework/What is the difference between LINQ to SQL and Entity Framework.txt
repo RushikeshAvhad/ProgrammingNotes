@@ -1,0 +1,12 @@
+Question - What are the difference between LINQ to SQL and Entity Framework?
+
+
+LINQ to SQL and Entity Framework are both technologies in the .NET ecosystem that provide ORM capabilities,
+allowing developers to interact with databases using an object-oriented approach.
+
+However, they differ in various aspects, including their design, features, and use cases.
+
+LINQ to SQL was designed primarily for a lightweight ORM solution and focuses on simplicity and ease of use.
+
+Entity Framework is a more comprehensive ORM framework designed to address a broader range of scenarios,
+including complex mapping and more advanced features.
