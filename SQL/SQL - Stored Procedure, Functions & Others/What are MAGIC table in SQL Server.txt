@@ -1,0 +1,6 @@
+Question - What are MAGIC tables in SQL server?
+
+
+In SQL Server,
+"magic tables" refer to special tables that are automatically created and populated by the system during the execution of triggers.
+These tables provide access to the data affected by the triggering event (e.g., an INSERT, UPDATE, DELETE) within the context of the trigger.
