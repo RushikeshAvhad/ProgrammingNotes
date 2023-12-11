@@ -1,0 +1,14 @@
+Question - What are the advantages of MVC over Web Forms? (atleast 3)
+
+
+MVC (Model-View-Controller) and Web Forms are both web application frameworks for building web applications in the .NET ecosystem.
+
+MVC:
+    MVC Emphasizes a clear separation of concerns among the Model, View, and Controller components.
+	MVC Provides a more modular and maintainable code structure.
+	using MVC Developers can work on different components independently, making it easier to manage and understand the codebase.
+
+
+Web Forms:
+	Tightly couples the presentation logic with the user interface in the form of server-side controls and events.
+	Can lead to code that is tightly interconnected, making it more challenging to maintain and test.
