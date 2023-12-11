@@ -1,0 +1,20 @@
+Question - What are the different types of Caching?
+
+
+In ASP.NET Web Forms, 
+caching is a technique used to store and retrieve frequently used data or content in a way that improves the performance and responsiveness of web applications. 
+
+1. Output Caching: 
+    Caches the entire output HTML of a page.
+2. Fragment Caching: 
+    Caches a specific portion or fragment of a page.
+3. Data Caching: 
+    Caches data objects, such as datasets or custom objects, in memory.
+4. Object Caching: 
+    Caches objects in memory for reuse across multiple requests.
+5. SQL Cache Dependency: 
+    Caches data based on changes in a SQL Server database.
+6. Donut Hole Caching: 
+    Similar to fragment caching but allows dynamic content within a cached fragment.
+7. Custom Caching: 
+    Implement custom caching mechanisms tailored to specific application requirements.
