@@ -1,0 +1,44 @@
+Question - What are the events in page life cycle? In which event the controls loaded?
+
+
+The Page Life Cycle in ASP.NET Web Forms defines a series of events that occur from the initialization of a page to its rendering and unloading.
+
+1. Page Initialization (Init):
+    The Init event is the first event in the page life cycle.
+    During this event, the page and its controls are initialized.
+    Accessing controls in this event ensures they are available for subsequent events.
+2. Load ViewState (LoadViewState):
+    This event is triggered to load the view state of the page and its controls.
+    The view state is the mechanism used to persist the state of controls across postbacks.
+3. Page Load (Load):
+    The Load event is raised for the page and its controls.
+    This is a critical event where developers often place code to initialize or populate controls.
+    It occurs after the Init event and before any control events (e.g., button click events).
+4. Postback Event Handling:
+    If the request is a postback (e.g., a button click), the corresponding control events are processed.
+5. Page Load (Load) (continued):
+    The Load event is raised again after postback event processing.
+    Additional processing can be done based on the postback data.
+6. Load Complete (LoadComplete):
+    The LoadComplete event is raised after all postback events and processing are complete.
+    This is a suitable place for finalizing activities related to the page load.
+7. PreRender (PreRender):
+    The PreRender event is triggered just before rendering the page.
+    It is often used for final modifications to controls before rendering.
+8. Save ViewState (SaveViewState):
+    This event is raised to save the view state of the page and its controls.
+    The view state is persisted to be sent to the client for the next postback.
+9. Render (Render):
+    The Render event is where the page's HTML is generated.
+    Custom rendering logic can be implemented during this event.
+10. Unload (Unload):
+    The Unload event is the last event in the page life cycle.
+    It occurs after the page has been fully rendered, and resources are released.
+    During this event, you should release any resources acquired during the page's lifespan.
+
+
+Controls Loaded:
+    The controls are loaded during the Init event of the page life cycle.
+    This is the earliest stage where you can access and interact with the controls on the page.
+    The Init event ensures that controls are initialized and their properties are set,
+    making them ready for subsequent events in the life cycle.
