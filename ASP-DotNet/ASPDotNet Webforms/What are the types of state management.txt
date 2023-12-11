@@ -1,0 +1,54 @@
+Question - What are the types of state management?
+
+
+State management in web development refers to the mechanisms used to store and retrieve information between HTTP requests from the same user.
+
+There are several types of state management techniques in web applications:
+1. Client-Side State Management:
+Cookies: 
+    Small pieces of data stored on the client's machine.
+    Cookies are sent with each request to the server and can store information such as user preferences or session identifiers.
+Session Storage and Local Storage: 
+    HTML5 introduced sessionStorage and localStorage for storing data on the client side.
+    sessionStorage stores data for the duration of a page session, while localStorage stores data with no expiration date.
+Web Storage: 
+   A generic term for sessionStorage and localStorage.
+
+2. Server-Side State Management:
+View State: 
+    Used in ASP.NET web forms to persist state information across postbacks.
+    It stores values on the server and sends a hidden field with the page containing the data.
+Hidden Fields:
+    Hidden fields in an HTML form can store data that needs to be sent back to the server on the next request.
+Query Strings:
+    Data is passed in the URL as query parameters. 
+    This is commonly used for navigation and transferring small amounts of data between pages.
+URL Rewriting:
+    Modifying the URL to include session information or parameters.
+    This can be done on the server or using client-side techniques.
+
+3. Application State:
+Application State: 
+    Shared data that is accessible by all users of an application. 
+    It is stored on the server and can be accessed by any client.
+
+4. Database State Management:
+Database Storage:
+    Persisting state information in a database. 
+    This is often used for long-term storage of user preferences, user profiles, or other application data.
+
+5. Cache Management:
+Caching: 
+    Storing frequently accessed data in memory for quicker retrieval.
+    This can be done on the client side (browser caching) or on the server side (caching frequently accessed database queries or computed results).
+
+6. Cookies and Sessions:
+Cookies: 
+    As mentioned earlier, cookies can be used for both client-side and server-side state management. 
+    They are small pieces of data sent from a website and stored on the user's computer by the user's web browser.
+Sessions: 
+    Sessions involve storing user-specific information on the server, typically identified by a session ID stored in a cookie or URL.
+
+The choice of state management technique depends on factors such as the type of data to be stored, 
+the required lifespan of the data, security considerations, and the scalability of the application. 
+Web developers often use a combination of these techniques to address different requirements within a web application.
