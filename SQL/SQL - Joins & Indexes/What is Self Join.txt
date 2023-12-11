@@ -1,0 +1,4 @@
+Question - What is Self-Join?
+
+A self-join occurs when a table is joined with itself. 
+It is useful for hierarchical data or when relating records within the same table.
