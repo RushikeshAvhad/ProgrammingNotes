@@ -1,0 +1,18 @@
+Question - What is Bundling and minification in MVC?
+
+
+Bundling and minification are optimization techniques in ASP.NET MVC that help improve the performance of web applications by reducing the number of requests to the server and minimizing the size of resources (such as CSS and JavaScript files) sent to the client.
+
+Bundling:
+    Bundling is the process of combining multiple CSS or JavaScript files into a single bundle file.
+    Instead of loading multiple separate files, a single bundle file is sent to the client, reducing the number of HTTP requests and improving page load time. 
+    Bundling is particularly useful for optimizing the loading of resources on web pages.
+    In ASP.NET MVC, you can define bundles in the BundleConfig.cs file, typically found in the App_Start folder.
+
+Minification:
+    Minification is the process of reducing the size of CSS and JavaScript files by removing unnecessary characters,
+    such as whitespace, comments, and sometimes renaming variables.
+    Smaller file sizes lead to faster downloads and improved performance.
+    In addition to bundling, ASP.NET MVC provides automatic minification of script and style resources when the application is in Release mode.
+    This is controlled by the BundleTable.EnableOptimizations setting.
+
