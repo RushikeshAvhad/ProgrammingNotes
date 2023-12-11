@@ -1,0 +1,21 @@
+Question - What are the Authentication techniques used to connect to SQL Server?
+
+
+SQL Server supports various authentication techniques to connect to a database.
+The two primary authentication modes are Windows Authentication and SQL Server Authentication.
+
+1. Windows Authentication (Integrated Security):
+    Windows Authentication, also known as Integrated Security, relies on the Windows operating system to authenticate users.
+    Users connect to SQL Server using their Windows credentials, and SQL Server validates these credentials against the Windows domain.
+
+2. SQL Server Authentication (Username and Password):
+    SQL Server Authentication requires users to provide a username and password directly to SQL Server.
+    These credentials are stored and managed within SQL Server, independent of Windows accounts.
+
+3. Mixed Mode Authentication: 
+    Mixed Mode Authentication, also known as SQL Server and Windows Authentication Mode, allows the use of both Windows Authentication and SQL Server Authentication.
+    This mode provides flexibility, allowing connections from both Windows-authenticated users and users with SQL Server logins.
+
+4. Azure Active Directory Authentication:
+    In Microsoft Azure, SQL Database and SQL Managed Instance can use Azure Active Directory (AAD) for authentication.
+    Users connect using their Azure Active Directory (AD) credentials.
