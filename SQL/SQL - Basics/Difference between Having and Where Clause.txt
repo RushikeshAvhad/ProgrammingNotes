@@ -1,0 +1,15 @@
+Question - What is the difference between Having clause and Where Clause?
+
+Both the WHERE clause and the HAVING clause are used to filter and retrieve data based on specified conditions.
+
+WHERE Clause:
+    The WHERE clause is used to filter rows before they are grouped and aggregated.
+    It is used with non-aggregated (individual) column values.
+    The WHERE clause appears after the FROM clause and before the GROUP BY clause (if used).
+    The WHERE clause is primarily used for filtering rows based on individual column values.
+
+HAVING Clause:
+    The HAVING clause is used to filter the results of aggregate functions (e.g., SUM, COUNT, AVG) applied to grouped rows.
+    It is used with aggregated values.
+    The HAVING clause appears after the GROUP BY clause (if used) and before the ORDER BY clause.
+    The HAVING clause is used for filtering the results of aggregate functions after they have been applied to grouped rows.
