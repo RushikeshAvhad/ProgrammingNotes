@@ -1,0 +1,6 @@
+Question - What is Routing in MVC?
+
+
+Routing in ASP.NET MVC is the process of mapping incoming HTTP requests to controller actions and handling them appropriately.
+It determines how URLs are interpreted and how the corresponding controllers and actions are invoked.
+Routing plays a crucial role in achieving the clean and user-friendly URLs associated with MVC web applications.
