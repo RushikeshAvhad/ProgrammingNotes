@@ -1,0 +1,6 @@
+Question - What is Non-Clustered Index?
+
+
+A non-clustered index in SQL Server does not dictate the physical order of data rows in a table.
+Instead, it provides a separate structure that contains a sorted list of references to the rows in the table.
+This index allows for efficient retrieval of data based on the indexed columns without altering the physical order of the actual data rows in the table.
