@@ -1,0 +1,6 @@
+Question - What is meant by DBContext and DBSet?
+
+
+The DbContext class serves as the main entry point for interacting with the database,
+while DbSet properties represent collections of entities, 
+enabling developers to perform operations on those entities within the context of the database session.
