@@ -1,0 +1,58 @@
+Question - What are the main components of ADO.NET?
+
+
+ADO.NET (Active Data Objects for .NET) is a set of classes in the .NET Framework for accessing and manipulating data from diverse sources,
+such as relational databases, XML, and more. 
+
+The main components of ADO.NET include:
+1. Connection: 
+    The Connection object establishes a connection to a data source, such as a database.
+    It includes information like the data source's location, authentication credentials, and other settings.
+    
+    SqlConnection sqlConnection = new SqlConnection(“connectionString”);
+
+2. Command:
+    The Command object represents a SQL or other database command that is executed against a data source.
+    It includes commands like SqlCommand for SQL Server, OleDbCommand for OLE DB data sources, etc.
+    
+    SqlCommand sqlCommand = new SqlCommand(“SELECT * FROM TableName”, sqlConnection);
+ 
+3. DataReader: 
+    The DataReader reads a forward-only stream of rows from a data source.
+    It provides a way to efficiently read data from a data source, one record at a time.
+
+    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+4. DataAdapter:
+    The DataAdapter serves as a bridge between a DataSet and a data source for retrieving and saving data.
+    It includes SqlDataAdapter for SQL Server, OleDbDataAdapter for OLE DB data sources, etc.
+
+    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+5. DataSet:
+    The DataSet is an in-memory cache of data retrieved from a data source.
+    It can contain multiple DataTable objects, each representing a result set from a database query.
+
+    DataSet dataset = new DataSet();
+
+6. DataTable: 
+    The DataTable is an in-memory representation of a database table.
+    It contains a collection of DataRow objects, each representing a row in the table.
+
+    DataTable dataTable = dataSet.Tables[0];
+ 
+7. DataRow: 
+    The DataRow represents a row of data in a DataTable. 
+    It allows you to access and manipulate the data within a specific row.
+
+    DataRow dataRow = dataTable.Rows[0];
+ 
+8. DataView: 
+    The DataView provides a way to create a customized view of a DataTable.
+    It allows sorting, filtering, and searching within the DataTable.
+
+    DataView dataView = new DataView(dataTable);
+
+These components work together to retrieve, manipulate, and update data in a connected or disconnected manner,
+providing flexibility and efficiency in data access for .NET applications.
+The choice of components depends on factors such as the data source, application requirements, and performance considerations.
