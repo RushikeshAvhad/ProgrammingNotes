@@ -1,0 +1,33 @@
+Question - What are the different ways to store session state in asp.net?
+
+
+In ASP.NET,
+session state is used to store and retrieve values for a user across multiple web pages in a web application.
+
+In-Process (In-Memory) State:
+    Session data is stored in the web server's memory.
+    Fast access as it's in-memory, simple configuration.
+    Limited to a single server.
+    If the server restarts or the application pool recycles, session data is lost.
+    Default mode, no specific configuration required.
+
+State Server:
+    Session data is stored in a separate, out-of-process server.
+    Allows for session data to be shared across multiple servers (web farms).
+    Slower than in-process due to communication with the state server, some objects may not be serializable.
+    Specify the stateConnectionString to the remote state server.
+    
+SQL Server:  
+    Session data is stored in a SQL Server database.
+    Allows for session data to be shared across multiple servers, persists even if the web server restarts.
+    Requires database setup, can introduce additional latency.
+    Specify the connection string to the SQL Server.
+
+Custom Provider:
+    You can implement a custom session state provider to store session data in a custom data store.
+    Requires custom development.
+    Implement a custom provider and configure it in the web.config file.
+
+Cookieless State:
+    Session data is embedded in the URL, allowing session tracking without cookies.
+    Enables session state for clients that don't support cookies.
