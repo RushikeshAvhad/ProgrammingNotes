@@ -1,0 +1,17 @@
+Question - How to optimize a Store Procedure or SQL query?
+
+
+Optimizing a stored procedure or SQL query is crucial for improving the performance of database operations.
+
+
+Here are some general strategies and techniques to optimize stored procedures and queries:
+1. Use Indexes:
+    Ensure that appropriate indexes are created on columns used in WHERE clauses and JOIN conditions.
+2. *Avoid SELECT :
+    Specify only the columns that are necessary in the SELECT list rather than using SELECT *.
+3. Limit the Result Set:
+    Use the TOP, LIMIT, or FETCH clauses to limit the number of rows returned if you only need a subset of the results.
+4. Minimize Joins:
+    Reduce the number of JOIN operations if possible.
+5. Avoid Functions in WHERE Clauses:
+    Using functions in WHERE clauses can prevent the query optimizer from using indexes.
