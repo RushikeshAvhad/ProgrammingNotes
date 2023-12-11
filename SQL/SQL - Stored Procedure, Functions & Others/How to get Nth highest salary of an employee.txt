@@ -1,0 +1,5 @@
+Question - How to get the Nth highest salary of an employee?
+
+
+To retrieve the Nth highest salary from an Employee table in SQL,
+you can use the LIMIT or OFFSET FETCH clause in combination with the ORDER BY clause.
