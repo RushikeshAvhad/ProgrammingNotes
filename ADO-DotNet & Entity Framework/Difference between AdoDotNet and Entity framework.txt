@@ -1,0 +1,12 @@
+Question - How will you differentiate ADO.NET From Entity Framework?
+
+
+ADO.NET:
+    ADO.NET is a lower-level data access technology that provides a set of classes for interacting directly with databases.
+    Requires more manual coding for tasks like opening/closing connections,
+    writing SQL queries, and mapping data between database and application objects.
+
+Entity Framework:
+    Entity Framework is a higher-level ORM (Object-Relational Mapping) framework that abstracts the underlying database structure,
+    allowing developers to work with database entities as .NET objects.
+    Developers interact with a more abstracted model, such as DbContext and entity classes.
