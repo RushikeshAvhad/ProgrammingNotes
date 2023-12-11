@@ -1,0 +1,18 @@
+Question - What is the difference between Stored Procedure and Functions?
+
+
+Stored Procedure:
+    Stored procedures are used to group one or more SQL statements into a logical unit and can include control-of-flow language constructs 
+    (like loops and conditionals).
+    They are often used for performing a series of database operations or business logic.
+    A stored procedure may or may not return a value.
+    It can return multiple output parameters.
+    Executed using the EXECUTE or EXEC keyword.
+    Can be called from another stored procedure or a script.
+
+Function:
+    Functions are used to encapsulate a specific operation and return a single value.
+    Functions must return a single value.
+    Functions cannot return multiple output parameters.
+    They called in SQL statements, SELECT queries, or WHERE clauses.
+    Functions can be used in computed columns, the SELECT list, and WHERE clauses.
