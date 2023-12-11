@@ -1,0 +1,24 @@
+Question - How Validation works in MVC? What is Data Annotation?
+
+
+In ASP.NET MVC, validation is the process of ensuring that user input meets specified criteria before it is processed by the application.
+Validation helps in preventing invalid or malicious data from being submitted and processed.
+There are various mechanisms for performing validation in MVC, and one of the commonly used techniques is through Data Annotations.
+
+Data Annotations for Validation:
+    Data Annotations are attributes applied to model properties to specify validation rules.
+    These attributes are part of the System.ComponentModel.DataAnnotations namespace and provide a declarative way to define validation constraints.
+
+How Validation Works in MVC:
+User Input: 
+    User input is submitted through an HTML form.
+Model Binding: 
+    The MVC framework binds the user input to the corresponding properties of the model.
+Validation: 
+    Validation rules specified using Data Annotations are applied during the model binding process.
+    If validation fails, the ModelState is updated with error messages.
+ModelState: 
+    The ModelState object contains information about model state, including validation errors.
+    If there are validation errors, the controller can handle them and return the user to the form with error messages.
+Displaying Errors in the View: 
+    In the view, error messages can be displayed using the Html.ValidationMessageFor helper method
