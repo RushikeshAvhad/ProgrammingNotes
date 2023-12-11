@@ -1,0 +1,65 @@
+Question - What are the different types of development approaches used with EF?
+
+
+Entity Framework (EF) supports different development approaches to model and interact with databases.
+
+The three main approaches are:
+
+Database-First Approach:
+    In the Database-First approach,
+    the database schema is designed first, and then the corresponding model is generated from the existing database.
+    Visual Studio provides tools like Entity Data Model Designer to create an Entity Data Model (EDM) based on an existing database.
+    The edmx file represents the conceptual model, storage model, and mapping between them.
+
+    Steps:
+    Create a new ADO.NET Entity Data Model.
+    Choose the "Generate from Database" option to import tables, views, and stored procedures.
+    EF generates entity classes, a context class, and mapping details from the database schema.
+    Procedures:
+    Quick setup for projects with an existing database.
+    Changes to the database can be easily reflected in the model using the "Update Model from Database" feature.
+    Conclusion:
+    Tightly coupled to the existing database schema.
+    Limited control over the generated code.
+
+Code-First Approach:
+    In the Code-First approach, developers define the application's domain model using Plain Old CLR Objects (POCO) classes.
+    The database schema is then automatically created based on these classes.
+    Developers use data annotations or Fluent API to configure mappings between the POCO classes and the database tables.
+    Migrations can be used to evolve the database schema over time as the code changes.
+    
+    Steps:
+    Create Plain Old CLR Object (POCO) classes to represent entities.
+    Define a DbContext class that inherits from DbContext.
+    Use data annotations or Fluent API to configure mappings.
+    Enable migrations and update the database to reflect changes in the model.
+    Pros:
+    Greater control over the database schema.
+    Model and database schema evolve together.
+    Cons:
+    Initial setup may take longer compared to Database-First.
+    Changes to the model may require manual intervention to update the database.
+
+Model-First Approach:
+    In the Model-First approach, developers design the conceptual model using tools like Entity Data Model Designer.
+    The database schema and entity classes are then generated from the conceptual model.
+    Developers work with a graphical designer to create entities, relationships, and inheritance hierarchies.
+    The edmx file represents the conceptual model, and EF generates the storage model and entity classes.
+    
+    Steps:
+    Create an ADO.NET Entity Data Model.
+    Choose the "Empty Model" option to design the conceptual model.
+    Generate database schema and entity classes from the conceptual model.
+    Pros:
+    Quick visual modeling without writing code.
+    Changes to the model can be used to regenerate the database schema.
+    Cons:
+    Tightly coupled to the conceptual model.
+    Limited control over the generated code.
+
+
+Each approach has its own strengths and weaknesses,
+and the choice depends on factors such as project requirements, team preferences, and the existing database setup.
+Code-First is often favored for greenfield projects where developers have control over the database design, 
+while Database-First may be preferred in projects where the database schema is predefined.
+Model-First is less commonly used but can be suitable for certain scenarios where visual modeling is a priority.
