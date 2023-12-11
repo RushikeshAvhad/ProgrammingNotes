@@ -1,0 +1,38 @@
+Question - What is the Difference between Server.Transfer() and Response.Redirect()?
+
+
+Server.Transfer() and Response.Redirect() are both methods in ASP.NET used for navigation between web pages.
+
+Server.Transfer():
+Server-Side Transfer: 
+    The transfer is handled on the server side.
+No Round-Trip to the Client: 
+    The browser is not involved in the transfer.
+    It's a server-side operation, and the client is not aware of it.
+Single Request-Response: 
+    It's a single request-response between the client and the server.
+URL in the Browser Does Not Change: 
+    The URL in the browser remains the same;
+    the client is not aware that it has been transferred to another page on the server.
+Better Performance: 
+    Generally, Server.Transfer() is considered more efficient as it avoids a round-trip to the client.
+Example:
+    Server.Transfer("newPage.aspx"); 
+
+Response.Redirect():
+Client-Side Redirect: 
+    The client is sent a response with a status code (302 - Found) and a new URL to which the client should navigate.
+Round-Trip to the Client: 
+    The browser is involved, and there is a round-trip between the client and the server.
+Two Request-Response Cycles: 
+    It involves two separate request-response cycles: one for the original request and one for the redirected request.
+URL in the Browser Changes: 
+    The URL in the browser changes to the new URL specified in Response.Redirect().
+Slower Performance: 
+    Since it involves a round-trip to the client, it is generally considered to have slightly slower performance than Server.Transfer().
+Example:
+    Response.Redirect("newPage.aspx"); 
+
+In summary, 
+if you want to perform a server-side transfer without involving the client, you might prefer Server.Transfer().
+If you need to redirect the client to a different page and have the URL change in the browser, you would use Response.Redirect(). 
