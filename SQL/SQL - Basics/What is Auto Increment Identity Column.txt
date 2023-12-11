@@ -1,0 +1,6 @@
+Question - What is Auto Increment / Identity column in SQL Server?
+
+An auto-increment or identity column is a column that is typically used to generate a unique numeric value,
+for each new row added to a table.
+This is particularly useful as a primary key or a part of a primary key,
+ensuring that each row in the table has a distinct identifier.
