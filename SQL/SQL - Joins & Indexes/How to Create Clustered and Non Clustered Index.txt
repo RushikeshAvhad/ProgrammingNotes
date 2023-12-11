@@ -1,0 +1,26 @@
+Question - How to create Clustered and Non-Clustered Index in a table?"
+
+
+In SQL Server, you can create clustered and non-clustered indexes on a table using the CREATE INDEX statement.
+
+Here's an example of how to create both types of indexes:
+1. Create a Clustered Index:
+    A clustered index determines the physical order of data rows in a table.
+    There can be only one clustered index per table.
+    
+    CREATE CLUSTERED INDEX IX_ClusteredIndexName ON TableName (Column1, Column2, …);
+
+
+2. Create a Non-Clustered Index:
+    A non-clustered index does not affect the physical order of data rows on disk.
+    You can create multiple non-clustered indexes on a table.
+
+
+    CREATE NONCLUSTERED INDEX IX_NonClusteredIndexName ON TableName (Column1, Column2, …); 
+
+
+Drop Existing Index: 
+    If you want to replace an existing index, you may need to drop it first using the DROP INDEX statement.
+    
+    
+    DROP INDEX IX_ExistingIndexName ON TableName;
