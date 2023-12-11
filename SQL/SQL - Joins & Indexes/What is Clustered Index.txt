@@ -1,0 +1,6 @@
+Question - What is Clustered Index?
+
+
+A clustered index in SQL Server determines the physical order of data rows in a table. 
+The data rows in a table with a clustered index are stored on disk in the order of the indexed column or columns. 
+Because of this physical ordering, a table can have only one clustered index.
