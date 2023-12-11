@@ -1,0 +1,12 @@
+Question - What is a Cursor? Why to avoid them?
+
+
+A cursor in SQL is a database object that allows for the sequential processing of a result set,
+typically within a stored procedure or a batch of SQL statements.
+Cursors provide a way to iterate over the rows returned by a query and perform operations on each row one at a time.
+
+why cursors should be avoided:
+1. Cursors can have a significant impact on performance, especially in large datasets.
+2. Cursors consume additional resources, both in terms of memory and processing power.
+3. Cursors may acquire locks on the rows they are processing, leading to potential blocking issues.
+4. Cursor-based logic can be more complex and harder to understand than set-based operations.
