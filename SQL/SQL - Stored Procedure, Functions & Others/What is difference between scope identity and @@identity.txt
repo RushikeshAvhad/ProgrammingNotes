@@ -1,0 +1,12 @@
+Question - What is the difference between Scope Identity and @@Identity?
+
+Scope Identity
+SCOPE_IDENTITY() is limited to the current scope or session.
+It returns the last identity value generated within the current scope
+SCOPE_IDENTITY() is generally recommended over @@IDENTITY because it is less prone to errors and provides results limited to the current scope.
+
+@@Identity
+@@IDENTITY is not limited to the current scope.
+It returns the last identity value generated for any table in any session on the current connection.
+@@IDENTITY should be used with caution, especially in scenarios involving triggers, nested stored procedures, or multi-statement batches,
+where it might not provide the expected result.
