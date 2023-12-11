@@ -1,0 +1,10 @@
+Question - What is Connected architecture and Disconnected architecture?
+
+
+Connected Architecture: 
+    In a connected architecture, the application maintains a continuous connection to the database throughout its execution. 
+    The connection is opened when data needs to be fetched or updated, and it remains open until the data-related operations are completed.
+
+Disconnected Architecture: 
+    In a disconnected architecture, the application connects to the database, retrieves the required data, and then disconnects from the database.
+    Once the data is retrieved, the application works with the data locally without maintaining an active connection to the database.
