@@ -1,0 +1,95 @@
+Question - What are the different return types of a Controller Action Method?
+
+
+In ASP.NET MVC,
+controller action methods return different types, 
+each indicating how the result of the action should be processed and presented to the user.
+
+1. ViewResult:
+    Represents HTML and markup.
+    Used when rendering a view.
+    Typically returned by actions responsible for displaying web pages.
+    
+    public IActionResult MyView()
+    {
+        return View():
+    }
+
+2. PartialViewResult:
+    Represents HTML and markup, similar to ViewResult.
+    Returned by actions that render a partial view.
+    
+    public IActionResult MyPartialView()
+    {
+        return PartialView();
+    }
+
+3. JsonResult:
+    Represents JSON-formatted data.
+    Used when returning data for AJAX requests or other scenarios requiring JSON.
+    Commonly returned by actions serving as API endpoints.
+
+    public IActionResult MyJasonAction()
+    {
+        var data = new { Name = “John”, Age = 30 };
+        return Json(data);
+    }
+
+4. ContentResult:
+    Represents a raw string content.
+    Used to return plain text or custom content types.
+    
+    public IActionResult MyTextResult()
+    {
+        return Content(“Hello, World!”, “text/plain”);
+    }
+
+5.RedirectResult:
+    Represents a redirection to a different URL.
+    Used to perform client-side redirection.
+    Commonly returned after form submissions or actions that require a redirect.
+    
+    public IActionResult MyRedirectAction()
+    {
+        return Redirect(“/Home/Index”);
+    }
+
+ 6. RedirectToActionResult:
+    Represents a redirection to another action within the same controller or a different controller.
+    Used for redirecting to a named action.
+    Provides a more type-safe way to specify the target action.
+    
+    public IActionResult MyRedirectAction()
+    {
+        return RedirectToAction(“Index”, “Home”);
+    }
+
+7. FileResult:
+    Represents a binary file result.
+    Used to return files for download.
+    Allows specifying the file content, MIME type, and file download name.
+    
+    public IActionResult DownloadFile()
+    {
+        byte[] fileContent = /* Load file content */;
+        return File(fileContents, “application/octet-stram”, “FileName.ext”);
+    } 
+
+8. NotFoundResult:
+    Represents an HTTP 404 Not Found response.
+    Used when the requested resource is not found.
+    Signifies that the requested page or resource is not available.
+    
+    public IActionResult NotFoundAction()
+    {
+        return NotFound();
+    } 
+
+9. StatusCodeResult:
+    Represents an HTTP response with a specific status code.
+    Used to return a custom HTTP status code and an optional reason phrase.
+    
+    public IActionResult MyCustomStatus()
+    {
+       return StatusCode(403, “Access Forbidden”);
+    }
