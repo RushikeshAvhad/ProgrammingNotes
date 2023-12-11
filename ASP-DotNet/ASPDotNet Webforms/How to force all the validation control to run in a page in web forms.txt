@@ -1,0 +1,36 @@
+Question - How to force all the validation control to run in a page in web forms?
+
+
+In ASP.NET Web Forms, you can force all validation controls on a page to run validation by calling the Page.Validate() method.
+This method triggers the validation process for all validation controls on the page.
+After calling Page.Validate(), you can check the Page.IsValid property to determine if all validations passed.
+
+
+Here's an example of how you can force all validation controls to run in a page:
+
+protected void btnSubmit_Click(object sender, EventArgs e)
+{
+    // Force validation for all controls on the page
+    Page.Validate();
+
+    // Check if all validations passed
+    if (Page.IsValid)
+    {
+        // Your code to handle the form submission when validations pass
+        // This block will only be executed if all validations are successful
+    }
+    else
+    {
+        // Validation failed, handle accordingly (e.g., display error messages)
+    }
+}
+
+In this example:
+The Page.Validate() method is called to initiate the validation process for all validation controls on the page.
+
+The Page.IsValid property is then checked.
+If it returns true, it means that all validations passed, and you can proceed with the form submission logic.
+
+If Page.IsValid returns false,
+it means that at least one validation failed.
+You can handle this situation by displaying error messages or taking appropriate actions based on your application's requirements.
