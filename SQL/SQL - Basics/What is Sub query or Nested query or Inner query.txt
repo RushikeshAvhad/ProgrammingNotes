@@ -1,0 +1,16 @@
+Question - What is Sub query or Nested query or Inner query in SQL?
+
+
+In SQL, a subquery, also known as a nested query or inner query, is a query nested inside another query.
+A subquery is enclosed within parentheses and is usually embedded within the WHERE, FROM, or SELECT clause of the main (outer) query.
+The result of a subquery is used by the outer query to perform further operations.
+
+There are two main types of subqueries: scalar subqueries and table subqueries.
+
+1. Scalar Subquery:
+    A scalar subquery is a subquery that returns a single value and is typically used within a comparison operator.
+    It can be used in various parts of a SQL statement where a single value is expected.
+
+2. Table Subquery:
+    A table subquery is a subquery that returns a result set of rows and columns.
+    It is used in situations where a set of values is expected, such as in the IN or EXISTS clauses.
