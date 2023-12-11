@@ -1,0 +1,22 @@
+Question - How can we pass the data from Controller to View in MVC?
+
+
+In ASP.NET MVC, data can be passed from a controller to a view using various mechanisms.
+
+1. ViewData: 
+    ViewData is a dictionary-like object that allows you to pass data between a controller and a view.
+    It uses a key-value pair mechanism to store and retrieve data.
+
+2. ViewBag:
+    ViewBag is a dynamic property that uses the ExpandoObject class to store data.
+    It is similar to ViewData but provides a more dynamic syntax.
+
+3. Model: 
+    The most common and recommended way is to use a strongly-typed model.
+    Create a model class and pass an instance of that model to the view.
+
+4. TempData: 
+    TempData is a dictionary-like object that can be used to store data for the duration of an HTTP request (including redirects).
+    
+5. Strongly-Typed View:
+    When using a strongly-typed model, the view can access the model directly.
