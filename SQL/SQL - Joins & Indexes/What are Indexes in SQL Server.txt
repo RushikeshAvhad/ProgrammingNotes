@@ -1,0 +1,5 @@
+Question - What are Indexes in SQL Server?
+
+In SQL Server, an index is a database object that provides a fast and efficient way to look up and retrieve data from a table.
+It works similar to an index in a book, allowing the database engine to quickly find the location of specific rows in a table. 
+Indexes are crucial for optimizing query performance, especially for tables with a large amount of data.
