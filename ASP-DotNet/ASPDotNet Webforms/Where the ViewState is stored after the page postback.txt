@@ -1,0 +1,39 @@
+Question - Where the ViewState is Stored after the page postback?
+
+
+In ASP.NET Web Forms, the ViewState is a mechanism used to persist state information for controls on a page across postbacks.
+The ViewState data is stored on the server, but it is sent to and received from the client between requests.
+
+Here's how it generally works:
+Server-Side Storage: 
+    When a Web Form page is rendered and sent to the client, the values of certain controls are saved in the ViewState dictionary on the server.
+Client-Side Transmission:
+    The ViewState data is then encoded and sent to the client as a hidden field within the HTML output.
+    This allows the state information to be sent back to the server on subsequent postbacks.
+Round-Trip Process:
+    On subsequent postbacks, the ViewState data is sent back to the server along with the form data.
+    The server then decodes the ViewState data and uses it to restore the state of controls on the page.
+    This enables the page to maintain state across postbacks, allowing controls to remember their values and other properties.
+
+It's important to note that while ViewState is a convenient mechanism for maintaining state in Web Forms, it has some considerations:
+Increased Page Size:
+    The ViewState data is included in the page, which can increase the size of the HTML sent to the client.
+    This can impact performance, especially for large pages.
+Security Considerations:
+    Since ViewState data is sent to and received from the client, it can be manipulated by users.
+    While it includes measures to prevent tampering, developers should be cautious about storing sensitive information in ViewState.
+Overhead: 
+    ViewState can add overhead to the page life cycle, and in some scenarios, it might be disabled or limited to improve performance.
+
+To disable ViewState for specific controls or for the entire page, you can set the EnableViewState property to false. 
+For example:
+aspxCopy code
+<asp:TextBox runat="server" ID="TextBox1" EnableViewState="false" /> 
+
+Or for the entire page:
+aspxCopy code
+<%@ Page EnableViewState="false" %> 
+
+In summary,
+ViewState in ASP.NET Web Forms is stored on the server but is transmitted to and from the client to maintain state across postbacks.
+Developers should be mindful of its impact on page size, performance, and security.
