@@ -1,0 +1,9 @@
+Question - What is cookie less session?
+
+
+A cookieless session in the context of web development refers to a session management approach where session information is maintained without the use of browser cookies.
+In a typical web application, session data is often stored on the server and associated with a unique session identifier that is sent to the client's browser as a cookie.
+However, some clients may have cookies disabled or not support them.
+In a cookieless session, the session identifier is embedded in the URLs instead of being stored in a cookie.
+This allows the web application to track and manage user sessions even when cookies are not available.
+The session identifier is included in the URL as a query string parameter or as part of the path.
