@@ -1,0 +1,18 @@
+Question - What is the difference between DELETE, TRUNCATE and DROP commands?
+
+
+DELETE 
+    is used to remove one or more rows from a table based on a condition specified in the WHERE clause.
+    Syntax,
+    DELETE FROM tableName WHERE CONDITION (columnName = value);
+
+TRUNCATE
+    is used to remove all rows from a table without specifying any conditions.
+    It effectively removes all data from the table.
+    Syntax,
+    TRUNCATE TABLE tableName;
+
+DROP
+    is used to remove an entire database object, such as a table, view, index, or stored procedure.
+    Syntax,
+    DROP TABLE tableName;
