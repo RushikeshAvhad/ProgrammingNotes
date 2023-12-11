@@ -1,0 +1,14 @@
+Question - What are the different execute methods of ADO.NET?
+
+
+ExecuteNonQuery: 
+    Executes a SQL command that doesn't return data, such as INSERT, UPDATE, DELETE statements.
+ExecuteScalar:
+    Executes a SQL command that returns a single value (an aggregate value or the result of a SELECT statement with a single result).
+ExecuteReader:
+     Executes a SQL command that returns a data reader, allowing forward-only, read-only access to the result set.
+ExecuteXmlReader:
+    Executes a SQL command that returns an XML reader, specifically designed for reading XML data. 
+BeginExecuteNonQuery:
+    Asynchronously executes a SQL command that doesn't return data.
+    It starts the command and returns control to the calling program, which can later retrieve the results.
