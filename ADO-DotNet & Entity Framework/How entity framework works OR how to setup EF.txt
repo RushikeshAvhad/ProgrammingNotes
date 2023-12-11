@@ -1,0 +1,54 @@
+Question - How entity framework works? Or how to setup EF?
+
+
+How Entity Framework Works:
+1. Entity Data Model:
+    EF uses an Entity Data Model (EDM) to represent the database schema in terms of conceptual entities and their relationships.
+    The EDM is typically defined using the Entity Data Model Designer in Visual Studio or by writing code-first classes that map to the database schema.
+
+2. DbContext:
+    DbContext is a central class in EF that represents a session with the database.
+    It is responsible for tracking changes to entities, managing connections, and coordinating interactions with the underlying database.
+    Developers create a class derived from DbContext that contains DbSet properties representing the entities to be persisted in the database.
+
+3.LINQ to Entities:
+    Developers can use Language Integrated Query (LINQ) to query and manipulate data in the database using EF.
+    LINQ queries are translated by EF into SQL queries that are executed against the database.
+
+4.Change Tracking:
+    EF tracks changes made to entities during their lifespan within a DbContext.
+    Changes include entity creations, modifications, and deletions.
+
+5.Database Initialization:
+    EF can initialize the database based on the EDM. This includes creating tables, relationships, and other database artifacts.
+    Initialization strategies can be code-first migrations, model-first generation, or database-first reverse engineering.
+
+
+Setting Up Entity Framework:
+    Setting up Entity Framework involves several steps,
+    and the exact process can vary depending on whether you are using a database-first, model-first, or code-first approach.    
+Here's a basic guide for code-first, which is a common approach:
+1.Install Entity Framework NuGet Package:
+    Open the Package Manager Console in Visual Studio.
+    Install the Entity Framework NuGet package using command.
+
+2.Create DbContext Class:
+    Create a class derived from DbContext that represents your database context. 
+    Define DbSet properties for each entity you want to persist.
+
+3.Configure Connection String:
+    Add a connection string in the appsettings.json file or the Web.config file, specifying the database provider, server, and database name.
+
+4.Register DbContext:
+    In your application's startup configuration (typically Startup.cs), register your DbContext in the dependency injection container.
+
+5.Run Migrations (Optional for Code-First):
+    If you are using code-first, run migrations to create or update the database schema based on your code.
+
+6.Use DbContext in Your Application:
+    Finally, use the DbContext in your application to interact with the database.
+
+
+This is a basic setup for Entity Framework using the code-first approach.
+Depending on your requirements and preferences, you may choose other approaches, such as database-first or model-first,
+and configure EF accordingly.
