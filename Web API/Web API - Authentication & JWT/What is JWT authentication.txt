@@ -1,0 +1,5 @@
+Question - What is JWT authentication?
+
+
+JWT is a compact, URL-safe means of representing claims between two parties.
+JWTs can be used for authentication by including them in the Authorization header of a request.
