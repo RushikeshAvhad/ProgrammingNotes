@@ -1,0 +1,12 @@
+Question - What is Metapackage? What is the name of Metapackage in ASP.NET core?
+
+
+A metapackage, in the context of software development and package management,
+is a package that doesn't contain any actual code or functionality but serves as a convenient way to group related packages together.
+It is essentially a package that depends on other packages, 
+allowing developers to easily include a set of related libraries or components with a single reference.
+In the context of ASP.NET Core, the metapackage that serves this purpose is known as the "Microsoft.AspNetCore.App" metapackage.
+This metapackage simplifies dependency management by bundling together a set of commonly used and recommended packages for building
+ASP.NET Core web applications.
+Instead of explicitly referencing each individual package,
+developers can reference the "Microsoft.AspNetCore.App" metapackage to get a predefined set of dependencies.
