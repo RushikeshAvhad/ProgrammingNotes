@@ -1,0 +1,36 @@
+Question - What is Dependency Injection?
+
+
+Dependency Injection (DI) is a design pattern and a technique in software development,
+where the components of a system receive their dependencies from an external entity rather than creating them internally. 
+In simpler terms, instead of a class creating its own dependencies, they are provided (injected) from the outside.
+
+The main goals of dependency injection are to:
+Promote Reusability:
+    Components become more reusable since they are decoupled from their dependencies.
+    They can be used in different contexts by providing different implementations of their dependencies.
+Improve Testability:
+    By injecting dependencies, it becomes easier to replace real dependencies with mock or stub implementations during testing.
+    This allows for more controlled and isolated unit tests.
+Simplify Maintenance:
+    Dependency injection reduces the coupling between components, making the system more maintainable.
+    Changes to one component are less likely to impact others.
+
+Key Concepts:
+Dependency:
+    A dependency is an object that a class needs to perform its functions.
+    It can be another class, a service, a database connection, etc.
+Dependency Injection Container (IoC Container):
+    The IoC (Inversion of Control) container is responsible for managing the dependencies and injecting them into the dependent classes.
+    It acts as a registry for dependencies and resolves them when needed.
+Injection Types:
+    Constructor Injection:
+        Dependencies are injected through the class constructor.
+        This is the most common and recommended form of dependency injection.
+    Property Injection: 
+        Dependencies are injected through public properties of the class.
+    Method Injection: 
+        Dependencies are injected through methods of the class.
+
+Dependency Injection is a fundamental concept in modern software development and is widely used in various frameworks and libraries.
+It promotes modular, maintainable, and testable code by reducing the tight coupling between components.
