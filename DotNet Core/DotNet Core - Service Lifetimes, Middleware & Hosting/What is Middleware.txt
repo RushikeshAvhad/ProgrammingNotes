@@ -1,0 +1,11 @@
+Question - What is Middleware in ASP.NET core? What is custom middleware?
+
+
+In ASP.NET Core, middleware is a software component that is added to the application pipeline to process requests and responses.
+Middleware components are executed in a sequence, and each component in the pipeline performs a specific function.
+The middleware pipeline in ASP.NET Core allows developers to handle HTTP requests and responses at various stages of the request processing.
+
+Custom Middleware:
+Custom middleware provides flexibility to developers, 
+allowing them to inject their own logic at specific points in the request processing pipeline.
+This can include tasks such as logging, authentication, authorization, and more.
