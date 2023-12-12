@@ -1,0 +1,10 @@
+Question - What is Content Negotiation in Web API?
+
+
+Content Negotiation in Web API refers to the process by which the server selects the most appropriate representation of a resource
+to send back to the client based on the client's preferences.
+It allows clients and servers to communicate about the media types they support,
+and the negotiation process helps determine the format of the data exchanged between them.
+In the context of Web API,
+content negotiation typically involves determining the media type (such as JSON or XML) 
+and other formatting details (like character encoding) for the data that will be sent in the response.
