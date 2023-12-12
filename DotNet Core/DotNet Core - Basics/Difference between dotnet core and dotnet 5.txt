@@ -1,0 +1,16 @@
+Question - What is the difference between .NET core and .NET 5?
+
+
+.NET Core:
+    .NET Core was an open-source, cross-platform framework for building modern, cloud-based, and modular applications.
+    It was initially developed to be a modular and lightweight platform that could run on various operating systems,
+    including Windows, macOS, and Linux.
+    .NET Core was the successor to the .NET Framework, and it introduced a number of changes, 
+    including cross-platform support, a modular design, and a new runtime (CoreCLR).
+
+.NET 5:
+    .NET 5 represents a significant shift in the .NET ecosystem.
+    Instead of continuing with the separate development of .NET Core and .NET Framework,
+    Microsoft decided to unify these frameworks into a single, cohesive platform called .NET 5.
+    .NET 5 provides a unified platform that incorporates the best features of both .NET Core and .NET Framework.
+    It's important to note that there is no ".NET Core 4" or ".NET Framework 5"—.NET 5 is the successor to both.
