@@ -1,0 +1,21 @@
+Question - How to consume web API from a .NET MVC application?
+
+
+Create a new .NET MVC project
+
+Ensure that your project has the necessary dependencies to make HTTP requests.
+
+In a .NET MVC project, you can use the HttpClient class, which is available in the System.Net.Http namespace.
+If it's not already added, you can install it using NuGet:
+
+use HttpClient to make HTTP requests to the Web API. 
+
+For other HTTP methods (POST, PUT, DELETE, etc.), you can use the corresponding methods of HttpClient (PostAsync, PutAsync, DeleteAsync, etc).
+
+If the Web API returns JSON data, you'll need to deserialize the JSON response.
+You can use the System.Text.Json.JsonSerializer or a third-party library like Newtonsoft.Json (Json.NET) for this purpose.
+
+Implement appropriate error handling to deal with network issues, server errors, or unexpected responses.
+
+When you're done using the HttpClient, make sure to dispose of it to release resources.
+One way to do this is by implementing the IDisposable interface in your controller or using the using statement.
