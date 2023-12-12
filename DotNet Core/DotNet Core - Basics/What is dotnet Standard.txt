@@ -1,0 +1,32 @@
+Question - What is .NET Standard?
+
+
+.NET Standard is a specification that defines a set of common APIs (Application Programming Interfaces)
+that must be available on all .NET implementations.
+The goal of .NET Standard is to establish a consistent set of APIs that developers can rely on,
+regardless of the specific .NET implementation they are targeting.
+This helps in creating libraries and frameworks that can be easily shared and used across different .NET platforms.
+
+Key points about .NET Standard:
+Common API Surface: 
+    .NET Standard defines a common set of APIs,
+    including types and methods, that must be implemented by all .NET platforms that claim compliance with a specific version of .NET Standard.
+Interoperability: 
+    By adhering to the .NET Standard,
+    developers can create libraries or packages that are compatible with any .NET implementation that supports that version of the standard.
+    This promotes interoperability and code sharing between different .NET applications and platforms.
+Versioning: 
+    .NET Standard is versioned, with each version specifying a certain set of APIs.
+    Higher versions of .NET Standard include all APIs from previous versions and may introduce additional ones.
+    Developers can target a specific version of .NET Standard based on their compatibility requirements.
+Not a Runtime Implementation: 
+    It's important to note that .NET Standard itself is not a runtime implementation.
+    Instead, it is a set of specifications that other .NET platforms (like .NET Core, .NET Framework, Xamarin, etc.) 
+    implement to ensure compatibility.
+Bridge Between Platforms: 
+    .NET Standard serves as a bridge between different .NET platforms,
+    allowing developers to create libraries that work seamlessly across a variety of runtime environments.
+Unified Development:
+    With the introduction of .NET 5 and later,
+    Microsoft has moved towards a unified platform that encompasses the best features of both .NET Core and .NET Framework.
+    In this context, the concept of .NET Standard has been largely superseded by the broader efforts to create a unified and consistent platform for all .NET applications.
