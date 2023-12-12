@@ -1,0 +1,6 @@
+Question - What is DRY principle?
+
+
+DRY (Don't Repeat Yourself) principle is a guiding principle that encourages developers to avoid duplicating code and to promote code reuse.
+The goal is to write code in a way that common functionality is not repeated in multiple places, leading to a more maintainable, readable,
+and efficient codebase.
