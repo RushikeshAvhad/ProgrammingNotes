@@ -1,0 +1,16 @@
+Question - What is the difference between WEB API & MVC Controller?
+
+
+Web API is focused on building HTTP services that provide data in machine-readable formats,
+while MVC controllers are part of the ASP.NET MVC framework and are used for building web applications that generate HTML content.
+
+Web API:
+	Designed for building HTTP services that can be consumed by various clients, including web browsers, mobile devices, and other servers.
+	Primarily used for exposing data and services over HTTP in a format such as JSON or XML.
+	Suited for building RESTful APIs that follow REST principles.
+	Does not typically deal with rendering HTML views.
+
+MVC Controller:
+	Part of the ASP.NET MVC framework, used for handling HTTP requests and orchestrating the interaction between models and views.
+	Responsible for processing user input, updating the model, and returning the appropriate view to the client.
+	Deals with generating HTML content and rendering views.
