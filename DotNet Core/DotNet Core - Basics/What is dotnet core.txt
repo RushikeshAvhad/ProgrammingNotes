@@ -1,0 +1,28 @@
+Question - What is .NET Core?
+
+
+.NET Core is an open-source, cross-platform framework developed by Microsoft for building modern, cloud-based, and modular applications.
+It is a modular and high-performance framework that can be used to develop a wide range of applications,
+including web applications, cloud services, mobile apps, desktop applications, and IoT (Internet of Things) applications.
+
+Key features of .NET Core include:
+Cross-Platform:
+    .NET Core is designed to run on various operating systems, 
+    including Windows, macOS, and Linux, making it a versatile choice for developers targeting different platforms.
+Open Source:
+    The framework is open-source, allowing developers to contribute to its development,
+    review its source code, and customize it according to their needs.
+Modularity:
+    .NET Core is composed of modular and lightweight libraries, making it easy to use only the components needed for a particular application.
+    This helps in reducing the overall footprint of the application.
+High Performance:
+    .NET Core is optimized for performance, providing fast execution and efficient resource utilization.
+    It includes features like Just-In-Time (JIT) compilation and a runtime that's designed for speed.
+Cross-Language Support:
+    Developers can use multiple programming languages, such as C#, F#, and Visual Basic, to build applications on the .NET Core platform.
+Unified Platform: 
+    With the release of .NET 5, Microsoft has merged the .NET Core and .NET Framework into a single, unified platform,
+    simplifying the development process and reducing fragmentation.
+Container Support: 
+    .NET Core is well-suited for containerized applications,
+    and it integrates well with container orchestration tools like Docker and Kubernetes.
