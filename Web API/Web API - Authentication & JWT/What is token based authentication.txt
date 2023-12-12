@@ -1,0 +1,5 @@
+Question - What is token based authentication?
+
+
+In custom token-based authentication, the server issues a token to the client upon successful authentication.
+The client includes the token in subsequent requests to prove its identity.
