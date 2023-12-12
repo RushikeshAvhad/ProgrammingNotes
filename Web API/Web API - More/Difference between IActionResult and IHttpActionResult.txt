@@ -1,0 +1,11 @@
+Question - What is the difference between IActionResult and IHttpActionResult?
+
+
+IActionResult (ASP.NET Core):
+    IActionResult is an interface in ASP.NET Core MVC that represents the result of an action method.
+    It provides a way to encapsulate the result that should be returned to the client.
+    IActionResult includes various derived types representing different types of results, such as ViewResult, JsonResult, RedirectResult, etc.
+
+IHttpActionResult (ASP.NET Web API):
+    IHttpActionResult is an interface introduced in ASP.NET Web API (prior to ASP.NET Core) to represent the result of a Web API action.
+    It provides a way to encapsulate the HTTP response that should be returned to the client.
