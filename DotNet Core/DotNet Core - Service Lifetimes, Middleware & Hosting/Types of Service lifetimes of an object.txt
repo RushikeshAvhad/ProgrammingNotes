@@ -1,0 +1,31 @@
+Question - What are the types of Service Lifetimes of an object / instance in ASP.NET?
+
+
+In ASP.NET Core, services are registered with different lifetimes, specifying how long an instance of a service should live.
+The service lifetime affects how instances are created and managed by the dependency injection container.
+
+The three main types of service lifetimes in ASP.NET Core are:
+Transient:
+    Transient services are created each time they are requested.
+    A new instance is provided for every request for the service.
+    Transient services are suitable for lightweight, stateless services where a new instance for each request is not a problem.
+    
+    Example:
+        A service that generates a unique identifier for each request.
+
+Scoped:
+    Scoped services are created once per request within the scope of the request.
+    This means that the same instance is reused within a single HTTP request, but different requests will have different instances.
+    Scoped services are often used for components that need to maintain state for the duration of a request.
+    Use scoped services for components that maintain state for the duration of a request.
+    
+    Example:
+        A service that tracks user information within a specific HTTP request.
+
+Singleton:
+    Singleton services are created once and reused throughout the application's lifetime.
+    The same instance is provided for every request.
+    Singleton services are suitable for stateless or thread-safe services that can be shared across the application.
+    
+    Example:
+        A service that provides configuration settings for the entire application.
