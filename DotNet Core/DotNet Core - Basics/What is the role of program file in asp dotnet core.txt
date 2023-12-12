@@ -1,0 +1,25 @@
+Question - What is the role of Program.cs file in ASP.NET Core?
+
+
+In ASP.NET Core, the Program.cs file plays a crucial role in the application's startup process.
+This file is the entry point for the application and contains the Main method,
+which serves as the starting point for the application's execution.
+The Program.cs file is used to configure the host for the ASP.NET Core application and to set up the initial services and configurations.
+
+
+Responsibilities of the Program.cs file in an ASP.NET Core application:
+1. CreateWebHostBuilder Method:
+    The Main method typically calls the CreateWebHostBuilder method, which is responsible for creating an instance of the IWebHostBuilder.
+    The IWebHostBuilder is used to configure the web host,
+    which includes setting up the server, specifying the startup class, and configuring other aspects of the hosting environment.
+2. UseStartup Method:
+    The UseStartup method specifies the startup class for the application.
+    The startup class contains the configuration for the application's services, middleware, and other components.
+    In the example above, the Startup class is specified as the startup class for the application.
+3. WebHost Configuration:
+    The CreateDefaultBuilder method is often used to configure the default settings for the web host.
+    This method sets up configuration, logging, and other aspects of the hosting environment.
+    The UseStartup method specifies the startup class to be used for configuring the application.
+4. Build and Run:
+    Finally, the Build method is called to build the web host, and the Run method is called to start the application.
+    This method sequence ensures that the web host is properly configured and initialized before the application starts processing requests.
