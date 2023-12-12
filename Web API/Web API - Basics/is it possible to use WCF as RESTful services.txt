@@ -1,0 +1,8 @@
+Question - Is it possible to use WCF as RESTful Services?
+
+
+Yes, it is possible to use Windows Communication Foundation (WCF) to create RESTful services.
+WCF provides support for building RESTful services through the use of the WebHttpBinding and the WebHttpBehavior.
+This allows you to expose services over HTTP using the principles of Representational State Transfer (REST).
+WCF supports various HTTP methods such as GET, POST, PUT, and DELETE.
+The WebInvoke attribute on the operation specifies the HTTP method, response format (JSON, XML), and the URI template.
