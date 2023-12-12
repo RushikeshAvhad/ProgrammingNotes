@@ -1,0 +1,22 @@
+Question - What are main return types supported in WEB API?
+
+
+In ASP.NET Web API, the main return types represent the data that is sent back to the client in response to an HTTP request.
+
+Here are the main return types supported in Web API:
+1. HttpResponseMessage: 
+    Represents an HTTP response, allowing you to customize the status code, headers, and content.
+2. IHttpActionResult:
+    An interface that represents an action result that can be executed and returns an HttpResponseMessage.
+3. ObjectResult:
+    Represents an action result that returns an arbitrary object serialized into the response body.
+4. ActionResult<T>: 
+    Represents an action result that returns a specific type T serialized into the response body.
+5. FileResult:
+    Represents an action result that returns a file to the client.
+6. BadRequestResult, NotFoundResult, StatusCodeResult, etc.:
+    Represents specific HTTP status code responses without a response body.
+7. RedirectResult:
+    Represents an action result that performs an HTTP redirection.
+8. ContentResult:
+    Allows you to return raw content, such as HTML or plain text.
