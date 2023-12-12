@@ -1,0 +1,18 @@
+Question - What are Response Codes in Web API?
+
+
+In the context of Web API, response codes refer to the HTTP status codes that a server returns to the client as part of an HTTP response.
+These status codes provide information about the result of the client's request and help communicate the status of the operation.
+
+HTTP status codes are three-digit numeric codes that are grouped into five classes:
+
+1xx (Informational):
+    This class indicates that the client's request was received, continuing process.
+2xx (Successful):
+    This class indicates that the client's request was successfully received, understood, and accepted.
+3xx (Redirection):
+    This class indicates that further action needs to be taken to complete the request, often indicating a redirect.
+4xx (Client Error):
+    This class indicates that the client seems to have made an error in its request.
+5xx (Server Error):
+    This class indicates that the server failed to fulfill a valid request.
