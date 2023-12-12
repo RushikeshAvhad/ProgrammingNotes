@@ -1,0 +1,14 @@
+Question - What is Run(), Use() and Map() method?
+
+
+In ASP.NET Core, Run(), Use(), and Map() are methods used to configure middleware in the application's request processing pipeline.
+Each method plays a specific role in defining how the application should handle incoming HTTP requests.
+1. Run() Method: 
+    The Run() method is used to add a terminal middleware to the pipeline.
+    A terminal middleware is a component that doesn't call the next delegate, meaning it doesn't pass control to the next middleware in the pipeline.
+2. Use() Method:
+    The Use() method is a versatile method that can be used to add middleware components to the pipeline.
+    Middleware added with Use() can perform actions such as processing requests, modifying responses, or passing control to the next middleware.
+3. Map() Method:
+    The Map() method is used to conditionally branch the request pipeline based on the request's path.
+    It allows you to map specific middleware to handle requests with certain paths.
