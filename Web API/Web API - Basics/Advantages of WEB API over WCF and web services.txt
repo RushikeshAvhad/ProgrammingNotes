@@ -1,0 +1,11 @@
+Question - What are WEB API Advantages over WCF and WEB SERVICES?
+
+
+Web API is designed with RESTful principles, which emphasize a stateless, uniform, and resource-oriented approach.
+It uses standard HTTP methods and URIs to perform operations on resources.
+Web API is lightweight and follows a more straightforward design.
+It is well-suited for scenarios where simplicity and ease of use are prioritized.
+
+WCF and traditional web services (ASMX) often use SOAP (Simple Object Access Protocol) for communication,
+which can be more heavyweight and complex than RESTful approaches.
+
