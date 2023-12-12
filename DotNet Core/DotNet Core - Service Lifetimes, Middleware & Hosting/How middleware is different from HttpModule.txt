@@ -1,0 +1,42 @@
+Question - How ASP.NET Core Middleware is different from HttpModule?
+
+
+ASP.NET Core Middleware provides a more flexible, composable, and cross-platform approach to building request processing pipelines.
+It is designed to work well with the modern features of the .NET ecosystem, including dependency injection and asynchronous programming.
+On the other hand, HttpModules are part of the legacy ASP.NET framework,
+tightly tied to System.Web, and are not as versatile or testable as ASP.NET Core Middleware.
+When building new applications or migrating existing ones to ASP.NET Core,
+the use of Middleware is recommended for taking advantage of the improved architecture and features provided by the ASP.NET Core framework.
+
+ASP.NET Core Middleware:
+Cross-Platform and Cross-Framework:
+    ASP.NET Core Middleware is designed to be cross-platform and cross-framework.
+    It can run on multiple operating systems, and it is not tied to the System.Web infrastructure, making it more versatile and lightweight.
+Dependency Injection:
+    Middleware components in ASP.NET Core can take advantage of the built-in dependency injection system.
+    This enables better testability, modular design, and easier management of dependencies compared to HttpModules.
+Flexible Configuration:
+    Middleware can be easily configured in the Startup.cs file using the Configure method.
+    The order of middleware components can be specified, and individual components can be added or removed with ease.
+Composable:
+    Middleware components are composable and can be combined to build complex request processing pipelines.
+    This makes it easier to organize and reuse functionality across different parts of an application.
+Async Support:
+    ASP.NET Core Middleware fully supports asynchronous programming.
+    Middleware components can be asynchronous, allowing for more efficient use of resources, especially in scenarios with high concurrency.
+
+ASP.NET HttpModule:
+Tied to System.Web:
+    HttpModules are specific to the ASP.NET System.Web infrastructure.
+    They are part of the ASP.NET pipeline in the traditional ASP.NET framework and are tightly coupled to the HttpContext and other System.Web components.
+Limited Testability:
+    Due to the tight integration with the HttpContext and other static classes, HttpModules can be challenging to unit test.
+    This can make it more difficult to achieve the same level of test coverage compared to ASP.NET Core Middleware.
+Configuration in Web.config:
+    Configuration for HttpModules is often done in the web.config file.
+    This centralized configuration can be less flexible compared to the programmatic configuration available in ASP.NET Core Startup.cs.
+Synchronous Execution:
+    HttpModules execute synchronously in the request pipeline.
+    While this is suitable for many scenarios, it may lead to less optimal resource utilization, especially in scenarios with high concurrency.
+Limited Cross-Framework Support:
+    HttpModules are specific to the ASP.NET framework and are not easily portable to other frameworks or platforms.
