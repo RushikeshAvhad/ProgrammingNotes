@@ -1,0 +1,16 @@
+Question - What are the parts of JWT token?
+
+
+A JWT (JSON Web Token) is a compact, URL-safe means of representing claims between two parties.
+It's commonly used for authentication and information exchange in web development.
+A JWT token consists of three parts: the header, the payload, and the signature. 
+These parts are separated by dots ('.') and together form a string that represents the entire JWT.
+
+Header:
+    The header typically consists of two parts:
+        the type of the token, which is JWT, and the signing algorithm being used, such as HMAC SHA256 or RSA.
+Payload:
+    The payload contains the claims.
+    Claims are statements about an entity (typically, the user) and additional metadata.
+Signature:
+    The signature is used to verify that the sender of the JWT is who it says it is and to ensure that the message wasn't changed along the way.
