@@ -1,0 +1,49 @@
+Question - What is the role of ConfigureServices method?
+
+
+In an ASP.NET Core application, the ConfigureServices method is part of the startup process and is found in the Startup class.
+This method is responsible for configuring the services that the application will use.
+Services in ASP.NET Core are components that provide functionality to the application, such as data access, logging, authentication, and more.
+
+The ConfigureServices method takes an IServiceCollection parameter, which is a collection of service descriptors.
+Service descriptors define the services and their lifetimes within the application.
+
+Here's a typical structure of the ConfigureServices method:
+    public void ConfigureServices(IServiceCollection services) 
+    { 
+        // Configure and add services to the service collection. 
+    } 
+
+Key responsibilities of the ConfigureServices method include:
+1. Dependency Injection Configuration:
+    The method is used to configure dependency injection for the application.
+    It specifies how services should be instantiated and injected into components such as controllers, middleware, and other parts of the application.
+2. Adding Services to the Service Collection:
+    Developers use the services parameter to add services to the service collection.
+    This is done using methods like AddTransient, AddScoped, and AddSingleton.
+    The choice of these methods depends on how long the service instance should live
+    (transient, scoped to the request, or a singleton throughout the application's lifetime).
+3. Configuration of Options:
+    Some services may have configurable options.
+    The ConfigureServices method is a common place to bind configuration settings to options classes and register them with the service collection.
+4. Adding MVC and Other Framework Services:
+    If the application uses ASP.NET Core MVC or other framework-specific services, they are often added in the ConfigureServices method.
+    For example, adding MVC services can be done using:
+        
+        services.AddMvc(); 
+
+5. Adding Authentication and Authorization Services:
+    Configuration of authentication and authorization services, if used in the application, is often done in the ConfigureServices method.
+    This may include specifying authentication schemes, adding identity services, and configuring authorization policies.
+
+        services.AddAuthentication().AddJwtBearer(); 
+
+6. Custom Service Configuration:
+    Developers can add custom services or configure third-party services required for the application.
+    This is the place where the application's service composition is defined.
+
+The ConfigureServices method is called during the application startup,
+and it sets up the foundation for the application by defining the services it will use.
+This method is complementary to the Configure method,
+which is responsible for configuring middleware and the application's request processing pipeline.
+Together, these methods provide the necessary configuration for an ASP.NET Core application to run successfully.
