@@ -1,0 +1,40 @@
+Question - How to implement Dependency Injection in .NET core?
+
+
+In .NET Core, dependency injection is built into the framework, and it's an integral part of the application's design.
+.NET Core provides a lightweight, built-in IoC (Inversion of Control) container that makes it easy to register and resolve dependencies.
+
+Here's how you can implement dependency injection in a .NET Core application:
+1. Create Services:
+    Define the services and interfaces that your application will use.
+2. Configure Dependency Injection in Startup.cs:
+    In the Startup.cs file, you configure the services and their implementations in the ConfigureServices method:
+3. Use Dependency Injection in Controllers:
+    You can then use dependency injection in your controllers, services, or other components that are managed by the .NET Core framework.
+    For example, in a controller:
+
+Note:
+    .NET Core's DI container automatically resolves dependencies and injects them into the constructor or properties.
+    It's also possible to use constructor injection in middleware, filters, and other components.
+Additional Tips:
+    Using Constructor Injection in Razor Pages:
+        If you are working with Razor Pages, you can use constructor injection in your PageModel:
+
+Lifetime of Services: 
+    Choose the appropriate lifetime for your services based on your application's requirements.
+    Common lifetimes are transient, scoped, and singleton.
+
+    AddTransient:
+        A new instance is created every time the service is requested.
+    AddScoped:
+        A single instance is created per scope (typically per HTTP request).
+    AddSingleton:
+        A single instance is created and shared throughout the application.
+
+Configuration Bindings:
+    You can use the Configure method to bind configuration sections to strongly typed options.
+    This can be useful for injecting configuration settings into your services.
+
+With these steps, you've set up a basic dependency injection system in a .NET Core application.
+The built-in container is often sufficient for many applications, 
+but you can also use third-party IoC containers if you have more advanced requirements.
