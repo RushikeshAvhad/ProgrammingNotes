@@ -1,0 +1,12 @@
+Question - What are the roles of Appsetting.Json and Launchsetting.Json file?
+
+
+1. appsettings.json:
+    appsettings.json is a configuration file used to store application settings and configurations such as connection strings,
+    API keys, logging settings, etc.
+    It is a JSON file that provides a structured way to organize and manage configuration data for an application.
+    The settings in appsettings.json are accessed and used in the application code during runtime.
+2. launchsettings.json:
+    launchsettings.json is primarily used during development to configure the behavior of the development server and the application
+    when running in the development environment.
+    It contains settings related to the development server, including the application URL, SSL settings, and environment variables.
