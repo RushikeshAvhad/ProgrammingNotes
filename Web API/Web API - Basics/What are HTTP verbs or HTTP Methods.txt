@@ -1,0 +1,16 @@
+Question - What are HTTP verbs or HTTP methods?
+
+
+HTTP methods or HTTP verbs indicate the desired action to be performed for a given resource.
+Each HTTP request includes a method, and the server interprets the method to understand the operation the client is requesting. 
+
+GET: 
+    Retrieve data from the server.
+POST:
+    Submit data to be processed to a specified resource.
+PUT:
+    Update a resource or create a new resource if it does not exist.
+DELETE: 
+    Delete a specified resource.
+PATCH: 
+    Apply partial modifications to a resource.
