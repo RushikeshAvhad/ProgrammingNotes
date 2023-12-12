@@ -1,0 +1,7 @@
+Question - What is WEB API? What is purpose of WEB API?
+
+
+A Web API, or Web Application Programming Interface, is a set of rules and protocols for building and interacting with web services. 
+Web APIs allow communication between applications running on different platforms,
+such as web applications, mobile apps, and desktop applications.
+
