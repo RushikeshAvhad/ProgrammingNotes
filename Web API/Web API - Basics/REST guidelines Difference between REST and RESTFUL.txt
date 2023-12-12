@@ -1,0 +1,20 @@
+Question - What are REST guidelines? What is the difference between REST and RESTful?
+
+
+REST Guidelines:
+    The server should not store any information about the client's state between requests.
+    The client is responsible for the user interface and user experience,
+    while the server is responsible for processing requests and managing resources.
+    A uniform and consistent interface simplifies and decouples the architecture. 
+    Resources are the key abstractions in a RESTful system. 
+    Resources can have multiple representations, such as XML, JSON, or HTML. 
+
+Difference Between "REST" and "RESTful":
+
+REST:
+    "REST" refers to the architectural style itself.
+    It is a set of constraints and principles that guide the design of distributed systems for web-based communication.
+RESTful:
+    "RESTful" is an adjective used to describe systems or services that adhere to the principles of REST.
+    When we say a service is RESTful, 
+    it means that the service follows the guidelines and constraints of REST in its design and implementation.
