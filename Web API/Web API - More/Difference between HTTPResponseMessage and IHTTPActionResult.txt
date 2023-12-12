@@ -1,0 +1,26 @@
+Question - What is the difference between HTTPResponseMessage and IHttpActionResult?
+
+
+HttpResponseMessage and IHttpActionResult are both classes/interfaces used in ASP.NET Web API (now part of ASP.NET Core MVC/WebAPI) 
+to represent HTTP responses, but they serve slightly different purposes.
+
+HttpResponseMessage:
+    HttpResponseMessage is a class that represents an HTTP response.
+    It is used to create and return HTTP responses from Web API actions.
+    You can use HttpResponseMessage to set various properties of the HTTP response, such as status code, headers, and content.
+
+IHttpActionResult:
+    IHttpActionResult is an interface introduced in Web API to provide a more abstract and testable way to return HTTP responses.
+    It is typically used as the return type for Web API actions.
+    IHttpActionResult provides a level of abstraction over the creation of HttpResponseMessage.
+    It allows you to return different types of results, and Web API will handle the creation of the corresponding HttpResponseMessage.
+
+Differences:
+    HttpResponseMessage provides a lower-level abstraction where you have direct control over the HTTP response details.
+    With HttpResponseMessage, testing might involve inspecting the properties of the returned HttpResponseMessage.
+    HttpResponseMessage requires explicit configuration for each aspect of the HTTP response.
+    IHttpActionResult provides a higher-level abstraction, allowing you to return results in a more expressive and testable way.
+    IHttpActionResult makes it easier to unit test your Web API actions because it abstracts away the details of the HTTP response,
+    and you can assert against the returned IHttpActionResult.
+    IHttpActionResult includes convenience methods like Ok, NotFound, BadRequest, etc.,
+    which simplify the process of returning common HTTP responses.
