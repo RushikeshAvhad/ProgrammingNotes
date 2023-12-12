@@ -1,0 +1,7 @@
+Question - What are Razor pages in .NET core?
+
+
+Razor Pages is a feature in ASP.NET Core that makes it easy to build web pages with a clean separation of concerns.
+It's a lightweight and intuitive web page programming model that follows the MVC pattern (Model-View-Controller). 
+Razor Pages provide a simpler syntax than the traditional MVC framework, making it particularly suitable for lightweight applications
+and scenarios where a full MVC structure might be considered overkill.
