@@ -1,0 +1,9 @@
+Question - What is Routing? Explain attribute routing in ASP.NET core?
+
+
+Routing in ASP.NET Core refers to the process of matching incoming HTTP requests to the appropriate endpoint in your application.
+An endpoint can be a controller action, a Razor page, or a middleware, and routing determines which code should handle a particular request.
+
+Attribute Routing in ASP.NET Core:
+    Attribute routing is a feature in ASP.NET Core that allows developers to define routes directly on controllers and actions using attributes. 
+    This provides a more declarative way to define routing, especially useful for RESTful APIs.
