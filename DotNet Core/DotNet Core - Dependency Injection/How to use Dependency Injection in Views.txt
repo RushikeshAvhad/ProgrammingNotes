@@ -1,0 +1,23 @@
+Question - How to use Dependency Injection in Views in ASP.NET Core?
+
+
+In ASP.NET Core, dependency injection is typically used to inject services into controllers, middleware, 
+or other components during the request processing pipeline.
+However, in views, dependency injection is more indirect, as views themselves are not directly injected with dependencies.
+
+To use dependency injection in views in ASP.NET Core,
+you can leverage the @inject directive to declare and use services directly within the view. 
+
+Here's a step-by-step guide to use the Dependency Injection in Views:
+1. Register the Service:
+    Ensure that the service you want to use in the view is registered with the dependency injection container in the Startup.cs file,
+    in the ConfigureServices method.
+2. Inject the Service in the View:
+    In your view file (e.g., a Razor view file with the extension .cshtml), use the @inject directive to inject the service.
+    You'll typically place this at the top of the view file, outside the HTML tags.
+3. Use the Injected Service in the View:
+    Now, you can use the injected service within the view.
+
+Remember that while this approach allows you to use dependency injection in views,
+it's generally advisable to keep views focused on presentation logic and delegate complex logic to controllers or services.
+If the logic in your view becomes too complex, it might be a sign that some of it should be moved to a controller or service.
