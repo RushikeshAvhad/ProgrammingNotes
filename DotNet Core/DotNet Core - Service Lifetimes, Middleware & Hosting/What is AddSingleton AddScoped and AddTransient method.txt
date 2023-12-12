@@ -1,0 +1,17 @@
+Question - What is AddSingleton, AddScoped and AddTransient method?
+
+
+In ASP.NET Core dependency injection, 
+AddSingleton, AddScoped, and AddTransient are methods used to register services with the dependency injection container. 
+These methods define the lifetime of the service instances,
+determining how long each instance is kept in the container and when it is created or disposed.
+
+1. AddSingleton:
+    A single instance of the service is created and shared across the entire application.
+    It is created the first time it's requested and reused for subsequent requests.
+2. AddScoped:
+    A new instance of the service is created for each scope.
+    In the context of a web application, a scope is often equivalent to a single HTTP request.
+3. AddTransient:
+    A new instance of the service is created each time it's requested. 
+    There is no reuse of instances.
