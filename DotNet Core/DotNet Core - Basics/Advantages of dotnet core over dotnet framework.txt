@@ -1,0 +1,36 @@
+Question - What are the advantages of .NET core over .NET framework?
+
+
+Cross-Platform Support:
+    .NET Core is designed to be cross-platform, supporting Windows, macOS, and Linux.
+    This is particularly valuable for applications targeting a variety of environments, including cloud services and containers.
+Open Source:
+    .NET Core is fully open source, and its development is conducted in the open on GitHub.
+    This transparency allows developers to contribute to the framework, review its source code, and customize it for their needs.
+Modularity:
+    .NET Core is modular, allowing developers to include only the necessary components for their applications.
+    This modularity reduces the size of deployed applications and enhances performance.
+Performance:
+    .NET Core is optimized for performance.
+    It includes features such as the CoreCLR runtime and Just-In-Time (JIT) compilation,
+    resulting in faster execution and improved resource utilization.
+Unified Platform:
+    With the introduction of .NET 5 and later versions, Microsoft has merged the best features of .NET Core and .NET Framework into a single,
+    unified platform.
+    This helps in reducing fragmentation and simplifying the development process.
+Container Support:
+    .NET Core is well-suited for containerized applications.
+    It can be easily deployed using containerization tools like Docker,
+    making it a good fit for microservices architectures and container orchestration platforms like Kubernetes.
+Side-by-Side Versioning:
+    .NET Core allows for side-by-side versioning, meaning that multiple versions of the runtime can coexist on the same machine.
+    This is useful for applications that require specific versions of the framework.
+Command-Line Interface (CLI):
+    .NET Core comes with a command-line interface (CLI) that facilitates development, build, and deployment processes.
+    This can be particularly beneficial for automation and continuous integration/continuous deployment (CI/CD) pipelines.
+Modern Language Features:
+    .NET Core supports modern language features,
+    providing developers with access to the latest advancements in C# and other supported languages.
+Community and Ecosystem:
+    The open-source nature of .NET Core has led to a vibrant and active community.
+    This has resulted in a growing ecosystem of libraries, frameworks, and tools that can be used in conjunction with .NET Core.
