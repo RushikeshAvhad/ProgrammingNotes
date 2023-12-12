@@ -1,0 +1,19 @@
+Question - What are the types of authentication techniques in WEB API?
+
+
+Web API authentication is a crucial aspect of securing your API and ensuring that only authorized users or systems can access the resources.
+
+API Key Authentication:  
+    In API key authentication, a unique key is generated for each client or application that wants to access the API.
+Basic Authentication:  
+    Basic Authentication involves sending a username and password as part of the request headers.
+Bearer Token Authentication (OAuth 2.0):  
+    Bearer Token Authentication involves the use of access tokens. 
+JWT (JSON Web Token) Authentication:  
+    JWT is a compact, URL-safe means of representing claims between two parties. 
+Windows Authentication: 
+    Windows Authentication allows users to authenticate using their Windows credentials. 
+Client Certificate Authentication:  
+    Client certificate authentication involves validating the client's identity using an X.509 certificate.
+Token-Based Authentication (Custom): 
+    The server issues a token to the client upon successful authentication. 
