@@ -1,0 +1,5 @@
+Question - What is API key authentication in WEB API?
+
+
+In API key authentication, a unique key is generated for each client or application that wants to access the API.
+The key is included in the HTTP headers of the request.
