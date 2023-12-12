@@ -1,0 +1,48 @@
+Question - Describe the complete Request processing pipeline for ASP.NET core MVC?
+
+
+The request processing pipeline in ASP.NET Core MVC is a series of middleware components that handle incoming HTTP requests and produce responses.
+The pipeline is defined in the Configure method of the Startup class. 
+
+Below is an overview of the complete request processing pipeline for ASP.NET Core MVC:
+HTTP Request:
+    The process begins when an HTTP request is received by the ASP.NET Core application.
+    The request contains information such as the URL, headers, and any associated data (e.g., form data or JSON payload).
+Hosting Middleware:
+    The request first goes through hosting middleware, which is responsible for setting up the hosting environment,
+    handling security concerns, and other server-level tasks.
+Logging Middleware:
+    Logging middleware, if configured, can log information about the incoming request.
+    This can include details such as request method, URL, and headers.
+Static Files Middleware:
+    If the application serves static files (e.g., images, stylesheets, or client-side scripts), 
+    the static files middleware will attempt to fulfill the request without involving MVC routing.
+Routing Middleware:
+    The routing middleware is responsible for determining which controller and action should handle the request based on the URL.
+    Routes are configured in the Configure method, typically using the UseMvc extension method.
+MVC Middleware:
+    Once the routing middleware identifies the appropriate controller and action, the request enters the MVC middleware.
+    This middleware processes the request through the MVC framework, including model binding, action invocation, and result execution.
+Controller Execution:
+    The MVC framework identifies and invokes the appropriate controller and action method based on the route.
+    The controller handles the request by executing the specified action method, which may involve interacting with models and services.
+View Rendering:
+    If the action result is a view, the view rendering process is initiated.
+    Views are responsible for generating the HTML markup that will be sent as the response.
+Response Generation:
+    The generated HTML or other response content is sent back to the client as the HTTP response.
+Exception Handling Middleware:
+    If an unhandled exception occurs during the request processing, 
+    it is caught by the exception handling middleware, which can log the error, display an error page, or take other configured actions.
+Response Compression Middleware:
+    If response compression is configured, the response may be compressed before being sent to the client.
+HTTPS Redirection Middleware:
+    If the application requires HTTPS, the HTTPS redirection middleware can be configured to redirect HTTP requests to HTTPS.
+Security Headers Middleware:
+    Security headers middleware can add security-related HTTP headers to the response.
+End of the Pipeline:
+    Once the request has been processed through all configured middleware components,
+    the response is sent back to the client, completing the request-response cycle.
+
+This sequence of middleware components constitutes the request processing pipeline for an ASP.NET Core MVC application.
+Developers can customize the pipeline by adding, removing, or reordering middleware components in the Configure method of the Startup class.
