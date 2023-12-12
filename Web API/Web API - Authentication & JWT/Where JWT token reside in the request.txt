@@ -1,0 +1,5 @@
+Question - Where JWT token reside in the request?
+
+
+In a typical usage scenario, a JWT (JSON Web Token) resides in the HTTP request headers, specifically in the Authorization header.
+The JWT is sent as a bearer token, and the Authorization header has a specific format to include the token.
