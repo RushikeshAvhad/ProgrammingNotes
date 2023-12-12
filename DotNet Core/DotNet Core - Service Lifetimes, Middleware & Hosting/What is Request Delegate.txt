@@ -1,0 +1,7 @@
+Question - What is Request Delegate?
+
+
+In the context of ASP.NET Core, a RequestDelegate is a type that represents a delegate capable of handling an HTTP request.
+It's a fundamental concept within the ASP.NET Core middleware pipeline.
+A RequestDelegate is essentially a function that takes an HttpContext as its parameter and returns a Task.
+It's a component in the middleware pipeline responsible for processing a specific stage of the HTTP request/response lifecycle.
