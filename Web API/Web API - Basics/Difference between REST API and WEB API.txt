@@ -1,0 +1,10 @@
+Question - What is difference between REST API & WEB API?
+
+
+Web API:
+    "Web API" is a broad term that refers to any API exposed over the web using HTTP.
+    It doesn't prescribe a specific architectural style or set of guidelines.
+
+REST API:
+    "REST API" specifically refers to APIs that follow the principles of Representational State Transfer (REST).
+    REST is an architectural style that defines a set of constraints and guidelines for designing networked applications.
