@@ -1,0 +1,22 @@
+Question - What is CORS? Why CORS restriction is required? How to fix CORS error?
+
+
+Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers to control how web pages in one domain can request
+and interact with resources hosted on another domain.
+It is a security feature to prevent unauthorized access to resources and protect user data.
+
+Why CORS Restriction is Required:
+Same-Origin Policy:
+    Browsers enforce the Same-Origin Policy,
+    which restricts web pages from making requests to a different domain than the one that served the web page.
+
+CORS Relaxation:
+    It provides a way for servers to declare which origins are allowed to make requests and which HTTP methods (GET, POST, etc.) 
+    are supported.
+
+CORS is a security feature implemented by web browsers to control cross-origin requests.
+
+To fix CORS errors,
+the server needs to be configured to include the appropriate CORS headers in the response.
+The server specifies which origins are allowed, which methods are supported, and may handle OPTIONS preflight requests.
+Proper CORS configuration helps ensure a secure and controlled cross-origin interaction between web pages and servers.
