@@ -1,0 +1,8 @@
+Question - What is MediaTypeFormatter class in web API?
+
+
+MediaTypeFormatter is a class in ASP.NET Web API that plays a crucial role in the content negotiation process.
+It is responsible for serializing objects into the format specified by the requested media type and deserializing incoming requests into objects.
+Essentially, MediaTypeFormatter handles the conversion between the .NET object representation and various media types, such as JSON or XML. 
+When a Web API action returns an object, 
+the MediaTypeFormatter is responsible for serializing that object into the appropriate format based on the requested media type (specified by the client in the request's Accept header).
