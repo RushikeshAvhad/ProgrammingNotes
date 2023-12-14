@@ -1,0 +1,48 @@
+Question - How ASP.NET Core serve static files?
+
+
+In ASP.NET Core,
+serving static files is a built-in feature that allows the web server to serve files directly to clients without the need for additional
+processing by the application.
+This is particularly useful for serving CSS files, JavaScript files, images, and other static assets.
+ASP.NET Core uses the wwwroot folder to organize and serve these static files.
+
+Here's how ASP.NET Core serves static files:
+
+wwwroot Folder:
+    The wwwroot folder is the default location for static files in an ASP.NET Core application.
+    Files placed in this folder are considered public and can be served directly to clients.
+Static File Middleware:
+    The ASP.NET Core framework includes a built-in middleware called the Static Files Middleware (UseStaticFiles).
+    This middleware is responsible for serving static files from the wwwroot folder.
+Configuration in Startup.cs:
+    To enable static file serving, you typically add the UseStaticFiles middleware in the Configure method of the Startup class
+    in the Startup.cs file.
+    
+    Here's an example:
+    csharpCopy code
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        // Other middleware...
+        app.UseStaticFiles(); // This enables serving static files from wwwroot.
+        // Other middleware...
+    }
+
+Request Handling:
+    When a client requests a static file (e.g., an image or a stylesheet), the Static Files Middleware intercepts the request. 
+    If the requested file exists in the wwwroot folder, it is served directly to the client.
+Static File Options:
+    The UseStaticFiles method can be configured with options to customize its behavior.
+    For example, you can set the request path prefix, specify additional file types to serve, or configure caching options.
+    
+    csharpCopy code
+    app.UseStaticFiles(new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
+        RequestPath = "/StaticFiles"
+    });
+
+By default, the Static Files Middleware serves files directly from the wwwroot folder with no additional configuration required.
+This makes it easy to include static assets in your ASP.NET Core application and serve them efficiently.
+Keep in mind that when deploying to production, 
+you might want to consider using a reverse proxy server like Nginx or IIS to handle static file serving for better performance and security.
