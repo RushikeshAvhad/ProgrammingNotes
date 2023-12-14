@@ -1,0 +1,80 @@
+Question - What is Open-Closed Principle?
+
+
+The Open/Closed Principle (OCP) is one of the SOLID principles of object-oriented design, introduced by Bertrand Meyer.
+
+The Open/Closed Principle states:
+    "Software entities (such as classes, modules, functions, etc.) should be open for extension but closed for modification."
+
+In essence,
+this principle suggests that once a class is implemented and in use,
+its source code should not be modified to add new functionalities.
+Instead, the class should be designed in a way that allows new features to be added through extensions, without altering the existing code.
+
+Key points related to the Open/Closed Principle:
+Open for Extension:
+    The "open for extension" part means that you can add new functionality to an existing class without modifying its source code.
+    This is typically achieved through mechanisms like inheritance, interfaces, or composition.
+Closed for Modification:
+    The "closed for modification" part emphasizes that once a class is implemented and in use, its existing code should not be changed.
+    This reduces the risk of introducing bugs or unintended consequences when extending the system.
+Abstraction and Polymorphism:
+    Abstraction and polymorphism play a significant role in achieving the Open/Closed Principle.
+    By using abstract classes, interfaces, and polymorphic behavior, 
+    you can create a framework that allows for easy extension without modifying existing code.
+
+Example adhering to OCP:
+csharpCopy code
+public abstract class Shape
+{
+    public abstract double Area();
+}
+
+public class Circle : Shape
+{
+    public double Radius { get; set; }
+
+    public override double Area()
+    {
+        return Math.PI * Math.Pow(Radius, 2);
+    }
+}
+
+public class Rectangle : Shape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public override double Area()
+    {
+        return Width * Height;
+    }
+}
+In this example, the Shape class is open for extension.
+You can create new shape classes (e.g., Triangle, Square) without modifying the existing Shape class.
+Each new shape class can extend the Shape class and provide its implementation of the Area method.
+
+csharpCopy code
+public class Triangle : Shape
+{
+    public double Base { get; set; }
+    public double Height { get; set; }
+
+    public override double Area()
+    {
+        return 0.5 * Base * Height;
+    }
+}
+
+public class Square : Shape
+{
+    public double Side { get; set; }
+
+    public override double Area()
+    {
+        return Math.Pow(Side, 2);
+    }
+}
+
+By adhering to the Open/Closed Principle,
+you can introduce new shapes without modifying the existing code, promoting a more flexible and maintainable design.
