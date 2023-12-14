@@ -1,0 +1,51 @@
+Question - What is Kestrel? What is the difference between Kestrel and IIS?
+
+
+Kestrel:
+Kestrel is a cross-platform, open-source web server developed by the ASP.NET team at Microsoft.
+It is designed to be a lightweight and fast web server that can be used to host ASP.NET Core applications.
+Kestrel is the default web server for ASP.NET Core applications and can be used for both in-process and out-of-process hosting.
+
+Key features of Kestrel include:
+Cross-Platform:
+    Kestrel is cross-platform and can run on Windows, Linux, and macOS.
+    This makes it suitable for hosting ASP.NET Core applications on a variety of operating systems.
+Performance: 
+    Kestrel is designed with performance in mind.
+    It is optimized for handling a large number of concurrent connections efficiently.
+Integration:
+    While Kestrel can be used as a standalone server, it is often used in combination with a reverse proxy server
+    (like Nginx or IIS) when hosting production ASP.NET Core applications to handle tasks such as load balancing and SSL termination.
+
+
+Difference Between Kestrel and IIS:
+Hosting Model:
+Kestrel: 
+    It is a standalone web server and can be used for both in-process and out-of-process hosting.
+    It is the default server for ASP.NET Core applications.
+IIS (Internet Information Services):
+    IIS is a web server created by Microsoft and is traditionally used to host ASP.NET applications.
+    In ASP.NET Core, IIS can be used for in-process hosting, where the ASP.NET Core application runs within the IIS worker process.
+
+Platform Compatibility:
+Kestrel: 
+    Cross-platform (Windows, Linux, macOS).
+IIS: 
+    Primarily used on Windows, though there are ways to use it in combination with reverse proxy servers for broader platform support.
+
+Performance:
+Kestrel:
+    Optimized for performance and is particularly well-suited for handling a large number of concurrent connections.
+IIS:
+    While IIS is a robust and feature-rich server, Kestrel is often used in conjunction with IIS for improved performance.
+
+Use Cases:
+Kestrel:
+    Suitable for standalone use or behind a reverse proxy server. 
+    Commonly used in out-of-process hosting scenarios.
+IIS: 
+    Commonly used for in-process hosting, where the ASP.NET Core application runs within the IIS worker process.
+
+In many production scenarios, Kestrel is used as the primary web server, and IIS (or another reverse proxy server) is used
+as a reverse proxy to handle tasks such as load balancing, SSL termination, and serving static files.
+This combination provides a flexible and high-performance hosting solution for ASP.NET Core applications.
