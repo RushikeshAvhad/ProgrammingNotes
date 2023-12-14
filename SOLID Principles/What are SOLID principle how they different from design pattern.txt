@@ -1,0 +1,62 @@
+Question - What are SOLID principles? How they different from design pattern?
+
+
+SOLID Principles:
+    SOLID is an acronym that represents a set of five design principles intended to guide software design and promote maintainability,
+    flexibility, and readability.
+    These principles were introduced by Robert C. Martin and have become fundamental concepts in object-oriented design.
+
+Single Responsibility Principle (SRP):
+    A class should have only one reason to change, meaning that it should have only one responsibility.
+    This principle encourages a class to have a single, well-defined purpose.
+Open/Closed Principle (OCP):
+    Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
+    This implies that you should be able to add new features or behaviors to a system without altering existing code.
+Liskov Substitution Principle (LSP):
+    Subtypes must be substitutable for their base types without altering the correctness of the program. 
+    In other words, if a class is a subclass of another class, it should be usable wherever the base class is used without introducing errors.
+Interface Segregation Principle (ISP):
+    A class should not be forced to implement interfaces it does not use.
+    This principle suggests that a class should only be required to implement the methods that are relevant to its behavior.
+Dependency Inversion Principle (DIP):
+    High-level modules should not depend on low-level modules.
+    Both should depend on abstractions.
+    Additionally, abstractions should not depend on details;
+    details should depend on abstractions.
+    This principle promotes the use of dependency injection and inversion of control.
+Design Patterns:
+    Design patterns are general reusable solutions to common problems that occur during software development.
+    They are not blueprints or templates but rather guidelines for solving particular design problems.
+    Design patterns provide solutions for organizing code, improving code quality, and making code more maintainable.
+
+There are several design patterns, and some of the commonly used ones include:
+Singleton Pattern:
+    Ensures that a class has only one instance and provides a global point of access to it.
+Factory Method Pattern:
+    Defines an interface for creating an object but leaves the choice of its type to the subclasses, creating the instance.
+Observer Pattern:
+    Defines a one-to-many dependency between objects so that when one object changes state,
+    all its dependents are notified and updated automatically.
+Decorator Pattern:
+    Attaches additional responsibilities to an object dynamically.
+     Decorators provide a flexible alternative to subclassing for extending functionality.
+
+
+Difference between SOLID Principles and Design Patterns in .NET:
+Scope:
+    SOLID principles are high-level design principles that guide the overall organization of your code and the relationships between classes.
+    Design patterns, on the other hand, are specific solutions to recurring design problems and can be implemented within the framework of 
+    SOLID principles.
+Granularity:
+    SOLID principles provide guidelines at a broader level, focusing on the organization of classes, responsibilities, and dependencies.
+    Design patterns are more specific and deal with recurring design problems at a more detailed level,
+    offering solutions for common coding scenarios.
+Applicability:
+    SOLID principles are applied at the architectural level and guide the overall structure of your application.
+    Design patterns are applied at the implementation level and provide specific solutions to coding challenges within the application.
+
+In summary,
+SOLID principles provide a foundation for building maintainable and flexible software,
+while design patterns offer specific solutions to common coding problems.
+They can complement each other, with design patterns being implemented within a codebase that follows SOLID principles.
+Both are important for creating robust, scalable, and maintainable software in .NET or any other programming environment.
