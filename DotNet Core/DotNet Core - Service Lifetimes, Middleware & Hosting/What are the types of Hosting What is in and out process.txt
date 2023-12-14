@@ -1,0 +1,33 @@
+Question - What are the types of Hosting in ASP.NET core? What is In process and Out?
+
+
+In ASP.NET Core, 
+hosting refers to the process of deploying and running your application.
+There are two main types of hosting in ASP.NET Core:
+In-process hosting and Out-of-process hosting.
+
+In-process Hosting:
+    Also known as "in-process" hosting or "IIS hosting."
+    In this type of hosting, the ASP.NET Core application runs within the IIS worker process (w3wp.exe on Windows) alongside the IIS server.
+    It is the traditional hosting model used with earlier versions of ASP.NET.
+    In-process hosting is achieved using the AspNetCoreModule in IIS, which forwards requests to the ASP.NET Core application.
+    
+    
+Out-of-process Hosting:
+    Also known as "out-of-process" hosting or "self-hosting."
+    In this type of hosting, the ASP.NET Core application runs in its own process independent of the web server (e.g., Kestrel server).
+    Out-of-process hosting is the default hosting model for ASP.NET Core applications.
+    It provides more flexibility and scalability as the application can be hosted using various servers, including Kestrel,
+    without relying on a specific web server like IIS.
+
+Kestrel:
+    Kestrel is a cross-platform, lightweight web server developed by the ASP.NET team.
+    It is used as the default server for out-of-process hosting.
+    Even when using out-of-process hosting with IIS, requests are first received by the IIS server,
+    which then forwards them to the Kestrel server.
+
+In summary, 
+in-process hosting involves running the ASP.NET Core application within the IIS worker process,
+while out-of-process hosting involves running the application in its own independent process,
+often using the Kestrel web server.
+Out-of-process hosting is the preferred choice for new ASP.NET Core applications due to its flexibility and cross-platform support.
