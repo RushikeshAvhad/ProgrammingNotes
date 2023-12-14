@@ -1,0 +1,37 @@
+Question - Explain default project structure in ASP.NET core application?
+
+
+The default project structure in an ASP.NET Core application follows a convention over configuration principle,
+providing a well-organized and modular layout for your code.
+
+Below is an explanation of the key components in the default project structure:
+
+wwwroot:
+    This folder is used to store static files, such as HTML, CSS, JavaScript, images, etc., 
+    that should be served directly to clients without any processing by the server.
+Controllers:
+    This folder contains the controller classes.
+    Controllers handle incoming HTTP requests, process them, and return appropriate responses.
+    Controllers are responsible for the application's behavior.
+Views:
+    The Views folder contains the Razor view templates (.cshtml files). 
+    Views are responsible for rendering HTML and other content that is sent to the client.
+    They often work in conjunction with controllers.
+Models:
+    This folder is where you can define your data models.
+    Models represent the data structures used by the application and are often used to interact with databases or other data sources.
+Data:
+    This folder is sometimes included in the default structure, especially in ASP.NET Core MVC applications. 
+    It can contain classes related to data access, such as database context classes for Entity Framework.
+Startup.cs:
+    This file contains the Startup class, which is the entry point for configuring the ASP.NET Core application.
+    It includes methods for configuring services (dependencies) and configuring the request processing pipeline.
+appsettings.json:
+    This JSON file is used to store configuration settings for the application.
+    It can include settings such as database connection strings, API keys, and other configuration parameters.
+Program.cs:
+    The Program.cs file contains the Main method, which is the entry point for the application. 
+    It's responsible for building the web host and starting the application.
+Dependencies (Optional):
+    If you're using a dependency injection container, the default project structure supports organizing your dependencies in a folder.
+    For example, you might have a "Services" folder to keep service classes.
