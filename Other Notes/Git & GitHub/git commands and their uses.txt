@@ -1,0 +1,251 @@
+
+1. git --version
+Check installed git version
+
+2. git config
+Sets the author name & email address to be used with commit
+
+3. git init
+Initialized Empty Git Repository
+
+4. git status
+Check Git Status (Check status of working directory & staging area)
+
+5. git add [Filename]
+Add Single file to Staging Area (this states the quested file to the commit)
+
+6. git add -A 
+Stages files are commited to your local working branch
+
+7. git add .
+Add All Files to Staging Area
+
+8. git rm [Filename]
+Remove file from staging area
+
+9. git commit -m [Message]
+Commit with message
+
+10. git log
+Check / Display Commit History of current branch In Details with Commit ID
+
+11. git checkout [CommitId]
+Switch to the commit using commitId / (detached head)
+
+12. git branch -M [NewBranchName]
+Rename current Branch name to NewBranchName
+
+13. git branch
+Show all branches / Check working branch
+
+14. git branch BranchName
+Create New Branch
+
+15. git checkout BranchName
+Switch Branch (Change Branch)
+
+16. git swith BranchName
+Switch Branch (Change Branch)
+
+17. git switch -c BranchName
+Create & switch branch
+
+18. git checkout -b BranchName
+Create & switch branch
+
+19. git merge
+Merge all branches to current Branch (Bring all changes of other branch to current brach)
+
+20. git show head
+Check the status or the location of the Head.
+
+21. git ls-file
+Check commited file list in branch / List data in staging area
+
+22. git status
+Check Current Status
+
+23. git checkout initial-commit.txt
+To Undo the changes / will show message as updated 1 path from the index and that changes will be undo
+
+24. git checkout (--) .
+Revert changes in tracked files
+
+25. git restore [filename] or .
+Revert changes in tracked files
+
+26. git restore .
+Remove all files from staging area
+
+27. git clean -df
+Delete untracked files (d = delete, f = forecefully)
+
+28. git reset
+Reset current HEAD to the specified state
+
+29. git reset [filename]
+Remove file from staging area
+
+30. git checkout -- [filename]
+Remove file from staging area
+
+31. git restore --staged [filename]
+Remove file from staging area
+
+32. git reset --soft HEAD~1
+Undo latest (~1) commmit 
+(Delete the last commit from commit but keep in staging area)
+(by git ls-file we can see this file in staging area as well as working directory)
+
+33. git reset HEAD~1
+Delete head(last) Commit
+(Remove from staging area but keeps in working directory)
+(Can add in staging area using (git add .) command & can commit again from staging area)
+
+34. git reset --hard HEAD~1
+Undo latest merge , switch to head 
+(Remove latest commit, Remove from staging area and Remove from working directory)
+
+35. git branch -d BranchName
+Delete branch
+
+36. git branch -d BranchName BranchName 
+Delete Multiple Branches
+
+37. .gitignore
+This file allow us to decide What to ignore from commit and staging area /  
+To ignore all .log file except test.txt -  
+(*.log & to the new line !test.log) here git will ignore all .log file except test.log file. 
+(If we want to ignore folder -- foldername/*)
+
+38. git clone URL
+Clone the repository from github
+
+39. git clone /path/to/repository 
+Creates a working copy of a local repository
+
+40. git clone user@host:/repository 
+This creates a working copy of a remote repository
+
+41. git stash
+Temporary storage for unstaged and uncommited changes.
+(If you want to switch branch without adding changes in staging area and without committing them,
+then save directory in stash)
+
+42. git stash list 
+Check the Stored Stashes
+(get the list of added directory in stash)
+
+43. git stash apply
+The above output restores the last stash
+
+44. git stash apply stashId
+To get particular stash in return using stash index number if more than one stash is saved
+
+45. git stash save "Stashing Message"
+Saving Stashes with the message
+
+46. git stash push -m "Message"
+To send in stash with message / Add in stash with message
+
+47. git stash show
+Show the file that is stashed and changes made on them
+
+48. git stash pop
+Re-apply the previous commits to the repository
+(Works like git stash apply stashID but remove from stash list)
+
+49. git stash drop
+Delete a stash from the queue. 
+(Generally, it deletes the most recent stash)
+
+50. git stash drop <stashId>
+Delete a particular stash from the queue
+
+51. git stash clear
+Delete all the stashes that exist in the repository.
+
+52. git stash branch <Branch Name>
+Create a new branch and transfer the stashed work on that branch
+
+53. git show HEAD
+Show The last commit in Branch
+
+54. git checkout commitID
+Switch to the commit using commandId
+
+55. git restore
+Restore (deleted) commit or branch 
+(to delete use git reset HEAD~1/git reset --soft HEAD~1/git reset --hard HEAD~1)
+
+56. git reflog
+Show all History/A log of all project changes made including deleted commits.
+(used to bring lost or deleted data back)
+(Show all the changes with id 
+(copy any id and say git reset hard reflogId(commit head)
+will remove it from commit staging area and directory and will change git head).)
+reflog is used to restore any thing like branch or commit or directory using checkout refloghash/reflog id
+
+57. git merge
+Combining commits from different branches by creating a new merge commit
+commit(recursive(non fast forward)) or by moving the head (fast forward)
+
+58. git merge branchname
+Merge branch and change head
+
+59. git merge --squash branchname
+Add into staging area without commit. 
+(If you change branch without committing changes and if you visit that branch again then the changes will be gone from staging area too.)
+get merge to satging area
+
+60. git merge --no-ff branchName
+(No fast forward merge) To Merge 2 branches but dont want to merge fast forward merge.
+/merege made by recursive strategy./Recursive merge(Non fast forward merge)
+
+61. git rebase
+change the base (i.e. the parent commit)of commits in another branch
+
+62. git rebase branchname
+New commits in master branch while working in feature branch.
+Rebase master into feature branch + merge feature branch into feature.
+(when you want to take the changes from other branch at its base without changing the head)
+
+63. git rebase --continue
+Used to continue with the changes you made. 
+
+64. git rebase --skip
+to skip the change,
+
+65. git conflict
+(When two branches are trying to merge changes both branches have changes in the same file,
+Git won't be able to identify which version is to take for changes.
+Such Situation is called merge conflict.)
+
+66. git merge --abort
+Git merge tool command is used to resolve the conflict. / To abort/undone the merge (undo merge)
+
+67. git diff
+Show changes between commits, commit and working tree, etc
+
+68. git log --merge
+Get log of merge
+
+69. git cherry-Pick	CommitID
+Fixed the issue in branch1 from branch2 without switching to branch1 and commit.
+From branch one use command cherry-pick commitID it will take only changes in fixed file 
+Exacly Pick Specific Commit to merge
+
+70. git tag tagName CommitID
+can add tag anywhere in the project and can come back there anytime using git checkout tagName 
+(To exit from tag use git switch BranchName command)
+
+71. git tag -d tagName
+Delete / Remove tag
+
+72. git show tagName
+Display the tag description (Check tag information)
+
+73. git tag -a tagName -m "meassage"
+Annotated tag /
+(Annotated tags are tags that store extra Metadata like developer name, email, date, and more.)
+(Create a tag with a message.)
