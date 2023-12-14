@@ -1,0 +1,146 @@
+Question - How to handle errors in ASP.NET core?
+
+
+Handling errors effectively is a crucial aspect of building robust and user-friendly ASP.NET Core applications.
+ASP.NET Core provides a range of mechanisms to handle errors at various levels of the application,
+from global error handling to handling errors in specific controllers or actions.
+
+Here are some approaches for handling errors in ASP.NET Core:
+1. Global Error Handling (Middleware):
+Startup.cs
+csharpCopy code
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    if (env.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
+    else
+    {
+        app.UseExceptionHandler("/Home/Error");
+        app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
+        app.UseHsts();
+    }
+
+    // Other middleware...
+
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+    app.UseCookiePolicy();
+
+    // Other middleware...
+}
+
+UseDeveloperExceptionPage: 
+    In development mode, detailed error information is displayed, including stack traces and exception details.
+UseExceptionHandler: 
+    In production mode, this middleware catches unhandled exceptions and redirects the user to a specified error handling route.
+UseStatusCodePagesWithReExecute: 
+    Configures a re-execution of the request pipeline when a particular HTTP status code is encountered. 
+    This is useful for custom error pages.
+
+2. Controller-Level Error Handling:
+Inside a Controller
+csharpCopy code
+public class HomeController : Controller
+{
+    [HttpGet("/Home/Error")]
+    public IActionResult Error()
+    {
+        var exceptionHandlerPathFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+        // Log the exception or perform additional actions
+        return View("Error");
+    }
+}
+
+3. Action-Level Error Handling:
+Inside an Action
+csharpCopy code
+public class HomeController : Controller
+{
+    public IActionResult Index()
+    {
+        try
+        {
+            // Code that might throw an exception
+        }
+        catch (Exception ex)
+        {
+            // Log the exception or perform additional actions
+            return View("Error");
+        }
+        return View();
+    }
+}
+
+4. Custom Middleware for Logging:
+    You can create custom middleware to log errors globally. 
+    This middleware should be added early in the pipeline.
+
+csharpCopy code
+public class ErrorLoggingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly ILogger<ErrorLoggingMiddleware> _logger;
+
+    public ErrorLoggingMiddleware(RequestDelegate next, ILogger<ErrorLoggingMiddleware> logger)
+    {
+        _next = next;
+        _logger = logger;
+    }
+
+    public async Task Invoke(HttpContext context)
+    {
+        try
+        {
+            await _next(context);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError($"Unexpected error: {ex}");
+            context.Response.Redirect("/Home/Error");
+        }
+    }
+}
+In Startup.cs:
+
+csharp
+Copy code
+public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+{
+    // Other middleware...
+    
+    app.UseMiddleware<ErrorLoggingMiddleware>();
+    
+    // Other middleware...
+}
+
+5. Logging:
+    Utilize logging to capture and analyze errors. ASP.NET Core comes with built-in logging support. 
+    Use logging frameworks like Serilog, NLog, or the built-in LoggerFactory to log errors.
+
+csharpCopy code
+public class HomeController : Controller
+{
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(ILogger<HomeController> logger)
+    {
+        _logger = logger;
+    }
+
+    public IActionResult Index()
+    {
+        try
+        {
+            // Code that might throw an exception
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An unexpected error occurred.");
+            return View("Error");
+        }
+
+        return View();
+    }
+}
