@@ -1,0 +1,78 @@
+Question - What are the techniques to save configuration setting in .NET core?
+
+
+In .NET Core,
+configuration settings are a crucial part of application development,
+allowing you to externalize parameters and settings to make your application more flexible and maintainable.
+
+There are various techniques to save and retrieve configuration settings in .NET Core:
+
+appsettings.json File:
+    The appsettings.json file is a common way to store configuration settings.
+    It's a JSON file where you can define key-value pairs for your configuration settings.
+    
+    jsonCopy code
+    {
+    "Logging": {
+        "LogLevel": {
+        "Default": "Information",
+        "Microsoft": "Warning",
+        "Microsoft.Hosting.Lifetime": "Information"
+        }
+    },
+    "MySettings": {
+        "ConnectionString": "your_connection_string",
+        "ApiKey": "your_api_key"
+    }
+    }
+    You can then access these settings using the Configuration object in your application.
+
+    csharpCopy code
+    var connectionString = Configuration["MySettings:ConnectionString"];
+
+Environment Variables:
+    Configuration settings can also be stored in environment variables.
+    This is useful for sensitive information that you don't want to store in source code or configuration files.
+    
+    csharpCopy code
+    var apiKey = Environment.GetEnvironmentVariable("MySettings__ApiKey");
+    Here, double underscores are used to represent nested levels in JSON keys.
+
+User Secrets:
+    User Secrets is a secure way to store sensitive data during development.
+    It is designed for local development and should not be used in production.
+    
+    bashCopy code
+    dotnet user-secrets set "MySettings:ApiKey" "your_api_key"
+    In your application, you can access user secrets using the Secret Manager.
+
+Command-Line Arguments:
+    You can pass configuration settings through command-line arguments when running your application.
+    
+    bashCopy code
+    dotnet run --MySettings:ApiKey=your_api_key
+    Access the values in your code:
+
+    csharpCopy code
+    var apiKey = Configuration["MySettings:ApiKey"];
+
+Custom Configuration Providers:
+    You can create custom configuration providers to load settings from different sources such as databases, external services,
+    or any custom storage.
+    
+    csharpCopy code
+    var builder = new ConfigurationBuilder()
+        .AddCustomProvider();
+    var configuration = builder.Build();
+    Implement IConfigurationProvider to define how the configuration is loaded.
+
+    csharpCopy code
+    public class CustomConfigurationProvider : ConfigurationProvider
+    {
+        public override void Load() => // Load logic
+    }
+
+These techniques can be used individually or combined based on the requirements of your application.
+The recommended approach is often a combination of appsettings.json for default values,
+environment variables for sensitive information, and command-line arguments for runtime configuration.
+This provides a good balance between security, flexibility, and ease of use.
