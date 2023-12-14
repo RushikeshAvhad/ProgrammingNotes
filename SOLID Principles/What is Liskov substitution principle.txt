@@ -1,0 +1,83 @@
+Question - What is Liskov Substitution principle?
+
+
+The Liskov Substitution Principle (LSP) is one of the SOLID principles of object-oriented design, introduced by Barbara Liskov.
+
+The Liskov Substitution Principle states:
+    "Subtypes must be substitutable for their base types without altering the correctness of the program."
+
+In simpler terms, if a class is a subtype of another class, 
+instances of the subtype should be able to replace instances of the base type without affecting the correctness of the program.
+This principle ensures that derived classes or subclasses adhere to the behavior expected from their base classes.
+
+Key points related to the Liskov Substitution Principle:
+Behavioral Compatibility:
+    A subclass should extend or specialize the behavior of its superclass but should not alter or contradict it.
+    Clients using instances of the base class should be able to use instances of the derived class without knowing the difference.
+Method Signatures:
+    Subclasses must provide implementations for the methods declared in their base classes, ensuring that method signatures remain compatible.
+    The overridden methods should follow the same contract as those in the base class.
+Invariant Preservation:
+    The properties (invariants) of the base class should be preserved by its subclasses.
+    In other words, any assumptions made by the client using the base class should still hold when using a derived class.
+
+Example adhering to LSP:
+csharpCopy code
+public class Rectangle
+{
+    public virtual int Width { get; set; }
+    public virtual int Height { get; set; }
+
+    public int CalculateArea()
+    {
+        return Width * Height;
+    }
+}
+
+public class Square : Rectangle
+{
+    private int _side;
+
+    public override int Width
+    {
+        get => _side;
+        set
+        {
+            _side = value;
+            UpdateSide();
+        }
+    }
+
+    public override int Height
+    {
+        get => _side;
+        set
+        {
+            _side = value;
+            UpdateSide();
+        }
+    }
+
+    private void UpdateSide()
+    {
+        // Ensure the square remains a square
+        if (Width != Height)
+        {
+            _side = Math.Min(Width, Height);
+        }
+    }
+}
+In this example,
+Square is a subclass of Rectangle, and it adheres to Liskov Substitution Principle.
+Although a square is a special case of a rectangle, modifying the width or height of a square appropriately maintains its square nature.
+Code that works with instances of Rectangle should be able to work with instances of Square without introducing errors or unexpected behavior.
+
+csharpCopy code
+Rectangle rectangle = new Square();
+rectangle.Width = 5;
+rectangle.Height = 10;
+
+int area = rectangle.CalculateArea(); // The result should be 50 (5 * 10)
+By adhering to the Liskov Substitution Principle,
+you can confidently substitute objects of the base type with objects of the derived type,
+promoting flexibility and maintainability in your object-oriented designs.
