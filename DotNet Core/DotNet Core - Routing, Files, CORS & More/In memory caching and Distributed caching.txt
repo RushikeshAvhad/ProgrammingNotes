@@ -1,0 +1,60 @@
+Question - What is In-Memory caching & Distributed caching? When to use what?
+
+
+Caching is a crucial aspect of optimizing performance.
+
+In-Memory Caching:
+Definition:
+    In-memory caching in ASP.NET Core involves storing data in the application's memory for quick retrieval.
+    The cached data is local to a single instance of the application.
+Characteristics:
+    Scope:  Limited to a single application instance.
+            Each instance of the ASP.NET Core application has its own in-memory cache.
+    Speed:  Accessing data from in-memory cache is fast because it resides in the application's memory.
+Use Cases:
+    Suitable for scenarios where data needs to be cached for a short duration.
+    Applicable when the cached data is specific to and used within a single instance of the application.
+
+Distributed Caching in ASP.NET Core:
+Definition:
+    Distributed caching involves storing cached data in a shared cache that can be accessed by multiple instances 
+    of an ASP.NET Core application, often running on different servers.
+Characteristics:
+    Scope:  Shared among multiple instances of an ASP.NET Core application, possibly on different servers. 
+            All instances can access and update the same cache.
+    Speed:  Accessing data from distributed cache might introduce some latency due to communication between different application
+            instances or servers.
+Use Cases:
+    Ideal for scenarios where cached data needs to be shared among multiple instances of the same ASP.NET Core application.
+    Ensures consistency across the application when multiple instances are handling requests.
+
+
+When to Use In-Memory Caching and Distributed Caching:
+In-Memory Caching:
+    Single Instance Applications:
+        In-memory caching is suitable when your ASP.NET Core application runs on a single server or instance,
+        and there's no need to share the cached data across multiple instances.
+    Temporary Storage: 
+        Appropriate for caching data that is short-lived and doesn't need to be persisted for an extended period.
+    Performance Critical Operations:
+        Use in-memory caching in scenarios where quick access to data is a higher priority than sharing the cache across multiple instances.
+
+Distributed Caching:
+    Load-Balanced Environments:
+        Distributed caching is crucial in load-balanced environments where multiple instances of an ASP.NET Core application handle requests.
+        It ensures that all instances share the same cache, providing consistency across the application.
+    Sharing State:
+        When your ASP.NET Core application requires sharing state or data between different instances,
+        distributed caching becomes necessary.
+    Scalability: 
+        For applications that need to scale horizontally by adding more servers, 
+        distributed caching allows all instances to access a shared cache, preventing data inconsistencies.
+
+Combining In-Memory and Distributed Caching:
+    In practice, ASP.NET Core applications often use a combination of both in-memory and distributed caching.
+    For example,
+    you might use in-memory caching for local, short-lived data 
+    and distributed caching for shared state or data across a load-balanced environment.
+    This approach optimizes performance and provides flexibility based on the specific requirements of different parts of the application.
+    The ASP.NET Core framework supports various caching mechanisms,
+    and you can configure caching providers such as MemoryCache, Redis, or others based on your application's needs.
