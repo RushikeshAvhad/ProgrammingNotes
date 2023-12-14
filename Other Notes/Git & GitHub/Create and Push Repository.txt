@@ -8,3 +8,11 @@ git commit -m "First Commit"
 git branch -M main
 git remote add origin http://github.com/yourGitHubAccountName/RepositoryName.git
 git push -u origin main
+
+--------------------------------------------------------------
+
+Push an existing Repository using terminal
+
+git remote add origin http://github.com/yourGitHubAccountName/RepositoryName.git
+git branch -M main
+git push -u origin main
