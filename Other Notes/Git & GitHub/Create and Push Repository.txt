@@ -1,0 +1,10 @@
+Commands to Create and Push new Repository using terminal.
+
+
+echo "# TestGitRepository" >> README.md
+git init
+git add README.md
+git commit -m "First Commit"
+git branch -M main
+git remote add origin http://github.com/yourGitHubAccountName/RepositoryName.git
+git push -u origin main
