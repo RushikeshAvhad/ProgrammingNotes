@@ -1,0 +1,68 @@
+Question - What is Single Responsibility Principle?
+
+
+The Single Responsibility Principle (SRP) is one of the SOLID principles of object-oriented design, introduced by Robert C. Martin.
+
+The SRP states that:
+"A class should have only one reason to change, meaning that it should have only one responsibility."
+In other words, a class should encapsulate only one functionality or behavior,
+and that functionality should be the primary reason for the class to exist.
+This principle encourages a separation of concerns, making classes more maintainable, reusable, and adaptable to change.
+
+
+Key points related to the Single Responsibility Principle:
+One Reason to Change:
+    The "reason to change" refers to the motivation behind modifying a class.
+    If a class has more than one responsibility, any change in one aspect might affect other unrelated aspects.
+    By adhering to SRP, a class is less likely to be impacted by changes to other parts of the system.
+Encapsulation of Responsibility:
+    Each class should encapsulate a single responsibility or behavior.
+    This makes the code more modular and easier to understand because a class is focused on doing one thing well.
+Maintainability:
+    Classes adhering to SRP are more maintainable because modifications related to a specific responsibility can be confined to a single class.
+    This reduces the risk of unintentional side effects in other parts of the code.
+Readability and Understandability:
+    Code becomes more readable and understandable when each class has a clear and distinct purpose.
+    This makes it easier for developers to comprehend the functionality of each class and reason about the system as a whole.
+
+Example violating SRP:
+csharpCopy code
+public class Report
+{
+    public string Title { get; set; }
+    public string Content { get; set; }
+
+    public void GenerateReport()
+    {
+        // Logic for generating the report
+    }
+
+    public void SaveToFile()
+    {
+        // Logic for saving the report to a file
+    }
+}
+In this example,
+the Report class violates SRP by having two responsibilities: 
+generating the report and saving it to a file. 
+Following SRP, these responsibilities should be separated into distinct classes, such as ReportGenerator and ReportSaver.
+
+csharpCopy code
+public class ReportGenerator
+{
+    public string GenerateReport()
+    {
+        // Logic for generating the report
+    }
+}
+
+public class ReportSaver
+{
+    public void SaveToFile(string content)
+    {
+        // Logic for saving the report to a file
+    }
+}
+
+By adhering to SRP, each class is now focused on a single responsibility, making the code more modular and maintainable.
+Changes to report generation don't impact the file-saving logic and vice versa.
