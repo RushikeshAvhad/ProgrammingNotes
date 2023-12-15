@@ -1,0 +1,91 @@
+Question - What is Factory pattern? Why to use factory pattern?
+
+
+The Factory Pattern is a creational design pattern that provides an interface for creating instances of a class,
+but allows subclasses to alter the type of objects that will be created.
+It falls under the category of creational patterns because it deals with object creation mechanisms,
+abstracting the process of creating objects and making it more flexible.
+
+The primary goal of the Factory Pattern is to provide an interface for creating objects in a super class but 
+allow subclasses to alter the type of objects that will be created.
+This promotes loose coupling between the client code that uses the objects and the classes that create these objects.
+
+The Factory Pattern can be implemented in various ways, including:
+    Simple Factory:
+        Uses a single factory class to create objects without specifying the exact class of the object that will be created.
+        The factory class may have a method that takes a parameter and returns an instance of different classes based on the provided parameter.
+    Factory Method:
+        Defines an interface for creating an object but lets subclasses alter the type of objects that will be created.
+        Subclasses implement the factory method to produce objects of a desired type.
+    Abstract Factory:
+        Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+        It involves multiple factory methods, each responsible for creating a different type of object.
+
+
+In the context of .NET, here's a brief example of a simple factory method in C#:
+csharpCopy code
+// Product interface
+public interface IProduct
+{
+    void Display();
+}
+
+// Concrete product classes
+public class ConcreteProductA : IProduct
+{
+    public void Display() => Console.WriteLine("ConcreteProductA");
+}
+
+public class ConcreteProductB : IProduct
+{
+    public void Display() => Console.WriteLine("ConcreteProductB");
+}
+
+// Factory class
+public class ProductFactory
+{
+    public IProduct CreateProduct(string productType)
+    {
+        switch (productType)
+        {
+            case "A":
+                return new ConcreteProductA();
+            case "B":
+                return new ConcreteProductB();
+            default:
+                throw new ArgumentException("Invalid product type");
+        }
+    }
+}
+
+// Client code
+class Program
+{
+    static void Main()
+    {
+        ProductFactory factory = new ProductFactory();
+        
+        IProduct productA = factory.CreateProduct("A");
+        productA.Display();  // Output: ConcreteProductA
+
+        IProduct productB = factory.CreateProduct("B");
+        productB.Display();  // Output: ConcreteProductB
+    }
+}
+
+Why use the Factory Pattern in .NET?
+    Flexibility and Extensibility:
+        The Factory Pattern allows you to introduce new product classes without modifying the client code.
+        This makes it easy to extend and modify the system.
+    Decoupling:
+        The pattern decouples the client code from the specific classes it uses, promoting a more flexible and maintainable codebase.
+    Encapsulation: 
+        The creation logic is encapsulated within the factory, providing a clear separation of concerns.
+        Changes to the creation process are isolated to the factory class.
+    Centralized Configuration:
+        If object creation involves complex logic or dependencies, a factory can centralize and manage this configuration,
+        making it easier to maintain.
+
+In summary,
+the Factory Pattern is useful in scenarios where you want to centralize the creation logic,
+promote flexibility, and maintain a clean separation between the client code and the classes being instantiated.
