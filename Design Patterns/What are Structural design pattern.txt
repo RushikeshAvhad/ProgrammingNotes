@@ -1,0 +1,54 @@
+Question - What are Structural design pattern?
+
+
+Structural design patterns are a category of design patterns that focus on the composition of classes or objects to create larger structures.
+These patterns help ensure that these structures are flexible, maintainable, and easily extensible.
+Structural patterns abstract the composition of classes and objects,
+making it easier to change the composition without affecting the client code.
+
+Here are some common structural design patterns:
+Adapter Pattern:
+    Intent:
+        Allows the interface of an existing class to be used as another interface.
+    Use Case:
+        When you want to use an existing class that doesn't have the interface you need,
+        or when you want to create a reusable class that cooperates with unrelated or unforeseen classes.
+Bridge Pattern:
+    Intent:
+        Decouples an abstraction from its implementation so that the two can vary independently.
+    Use Case:
+        When you want to avoid a permanent binding between an abstraction and its implementation,
+        or when changes in the implementation should not affect clients.
+Composite Pattern:
+    Intent:
+        Composes objects into tree structures to represent part-whole hierarchies.
+        It lets clients treat individual objects and compositions of objects uniformly.
+    Use Case:
+        When you want clients to treat individual objects and compositions of objects uniformly,
+        and when the part-whole hierarchy needs to be represented.
+Decorator Pattern:
+    Intent:
+        Attaches additional responsibilities to an object dynamically.
+        Decorators provide a flexible alternative to subclassing for extending functionality.
+    Use Case:
+        When you want to add or alter behavior of objects at runtime without modifying their code,
+        or when you have a need for dynamically extensible behaviors.
+Facade Pattern:
+    Intent:
+        Provides a simplified interface to a set of interfaces in a subsystem, making it easier to use.
+    Use Case:
+        When you want to provide a simple and unified interface to a set of interfaces in a subsystem,
+        or when there are many dependencies between clients and the implementation classes.
+Flyweight Pattern:
+    Intent:
+        Uses sharing to support a large number of fine-grained objects efficiently.
+    Use Case:
+        When the application uses a large number of objects, and storage costs are high, or when most object state can be made extrinsic.
+Proxy Pattern:
+    Intent:
+        Provides a surrogate or placeholder for another object to control access to it.
+    Use Case:
+        When you want to add a level of control over the access to an object, such as lazy loading, controlling access permissions, or logging.
+
+These structural design patterns contribute to the creation of flexible and efficient software architectures by promoting code reuse,
+reducing dependencies, and allowing for better management of complex class hierarchies.
