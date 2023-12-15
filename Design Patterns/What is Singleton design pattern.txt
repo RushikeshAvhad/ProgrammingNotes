@@ -1,0 +1,60 @@
+Question - What is Singleton Design Pattern?
+
+
+The Singleton Design Pattern is a creational design pattern that ensures a class has only one instance and provides a global point of
+access to that instance.
+It restricts the instantiation of a class to a single object and provides a way to access that instance from any point in the application.
+This is particularly useful when exactly one object is needed to coordinate actions across the system,
+such as a configuration manager, logging service, or a connection pool.
+
+In the context of .NET, the Singleton Pattern is often implemented using the following principles:
+    Private Constructor:
+        The class with the Singleton pattern typically has a private constructor, preventing the instantiation of the class from outside.
+    Private Static Instance:
+        The class contains a private static instance of itself, usually named instance or similar.
+    Public Static Method (or Property) for Access:
+        There is a public static method or property that provides access to the single instance of the class.
+        If an instance does not exist, the method creates one; otherwise, it returns the existing instance.
+
+Here's a simple example of a Singleton pattern in C#:
+csharpCopy code
+public sealed class Singleton
+{
+    private static Singleton instance;
+    private static readonly object lockObject = new object();
+
+    // Private constructor to prevent instantiation from outside.
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            // Double-check locking for thread safety.
+            if (instance == null)
+            {
+                lock (lockObject)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Singleton();
+                    }
+                }
+            }
+
+            return instance;
+        }
+    }
+
+    // Other members of the Singleton class.
+    public void SomeMethod()
+    {
+        // Implementation here.
+    }
+}
+
+In this example:
+    The Singleton class has a private static instance of itself.
+    The private constructor ensures that the class cannot be instantiated from outside.
+    The Instance property provides a way to access the single instance, creating it if necessary.
+    The double-check locking mechanism is used to ensure thread safety when creating the instance in a multithreaded environment.
