@@ -1,0 +1,72 @@
+Question - How to make Singleton pattern thread safe?
+
+
+Ensuring thread safety in a Singleton pattern is crucial, especially in a multi-threaded environment where
+multiple threads may attempt to create an instance simultaneously.
+Several approaches can be used to make the Singleton pattern thread-safe.
+
+Here are a few methods:
+1. Double-Check Locking with Locking Mechanism:
+    Use a double-check locking mechanism along with a lock to ensure that only one thread can enter the critical section 
+    where the instance is created.
+    This helps in avoiding the overhead of synchronization once the instance is already created.
+
+csharpCopy code
+public sealed class Singleton
+{
+    private static Singleton instance;
+    private static readonly object lockObject = new object();
+
+    private Singleton() { }
+
+    public static Singleton Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                lock (lockObject)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Singleton();
+                    }
+                }
+            }
+
+            return instance;
+        }
+    }
+}
+
+2. Using Lazy<T> for Lazy Initialization:
+    In .NET, you can use the Lazy<T> class to achieve lazy initialization of the Singleton instance in a thread-safe manner.
+    The Lazy<T> class ensures that the instance is only created once and is thread-safe.
+
+csharpCopy code
+public sealed class Singleton
+{
+    private static readonly Lazy<Singleton> lazyInstance = new Lazy<Singleton>(() => new Singleton());
+
+    private Singleton() { }
+
+    public static Singleton Instance => lazyInstance.Value;
+}
+
+3. Static Initialization:
+    You can rely on the CLR's guarantee of thread safety during class initialization.
+    The CLR ensures that static initialization occurs only once and in a thread-safe manner.
+
+csharpCopy code
+public sealed class Singleton
+{
+    private static readonly Singleton instance = new Singleton();
+
+    // Explicit static constructor to tell C# compiler
+    // not to mark type as beforefieldinit
+    static Singleton() { }
+
+    private Singleton() { }
+
+    public static Singleton Instance => instance;
+}
