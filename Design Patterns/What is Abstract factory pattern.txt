@@ -1,0 +1,126 @@
+Question - What is Abstract factory pattern?
+
+
+The Abstract Factory Pattern is a creational design pattern that provides an interface for creating families of related or dependent objects 
+without specifying their concrete classes.
+It is an extension of the Factory Method Pattern and deals with multiple related factory methods organized in a single interface or
+abstract class.
+The Abstract Factory Pattern allows a client to use an interface for creating families of objects,
+ensuring that the created objects are compatible and designed to work together.
+
+
+Key components of the Abstract Factory Pattern:
+    Abstract Factory:
+        Declares the interface for creating a family of products.
+        It typically includes a set of factory methods, each responsible for creating a different type of product.
+    Concrete Factory:
+        Implements the Abstract Factory interface by providing concrete implementations for the factory methods.
+        Each concrete factory creates a family of products that are compatible with each other.
+    Abstract Product:
+        Declares the interface for a type of product created by the Abstract Factory.
+    Concrete Product:
+        Implements the Abstract Product interface to create a specific type of product.
+    Client:
+        Uses the Abstract Factory and Abstract Product interfaces to create families of related or dependent objects.
+
+Here's a simplified example to illustrate the Abstract Factory Pattern in C#:
+
+// Abstract Product A
+public interface IProductA
+{
+    void Display();
+}
+
+// Concrete Product A1
+public class ConcreteProductA1 : IProductA
+{
+    public void Display() => Console.WriteLine("ConcreteProductA1");
+}
+
+// Concrete Product A2
+public class ConcreteProductA2 : IProductA
+{
+    public void Display() => Console.WriteLine("ConcreteProductA2");
+}
+
+// Abstract Product B
+public interface IProductB
+{
+    void Show();
+}
+
+// Concrete Product B1
+public class ConcreteProductB1 : IProductB
+{
+    public void Show() => Console.WriteLine("ConcreteProductB1");
+}
+
+// Concrete Product B2
+public class ConcreteProductB2 : IProductB
+{
+    public void Show() => Console.WriteLine("ConcreteProductB2");
+}
+
+// Abstract Factory
+public interface IAbstractFactory
+{
+    IProductA CreateProductA();
+    IProductB CreateProductB();
+}
+
+// Concrete Factory 1
+public class ConcreteFactory1 : IAbstractFactory
+{
+    public IProductA CreateProductA() => new ConcreteProductA1();
+    public IProductB CreateProductB() => new ConcreteProductB1();
+}
+
+// Concrete Factory 2
+public class ConcreteFactory2 : IAbstractFactory
+{
+    public IProductA CreateProductA() => new ConcreteProductA2();
+    public IProductB CreateProductB() => new ConcreteProductB2();
+}
+
+// Client
+public class Client
+{
+    private IAbstractFactory factory;
+
+    public Client(IAbstractFactory factory)
+    {
+        this.factory = factory;
+    }
+
+    public void Run()
+    {
+        IProductA productA = factory.CreateProductA();
+        IProductB productB = factory.CreateProductB();
+
+        productA.Display();
+        productB.Show();
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Client chooses the factory to create a family of products
+        Client client1 = new Client(new ConcreteFactory1());
+        client1.Run();
+        
+        Client client2 = new Client(new ConcreteFactory2());
+        client2.Run();
+    }
+}
+
+In this example:
+    IAbstractFactory declares the interface for creating families of products.
+    ConcreteFactory1 and ConcreteFactory2 implement the abstract factory interface,
+    creating families of products that are compatible with each other.
+    Client uses the abstract factory and abstract product interfaces to create and work with families of related objects.
+
+The Abstract Factory Pattern is beneficial when the system needs to be configured with multiple families of objects,
+and the client code should be independent of the concrete classes it uses.
+It promotes the creation of objects that are designed to work together seamlessly.
