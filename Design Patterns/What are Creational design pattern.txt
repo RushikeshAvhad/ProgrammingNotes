@@ -1,0 +1,46 @@
+Question - What are Creational design pattern?
+
+
+Creational design patterns are a category of design patterns that deal with the process of object creation.
+They provide mechanisms for creating objects in a manner suitable to the situation,
+ensuring that the process is flexible, efficient, and well-managed.
+Creational patterns abstract the instantiation process, making the system independent of how its objects are created, composed, and represented. 
+
+Here are some common creational design patterns:
+1. Singleton Pattern:
+    Intent:
+        Ensure a class has only one instance and provide a global point of access to it.
+    Use Case:
+        When exactly one object is needed to coordinate actions across the system, such as a configuration manager or a logging service.
+2. Factory Method Pattern:
+    Intent:
+        Define an interface for creating an object but leave the choice of its type to the subclasses,
+        creating the instance in a factory method.
+    Use Case:
+        When a class cannot anticipate the class of objects it must create,
+        or when a class wants its subclasses to specify the objects it creates.
+
+3. Abstract Factory Pattern:
+    Intent:
+        Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+    Use Case:
+        When a system needs to be independent of how its objects are created, composed, and represented,
+        and the system is configured with multiple families of objects.
+
+4. Builder Pattern:
+    Intent:
+        Separate the construction of a complex object from its representation so that the same construction process can 
+        create different representations.
+    Use Case:
+        When an object needs to be constructed with various components and the construction process should allow different representations
+        of the same construction.
+
+5. Prototype Pattern:
+    Intent: 
+        Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
+    Use Case:
+        When the cost of creating an object is more expensive or complex than copying an existing one,
+        and the classes to instantiate are specified at runtime.
+
+These creational design patterns provide flexibility in object creation,
+promote code reuse, and help manage the complexities associated with creating and configuring objects.
