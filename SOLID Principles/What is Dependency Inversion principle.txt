@@ -1,0 +1,29 @@
+Question - What is Dependency Inversion Principle?
+
+
+The Dependency Inversion Principle (DIP) is one of the five SOLID principles of object-oriented programming and design.
+It was introduced by Robert C. Martin to guide developers in creating more maintainable and flexible software.
+
+The Dependency Inversion Principle consists of two key concepts:
+high-level modules should not depend on low-level modules, but both should depend on abstractions,
+and abstractions should not depend on details;
+details should depend on abstractions.
+
+Here's a breakdown of the Dependency Inversion Principle:
+High-level modules:
+    These are modules or classes that contain the high-level policy or business rules of an application.
+Low-level modules:
+    These are modules or classes that implement the low-level details or specific implementations related to the application.
+Abstractions:
+    Interfaces or abstract classes that define a set of methods or contracts without specifying the details of their implementation.
+
+The Dependency Inversion Principle suggests that high-level modules should depend on abstractions (interfaces or abstract classes),
+and low-level modules should also depend on the same abstractions.
+This way, the system becomes more flexible and decoupled.
+Changes in the low-level modules (implementation details) do not affect the high-level modules as long as they adhere to the same abstractions.
+
+By following the Dependency Inversion Principle,
+you create a more modular and maintainable codebase, making it easier to extend and modify the system without causing widespread changes.
+This principle is closely related to the concept of inversion of control (IoC),
+where control flow is inverted compared to traditional procedural programming.
+IoC containers and dependency injection frameworks are often used to implement the Dependency Inversion Principle in practice.
