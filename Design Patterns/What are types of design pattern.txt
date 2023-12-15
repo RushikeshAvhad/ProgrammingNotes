@@ -1,0 +1,44 @@
+Question - What are types of design pattern?
+
+
+Design patterns are generally categorized into three main types based on their purpose and use in software design:
+
+1. Creational Patterns:
+    These patterns deal with the process of object creation, providing mechanisms for creating objects in a manner suitable to the situation.
+    Examples include:
+    Singleton Pattern:
+        Ensures a class has only one instance and provides a global point of access to it.
+    Factory Method Pattern:
+        Defines an interface for creating an object but leaves the choice of its type to the subclasses, 
+        creating the instance in a factory method.
+    Abstract Factory Pattern:
+        Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+
+2. Structural Patterns:
+    These patterns are concerned with the composition of classes or objects to form larger structures.
+    They help ensure that these structures are flexible, maintainable, and easily extensible.
+    Examples include:
+    Adapter Pattern:
+        Allows the interface of an existing class to be used as another interface.
+    Decorator Pattern:
+        Attaches additional responsibilities to an object dynamically.
+    Composite Pattern:
+        Composes objects into tree structures to represent part-whole hierarchies.
+
+3. Behavioral Patterns:
+    Behavioral patterns focus on the interaction between objects and the patterns of communication between them.
+    They help define how objects collaborate and fulfill a common task.
+    Examples include:
+    Observer Pattern:
+        Defines a one-to-many dependency between objects so that when one object changes state,
+        all its dependents are notified and updated automatically.
+    Strategy Pattern:
+        Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+    Command Pattern:
+        Encapsulates a request as an object, thereby allowing for parameterization of clients with different requests,
+        queuing of requests, and logging of the parameters.
+
+These categories provide a high-level structure for understanding design patterns.
+Each type of pattern addresses specific issues in software design and development,
+and understanding when and how to apply them can significantly improve the quality and maintainability of code.
+Design patterns are not mutually exclusive, and it's common to see them used together to solve complex design problems.
