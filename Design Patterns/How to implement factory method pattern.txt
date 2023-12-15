@@ -1,0 +1,86 @@
+Question - How to implement factory method pattern?
+
+
+The Factory Method Pattern is a creational design pattern that defines an interface for creating an object but 
+lets subclasses alter the type of objects that will be created.
+The pattern allows a class to delegate the responsibility of instantiating its objects to its subclasses.
+
+Here's a step-by-step guide on how to implement the Factory Method Pattern:
+
+Step 1: Define the Product Interface
+    
+    // Product interface
+    public interface IProduct
+    {
+        void Display();
+    }
+
+Step 2: Implement Concrete Product Classes
+    
+    // Concrete product classes
+    public class ConcreteProductA : IProduct
+    {
+        public void Display() => Console.WriteLine("ConcreteProductA");
+    }
+
+    public class ConcreteProductB : IProduct
+    {
+        public void Display() => Console.WriteLine("ConcreteProductB");
+    }
+
+Step 3: Define the Creator (Abstract Creator) Class
+    
+    // Creator (abstract creator) class
+    public abstract class Creator
+    {
+        // The factory method that the subclasses must implement
+        public abstract IProduct FactoryMethod();
+
+        // Other methods that use the product created by the factory method
+        public void Operation()
+        {
+            IProduct product = FactoryMethod();
+            product.Display();
+        }
+    }
+
+Step 4: Implement Concrete Creator Classes
+
+    // Concrete creator classes
+    public class ConcreteCreatorA : Creator
+    {
+        // Implementation of the factory method to create ConcreteProductA
+        public override IProduct FactoryMethod() => new ConcreteProductA();
+    }
+
+    public class ConcreteCreatorB : Creator
+    {
+        // Implementation of the factory method to create ConcreteProductB
+        public override IProduct FactoryMethod() => new ConcreteProductB();
+    }
+
+Step 5: Client Code
+
+    class Program
+    {
+        static void Main()
+        {
+            // Client code uses the creator classes
+            Creator creatorA = new ConcreteCreatorA();
+            creatorA.Operation();  // Output: ConcreteProductA
+
+            Creator creatorB = new ConcreteCreatorB();
+            creatorB.Operation();  // Output: ConcreteProductB
+        }
+    }
+
+Explanation:
+    The Creator class declares the factory method FactoryMethod, which is responsible for creating an instance of the IProduct interface.
+    Concrete creator classes (ConcreteCreatorA and ConcreteCreatorB) extend the Creator class and provide their own implementations of
+    the factory method.
+    The client code creates instances of concrete creator classes and calls their operations,
+    which, in turn, use the factory methods to create specific instances of products (ConcreteProductA or ConcreteProductB).
+
+This structure allows for flexibility in extending the system with new product classes without modifying the client code. 
+The Factory Method Pattern is particularly useful when you have a family of related classes, 
+and the exact class instantiation is determined by the concrete subclasses.
