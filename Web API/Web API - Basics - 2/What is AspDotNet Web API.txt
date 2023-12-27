@@ -1,0 +1,15 @@
+Question - What is ASP.NET Web API?
+
+The term API stands for “Application Programming Interface”.
+ASP.NET Web API is a framework, provided by Microsoft, which makes it easy to build Web APIs, i.e. HTTP based services.
+The ASP.NET Web API is an ideal platform for building Restful services on top of the .NET Framework.
+
+These Web API services can be consumed by a variety of clients such as
+Browsers
+Mobile applications
+Desktop applications
+IOTs, etc.
+
+The most important thing to keep in mind is that we can develop both Restful and Non-Restful Web Services using the ASP.NET Web API framework.
+But mostly this framework is used to create RESTful services.
+In short, this framework does not provide any specific architectural style for creating the services. 
