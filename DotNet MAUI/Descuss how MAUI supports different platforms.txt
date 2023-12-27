@@ -1,0 +1,25 @@
+Question - Discuss how the .NET MAUI framework supports different platforms, such as iOS, Android, Windows and macOS.
+What are the pros and cons of using a single cross-platform framework like .NET MAUI?
+
+
+.NET MAUI (Multi-platform App UI) is a cross-platform framework that simplifies the development of native applications for 
+iOS, Android, Windows, and macOS.
+It achieves this by providing a single codebase with shared UI components and platform-specific APIs.
+
+Pros:
+1. Code Reusability:
+    Developers can write once and run on multiple platforms, reducing time and effort.
+2. Consistency:
+    Shared UI components ensure consistent user experience across devices.
+3. Easier Maintenance:
+    Single codebase simplifies updates and bug fixes.
+4. Large Developer Community:
+    .NET ecosystem offers extensive resources and support.
+
+Cons:
+1. Performance:
+    Cross-platform frameworks may have slightly lower performance compared to native apps due to abstraction layers.
+2. Limited Access to Native Features:
+    Some platform-specific features might not be available or require additional workarounds.
+3. Dependency on Framework Updates:
+    Developers must wait for .NET MAUI updates to access new OS features.
