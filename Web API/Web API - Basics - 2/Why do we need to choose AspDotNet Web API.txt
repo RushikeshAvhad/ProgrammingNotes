@@ -1,0 +1,12 @@
+Question - Why do we need to choose ASP .NET Web API?
+
+
+Nowadays, a web application is not sufficient or enough to reach all its customers.
+People are becoming very smart;
+they are using different types of devices such as mobile, iPhones, tablets, etc. in their daily life.
+These devices are having a lot of apps that makes their life easy.
+In simple words, we can say that we are moving toward the apps world from the web.
+So, if we want to expose our data (business data) to the browsers as well as to all these modern devices apps in a fast,
+secure and simple way, then we should have an API that should be compatible with browsers as well as all these modern devices.
+The ASP.NET WEB API is a great framework for building HTTP services that can be consumed by a broad range of clients including browsers,
+mobiles, iPhones, and tablets.
