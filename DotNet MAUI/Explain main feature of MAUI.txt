@@ -1,0 +1,20 @@
+Question - Explain the main features of .NET MAUI, and how does it differ from the previous Xamarin.Forms framework.
+
+
+.NET MAUI (Multi-platform App UI) is a cross-platform framework for building native UIs on various platforms.
+It extends Xamarin.Forms, providing improved features and capabilities:
+
+1. Single Project Experience: 
+    Simplifies app development by consolidating platform-specific projects into one.
+2. New Handler Architecture:
+    Replaces renderers with handlers, improving performance and customization.
+3. Enhanced MVU Support:
+    Supports Model-View-Update pattern alongside MVVM, offering flexibility in coding styles.
+4. Improved Tooling:
+    Offers better design-time experiences like Hot Reload and Live Visual Tree.
+
+Differences from Xamarin.Forms:
+1. Consolidated project structure reduces complexity.
+2. Better performance due to handler architecture.
+3. Additional support for MVU(Model-View-Update) pattern.
+4. Enhanced developer experience through improved tooling.
