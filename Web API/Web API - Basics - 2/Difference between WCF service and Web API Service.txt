@@ -1,0 +1,31 @@
+Question - What are the differences between the WCF service and Web API service? When to choose one over the other?
+
+
+The first important point is that we can use both WCF and ASP.NET Web API to develop restful services.
+In fact, WCF comes first, and then ASP.NET Web API.
+WCF (Windows Communication Foundation) is one of the choices available in the .NET Framework for developing both SOAP and REST services.
+The problem with WCF is that a lot of configuration is required to turn a WCF service (SOAP service) into a REST service.
+So the more natural choice for developing REST services is ASP.NET Web API.
+In fact, ASP.NET Web API is specifically designed for this purpose i.e. for developing Restful Services.
+WCF is more suitable for developing services that are transport/protocol independent. 
+For example, our requirement is to build one service that is going to be consumed by 2 different clients – 
+Let’s say, a Java client and a .NET client.
+The Java client wants the transport protocol to be HTTP and the message format to be XML for interoperability,
+whereas the .NET client expects the protocol to be TCP and the message format to be binary for performance.
+For this scenario, WCF is the right choice.
+What we need to do here is, create a single WCF service, and then configure 2 endpoints one for each client 
+(i.e. one for the Java client and the other one for the .NET client).
+There is nothing wrong to use WCF to develop RESTFUL services.
+It’s just that it’s a bit more complex and configuration can be a headache.
+So, if you are stuck with .NET Framework 3.5 or you have an existing SOAP service that you must support as well as you want to add
+REST to reach more clients, then you need to go for WCF.
+If you don’t have the limitation of .NET Framework 3.5 and you want to create a brand new restful service then go with ASP.NET Web API.
+
+WCF
+    It is a framework used for developing SOA (service-oriented applications). 
+    WCF can only be consumed by clients, which can understand XML.
+    WCF supports protocols like – HTTP, TCP, Named Pipes, etc.
+ASP.NET Web API
+    It is a framework that helps us to develop HTTP Based services i.e. Restful Services.
+    Web API is an open-source platform.
+    It supports most of the MVC features which keep Web API over WCF.
