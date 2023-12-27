@@ -1,0 +1,40 @@
+Question - Discuss how .NET MAUI facilitates app development from shared code, and explain how to handle platform-specific UI elements and APIs.
+
+
+.NET MAUI simplifies app development by enabling a single project structure and shared codebase for multiple platforms,
+including Android, iOS, macOS, and Windows. 
+It leverages the Model-View-ViewModel (MVVM) pattern to separate UI logic from business logic, promoting code reusability.
+
+To handle platform-specific UI elements,
+.NET MAUI provides the Device class with the RuntimePlatform property, allowing developers to conditionally apply platform-specific code.
+Additionally, it offers Platform Services, which abstracts native APIs into cross-platform interfaces.
+
+For platform-specific APIs,
+.NET MAUI supports Dependency Injection (DI) and DependencyService, enabling developers to create platform-specific implementations of shared interfaces.
+This approach allows calling platform-specific functionality from shared code without violating separation of concerns.
+
+Example:
+public interface IPlatformSpecificApi 
+{ 
+    /*...*/ 
+}
+
+// In Android project
+public class AndroidSpecificApi : IPlatformSpecificApi 
+{ 
+    /*...*/ 
+}
+
+// In iOS project
+public class iOSSpecificApi : IPlatformSpecificApi 
+{ 
+    /*...*/ 
+}
+
+// Register in Startup.cs
+builder.Services.AddSingleton<IPlatformSpecificApi>(Device.RuntimePlatform switch
+{
+    DevicePlatform.Android => new AndroidSpecificApi(),
+    DevicePlatform.iOS => new iOSSpecificApi(),
+    _ => throw new NotSupportedException()
+});
