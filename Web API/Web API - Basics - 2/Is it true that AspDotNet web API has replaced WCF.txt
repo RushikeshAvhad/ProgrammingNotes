@@ -1,0 +1,15 @@
+Question - Is it true that ASP.NET Web API has replaced WCF?
+
+
+It’s not true.
+It’s a misconception that ASP.NET Web API has replaced WCF.
+ASP.NET Web API is just another way of building non-SOAP-based services, for example, plain XML or JSON string, etc.
+Yes, ASP.NET Web API has some added advantages like utilizing the full features of HTTP 
+(HTTP Built-in Header and HTTP Verbs such as GET, POST, PUT, PATCH, and DELETE, HTTP Status codes such as 500, 200, 404, etc.) 
+and reaching more clients such as mobile devices, Tables, IoTs, Browsers, etc.
+But WCF is still a good choice for the following scenarios:
+    
+If you want to develop transport protocol-oriented services other than HTTP, such as TCP, UDP, Named Pipes, etc.
+If HTTP only then go with Web API.
+Message Queuing scenario using MSMQ
+One-way communication or Duplex communication
