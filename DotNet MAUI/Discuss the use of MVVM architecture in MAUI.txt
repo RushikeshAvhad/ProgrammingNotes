@@ -1,0 +1,18 @@
+Question - Discuss the use of MVVM (Model-View-ViewModel) architecture in .NET MAUI. How does it ensure a better seperation of concerns and improve testability?
+
+
+.NET MAUI, the Multi-platform App UI framework, utilizes MVVM architecture to enhance separation of concerns and testability.
+MVVM comprises three components: Model, View, and ViewModel.
+
+Model represents data and business logic, while View handles user interface and presentation.
+ViewModel acts as an intermediary between Model and View, managing communication and data manipulation.
+This separation allows developers to work on different aspects without affecting others, improving maintainability and scalability.
+
+In .NET MAUI, data binding connects View and ViewModel, enabling automatic updates when data changes.
+Commands in ViewModel handle user interactions, decoupling them from View’s code-behind, promoting reusability and reducing complexity.
+
+Improved testability arises from isolating application logic within ViewModel, allowing unit testing without UI dependencies.
+Dependency injection further enhances testability by substituting real services with mock implementations during testing.
+
+Overall, MVVM architecture in .NET MAUI ensures better separation of concerns, modularization, and increased testability, 
+leading to more robust and maintainable applications.
