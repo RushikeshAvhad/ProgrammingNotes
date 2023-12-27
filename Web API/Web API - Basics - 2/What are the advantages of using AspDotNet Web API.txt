@@ -1,0 +1,14 @@
+Question - What are the advantages of using ASP.NET Web API?
+
+
+Using ASP.NET Web API has a number of advantages, but the core advantages are as follows:
+
+1.  It supports all the HTTP features.
+    That means you can use all the built-in HTTP Heapers such as Content-Type, Accept, Authorization, etc.
+    and HTTP Status codes such as 500, 200, 404, etc., 
+    and HTTP verbs such as GET, POST, PUT, PATCH, and DELETE to perform CRUD operations
+2.  It supports Attribute Routing which is good for SEO as well as user-friendly URLs.
+3.  It supports content negotiation i.e. as per the client request, the server sends the response in that format (if possible).
+    The Response is generated in JSON or XML format using MediaTypeFormatter
+4.  It has the ability to be hosted in IIS as well as self-host outside of IIS
+5.  Supports Model Binding and Validation.
