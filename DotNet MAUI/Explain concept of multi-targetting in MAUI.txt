@@ -1,0 +1,14 @@
+Question - Explain the concept of multi-targetting in .NET MAUI and how it improves the development process for cross-platform applications.
+
+
+Multi-targeting in .NET MAUI refers to the ability to develop cross-platform applications targeting multiple platforms,
+such as Android, iOS, macOS, and Windows, using a single codebase.
+This is achieved through shared projects and platform-specific implementations.
+
+.NET MAUI simplifies the development process by providing a unified framework for creating user interfaces, 
+accessing native APIs, and sharing common logic across platforms.
+Developers can leverage Xamarin.Forms controls and new handlers to customize UI elements while maintaining consistency.
+
+The multi-targeting approach reduces code duplication, streamlines maintenance, and accelerates app updates.
+It also enables seamless integration with modern tools like Visual Studio, Hot Reload, and C# 9 features,
+enhancing productivity and collaboration among teams.
