@@ -1,0 +1,10 @@
+Question - What is REST?
+
+
+REST stands for Representational State Transfer.
+This is an architectural pattern used for exchanging data over a distributed environment.
+In Rest, there is something called Client and Server, and the data can be exchanged between the client and server over a distributed environment.
+Distributed environment means the client can be on any platform like Java, .NET, PHP, etc.
+and the server can also be on any platform like Java, .NET, PHP, etc.
+The REST architectural pattern treats each service as a resource and a client can access those resources by using HTTP Protocol methods such as
+GET, POST, PUT, PATCH, and DELETE.
