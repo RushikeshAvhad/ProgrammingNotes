@@ -1,0 +1,36 @@
+Question - Describe how .NET MAUI handles platform-specific code by providing examples for a real-world scenario.
+
+
+.NET MAUI simplifies platform-specific code implementation through partial classes and multi-targeting.
+It enables sharing UI and business logic across platforms while allowing customization for each platform.
+
+Consider a real-world scenario of implementing device vibration in an app. With .NET MAUI,
+we can create a single interface, IVibrationService, to define the Vibrate method:
+
+public interface IVibrationService
+{
+    void Vibrate();
+}
+Next, implement this interface using partial classes for each platform.
+
+For Android:
+public partial class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IVibrationService
+{
+    public void Vibrate()
+    {
+        // Android-specific vibration code
+    }
+}
+
+For iOS:
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IVibrationService
+{
+    public void Vibrate()
+    {
+        // iOS-specific vibration code
+    }
+}
+
+Finally, use Dependency Injection to access the platform-specific implementation from shared code:
+IVibrationService vibrationService = DependencyService.Get<IVibrationService>();
+vibrationService.Vibrate();
