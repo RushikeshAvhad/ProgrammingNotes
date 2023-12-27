@@ -1,0 +1,47 @@
+Question - What are  the RESTful services?
+
+
+REST stands for Representational State Transfer.
+REST is an architectural pattern used for exchanging data over a distributed environment.
+REST architectural pattern treats each service as a resource and a client can access these resources by using HTTP protocol methods such as
+GET, POST, PUT, PATCH, and DELETE.
+The REST architectural pattern specifies a set of constraints that a system should be adhered to.
+
+Here are the REST constraints.
+1. Client-Server Constraint:
+    This is the first constraint.
+    This constraint specifies that a Client sends a request to the server and the server sends a response back to the client.
+    This separation of concerns supports the independent development of both client-side and server-side logic.
+    That means client applications and server applications should be developed separately without any dependency on each other.
+    A client should only know resource URIs and that’s all. 
+
+2. Stateless Constraint:
+    The next constraint is the Stateless Constraint.
+    The stateless constraint specifies that the communication between the client and the server must be stateless between requests.
+    That means the server should not be storing anything on the server related to the client.
+    The request from the client should contain all the necessary information so that the server can identify the client and can process that request.
+    This ensures that each request can be treated independently by the server.
+
+3. Cacheable Constraint:
+    In real-time applications, some data provided by the server is not changed that frequently like the list of Countries,
+    the list of States, the list of cities, and some master data.
+    The Cacheable Constraint says that let the client know how long this data is good for so that the client does not have to come back to
+    the server for that data over and over again.
+
+4. Uniform Interface Constraint:
+    The Uniform Interface Constraint defines an interface between the client and the server.
+    To understand the uniform interface constraint, first, we need to understand what a resource is and the HTTP verbs such as 
+    GET, PUT, POST, PATCH, and DELETE.
+    In the context of a RESTFUL Service, resources typically represent data entities. 
+    The Product, Employee, Customer, Country, State, City, etc. are all resources.
+    The HTTP verb (GET, PUT, POST, PATCH, and DELETE) that is sent with each request tells the API what to do with the resource.
+    Each resource is identified by a specific URI (Uniform Resource Identifier).
+
+5. Content Negotiation:
+    One of the constraints of the REST service is that the client should have the ability to decide in which format they want the response 
+    – whether they want the response in XML or JSON etc. This is called Content Negotiation
+
+6. Layered System:
+    REST allows us to use a layered system architecture where we deploy the APIs in server A,
+    and store data on server B and authenticate requests in server C.
+    For example, a client cannot ordinarily tell whether it is connected directly to the server or to an intermediary along the way.
