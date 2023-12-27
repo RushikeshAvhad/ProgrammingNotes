@@ -1,0 +1,62 @@
+Question - What are HTTP verbs or HTTP methods?
+
+
+In Restful services, the HTTP Verbs identify what type of operation, the service is going to be performed.
+
+Let us understand what all HTTP Methods or Verbs are available.
+
+GET Method:
+    The GET HTTP Method is used to Retrieve the Data.
+    The HTTP GET method requests a representation of the specified resource.
+    Requests using GET should only be used to request data (they shouldn’t include data).
+    For example, you want to search something like you want to get the list of employees, list of products, you want to retrieve a book by id, etc.
+    So, whenever you are expecting some data from the server, you need to use GET HTTP Verb.
+    In the case of the HTTP Get Method, the Web API may be expecting some data from the client,
+    but the main purpose of the GET method is to fetch or retrieve data from the server.
+    If you want to implement some kind of search functionality then the Web API may expect some data to filter out the results.
+    In this case, the clients need to send the data.
+
+POST Method:
+    The POST request is used to make a new entry in the database.
+    It is not only specific to a database, whenever you want to create a new resource in your application, then you need to use the POST method.
+    
+    What does it mean by adding a new Resource?
+    It means if you want to add a new Employee, or you want to add a new product.
+    So, here the main concept is not the database, the main concept is adding a new resource.
+
+PUT Method:
+    PUT is also one of the HTTP Verb.
+    The PUT method is used to update all the properties of the current resource in the database.
+    
+    What does it mean? 
+    For Example, we have a table called Product in our database.
+    If we want to update all properties of a particular product (i.e. current resource) then we need to use PUT HTTP Request.
+    So, whenever you want to update all the properties (column) of a resource (existing record in the database), then you need to use PUT Method.
+    You cannot add a new resource using the PUT method.
+
+PATCH Method:
+    There are some situations where you don’t want to update all the properties of an existing resource instead you want to update a few of 
+    the properties, then you need to use the PATCH method.
+    So, the PATCH method is similar to the PUT method, but it is used to update a few properties of the current resource in the database.
+    For example,
+    if you want to update a few properties (columns) of an existing product then you need to use the PATCH method. 
+    That means if your Product table contains 10 columns, and you want to update only four columns of an existing product,
+    then you need to use the PATCH method.
+
+DELETE Method:
+    The DELETE method is used to delete the resource from the database.
+    That means you are removing or deleting an existing entity from your database. 
+    In modern applications, we use two concepts for delete.
+    One is Soft Delete and another one is Hard Delete.
+
+    Soft Delete:
+    In your table, if you have some column like IsDeleted or IsActive, or something similar to this and you just want to update that column,
+    then you cannot use Delete Method.
+    In that case, you need to use the PATCH method.
+    This is because you are not deleting the record from the database, you just update the record.
+    
+    Hard Delete:
+    If you want to remove the existing entity from the table,
+    then you need to use the DELETE method.
+    For example,
+    Delete an existing product from the Product table in the database, etc.
