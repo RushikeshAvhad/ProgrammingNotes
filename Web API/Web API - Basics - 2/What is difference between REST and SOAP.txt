@@ -1,0 +1,13 @@
+Question - What is the difference between REST and SOAP?
+
+
+Let us discuss the difference between the REST and SOAP service:
+
+1.  SOAP stands for Simple Object Access Protocol whereas REST stands for Representational State Transfer.
+2.  The SOAP is an XML-based protocol whereas REST is not a protocol rather it is an architectural pattern i.e. resource-based architecture.                         
+3.  SOAP has specifications for both stateless and state-full implementation whereas REST is completely stateless.
+4.  SOAP enforces message format as XML whereas REST does not enforce message format as XML or JSON.
+5.  The SOAP message consists of an envelope that includes SOAP headers and a body to store the actual information we want to send whereas 
+    REST uses the HTTP build-in headers (with a variety of media types) to store the information and uses the HTTP Methods such as 
+    GET, POST, PUT, PATCH, and DELETE  to perform CRUD operations.
+6.  SOAP Performance is slow as compared to REST.
