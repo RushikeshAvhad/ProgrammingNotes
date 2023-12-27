@@ -1,0 +1,10 @@
+Question - What is IoTs?
+
+
+IOTs stands for Internet Of Things and it is actually a network of physical devices, buildings, vehicles, and other items that are embedded
+with electronics, sensors, software, actuators, and network connectivity that enable these objects to collect and exchange
+information or you can say data.
+
+In other words, we can say, the Internet Of Things (IoT) are the objects or devices which should have an IP address and
+they can communicate with other Internet-enabled devices and objects over the Internet.
+Examples of IoT include security systems, thermostats, electronic appliances, cars, etc, in addition to laptops, desktops, and smartphones.
