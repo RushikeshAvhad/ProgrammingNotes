@@ -1,0 +1,21 @@
+Question - What are the differences between ASP.NET MVC and ASP.NET web API?
+
+
+ASP.NET MVC
+    ASP.NET MVC Framework basically used to create a web application by following the MVC (Model-View-Controller) design pattern,
+    in which we can build web pages.
+    In ASP.NET MVC, the action method can return both data and view.
+    It only returns data in JSON format using JsonResult
+    All requests are mapped to the respective action method based on the action method names.
+    Content negotiation is not supported.
+
+ASP.NET Web API
+    ASP.NET Web API Framework is used to develop Restful services that can be consumed by different clients.
+    ASP.NET Web API Framework returns data in JSON, XML, or any other format based on the Accept header in the request.
+    It does not return the view to the client.
+    All requests are mapped to actions using HTTP verbs.
+    Content-negotiation supported.
+
+We can mix ASP.NET Web API and ASP.NET MVC controller in a single project to handle advanced AJAX requests which may return data in JSON,
+XML, or any other format, and build a full-blown HTTP service.
+Typically, this will be called ASP.NET Web API self-hosting. 
