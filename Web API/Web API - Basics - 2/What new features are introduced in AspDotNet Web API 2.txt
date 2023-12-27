@@ -1,0 +1,10 @@
+Question - What new features are introduced in ASP.NET Web API 2.0?
+
+
+The new features introduced in ASP.NET Web API framework v2.0 are as follows:
+
+1.  Attribute Routing
+2.  External Authentication (third-party authentication)
+3.  CORS (Cross-Origin Resource Sharing)
+4.  OWIN (Open Web Interface for .NET) Self Hosting
+5.  IHttpActionResult Retun type
