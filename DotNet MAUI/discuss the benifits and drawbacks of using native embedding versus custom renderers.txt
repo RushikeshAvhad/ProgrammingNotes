@@ -1,0 +1,36 @@
+Question - In the context of .NET MAUI, discuss the benifits and drawbacks of using native embedding versus custom renderers.
+Provide examples to illustrate your points.
+
+
+.NET MAUI offers two approaches for platform-specific UI customization:
+native embedding and custom renderers. 
+Each has its benefits and drawbacks.
+
+Native embedding allows developers to include native controls directly in the shared code, improving code reusability and maintainability.
+It simplifies integration with existing native libraries and provides a more consistent look and feel across platforms. 
+For example:
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+  <Label Text="Hello, World!" />
+  <ios:UISwitch x:DataType="x:Boolean" />
+</ContentPage>
+
+However, native embedding can lead to increased complexity when handling events or data binding, 
+as it requires additional code to bridge between .NET MAUI and native APIs.
+
+Custom renderers offer greater control over rendering and behavior of controls by subclassing and overriding methods.
+This enables fine-grained customization and better performance optimization.
+Example:
+public class CustomEntryRenderer : EntryRenderer
+{
+    protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+    {
+        base.OnElementChanged(e);
+        if (Control != null)
+        {
+            /* Customize native control */ 
+        }
+    }
+}
+
+Drawbacks of custom renderers include increased code complexity and potential maintenance challenges due to platform-specific implementations.
