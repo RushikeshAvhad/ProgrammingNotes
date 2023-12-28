@@ -1,0 +1,9 @@
+Question - Explain the concept of "Shell" in .NET MAUI and how it helps to simplify app navigation and improve overall performance.
+
+
+Shell in .NET MAUI is a container for app architecture, streamlining navigation and enhancing performance.
+It unifies visual structure, top-level navigation, and common UI features into one component.
+By consolidating these elements, Shell simplifies the creation of complex hierarchical structures and reduces boilerplate code.
+Developers can define flyout menus, tab bars, and URI-based routing with ease, improving maintainability and readability.
+Performance benefits stem from built-in optimizations like intelligent caching and on-demand rendering.
+This ensures smooth transitions between pages while minimizing resource consumption.
