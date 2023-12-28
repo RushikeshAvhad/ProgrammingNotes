@@ -1,0 +1,23 @@
+Question - Explain the differences between SkiaSharp and .NET MAUI graphics, and which one is better suited for various scenarios.
+
+
+SkiaSharp and .NET MAUI graphics are both used for creating graphical applications, but they differ in their approach and capabilities.
+
+SkiaSharp is a cross-platform 2D graphics API based on Google’s Skia library.
+It provides low-level drawing functions like shapes, text, images, and gradients with high performance.
+SkiaSharp excels in scenarios requiring complex custom rendering or when targeting multiple platforms without using Xamarin.Forms.
+
+.NET MAUI (Multi-platform App UI) is the evolution of Xamarin.Forms,
+providing a single codebase for building native UIs across different platforms.
+It includes built-in controls, layouts, and styling options that simplify app development.
+Graphics in .NET MAUI can be achieved through its Controls and Microsoft.Maui.Graphics libraries.
+The latter offers basic drawing functionality similar to SkiaSharp but at a higher level of abstraction.
+
+Choosing between SkiaSharp and .NET MAUI graphics depends on the scenario:
+1.  For simple, platform-consistent UIs with minimal custom drawing, use .NET MAUI.
+2.  For complex custom rendering or non-Xamarin.Forms projects, consider SkiaSharp.
+3.  If leveraging existing Xamarin.Forms code, transitioning to .NET MAUI may be more efficient.
+4.  When prioritizing ease-of-use and maintainability, opt for .NET MAUI.
+5.  For maximum performance and control over rendering, SkiaSharp might be preferable.
+6.  In cases where advanced features like shaders or filters are needed, SkiaSharp has an edge.
+
