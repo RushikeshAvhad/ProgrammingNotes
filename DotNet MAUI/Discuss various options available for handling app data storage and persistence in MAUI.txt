@@ -1,0 +1,26 @@
+Question - Discuss the various options available for handling app data storage and prsistence in .NET MAUI, including the pros and cons of each method.
+
+
+.NET MAUI offers multiple options for app data storage and persistence, including:
+1.  Preferences:
+    Simple key-value pairs stored using Xamarin.Essentials.Preferences.
+    Pros: Easy to implement, cross-platform support.
+    Cons: Limited to basic data types, not suitable for complex objects.
+2.  Files:
+    Store data in text or binary files using System.IO APIs.
+    Pros: Flexibility in handling various data formats, cross-platform support.
+    Cons: Requires manual serialization/deserialization, potential performance issues with large files.
+3.  SQLite:
+    Local relational database using Microsoft.Data.Sqlite or sqlite-net ORM.
+    Pros: Robust querying capabilities, ACID transactions, cross-platform support.
+    Cons: Additional dependencies, more complex setup compared to other methods.
+4.  Entity Framework Core (EF Core): 
+    Object-relational mapping (ORM) framework for .NET. 
+    Pros: Simplifies data access code, supports LINQ queries, change tracking, migrations. 
+    Cons: Steeper learning curve, additional dependencies, may introduce performance overhead.
+5.  Remote Storage: 
+    Cloud-based storage solutions like Azure Mobile Apps or Firebase Realtime Database. 
+    Pros: Scalability, real-time synchronization, user authentication/authorization. 
+    Cons: Internet connectivity required, increased complexity, potential latency issues.
+
+Choose the appropriate method based on your app’s requirements, considering factors such as data complexity, performance, and offline support.
