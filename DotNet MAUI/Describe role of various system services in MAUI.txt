@@ -1,0 +1,14 @@
+Question - Describe the role of various system services in .NET MAUI, such as the Dependency Service, Messaging Center and Font Registrar.
+
+
+.NET MAUI system services facilitate communication and resource management within the application.
+
+Dependency Service enables decoupling of platform-specific implementations from shared code,
+allowing injection of native functionality into shared classes.
+It simplifies cross-platform development by providing a single API for accessing platform-specific features.
+
+Messaging Center allows loosely-coupled communication between components without direct references, enabling event-driven architecture.
+Components can subscribe to messages and respond accordingly when published, promoting separation of concerns and reducing dependencies.
+
+Font Registrar manages custom fonts registration, streamlining font usage across platforms.
+By registering fonts with aliases, developers can reference them consistently in shared code, ensuring uniform appearance on all target platforms.
