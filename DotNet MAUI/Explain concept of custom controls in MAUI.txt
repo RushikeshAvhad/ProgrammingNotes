@@ -1,0 +1,27 @@
+Question - Explain the concept of custom controls in .NET MAUI, and describe how to create a custom control from scratch for a real-world scenario.
+
+
+Custom controls in .NET MAUI are user-defined, reusable UI components that extend existing controls or create new ones to meet specific requirements.
+They enhance code maintainability and consistency across applications.
+
+To create a custom control from scratch, follow these steps:
+
+1.  Create a new class inheriting from an appropriate base class (e.g., View) or an existing control.
+2.  Define properties for customization using BindableProperty.
+3.  Override methods like OnMeasure, ArrangeChildren, etc., for layout management.
+4.  Implement rendering logic by overriding Draw method or creating platform-specific renderers.
+5.  Register the renderer with ExportRenderer attribute if needed.
+6.  Use the custom control in XAML or C# code.
+
+For example, consider creating a circular progress bar:
+1.  Inherit from View:
+    public class CircularProgress : View { }
+2.  Add bindable properties: 
+    public static readonly BindableProperty ProgressProperty = ...
+3.  Override OnMeasure for size calculation.
+4.  Create platform-specific renderers, 
+    e.g., CircularProgressRenderer for Android/iOS.
+5.  Register renderers:
+    [assembly: ExportRenderer(typeof(CircularProgress), typeof(CircularProgressRenderer))]
+6.  Use it in XAML:
+    <local:CircularProgress Progress="{Binding Value}" />
