@@ -1,0 +1,16 @@
+Question - Describe how live reloading and hot-reloading can speed up the development process and improve overall efficiency in .NET MAUI
+
+
+Live reloading and hot-reloading in .NET MAUI significantly enhance development efficiency by allowing developers to see the impact of their 
+code changes instantly.
+Live reloading automatically refreshes the application’s UI when XAML or C# files are modified,
+eliminating the need for manual rebuilds and restarts.
+This accelerates iterative design and debugging processes.
+
+Hot-reloading takes it a step further by injecting new code into the running app without restarting it,
+preserving the current state and navigation stack.
+This feature is particularly beneficial when working on complex applications with deep navigation hierarchies,
+as it saves time navigating back to the modified screen after each change.
+
+Both techniques reduce context-switching and improve developer focus,
+leading to faster development cycles and higher overall productivity in .NET MAUI projects.
