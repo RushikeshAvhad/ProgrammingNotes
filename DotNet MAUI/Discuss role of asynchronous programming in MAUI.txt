@@ -1,0 +1,13 @@
+Question - Discuss the role of asynchronous programming in .NET MAUI and how it helps improve app responsiveness and overall user experiences.
+
+
+Asynchronous programming plays a crucial role in .NET MAUI by allowing developers to execute time-consuming operations 
+without blocking the UI thread.
+This is achieved through async/await keywords, which enable writing asynchronous code that appears synchronous.
+By using asynchronous methods,
+app responsiveness is significantly improved as users can continue interacting with the application while tasks like data fetching
+or file I/O are being processed in the background.
+This leads to a smoother user experience and prevents frustrating delays or freezing.
+Furthermore,
+.NET MAUI’s built-in support for Task-based Asynchronous Pattern (TAP) simplifies error handling and cancellation of ongoing tasks,
+ensuring better resource management and app stability.
