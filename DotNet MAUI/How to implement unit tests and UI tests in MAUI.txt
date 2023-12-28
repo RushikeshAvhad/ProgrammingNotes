@@ -1,0 +1,15 @@
+Question - Decribe how to implement unit tests and UI tests in .NET MAUI, and discuss the importance of testing in cross-platform applications.
+
+
+In .NET MAUI,
+implement unit tests using xUnit or NUnit testing frameworks.
+Create a separate test project, reference the main project, and write test methods with appropriate assertions.
+For UI tests, use Xamarin.UITest framework, which supports both Android and iOS platforms.
+Write Page Object Model (POM) classes to interact with UI elements and create test scenarios.
+
+Testing is crucial in cross-platform applications for several reasons:
+1.  Ensures consistent behavior across platforms.
+2.  Detects platform-specific issues early.
+3.  Validates code sharing efficiency.
+4.  Facilitates maintainability and extensibility.
+5.  Improves overall application quality and user experience.
