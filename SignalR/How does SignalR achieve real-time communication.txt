@@ -1,0 +1,47 @@
+Question - How does SignalR achieve real-time communication?
+
+
+SignalR achieves real-time communication by establishing a persistent connection between the server and connected clients, 
+enabling bidirectional communication.
+SignalR establishes a persistent connection using various transport protocols,
+allowing for efficient and real-time bidirectional communication between the server and connected clients.
+This makes SignalR suitable for building applications that require instant updates, such as chat applications, 
+live notifications, and collaborative editing platforms.
+The library uses various transport protocols to facilitate this communication.
+
+Here are the key components and steps involved in SignalR's real-time communication:
+Connection Negotiation:
+    When a client wants to establish a connection with the SignalR server, it initiates a negotiation process.
+    This negotiation occurs through an HTTP handshake, during which the client and server agree on the most suitable transport protocol.
+Transport Protocols:
+    SignalR supports multiple transport protocols, and the choice of protocol depends on the capabilities of the client and server.
+    The available protocols include:
+    WebSockets:
+        Provides a full-duplex communication channel over a single, long-lived connection.
+        It is the most efficient and low-latency option when supported by both the client and server.
+    Server-Sent Events (SSE):
+        Enables the server to push updates to the client over a single HTTP connection.
+        It is suitable for scenarios where WebSockets are not available.
+    Long Polling:
+        Involves the client making a request to the server and keeping the connection open until the server has new data to send or a timeout occurs.
+        It is a fallback option when WebSockets and SSE are not supported.
+Connection Establishment:
+    Once the negotiation is complete and the transport protocol is determined, the SignalR connection is established.
+    This connection remains open for the duration of the client's interaction with the server, allowing for continuous communication.
+Hubs:
+    SignalR uses the concept of hubs to organize communication.
+    Hubs are high-level abstractions that define methods that can be called by clients and server.
+    Clients can invoke methods on the server, and vice versa.
+Method Invocation:
+    Clients can call methods on the server by invoking hub methods.
+    Similarly, the server can call methods on connected clients.
+    This bidirectional method invocation is the basis for real-time communication.
+Connection ID:
+    Each client is assigned a unique connection ID when it connects to the SignalR server.
+    This connection ID is used to address messages to specific clients, enabling targeted communication.
+Groups:
+    SignalR supports the concept of groups, allowing clients to subscribe to named groups.
+    Messages can be broadcasted to all clients in a group, facilitating scalable communication for scenarios like chat applications.
+Backplanes (Scale-out):
+    SignalR provides support for backplanes, enabling the distribution of messages across multiple servers in a web farm.
+    This enhances scalability by ensuring that messages are broadcasted to all connected clients, regardless of the server they are connected to.
