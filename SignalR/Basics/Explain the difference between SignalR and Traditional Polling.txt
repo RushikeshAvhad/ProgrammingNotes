@@ -1,0 +1,43 @@
+Question - Explain the difference between SignalR and Traditional Polling?
+
+
+The main difference between SignalR and traditional polling lies in how they achieve real-time communication between the server and clients.
+while traditional polling relies on clients periodically querying the server for updates,
+SignalR uses a persistent connection and server push to provide a more efficient and real-time communication mechanism.
+SignalR is particularly beneficial for applications where timely updates are crucial,
+such as chat applications, live notifications, and collaborative editing.
+
+
+Traditional Polling:
+Client-Initiated Requests:
+    In traditional polling, the client initiates communication by sending periodic requests to the server asking if there are any updates.
+Fixed Intervals:
+    Clients poll the server at fixed intervals, regardless of whether there is new data or not.
+    This can lead to unnecessary network traffic and increased server load.
+Latency:
+    Updates are delivered with a delay equal to the polling interval.
+    If the interval is long, real-time responsiveness can be compromised.
+Resource Usage:
+    Frequent polling can consume more server resources and increase the load on both the client and the server.
+
+SignalR (WebSockets/Server-Sent Events/Long Polling):
+Server Push:
+    SignalR enables server-initiated communication.
+    The server can push updates to connected clients as soon as new data is available.
+Persistent Connection:
+    SignalR establishes a persistent connection between the server and clients, allowing for a continuous and efficient exchange of data.
+    It eliminates the need for repeated requests.
+Dynamic Transport Selection:
+    SignalR dynamically selects the most suitable transport protocol based on the capabilities of the client and server.
+    This can include WebSockets, Server-Sent Events (SSE), or long polling.
+Reduced Latency:
+    Updates are delivered in near real-time, significantly reducing latency compared to traditional polling.
+Efficiency:
+    SignalR minimizes unnecessary data transfer by only sending updates when there is new information.
+    This is more efficient than fixed-interval polling, especially when there are long periods without updates.
+Better Scalability:
+    SignalR supports the concept of backplanes, which allows for distributing messages across multiple servers.
+    This enhances scalability in scenarios where there are multiple server instances or a web farm.
+Cross-Browser Compatibility:
+    SignalR abstracts the underlying transport protocols, making it compatible with various browsers and environments.
+    It can gracefully degrade to less efficient transport methods when more advanced ones are not supported.
