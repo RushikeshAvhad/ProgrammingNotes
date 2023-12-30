@@ -1,0 +1,79 @@
+Question - Explain the concept of Hubs in SignalR?
+
+
+In SignalR, a hub is a high-level programming model that facilitates real-time communication between the server and connected clients.
+Hubs provide a simple and structured way for clients to call methods on the server and vice versa.
+The concept of hubs makes it easier for developers to implement real-time functionality in their applications.
+SignalR hubs provide a higher-level abstraction for building real-time communication in .NET applications.
+They simplify the implementation of real-time functionality by allowing developers to define methods that can be called by clients
+and providing features like group communication and connection lifecycle events.
+Hubs play a central role in making real-time communication more accessible and developer-friendly.
+
+
+Here are the key features and components of SignalR hubs:
+Hub Class:
+    A hub is represented by a .NET class that inherits from the Hub class in the SignalR library.
+    This class defines methods that can be called by clients and methods that can be invoked on connected clients.
+    
+    csharpCopy code
+    public class ChatHub : Hub
+    {
+        public void SendMessage(string user, string message)
+        {
+            // Clients.All refers to all connected clients
+            Clients.All.SendAsync("ReceiveMessage", user, message);
+        }
+    }
+
+Method Invocation:
+    Hubs allow clients to invoke methods on the server and server to invoke methods on connected clients.
+    The methods defined in the hub class can be called by clients using the SignalR connection.
+
+Group Communication:
+    Hubs support the concept of groups, where clients can subscribe to named groups,
+    and messages can be broadcasted to all clients in a specific group.
+    This is useful for scenarios like chat applications where messages need to be sent to a subset of connected clients.
+    
+    csharpCopy code
+    public class ChatHub : Hub
+    {
+        public async Task JoinGroup(string groupName)
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
+        }
+        
+        public async Task SendMessageToGroup(string groupName, string user, string message)
+        {
+            // Clients.Group refers to all clients in the specified group
+            await Clients.Group(groupName).SendAsync("ReceiveMessage", user, message);
+        }
+    }
+
+Connection Lifecycle Events:
+    Hubs provide events that are triggered during the lifecycle of a connection,
+    such as when a client connects (OnConnected), disconnects (OnDisconnected), or reconnects (OnReconnected).
+    Developers can override these methods to perform custom actions.
+    csharpCopy code
+    public class ChatHub : Hub
+    {
+        public override Task OnConnectedAsync()
+        {
+            // Perform actions when a client connects
+            return base.OnConnectedAsync();
+        }
+        
+        public override Task OnDisconnectedAsync(Exception exception)
+        {
+            // Perform actions when a client disconnects
+            return base.OnDisconnectedAsync(exception);
+        }
+    }
+
+Dynamic Proxy on the Client Side:
+    SignalR generates a dynamic JavaScript proxy on the client side, which provides a client API that mirrors the hub's methods.
+    This makes it easy for developers to call server methods from client-side code.
+    javascriptCopy code
+    // Client-side code (JavaScript or TypeScript)
+        connection.on("ReceiveMessage", function (user, message) {
+    // Handle received messages
+    });
