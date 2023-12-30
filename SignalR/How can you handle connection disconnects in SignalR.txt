@@ -1,0 +1,93 @@
+Question - How can you handle Connection disconnects in SignalR?
+
+
+Handling connection disconnects is an essential aspect of developing robust real-time applications using SignalR.
+SignalR provides built-in events and methods within the hub to address scenarios where a client disconnects,
+and you can take specific actions accordingly.
+
+Here's how you can handle connection disconnects in SignalR:
+1. Override OnDisconnectedAsync Method:
+    In your SignalR hub, you can override the OnDisconnectedAsync method to execute code when a client disconnects:
+
+    csharpCopy code
+    public class MyHub : Hub
+    {
+        public override async Task OnDisconnectedAsync(Exception exception)
+        {
+            // Your code to handle disconnection
+            // This method is called when a client disconnects from the hub
+            await base.OnDisconnectedAsync(exception);
+        }
+    }
+2. Access Connection ID:
+    You can access the connection ID within the OnDisconnectedAsync method to perform actions specific to the disconnected client:
+
+    csharpCopy code
+    public override async Task OnDisconnectedAsync(Exception exception)
+    {
+        string connectionId = Context.ConnectionId;
+        // Your code to handle disconnection using the connection ID
+        await base.OnDisconnectedAsync(exception);
+    }
+
+3. Remove Clients from Groups:
+    If you use groups in your application, you might want to remove the disconnected client from any groups it was a part of:
+
+    csharpCopy code
+    public override async Task OnDisconnectedAsync(Exception exception)
+    {
+        string connectionId = Context.ConnectionId;
+    
+        // Remove the client from any groups it was a part of
+        await Groups.RemoveFromGroupAsync(connectionId, "groupName");
+
+        // Your additional code to handle disconnection
+        await base.OnDisconnectedAsync(exception);
+    }
+
+4. Persist State or Notify Others:
+    You can persist state or notify other connected clients about the disconnection:
+
+    csharpCopy code
+    public override async Task OnDisconnectedAsync(Exception exception)
+    {
+        string connectionId = Context.ConnectionId;
+        // Persist state or notify others about the disconnection
+        await base.OnDisconnectedAsync(exception);
+    }
+
+5. Reconnect Events:
+    SignalR also provides events for reconnection, such as OnReconnected.
+    You can override this method to handle reconnection scenarios:
+
+    csharpCopy code
+    public override async Task OnReconnectedAsync(string newConnectionId)
+    {
+        // Your code for handling reconnection
+        await base.OnReconnectedAsync(newConnectionId);
+    }
+
+6. Client-Side Handling:
+    On the client side, you can handle disconnection and reconnection events using JavaScript or any other client-side technology.
+    For example, in JavaScript:
+    javascriptCopy code
+    const connection = new signalR.HubConnectionBuilder()
+    .withUrl("/myHub")
+    .build();
+
+    connection.onclose((error) => {
+        // Handle disconnection
+        console.error(`Connection closed due to error: ${error}`);
+    });
+
+    connection.start()
+        .then(() => {
+            // Handle successful connection
+        })
+        .catch((error) => {
+            // Handle connection failure
+            console.error(`Error while starting connection: ${error}`);
+        });
+
+By combining server-side handling within the SignalR hub and client-side handling,
+you can create a comprehensive solution for managing connection disconnects and reconnections in your real-time application.
