@@ -1,0 +1,42 @@
+Question - What is SignalR?
+
+
+SignalR is an open-source library for real-time web functionality in .NET applications.
+It simplifies the process of adding real-time web capabilities to applications,
+allowing for bi-directional communication between the server and connected clients in real-time.
+SignalR enables applications to push content to connected clients as soon as it becomes available,
+eliminating the need for the client to repeatedly request updates.
+SignalR is commonly used in applications that require real-time features,
+such as chat applications, online gaming, live dashboards, collaborative editing, and other scenarios 
+where instant updates are essential for a rich user experience. 
+It simplifies the complexities of real-time communication and provides a straightforward API for developers to implement these features
+in their applications.
+
+
+Key features and concepts of SignalR include:
+Real-time Communication:
+    SignalR enables real-time communication between the server and clients,
+    making it suitable for applications where instant updates and notifications are crucial.
+Hubs:
+    Hubs are high-level abstractions provided by SignalR to facilitate communication.
+    They define methods that can be called by clients, and clients can call methods on the server.
+    This simplifies the process of broadcasting messages to multiple clients or specific groups of clients.
+Persistent Connection:
+    SignalR establishes a persistent connection between the server and clients,
+    allowing for efficient communication without the need for constant polling.
+    This is achieved through various transport protocols, including WebSockets, Server-Sent Events (SSE), and long polling.
+Connection Management:
+    Each client connected to the SignalR server is assigned a unique connection ID.
+    This ID allows the server to track and address messages to specific clients, enabling targeted communication.
+Groups:
+    SignalR supports the concept of groups, allowing clients to subscribe to named groups.
+    This enables broadcasting messages to specific subsets of connected clients, providing a scalable way to manage communication.
+Scaling and Load Balancing:
+    SignalR supports backplanes, which enable the distribution of messages across multiple servers in a web farm.
+    This ensures that messages are broadcasted to all connected clients, regardless of the server they are connected to.
+Cross-Domain Communication:
+    SignalR supports cross-domain communication through Cross-Origin Resource Sharing (CORS) settings.
+    This allows clients and servers on different domains to communicate seamlessly.
+Integration with ASP.NET Core:
+    While SignalR originated as part of the ASP.NET framework, it has been integrated into ASP.NET Core,
+    making it compatible with the latest advancements in the .NET ecosystem.
