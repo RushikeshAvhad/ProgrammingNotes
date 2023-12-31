@@ -1,0 +1,46 @@
+Question - What is the difference between git pull and git fetch?
+
+
+git pull and git fetch are both Git commands used to update a local repository with changes from a remote repository.
+However, they differ in how they update the local repository and handle changes.
+git pull is a convenient command for quickly updating your local branch and merging changes from the remote,
+while git fetch provides more control over the process, allowing you to review changes before merging them into your local branch.
+
+git pull:
+Functionality:
+    git pull is a combination of two actions: 
+    git fetch and git merge.
+    It fetches changes from the remote repository and automatically merges them into the current local branch.
+Usage:
+    git pull is convenient when you want to update your local branch and incorporate changes from the remote repository in a single command.
+Example:
+    git pull origin master
+Automatic Merge:
+    git pull automatically performs a merge.
+    If there are no conflicts, the changes are merged seamlessly.
+
+
+git fetch:
+Functionality:
+    git fetch only fetches changes from the remote repository but does not automatically merge them into the local branch.
+    It updates the remote tracking branches (e.g., origin/master) to reflect the changes in the remote repository.
+Usage:
+    After fetching changes using git fetch, you can inspect the changes before deciding to merge them into your local branch.
+Example:
+    git fetch origin
+No Automatic Merge:
+    git fetch does not automatically merge the changes into the local branch.
+    This allows you to review the changes and decide when and how to integrate them.
+
+
+Key Differences:
+Automatic vs. Manual Merge:
+    git pull automatically fetches and merges changes into the local branch.
+    git fetch only fetches changes, and you need to decide when and how to merge them.
+Control and Review:
+    git pull provides less control and review of changes since the merge happens automatically.
+    git fetch allows you to review changes before deciding to merge them, providing more control over the process.
+Typical Use Cases:
+    Use git pull when you want to quickly update your local branch with the latest changes from the remote and are not concerned with 
+    reviewing changes before merging.
+    Use git fetch when you want more control over the merging process and want to inspect changes before merging.
