@@ -1,0 +1,39 @@
+Question - What is Git?
+
+
+Git is a distributed version control system (DVCS) used for tracking changes in source code during software development.
+It allows multiple developers to work on a project simultaneously, and it keeps a record of every change made to the codebase.
+This makes it easier to collaborate on projects, track the history of changes, and manage different versions of the code.
+Git is widely used in the software development industry and is an essential tool for collaborative coding.
+Popular hosting services like GitHub, GitLab, and Bitbucket provide platforms for hosting Git repositories and facilitate collaborative development.
+
+
+Here are some key concepts and terms associated with Git:
+
+Repository (Repo):
+    A repository is a collection of files and folders that make up a project, along with the version history of those files.
+Clone:
+    Creating a copy of a remote repository on your local machine is called cloning.
+    This allows you to work on the code locally.
+Commit:
+    A commit is a snapshot of the changes made to the files in a repository at a specific point in time.
+    Each commit has a unique identifier.
+Branch:
+    A branch is a separate line of development in a Git repository.
+    It allows developers to work on features or bug fixes independently without affecting the main codebase.
+Merge:
+    Merging is the process of combining changes from one branch into another.
+    It's often used to incorporate changes from feature branches into the main branch.
+Pull Request (PR):
+    In Git-based collaboration workflows, a pull request is a way to propose changes to a codebase.
+    It allows others to review the changes before they are merged.
+Push:
+    Pushing refers to uploading local changes to a remote repository. 
+    It makes your changes accessible to others working on the same project.
+Fetch:
+    Fetching involves retrieving changes from a remote repository without merging them into your local branch.
+Merge Conflict:
+    A merge conflict occurs when Git is unable to automatically reconcile changes from different branches.
+    It requires manual intervention to resolve conflicting changes.
+Remote:
+    A remote is a version of the repository stored on a server, often on platforms like GitHub, GitLab, or Bitbucket.
