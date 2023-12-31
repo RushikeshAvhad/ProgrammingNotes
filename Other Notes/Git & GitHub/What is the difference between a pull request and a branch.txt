@@ -1,0 +1,47 @@
+Question - What is the differnece between a pull request and a branch?
+
+
+
+A branch and a pull request (PR) are related concepts in Git,
+but they serve different purposes in the collaborative development process.
+
+Branch:
+Definition:
+    A branch is a separate line of development within a Git repository.
+    It allows developers to work on features, bug fixes, or other changes without affecting the main codebase.
+    Each branch represents an independent set of changes.
+Purpose:
+    Branches are created to work on specific features, fixes, or experiments without disrupting the stability of the main codebase.
+    They allow parallel development, enabling multiple developers to work on different tasks simultaneously.
+Usage:
+    Developers create branches using commands like git branch and switch between branches using git checkout or git switch.
+    Changes made in a branch are isolated until the branch is merged back into another branch (e.g., the main branch).
+
+Pull Request:
+Definition:
+    A pull request is a feature provided by Git hosting services (e.g., GitHub, GitLab, Bitbucket) 
+    that enables developers to propose changes from one branch (usually a feature branch)
+    to another (often the main branch).
+    It is a request to merge the changes in the source branch into the target branch.
+Purpose:
+    Pull requests facilitate code review and collaboration.
+    Before changes are merged, other team members can review the proposed modifications, discuss them, and suggest improvements.
+    They provide a structured way to manage the integration of changes, ensuring that new code meets the project's standards.
+Usage:
+    Developers create a pull request on a hosting platform after pushing changes to a feature branch.
+    Team members review the changes, discuss them, and may request additional modifications before the changes are merged into the target branch.
+Relationship:
+    A pull request is typically associated with a branch.
+    When you create a pull request, you are proposing to merge the changes from a source branch into a target branch.
+    The branch represents the set of changes you've made, while the pull request is a mechanism for proposing those changes for integration.
+
+In summary,
+a branch is a way to organize and isolate changes,
+while a pull request is a tool for proposing and reviewing changes before they are merged into another branch.
+Both are crucial for collaborative development,
+allowing teams to work on features independently and integrate changes in a controlled and reviewed manner.
+
+
+
+
+
