@@ -1,0 +1,30 @@
+Question - You need to update your local repos. What git commands will you use?
+
+
+To update local repository with the latest changes from the remote repository,
+we use either git pull or git fetch followed by a merge.
+
+Here are both approaches:
+Using git pull:
+    git pull origin <branch-name>
+
+    Replace <branch-name> with the name of the branch you want to update.
+    For example, if you are working on the "master" branch, you can use:  git pull origin master
+    
+    This command will fetch the changes from the remote repository and automatically merge them into your current local branch.
+
+Using git fetch and merge:
+    git fetch origin <branch-name>
+    git merge origin/<branch-name>
+
+    replace <branch-name> with the name of the branch you want to update.
+    For the "master" branch, you can use:
+    git fetch origin master
+    git merge origin/master
+    
+    This sequence of commands first fetches the changes from the remote repository without merging them.
+    Then, it manually merges the changes into your local branch.
+    This approach allows you to review the changes before merging.
+
+If you prefer a quick update with automatic merging, use git pull.
+If you want more control and prefer to review changes before merging, use git fetch followed by a manual merge.
