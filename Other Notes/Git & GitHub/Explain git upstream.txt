@@ -1,0 +1,42 @@
+Question - Explain git upstream.
+
+
+
+In Git, the term "upstream" is commonly used in the context of tracking branches and remotes.
+The upstream branch is the remote branch that a local branch is tracking.
+When you clone a repository, the default remote (usually named "origin") becomes the upstream for your local branches.
+
+Here are some key concepts related to the upstream in Git:
+Default Upstream:
+    When you clone a repository, 
+    Git automatically sets up a default remote called "origin" and establishes the branches in "origin" as the upstream branches 
+    for your local branches.
+Tracking Branch and Upstream:
+    A tracking branch is a local branch that is set to follow the changes of another branch, known as its upstream branch.
+    The upstream branch is typically located in a remote repository.
+    For example,
+    if you have a local branch named feature that tracks the remote branch origin/feature,
+    then origin/feature is the upstream branch for your local feature branch.
+Setting Upstream:
+    You can explicitly set the upstream branch for a local branch using the -u or --set-upstream-to option with the git branch command
+    or using the git push command with the -u option.
+    Example:
+        # Set the upstream branch for the current branch
+        git branch --set-upstream-to=origin/feature feature
+Viewing Upstream Information:
+    You can view information about the upstream branch for a local branch using the git branch -vv command or git status.
+    Example:
+        # View information about local branches and their upstream branches
+        git branch -vv
+Pulling and Pushing with Upstream:
+    When you are on a local branch with an upstream, you can use git pull to fetch and merge changes from the upstream branch,
+    and git push to push your changes to the upstream branch.
+    Example:
+        # Pull changes from the upstream branch
+        git pull
+        
+        # Push changes to the upstream branch
+        git push
+
+Understanding and managing upstream relationships is essential when collaborating with others or working on different branches in a Git repository.
+It helps you keep your local branches in sync with the changes happening in the remote repository.
