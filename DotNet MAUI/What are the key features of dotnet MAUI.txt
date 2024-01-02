@@ -1,0 +1,17 @@
+Question - What are the key features of .NET MAUI?
+
+
+.NET MAUI offers a wide range of features that make it an attractive choice for cross-platform development:
+
+Unified Development:
+    With .NET MAUI, developers can use a single codebase to create applications for multiple platforms,
+    reducing the need for platform-specific code.
+Native Performance:
+    Applications built with .NET MAUI deliver native performance and user experiences on each platform,
+    ensuring optimal performance and responsiveness.
+XAML for UI:
+    .NET MAUI utilizes XAML (eXtensible Application Markup Language) for defining user interfaces,
+    providing a declarative way to describe the structure and behavior of UI elements.
+Hot Reload:
+    The Hot Reload feature allows developers to make code changes and instantly see the results without restarting the application,
+    leading to a more efficient development workflow.
