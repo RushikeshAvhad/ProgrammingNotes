@@ -1,0 +1,82 @@
+Question - Descibe the DevOps life cycle.
+
+
+The DevOps lifecycle is a series of phases and practices that collectively aim to improve collaboration and efficiency
+throughout the software development and delivery process.
+The DevOps lifecycle aims to break down traditional silos between development and operations, automate manual processes,
+and create a culture of collaboration and continuous learning.
+Implementing DevOps practices can lead to faster, more reliable software delivery with improved quality and reduced time-to-market.
+
+
+While specific implementations may vary, the general DevOps lifecycle often includes the following key phases:
+Plan:
+    Objective:
+        Define and plan the features, fixes, and improvements to be delivered in the upcoming development cycles.
+    Activities:
+        Define user stories and requirements.
+        Prioritize and plan development sprints.
+        Collaborate across teams to ensure alignment with business goals.
+
+Code:
+    Objective:
+        Develop and write code based on the requirements outlined in the planning phase.
+    Activities:
+        Developers write and review code collaboratively.
+        Implement version control for source code management.
+        Use coding standards and best practices.
+
+Build:
+    Objective:
+        Compile the code, integrate changes, and create a build artifact ready for deployment.
+    Activities:
+        Automated build processes for compilation.
+        Integration of code changes from multiple developers.
+        Execution of automated tests to ensure code quality.
+
+Test:
+    Objective:
+        Verify that the application functions correctly and meets quality standards.
+    Activities:
+        Automated testing to validate functionality.
+        Manual testing for user experience and edge cases.
+        Performance testing, security testing, and other specialized testing as needed.
+
+Deploy:
+    Objective:
+        Release the application to a staging or production environment.
+    Activities:
+        Automated deployment processes to ensure consistency.
+        Rollback mechanisms in case of deployment failures.
+        Coordination with operations and infrastructure teams.
+
+Operate (or Release):
+    Objective:
+        Ensure the application runs smoothly in the production environment and monitor its performance.
+    Activities:
+        Continuous monitoring of application and infrastructure.
+        Incident response and resolution.
+        Collaboration between development and operations for ongoing support.
+
+Monitor:
+    Objective:
+        Continuously monitor the application, infrastructure, and user feedback to identify areas for improvement.
+    Activities:
+        Collect and analyze performance metrics.
+        Monitor user behavior and gather feedback.
+        Implement logging and tracing for troubleshooting.
+
+Feedback:
+    Objective:
+        Gather feedback from users and stakeholders to inform future development cycles.
+    Activities:
+        Conduct retrospectives to review and improve processes.
+        Use feedback to refine requirements and planning for the next development cycle.
+        Foster a culture of continuous improvement.
+
+Collaborate and Communicate:
+    Objective:
+        Promote collaboration and communication across teams throughout the entire lifecycle.
+    Activities:
+        Use collaboration tools for communication and sharing information.
+        Encourage cross-functional teams to work together.
+        Foster a culture of transparency and shared responsibility.
