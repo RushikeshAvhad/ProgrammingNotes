@@ -1,0 +1,32 @@
+Question - What is git Fork?
+
+
+In the context of Git, a "fork" refers to a copy of a repository.
+When you fork a repository, you create a separate copy of that repository under your own GitHub (or other Git hosting service) account.
+This copy is entirely independent of the original repository but initially contains the same code and commit history.
+
+Here are the typical steps involved in forking a repository:
+Navigate to the Repository on the Hosting Service:
+    Go to the GitHub (or another Git hosting service) repository that you want to fork.
+Fork the Repository:
+    On the top right of the repository page, you'll find a "Fork" button.
+    Clicking this button will create a copy of the repository under your account.
+Clone Your Forked Repository:
+    Once you've forked the repository, you can clone it to your local machine using the git clone command:
+    git clone https://github.com/your-username/forked-repo.git
+Make Changes:
+    Make any changes you want in your local copy of the repository.
+    You can create new branches, add features, fix bugs, etc.
+Push Changes to Your Fork:
+    After making changes locally, you can push those changes back to your fork on the hosting service:
+    git push origin your-branch-name
+Create a Pull Request:
+    If you want your changes to be incorporated into the original repository, you typically create a pull request (PR).
+    A pull request is a request to merge your changes from the fork into the original repository.
+
+This process is commonly used in collaborative development.
+Developers fork a repository, make changes in their fork, and then create pull requests to suggest 
+those changes be merged back into the original project.
+
+By forking a repository,
+you can work on your changes independently without affecting the original project until you are ready to submit your contributions.
