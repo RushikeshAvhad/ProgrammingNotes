@@ -1,0 +1,36 @@
+Question - Difference between remote tracking branches and local tracking branches?
+
+
+Tracking branches in Git are branches that "track" changes in another branch.
+They come in two flavors:
+remote tracking branches and local tracking branches.
+remote tracking branches are references to the state of branches in a remote repository and are used for keeping track of changes in the remote.
+Local tracking branches are branches in your local repository that track changes in a specific remote tracking branch,
+allowing you to work on changes locally while staying in sync with the remote repository.
+
+Remote Tracking Branches:
+    Remote tracking branches are references to the state of branches in a remote repository.
+    When you clone a remote repository, Git automatically creates remote tracking branches for each branch in the remote repository. 
+    For example, if there is a branch named master in the remote repository, Git will create a remote tracking branch named origin/master.
+    Remote tracking branches are read-only and automatically updated when you fetch changes from the remote repository.
+    They help you keep track of changes in the remote repository without directly affecting your local branches.
+    Example:
+        # Fetch changes from the remote repository
+        git fetch origin
+
+        # View remote tracking branches
+        git branch -r
+
+Local Tracking Branches:
+    Local tracking branches are branches in your local repository that track changes in a remote tracking branch.
+    When you check out a remote tracking branch (e.g., origin/master),
+    Git creates a local tracking branch (e.g., master) that is associated with the remote tracking branch.
+    The local tracking branch is then set up to automatically pull changes from the remote tracking branch during a git pull.
+    Local tracking branches are typically used for development, 
+    where you want to work on changes in a local branch that corresponds to a specific remote branch.
+    Example:
+        # Check out a remote tracking branch, creating a local tracking branch
+        git checkout -t origin/master
+
+        # Pull changes from the remote tracking branch
+        git pull
