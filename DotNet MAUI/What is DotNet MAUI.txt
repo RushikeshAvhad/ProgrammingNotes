@@ -1,0 +1,49 @@
+Question - What is .NET MAUI?
+
+
+.NET MAUI,
+also known as Multi-platform App UI, is a powerful framework developed by Microsoft.
+It enables developers to build cross-platform applications that can run seamlessly on Android, iOS, macOS, and Windows platforms.
+With .NET MAUI, you can write code once and deploy it across multiple platforms, saving time and effort.
+
+.NET MAUI (Multi-platform App UI) is a cross-platform framework for building native mobile and desktop applications using the .NET development stack.
+It is an evolution of Xamarin.Forms and is designed to simplify the development of applications that can run on a variety of platforms,
+including iOS, Android, macOS, Windows, and more.
+
+Key features and aspects of .NET MAUI include:
+Unified API Surface:
+    .NET MAUI provides a single, unified API surface for building applications across different platforms.
+    Developers can use a single codebase to create applications that run on iOS, Android, Windows, and macOS.
+Single Project Structure:
+    .NET MAUI supports a single project structure, allowing developers to work with a single project file for multiple platforms.
+    This simplifies project management and reduces the need for separate projects for each platform.
+.NET MAUI Blazor Hybrid Apps:
+    .NET MAUI supports the integration of Blazor, a web framework for building interactive and dynamic web applications using C# and .NET.
+    With .NET MAUI Blazor hybrid apps, developers can share code between the web and mobile/desktop versions of their applications.
+Platform-Specific Customizations:
+    While providing a unified API, .NET MAUI allows developers to implement platform-specific customizations when necessary.
+    This ensures that applications can take advantage of platform-specific features and design guidelines.
+Hot Reload:
+    .NET MAUI includes a Hot Reload feature that enables developers to see changes in their application immediately during development
+    without restarting the application.
+    This speeds up the development and testing process.
+Support for .NET 6:
+    .NET MAUI is built on top of .NET 6, the latest long-term support (LTS) version of the .NET platform.
+    This ensures that developers can leverage the latest features and improvements in the .NET ecosystem.
+Multi-Platform Project Templates:
+    .NET MAUI provides project templates for creating cross-platform applications.
+    Developers can use these templates to start building applications with a structure that supports multiple platforms.
+Device-Specific APIs:
+    Developers can access device-specific APIs and capabilities through .NET MAUI,
+    allowing them to build applications that can leverage platform-specific features and functionality.
+Community and Ecosystem:
+    .NET MAUI benefits from the existing .NET ecosystem and has a strong community of developers.
+    It inherits the advantages of Xamarin, which has been widely used for cross-platform mobile app development.
+Desktop Application Support:
+    In addition to mobile platforms, .NET MAUI extends its support to desktop platforms, including Windows and macOS.
+    This allows developers to create applications for a broader range of devices.
+
+.NET MAUI is part of Microsoft's ongoing effort to provide a unified and modern development platform 
+for building cross-platform applications with .NET.
+It simplifies the development process and aims to improve productivity while delivering high-quality native user
+experiences on various devices and operating systems.
