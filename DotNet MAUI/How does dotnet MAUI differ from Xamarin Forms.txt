@@ -1,0 +1,63 @@
+Question - How does .NET MAUI differ from Xamarin.Forms?
+
+
+.NET MAUI is the next evolution of Xamarin.Forms,
+building upon its foundation and addressing its limitations.
+It introduces several improvements and enhancements, including a simplified API,
+improved performance, and a more streamlined development experience.
+Additionally, .NET MAUI offers a smoother migration path for existing Xamarin.Forms projects,
+allowing developers to leverage their existing codebase.
+
+
+.NET MAUI (Multi-platform App UI) and Xamarin.Forms are related frameworks for building cross-platform mobile and desktop applications using
+the .NET development stack.
+While .NET MAUI builds upon Xamarin.Forms,
+there are key differences and improvements in .NET MAUI that make it a more versatile and powerful framework.
+
+Here are some of the main differences:
+Unified API Surface:
+    Xamarin.Forms had some differences in APIs and capabilities across platforms, which could lead to platform-specific code in certain scenarios.
+    .NET MAUI introduces a truly unified API surface, providing a consistent set of APIs for building applications across multiple platforms.
+    This means developers can use a single codebase without worrying about significant platform variations.
+Single Project Structure:
+    Xamarin.Forms projects typically required separate projects for each platform (iOS, Android, Windows, etc.),
+    leading to a more complex project structure.
+    In contrast, .NET MAUI simplifies this by supporting a single project structure for multiple platforms.
+    Developers can manage their code in a single project file, making it easier to maintain and reducing the overhead of managing multiple projects.
+Native Controls and Renderers:
+    While Xamarin.Forms used a rendering mechanism to display controls on different platforms,
+    .NET MAUI introduces a more native and direct use of platform-specific controls.
+    This results in improved performance and better adherence to each platform's design guidelines.
+.NET 6 Integration:
+    .NET MAUI is built on top of .NET 6, the latest long-term support (LTS) version of the .NET platform.
+    This ensures that developers can leverage the latest features, performance improvements, and language enhancements provided by .NET 6.
+Blazor Integration:
+    .NET MAUI supports the integration of Blazor, allowing developers to build hybrid applications that share code between web and
+    mobile/desktop versions.
+    This enables the use of C# and .NET for both web and native application development.
+Performance Improvements:
+    .NET MAUI includes performance improvements over Xamarin.Forms,
+    resulting in faster startup times, improved runtime performance, and a more responsive user experience.
+Hot Reload:
+    While Xamarin.Forms had a Live Reload feature,
+    .NET MAUI introduces Hot Reload, a more advanced feature that allows developers to see code changes immediately during development without
+    restarting the application. 
+    This speeds up the development and testing process.
+Desktop Application Support:
+    .NET MAUI extends its support beyond mobile platforms to include desktop platforms such as Windows and macOS.
+    Developers can use a single codebase to target a broader range of devices.
+Enhanced Theming:
+    .NET MAUI provides enhanced theming capabilities,
+    allowing developers to create consistent and visually appealing user interfaces across platforms.
+    The framework leverages platform-specific styling to ensure a native look and feel.
+Community and Future Development:
+    .NET MAUI represents the next evolution in cross-platform application development within the .NET ecosystem.
+    It benefits from the lessons learned and feedback received from Xamarin.Forms,
+    and it is actively developed and supported by Microsoft and the community.
+
+In summary,
+.NET MAUI builds on the foundation of Xamarin.Forms,
+addressing limitations and introducing new features to provide a more unified, performant,
+and versatile framework for building cross-platform applications.
+Developers familiar with Xamarin.Forms will find many concepts and patterns carried over to .NET MAUI,
+making the transition smoother while enjoying the benefits of the improvements introduced in the new framework.
