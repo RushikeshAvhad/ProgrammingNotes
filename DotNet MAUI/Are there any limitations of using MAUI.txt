@@ -1,0 +1,14 @@
+Question - Are there any limitations of using .NET MAUI?
+
+
+While .NET MAUI offers many benefits, it's important to be aware of its limitations:
+
+Learning Curve:
+    As with any new technology, there is a learning curve associated with .NET MAUI.
+    Developers may need some time to familiarize themselves with its concepts and best practices.
+Third-Party Library Support:
+    As .NET MAUI is a relatively new framework, the availability of third-party libraries and packages may be more limited
+    compared to more mature frameworks.
+Platform-Specific Considerations:
+    While .NET MAUI aims to provide a unified development experience,
+    there may still be platform-specific considerations and adjustments required for certain features or functionalities.
