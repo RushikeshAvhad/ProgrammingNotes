@@ -1,0 +1,59 @@
+Question - How does dependency injection work in .NET MAUI?
+
+
+Dependency injection (DI) is a software design pattern that helps manage the dependencies between different components in an application.
+In .NET MAUI, dependency injection is built upon the Microsoft.Extensions.DependencyInjection framework, which is part of the broader .NET ecosystem.
+.NET MAUI leverages the dependency injection capabilities provided by the Microsoft.Extensions.DependencyInjection framework.
+By registering services, specifying their lifetimes, and injecting dependencies through constructors,
+developers can create modular and testable applications with clear separation of concerns.
+
+Here's how dependency injection works in .NET MAUI:
+Service Registration:
+    The first step in using dependency injection is to register services with the dependency injection container.
+    This is typically done during application startup.
+    Services can include things like view models, platform-specific functionality, data access, or any other component that your application needs.
+
+    // Example of service registration in the Startup.cs file
+    builder.Services.AddSingleton<IMyService, MyService>();
+
+Dependency Injection Container:
+    .NET MAUI uses the built-in dependency injection container provided by the Microsoft.Extensions.DependencyInjection namespace.
+    This container manages the instantiation and lifetime of the registered services.
+
+Constructor Injection:
+    Dependencies are injected into the components (such as pages, views, or services) through their constructors.
+    The dependency injection container automatically resolves the dependencies and passes them to the constructor when creating an
+    instance of the component.
+
+    // Example of constructor injection in a MAUI page
+    public partial class MyPage : ContentPage
+    {
+        private readonly IMyService _myService;
+        public MyPage(IMyService myService)
+        {
+            _myService = myService;
+            InitializeComponent();
+        }
+    }
+
+Scope and Lifetime Management: 
+    The dependency injection container manages the lifetime of services based on their registration.
+    Common lifetimes include:
+        Singleton:
+            A single instance is created and shared across the entire application.
+        Scoped:
+            A new instance is created for each scope (e.g., per page or per request).
+        Transient:
+            A new instance is created every time the service is requested.
+    The choice of lifetime depends on the specific requirements of the application and the nature of the service.
+
+    // Example of scoped service registration
+    builder.Services.AddScoped<IMyScopedService, MyScopedService>();
+
+Service Resolution:
+    Components request services through the constructor or, in some cases, through property injection.
+    The dependency injection container resolves these dependencies at runtime.
+
+Testing and Mocking:
+    Dependency injection simplifies testing by allowing the substitution of real services with mock implementations.
+    This makes it easier to write unit tests for individual components without relying on the actual implementations of dependent services.
