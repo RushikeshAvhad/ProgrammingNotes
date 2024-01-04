@@ -1,0 +1,47 @@
+Question - What are Blazor lifecycle and Blaozr lifecycle methods?
+
+
+Blazor components have a lifecycle that defines the various stages a component goes through from its creation to its disposal.
+During these stages, Blazor provides lifecycle methods that developers can override to execute custom code.
+These lifecycle methods allow developers to perform actions at specific points in a component's lifecycle.
+
+Here are the main stages of the Blazor component lifecycle along with the corresponding methods:
+Initialization:
+    OnInitialized:
+        This method is called when the component is first initialized.
+        It is often used to perform one-time setup logic.
+    OnInitializedAsync:
+        This asynchronous method is similar to OnInitialized but allows for asynchronous initialization logic.
+Parameter Setting:
+    OnParametersSet:
+        This method is called whenever parameters passed to the component are set or changed.
+        It is useful for reacting to parameter changes.
+    OnParametersSetAsync:
+        Similar to OnParametersSet but asynchronous.
+Rendering:
+    Render:
+        This method is responsible for rendering the component's UI.
+        It is called whenever a component needs to be rendered.
+    ShouldRender:
+        This method is used to optimize rendering.
+        It returns a boolean indicating whether the component should be re-rendered.
+        If it returns false, the rendering process is skipped.
+Updating:
+    OnAfterRender:
+        This method is called after the component has been rendered.
+        It is often used for interacting with the rendered elements, such as setting up JavaScript interop.
+    OnAfterRenderAsync:
+        Similar to OnAfterRender but asynchronous.
+    OnAfterRender(bool firstRender):
+        This method is called after the component has been rendered, and it includes a boolean parameter indicating whether this is the first render.
+Disposal:
+    Dispose:
+        This method is called when a component is about to be disposed of.
+        It is used for cleaning up resources, such as unsubscribing from events or releasing unmanaged resources.
+    Dispose(bool disposing):
+        This overloaded Dispose method is called with a boolean parameter indicating whether the component is being disposed
+        due to a call to IDisposable.Dispose.
+
+These lifecycle methods provide hooks into the various stages of a component's life, allowing developers to execute custom logic when needed.
+For example, you might use OnInitializedAsync to fetch data from a server when the component is first created,
+or you might use OnAfterRender to perform actions after the component has been rendered.
