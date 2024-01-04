@@ -1,0 +1,49 @@
+Question - What are the components in Blazor?
+
+
+In Blazor, components are self-contained and reusable building blocks for building web applications.
+Components encapsulate both the UI (User Interface) and the logic needed to render and respond to user interactions.
+The component-based architecture of Blazor is similar to other modern web frameworks like React and Angular.
+
+Here are the key types of components in Blazor:
+Razor Components:
+    Blazor Server-Side Components:
+        These components run on the server, and their UI is rendered on the server side.
+        Updates to the UI are then sent to the client over a SignalR connection, ensuring a responsive user experience.
+    Blazor WebAssembly Components:
+        These components run directly in the browser using WebAssembly.
+        The entire component and its logic are downloaded to the client,
+        allowing for client-side rendering and interactivity without the need for frequent server communication.
+Pages:
+    Blazor supports the creation of pages, similar to traditional ASP.NET Core Razor Pages.
+    Pages in Blazor typically represent a discrete unit of user interface and functionality.
+Layouts:
+    Layouts define the structure of the pages and provide a consistent look and feel across multiple pages.
+    They often contain common elements such as headers, footers, and navigation menus.
+    Layouts can be used to enforce a consistent UI design throughout the application.
+Components:
+    Components are the fundamental building blocks in Blazor.
+    They can be standalone or nested within other components. 
+    Components can have parameters, allowing them to receive data from parent components.
+    They can also emit events to communicate with parent components.
+Code-Behind Files:
+    Components in Blazor can have associated code-behind files written in C#.
+    These files contain the logic and event-handling code for the corresponding Razor component.
+    The separation of markup and code promotes clean and maintainable code.
+Component Parameters:
+    Parameters are used to pass data from a parent component to a child component.
+    Parameters can be simple values, objects, or even callback functions.
+    They facilitate communication between components in a hierarchical structure.
+Event Handling:
+    Components can handle user interactions, such as button clicks or form submissions,
+    by defining event handlers in the associated code-behind file.
+    Events can also be raised and captured by parent and child components to enable communication.
+Routing:
+    Blazor applications often use a routing system to navigate between pages and components.
+    The routing system maps URLs to components or pages, allowing for a structured and navigable application.
+Dependency Injection:
+    Blazor supports dependency injection, allowing components to request and use services.
+    This is particularly useful for accessing data, managing state, or interacting with external services within a component.
+JS Interop:
+    Blazor components can interoperate with JavaScript code through a feature known as JS Interop.
+    This enables developers to use existing JavaScript libraries or call custom JavaScript functions from within their C# code.
