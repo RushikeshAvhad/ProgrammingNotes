@@ -1,0 +1,36 @@
+Question - What is Blazor WebAssembly?
+
+
+Blazor WebAssembly is a client-side web framework developed by Microsoft as part of the Blazor project.
+It allows developers to build interactive and single-page applications (SPAs) using C# and .NET languages to run directly in the browser.
+Blazor WebAssembly leverages WebAssembly, a binary instruction format that runs natively in web browsers,
+enabling near-native performance for client-side web applications.
+
+Key features and aspects of Blazor WebAssembly include:
+Client-Side Execution:
+    Unlike Blazor Server, which runs components on the server and sends UI updates to the client over a SignalR connection,
+    Blazor WebAssembly runs the entire application directly in the browser.
+    This means that the client's device executes the C# code, and there is less dependency on constant server communication for UI updates.
+WebAssembly Integration:
+    WebAssembly (often abbreviated as wasm) is a low-level binary instruction format that enables high-performance execution in web browsers.
+    Blazor WebAssembly takes advantage of WebAssembly to execute .NET-based code in the browser alongside JavaScript.
+Cross-Platform Compatibility:
+    Blazor WebAssembly applications are cross-platform and can run on various web browsers that support WebAssembly, including Chrome,
+    Firefox, Safari, and Edge.
+    This allows developers to target a wide range of devices and operating systems.
+.NET Standard Compatibility:
+    Blazor WebAssembly applications can share code and libraries with other .NET applications, thanks to the use of .NET Standard.
+    This compatibility allows developers to reuse existing .NET code and libraries, promoting code sharing and reducing development effort.
+Full .NET Ecosystem Access:
+    Developers have access to the full range of libraries, frameworks, and tools available in the .NET ecosystem.
+    This includes the ability to use popular NuGet packages and integrate with services and technologies commonly used in the 
+    .NET development community.
+Razor Components:
+    Blazor WebAssembly uses Razor Components, a component-based architecture similar to Blazor Server.
+    Developers can create reusable and modular components that encapsulate both UI and logic.
+Offline Support:
+    Blazor WebAssembly applications can be designed as Progressive Web Apps (PWAs), offering features like offline support,
+    service workers, and the ability to be installed on users' devices.
+Debugging Support:
+    Developers can use their preferred debugging tools, including browser developer tools and Visual Studio,
+    to debug and diagnose issues in Blazor WebAssembly applications.
