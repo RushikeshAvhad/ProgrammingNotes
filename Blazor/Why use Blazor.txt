@@ -1,0 +1,37 @@
+Question - Why use Blazor?
+
+
+Blazor is a web framework developed by Microsoft that allows developers to build interactive web applications using C# and 
+.NET instead of JavaScript.
+
+Here are some reasons why developers might choose to use Blazor:
+C# and .NET Development: 
+    Blazor allows developers to leverage their existing skills in C# and .NET for web development.
+    This can be advantageous for teams already familiar with these technologies,
+    as it enables code reuse and reduces the learning curve for building web applications.
+Full-stack Development:
+    With Blazor, developers can use C# for both client-side and server-side development.
+    This enables full-stack development with a single language, improving code maintainability and reducing context switching
+    between different languages.
+Component-based Architecture:
+    Blazor follows a component-based architecture, similar to other modern web frameworks like React or Angular.
+    Components are self-contained units of code that encapsulate both the UI and the logic.
+    This approach promotes code reusability and maintainability.
+Razor Syntax:
+    Blazor uses Razor syntax, a syntax for embedding C# code into HTML files.
+    This makes it easy for developers who are already familiar with Razor syntax from other ASP.NET technologies to transition to Blazor.
+Integration with Visual Studio:
+    Blazor integrates seamlessly with Visual Studio, Microsoft's popular integrated development environment (IDE).
+    Developers can take advantage of features like IntelliSense, debugging, and other tools provided by Visual Studio.
+Cross-platform Development:
+    Blazor enables cross-platform development, allowing developers to target both web browsers and mobile devices using the same codebase.
+    This is made possible through the use of Blazor WebAssembly for client-side development and Blazor Server for server-side development.
+WebAssembly Support:
+    Blazor WebAssembly allows developers to run C# code directly in the browser, thanks to WebAssembly.
+    This provides near-native performance and allows developers to build rich, client-side web applications without relying on JavaScript.
+Access to .NET Ecosystem:
+    By using Blazor, developers can leverage the extensive .NET ecosystem, including libraries, tools, and third-party components available for 
+    the .NET platform.
+Security:
+    Blazor applications benefit from the security features of the .NET runtime and can take advantage of existing authentication and
+    authorization mechanisms.
