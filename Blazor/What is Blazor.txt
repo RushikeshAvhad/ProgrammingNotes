@@ -1,0 +1,27 @@
+Question - What is Blazor?
+
+
+Blazor is a free, open-source, cross-platform Web framework that allows developers to build modern, scalable, 
+and cross-platform Web applications using C# and .NET.
+Blazor developed by Microsoft and the open-source community is initially designed to keep in 
+mind C# and .NET developers who want to build web client applications using C# language. 
+Blazor is modern, fast, and rapidly evolving. 
+Most web client applications are written using JavaScript where code mostly runs in the browser.
+Blazor framework allows developers to create rich interactive UIs using C# instead of JavaScript. 
+Blazor supports both client-side and server-side coding.
+Both server-side and client-side app logic is written in .NET. 
+Even though the code is written in .NET and C#, 
+Blazor renders the UI as HTML and CSS for wide browser support, including mobile browsers. 
+
+Here is a simple example of Blazor code that shows how HTML and C# are in the same file and how a function can be called from HTML code. 
+    <h1>Counter</h1>
+    <p>Current Count: @currentCount</p>
+    <button class="btn btn-primary" onclick="@IncrementCount">Click me</button
+
+    @code {
+        private int currentCount = 0;
+        private void IncrementCount()
+        {
+            currentCount++;
+        }
+    }
