@@ -1,0 +1,37 @@
+Question - How to deploy the Blazor app to IIS?
+
+
+Deploying a Blazor app to Internet Information Services (IIS) involves copying the necessary files to the server and configuring IIS to host the application.
+
+Here are the general steps for deploying a Blazor Server app to IIS:
+Build Your Blazor App:
+    Ensure your Blazor Server app is built, and the output is ready for deployment.
+Copy Published Files:
+    Locate the output of your Blazor Server app.
+    This is typically found in the bin\Release\netcoreapp3.x\publish folder.
+    Copy all the files and folders from the publish directory.
+Install .NET Core Hosting Bundle on the Server:
+    Ensure that the target server has the appropriate version of the .NET Core Hosting Bundle installed.
+    You can download it from the Microsoft .NET Download page.
+Configure IIS:
+    Open Internet Information Services (IIS) Manager on your server.
+    Create a new site or use an existing one to host your Blazor app.
+    Ensure that the application pool for the site is configured to use the appropriate version of the .NET CLR (e.g., .NET CLR v4.0.30319 for .NET Core 3.x).
+Set Up Site Binding (Optional):
+    If you have a custom domain, configure the site bindings to use the desired hostname and port.
+Configure ASP.NET Core Module (ANCM):
+    Ensure that the ASP.NET Core Module is installed on your server.
+    This module is responsible for hosting ASP.NET Core applications on IIS.
+    Verify that the web.config file is present in the root of your published app.
+    If not, create or copy it from the original project.
+Restart IIS:
+    After making changes to the server configuration, restart IIS to apply the changes.
+Verify Deployment:
+    Open a web browser and navigate to the URL of your deployed Blazor app to verify that it's running successfully.
+Additional Considerations:
+    HTTPS/SSL Configuration:
+        If you want to use HTTPS, configure SSL settings in IIS and ensure that your server has an SSL certificate installed.
+    URL Rewrite (Optional):
+        If you're using client-side routing, you may need to configure URL Rewrite rules in IIS to ensure proper handling of routes.
+    Logging and Troubleshooting:
+        Enable logging in your app, and use the Event Viewer on the server for any potential error messages.
