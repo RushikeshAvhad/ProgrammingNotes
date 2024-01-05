@@ -1,0 +1,49 @@
+Question - How to deploy the Blazor app in Azure?
+
+
+To publish the Blazor app on Azure, Right-click on the Server project of your solution and click publish. 
+It will open the “Pick a publish target” window.
+Select “App Service” from the left menu.
+Select the “Create New” radio button and click on “Create profile”. 
+The next window will ask you to log in to your Azure account if you are not logged in.
+Once the login is successful, a “Create App Service” window will open.
+The fields of this window are prepopulated as per the configuration of your Azure account.
+However, you can change these values as per your requirement.
+
+
+
+
+Steps to Deploy a Blazor WebAssembly App to Azure App Service:
+Prepare Your Blazor WebAssembly App:
+    Ensure your Blazor WebAssembly app is ready for deployment.
+    Build the app to generate the necessary output files.
+Create an Azure App Service:
+    Log in to the Azure portal (https://portal.azure.com/).
+    Click on "Create a resource," then search for "Web App."
+    Fill in the required details, such as App Name, Subscription, Resource Group, and choose an appropriate OS (Windows or Linux).
+    Configure the remaining settings and click "Review + create."
+Configure Deployment Options:
+    In the Azure portal, navigate to your App Service.
+    In the left menu, select "Deployment Center."
+    Choose a source repository for your app (e.g., GitHub, Azure Repos, Bitbucket).
+    Follow the prompts to configure the connection to your repository and choose the branch you want to deploy.
+Configure Build Settings:
+    Based on your repository, select the appropriate build provider (e.g., GitHub Actions, Azure Pipelines).
+    Configure the build settings to build your Blazor WebAssembly app.
+    This typically involves specifying the build and publish steps.
+Deploy Your App:
+    Trigger the deployment either manually or by setting up continuous integration.
+    The deployment process will build your app and deploy it to the specified Azure App Service.
+Configure Environment Variables (Optional):
+    If your app relies on environment variables, configure them in the Azure portal.
+    Navigate to your App Service, go to "Configuration," and add the necessary settings.
+Verify Deployment:
+    Once the deployment is complete, navigate to the URL of your Azure App Service to verify that your Blazor app is running successfully.
+Additional Considerations:
+    Custom Domain:
+        If you have a custom domain, configure it in the Azure portal under "Custom domains" for your App Service.
+    SSL Configuration:
+        Consider enabling SSL for your App Service.
+        You can use Azure's built-in certificate or bring your own SSL certificate.
+    Scaling:
+        Adjust the scaling settings based on your app's needs.
