@@ -1,0 +1,18 @@
+Question - What platform does Blazor support?
+
+Blazor is a web framework developed by Microsoft that allows developers to build interactive web applications using C# and .NET
+instead of relying on JavaScript.
+Blazor is designed to be flexible and can be hosted on a variety of platforms, including browsers, servers, and integrated with ASP.NET Core.
+
+Blazor WebAssembly (Wasm):
+    This allows you to run Blazor applications directly in the browser using WebAssembly.
+    It is platform-independent and can run on any modern browser that supports WebAssembly.
+Blazor Server:
+    In this model, the application runs on the server, and UI updates are sent to the client over a SignalR connection.
+    Blazor Server applications can be hosted on Windows or Linux servers, and they are accessed by clients through supported web browsers.
+Blazor Hybrid:
+    Blazor Hybrid applications combine the Blazor WebAssembly and Blazor Server models,
+    allowing you to run some components on the client using WebAssembly and others on the server.
+ASP.NET Core:
+    Blazor is designed to work seamlessly with ASP.NET Core, Microsoft's open-source, cross-platform web framework.
+    You can host Blazor applications within an ASP.NET Core application.
