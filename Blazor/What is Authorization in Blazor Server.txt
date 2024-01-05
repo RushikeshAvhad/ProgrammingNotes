@@ -1,0 +1,70 @@
+Question - What is Authorization in Blazor Server?
+
+
+Authorization is a process to validate that the user has rights to access the application resource.
+In other words, it helps you to control user access to a resource based on roles, claims, and policies.
+Blazor uses ASP.NET Core authorization mechanism and it can be achieve using attributes, built-in components and by defining authorization rules.
+The AuthorizeView is Blazor's built-in component that able to show page content based on the user's authentication state.
+This component also supports policy-based authorization and role-based authorization.
+This component is very useful when you want to show page content based on the role, policy, or authentication status of the user.
+It uses AuthenticationStateProvider to know the user authentication state.
+This component provides Authorized, and NotAuthorized render fragments.
+The Authorized fragment renders when the user is authenticated, and NotAuthorized fragment renders when the user is unauthenticated.
+Both fragments accept other interactive components.
+Authorization in Blazor Server is an essential aspect of building secure applications,
+allowing you to control access to various parts of the application based on user roles and permissions.
+It integrates with the broader ASP.NET Core authorization system, providing a robust foundation for managing user access.
+
+Blazor supports role-based, policy-based, and claim-based authorization.
+
+
+Authorization in Blazor Server refers to the process of controlling access to different parts of a Blazor Server application
+based on the identity and roles of the user.
+It involves determining whether a user is allowed to perform a certain action or access specific resources within the application.
+Blazor Server leverages the ASP.NET Core authentication and authorization system to provide a flexible and extensible way to handle authorization.
+
+Here are key concepts related to authorization in Blazor Server:
+Authentication:
+    Authentication is the process of verifying the identity of a user.
+    Blazor Server applications often use ASP.NET Core Identity or other authentication mechanisms to authenticate users.
+    Once authenticated, the user is associated with a unique identity, and information about the user,
+    such as roles and claims, is available for authorization.
+Authorization Policies:
+    Authorization in Blazor Server is typically implemented using authorization policies.
+    A policy defines a set of requirements that must be satisfied for a user to be authorized to perform a specific action or access a resource.
+    Policies are configured in the Startup.cs file or other configuration files.
+    
+    services.AddAuthorization(options =>
+    {
+        options.AddPolicy("RequireAdminRole", policy =>
+            policy.RequireRole("Admin"));
+    });
+AuthorizeView Component:
+    The AuthorizeView component in Blazor is used to conditionally render content based on the user's authorization status.
+    It has attributes like Roles and Policy that allow you to specify the required roles or policies for the enclosed content.
+    htmlCopy code
+    <AuthorizeView Roles="Admin">
+        <p>This content is visible to users in the Admin role.</p>
+    </AuthorizeView>
+Authorize Attribute:
+    The [Authorize] attribute can be applied to Blazor components or Razor pages to restrict access.
+    It ensures that only authenticated users are allowed to access the associated component or page.
+    csharpCopy code
+    [Authorize(Roles = "Admin")]
+    public class AdminPage : ComponentBase
+    {
+        // ...
+    }
+AuthenticationStateProvider:
+    The AuthenticationStateProvider service provides information about the current authentication state, including the user's identity and claims.
+    Blazor components can use this service to check the user's authentication status and make authorization decisions.
+    csharpCopy code
+    @inject AuthenticationStateProvider AuthenticationStateProvider
+    
+    @code {
+        private async Task CheckAuthorization()
+        {
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            // Check authorization based on authState.User
+        }
+    }
