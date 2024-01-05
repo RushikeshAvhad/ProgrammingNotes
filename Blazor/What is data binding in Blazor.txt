@@ -1,0 +1,58 @@
+Question - What is data binding in Blazor?
+
+
+Data binding in Blazor refers to the synchronization of data between the application's user interface (UI) and the underlying data model.
+Blazor provides a rich set of features for data binding, allowing you to connect UI elements to data sources,
+respond to user input, and update the UI automatically as the data changes.
+
+There are two main types of data binding in Blazor:
+One-Way Data Binding:
+    In one-way data binding, data flows in one direction: from the data source to the UI.
+    Changes in the data source automatically update the UI elements bound to that data.
+    
+    Example:
+    Displaying a property value in the UI.
+    csharpCopy code
+    <p>The current count is: @currentCount</p>
+    
+    @code {
+        private int currentCount = 0;
+        private void IncrementCount()
+        {
+            currentCount++;
+        }
+    }
+    In this example, the currentCount variable is bound to the <p> element.
+    Any changes to currentCount are automatically reflected in the displayed text.
+
+Two-Way Data Binding:
+    Two-way data binding allows changes in the UI to propagate back to the data source.
+    This is useful for forms and interactive UI elements where user input should update the underlying data.
+    
+    Example:
+    Binding an input field to a property.
+    csharpCopy code
+    <input type="text" @bind="userName" />
+    <p>Hello, @userName!</p>
+    
+    @code {
+        private string userName = "Guest";
+    }
+    
+    In this example, the userName variable is bound to the input field using @bind.
+    Any changes made in the input field by the user will update the userName variable, and the greeting message will be updated accordingly.
+
+Blazor supports various mechanisms for data binding, including:
+    @bind Directive:
+        Used for two-way data binding, as demonstrated in the second example above.
+    @value and @oninput Directives:
+        Used for two-way data binding in input elements.
+    @on[event] Directives:
+        Used to handle UI events and update the data accordingly.
+    @if, @for, and @foreach Directives:
+        Used for conditional rendering and iteration over data collections.
+    Component Parameters:
+        Passing data between parent and child components using parameters.
+
+Event Binding:
+    Event binding is in Blazor is supported by using function name along with @ i.e. @ButtonClicked (here ButtonClicked is function name)
