@@ -1,0 +1,51 @@
+Question - What is routing in Blazor?
+
+
+In Blazor, routing refers to the process of navigating between different pages or components in a web application.
+It allows you to create a navigational structure within your application, defining how URLs map to specific components or pages.
+Blazor supports client-side routing (Blazor WebAssembly) and server-side routing (Blazor Server).
+Routing is an essential aspect of creating a structured and navigable user interface in a Blazor application.
+It allows you to define the relationships between different components or pages and enables users to move between them seamlessly.
+
+
+Here's an overview of both:
+Client-Side Routing (Blazor WebAssembly):
+    In Blazor WebAssembly, the routing is handled on the client side,
+    meaning that navigation and page rendering occur directly in the user's web browser.
+    Routing is configured using the @page directive in Razor components.
+    The @page directive specifies the route for the component.
+    
+    @page "/example"
+
+    You can also use route parameters to capture values from the URL.
+    @page "/user/{userId}"
+
+    The NavigationManager service is commonly used to navigate between pages programmatically.
+    @inject NavigationManager NavigationManager
+    <button @onclick="NavigateToExample">Go to Example Page</button>
+    @code {
+        private void NavigateToExample()
+        {
+            NavigationManager.NavigateTo("/example");
+        }
+    }
+
+Server-Side Routing (Blazor Server):
+    In Blazor Server, the routing is handled on the server, and the user interacts with the application through a SignalR connection.
+    The @page directive is still used to define routes for components.
+
+    @page "/example"
+    
+    Navigation is typically done using standard HTML <a> elements or the NavigationManager service.
+    <a href="/example">Go to Example Page</a>
+    @inject NavigationManager NavigationManager
+    <button @onclick="NavigateToExample">Go to Example Page</button>
+
+    @code {
+        private void NavigateToExample()
+        {
+            NavigationManager.NavigateTo("/example");
+        }
+    }
+
+    Blazor Server also supports route parameters and query parameters.
