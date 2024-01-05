@@ -1,0 +1,65 @@
+Question - What are templated components in Blazor?
+
+
+Blazor uses the Razor template engine that generates HTML and serves to the web browsers.
+We can mix HTML and C# syntax in the Razor templates and Razor engine then compiles the Razor templates to generate the HTML.
+Blazor (version 0.6.0) supports the templated component.
+It is a component that accepts one or more UI templates as parameters and these parameters can be used for component rendering.
+It allows us to write high-level reusable components.
+Using templated components, we can write a generic and more reusable component.
+We can create the templated component by using one or more component parameters of type RenderFragment or RenderFragment<T>.
+The RenderFragment is a part of UI which is rendered by the component.
+It may have parameters that are used during the rendering of the component or while the RenderFragment is invoked.
+Templated components are especially useful when you want to create flexible and reusable components that can adapt to different use cases.
+They provide a powerful mechanism for component consumers to inject their own content or behavior into predefined areas of a component.
+
+
+In Blazor,
+templated components are a way to create reusable components with flexible and customizable rendering.
+Templated components allow you to define a component that includes a template for rendering content,
+and then users of the component can customize the appearance or behavior of the component by providing their own markup
+or code within the defined template.
+
+Here's a basic overview of how templated components work in Blazor:
+Creating a Templated Component:
+    You define a component with a template by using the RenderFragment type in the component's parameters or properties.
+    The RenderFragment type allows users to pass in a block of content or code that will be rendered within the component.
+    
+    csharpCopy code
+    // Example of a templated component
+    <MyTemplatedComponent>
+        <Template>
+            <!-- Custom content or code provided by the user -->
+            <p>Hello from the template!</p>
+        </Template>
+    </MyTemplatedComponent>
+    
+Using the Template in the Component:
+    Within the component, you use the provided RenderFragment to render the template.
+    The RenderFragment can be rendered using the @ChildContent directive.
+    
+    csharpCopy code
+    @inherits ComponentBase
+
+    <div>
+        <h3>My Templated Component</h3>
+        @ChildContent
+    </div>
+
+    @code {
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
+    }
+
+Customizing the Template:
+    Users of the component can provide their own content or code to be rendered within the template.
+    This allows for a high degree of customization without modifying the underlying component.
+    
+    csharpCopy code
+    <MyTemplatedComponent>
+        <Template>
+            <!-- Custom content or code provided by the user -->
+            <p>Hello, customized template!</p>
+            <button>Click me!</button>
+        </Template>
+    </MyTemplatedComponent>
