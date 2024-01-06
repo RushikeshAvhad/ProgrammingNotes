@@ -1,0 +1,43 @@
+Question - What is the difference between Blazor Server and Blazor WebAssembly?
+
+
+Blazor is a framework for building interactive web applications using C# and .NET instead of JavaScript.
+There are two hosting models in Blazor: Blazor Server and Blazor WebAssembly.
+
+Here are the key differences between them:
+Blazor Server:
+    Execution Model:
+        The server model runs on the server, and UI interactions are handled on the server side.
+        The application's UI is rendered on the server, and only the UI events and updates are sent to the client over a SignalR connection.
+        This means that the client has a lightweight runtime and relies on the server for processing logic.
+    Performance:
+        Offers good performance, but the responsiveness of the application is dependent on the network latency and the connection to the server.
+        UI updates involve communication between the client and the server.
+    Network Requirements:
+        Requires a constant connection to the server for UI updates and event handling.
+        The application remains responsive, but network latency can impact the user experience.
+    Hosting:
+        Hosted on a server that supports ASP.NET Core, such as IIS or Azure App Service.
+    Scalability:
+        Scales well for applications with a moderate number of users.
+        The server-side processing can become a bottleneck when dealing with a large number of concurrent users.
+
+Blazor WebAssembly:
+    Execution Model:
+        The WebAssembly (Wasm) model allows the application to run directly in the browser using WebAssembly.
+        The entire application, including the UI rendering and logic, is executed on the client-side within the browser.
+        This eliminates the need for a constant connection to the server after the initial download.
+    Performance:
+        Can provide a faster user experience as the application runs directly in the browser.
+        However, the initial load time might be longer due to the need to download the necessary .NET runtime and application assemblies to
+        the client.
+    Network Requirements:
+        After the initial download, the application can run offline as it is self-contained within the browser.
+        However, initial load times and subsequent updates may depend on the network speed.
+    Hosting:
+        Can be hosted on static file servers (like GitHub Pages or Azure Storage) since it doesn't require server-side processing
+        after the initial download.
+        It can also be hosted on any server that can serve static files.
+    Scalability:
+        Scales more easily as the client handles its own processing.
+        Server resources are mainly required for initial downloads, and subsequent user interactions don't put as much load on the server.
