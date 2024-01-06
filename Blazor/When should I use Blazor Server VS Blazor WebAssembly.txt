@@ -1,0 +1,29 @@
+Question - When should I use Blazor Server VS Blazor WebAssembly?
+
+
+Blazor server runs on the server-side and requires a web server such as IIS.
+You can compare Blazor server with an ASP.NET MVC application.
+Blazor WebAssembly is an option for C# and .NET developers who want to build client-side browser apps that run in the browser,
+without a need for a server.
+Unlike Blazor Server, a Blazor WebAssembly app does not require a server, and all code is executed in the browser.
+
+
+Here are some of the use cases where you may want to choose Blazor Server over Blazor WebAssembly. 
+    If you’ve an existing MVC or Razor pages app and want to continue expanding that with Blazor Server is probably a better choice for you.
+    You don’t need to rewrite your business logic or database libraries.
+    Your application can use MVC and Razor Pages for server-rendering and Blazor for client-side interaction.
+    Blazor Server apps are good where you want your client browser to do less work.
+    In Blazor Server, most of the work is done on the server.
+    It suits best for where you have a reliable low-latency network connection.
+    Blazor Server apps are not recommended for real-time frequent updates since server sider rending could be slower.
+    Blazor Server apps require an active network connection, offline scenarios are not supported.
+
+Here are some of the use cases where you may want to choose Blazor WebAssembly over Blazor Server.
+    You do not have experience working with ASP.NET and server-side.
+    You do not want to go through managing and deploying code on the server.
+    You want to take advantage of client browsers, compute, memory, and storage.
+    You want to build real-time responses and build a UI that updates frequently.
+    You want to build fast static websites.
+    You want to take advantage of modern technology such as progressive web apps (PWA) to implement live notifications,
+    local browser storage, messages, and server workers.
+    You want to build web apps that can completely work offline.
