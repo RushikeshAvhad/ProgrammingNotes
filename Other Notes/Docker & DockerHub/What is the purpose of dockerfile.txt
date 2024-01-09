@@ -1,0 +1,57 @@
+Question - What is the purpose of Dockerfile?
+
+
+A Dockerfile is a script that contains a set of instructions for building a Docker image.
+It serves as a blueprint for creating a reproducible and consistent environment for running an application inside a Docker container.
+The primary purpose of a Dockerfile is to automate the process of creating Docker images by specifying the steps needed to set
+up the environment and configure the application.
+
+
+Here are the key purposes and components of a Dockerfile:
+Base Image Selection:
+    Specify the base image that serves as the starting point for building the container.
+    This image typically includes a minimal operating system and runtime.
+Application Setup:
+    Install dependencies and libraries required by the application.
+    This can include system packages, programming language runtimes, and other software components.
+Application Code Copy:
+    Copy the application source code and any necessary configuration files into the image.
+    This ensures that the image contains the required files for running the application.
+Environment Configuration:
+    Set environment variables that configure the behavior of the application or runtime within the container.
+Application Build:
+    If the application requires compilation or build steps, such as compiling source code or assets,
+    specify those build commands in the Dockerfile.
+Expose Ports:
+    Declare which network ports the container will use and expose to the host system.
+    This is crucial for allowing communication with the containerized application.
+Container Startup Command:
+    Define the command that should be executed when the container starts.
+    This is typically the command that launches the main process of the application.
+
+
+Here's a simple example of a Dockerfile for a Node.js application:
+# Use an official Node.js runtime as the base image
+FROM node:14
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the application source code to the working directory
+COPY . .
+
+# Expose port 3000
+EXPOSE 3000
+
+# Define the command to run the application
+CMD ["node", "app.js"]
+
+This Dockerfile specifies the base image, sets up the working directory, installs Node.js dependencies,
+copies the application code, exposes a port, and defines the command to start the Node.js application.
+When this Dockerfile is used to build an image, it creates a containerized environment for running the specified Node.js application.
