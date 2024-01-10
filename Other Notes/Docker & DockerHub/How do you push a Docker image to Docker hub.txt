@@ -1,0 +1,40 @@
+Question - How do you push a Docker image to Docker hub?
+
+
+To push a Docker image to Docker Hub, you need to follow these general steps.
+Please note that you'll need to have a Docker Hub account and be logged in to Docker Hub on your local machine.
+
+Steps:
+Login to Docker Hub:
+    Open a terminal or command prompt on your local machine.
+    Run the following command to log in to Docker Hub.
+    docker login -u <username> -p <password>
+    If you have two-factor authentication enabled, you may need to use a personal access token as the password.
+    In that case, generate a token on the Docker Hub website and use it in place of the password.
+Tag the Docker Image:
+    Before pushing the image to Docker Hub, you need to tag it with your Docker Hub username and the repository name.
+    The tag should include the Docker Hub username, the repository name, and optionally a version tag.
+    docker tag local_image <username>/<repository>:tag
+    For example:
+    docker tag my_local_image myusername/myrepository:v1.0
+Push the Docker Image:
+    Once the image is tagged, you can push it to Docker Hub using the following command:
+    docker push <username>/<repository>:tag
+    For example:
+    docker push myusername/myrepository:v1.0
+    This command uploads the Docker image to your Docker Hub repository.
+    The process may take some time depending on the size of the image and your internet connection speed.
+Verify on Docker Hub:
+    After the push is complete, visit the Docker Hub website, log in to your account, and navigate to the repository.
+    You should see the pushed image listed there.
+    Example Workflow:
+    Here's a quick example using a concrete image:
+    # Log in to Docker Hub
+    docker login -u myusername -p mypassword
+    # Tag the local image
+    docker tag my_local_image myusername/myrepository:v1.0
+    # Push the image to Docker Hub
+    docker push myusername/myrepository:v1.0
+    
+Make sure that you replace the placeholder values with your actual Docker Hub credentials, image names, and version tags.
+Additionally, ensure that the Docker image you want to push is built and available locally on your machine.
