@@ -1,0 +1,46 @@
+Question - How do you pass data from a parent component to a child component in Blazor?
+
+
+In Blazor, you can pass data from a parent component to a child component by using component parameters.
+Component parameters allow you to define properties on the child component that can be set from the parent component.
+
+Here's how you can pass data from a parent component to a child component:
+Parent Component (ParentComponent.razor):
+
+<!-- ParentComponent.razor -->
+@page "/parent"
+<h3>Parent Component</h3>
+<!-- Pass data to the child component using a parameter -->
+<ChildComponent MessageFromParent="parentMessage" />
+@code {
+    private string parentMessage = "Hello from the parent!";
+}
+
+In this example, the parent component (ParentComponent.razor) has a property called parentMessage, which is a string.
+This property will be passed to the child component.
+
+Child Component (ChildComponent.razor):
+<!-- ChildComponent.razor -->
+<h4>Child Component</h4>
+<!-- Declare a parameter in the child component -->
+<p>@MessageFromParent</p>
+@code {
+    // Define a parameter named MessageFromParent
+    [Parameter]
+    public string MessageFromParent { get; set; }
+}
+
+In the child component (ChildComponent.razor), a parameter named MessageFromParent is declared using the [Parameter] attribute.
+The type of the parameter is specified (in this case, string). 
+The value of this parameter will be set from the parent component.
+
+When the parent component uses the child component (<ChildComponent MessageFromParent="parentMessage" />), 
+it passes the value of parentMessage to the MessageFromParent parameter in the child component.
+
+Now, when the child component renders, it displays the message received from the parent component:
+
+Child Component
+Hello from the parent!
+
+This is a simple example, and you can pass more complex objects or even other components as parameters.
+By using parameters, you establish a clear and structured way to pass data from parent components to child components in a Blazor application.
