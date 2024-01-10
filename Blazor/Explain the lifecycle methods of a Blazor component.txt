@@ -1,0 +1,66 @@
+Question - Explain the lifecycle methods of a Blazor component?
+
+
+Blazor components have a lifecycle with various methods that are called at different stages during the component's existence.
+These lifecycle methods provide developers with hooks to execute code at specific moments, allowing them to perform tasks like initialization,
+clean-up, and responding to changes.
+
+Here is an overview of the main lifecycle methods of a Blazor component:
+
+OnInitialized:
+    Description:
+        This method is called when the component has been initialized, but it has not yet been rendered.
+    Use Cases:
+        Initialization logic that needs to be performed before the component is rendered.
+    
+    protected override void OnInitialized()
+    {
+        // Initialization logic
+    }
+
+OnInitializedAsync:
+    Description:
+        Similar to OnInitialized, but it supports asynchronous operations.
+    Use Cases:
+        Asynchronous initialization tasks.
+
+OnParametersSet:
+    Description:
+        This method is called whenever parameter values for the component are set or changed.
+    Use Cases:
+        Responding to changes in component parameters.
+
+OnParametersSetAsync:
+    Description:
+        Similar to OnParametersSet, but supports asynchronous operations.
+    Use Cases:
+        Asynchronous logic in response to changes in parameters.
+    
+OnAfterRender:
+    Description:
+        This method is called after the component has been rendered in the browser.
+    Use Cases:
+        Performing actions after the component has been rendered, such as interacting with the DOM.
+    
+OnAfterRenderAsync:
+    Description:
+        Similar to OnAfterRender, but supports asynchronous operations.
+    Use Cases:
+        Asynchronous logic after the component has been rendered.
+
+ShouldRender:
+    Description:
+        This method is used to determine whether the component should render.
+        It returns a boolean indicating whether rendering should occur.
+    Use Cases:
+        Controlling the rendering process based on certain conditions.
+
+Dispose:
+    Description:
+        This method is called when the component is being disposed of, allowing for cleanup operations.
+    Use Cases:
+        Disposing of resources, canceling asynchronous tasks, or releasing references.
+
+These lifecycle methods give developers fine-grained control over the behavior of Blazor components throughout their lifecycle.
+By overriding these methods, developers can execute custom logic at specific moments during the component's existence,
+enabling a wide range of use cases, from initialization to cleanup and beyond.
