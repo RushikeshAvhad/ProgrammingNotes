@@ -1,0 +1,56 @@
+Question - What is Blazor Component?
+
+
+A Blazor component is a self-contained, reusable unit that defines the UI and behavior for a specific part of a web application.
+Components in Blazor are the fundamental building blocks of the user interface, allowing developers to create modular and maintainable code.
+Each component encapsulates a piece of the user interface and can include both HTML markup and C# code.
+
+Here are the key characteristics of a Blazor component:
+Markup and Code:
+    A Blazor component consists of both HTML markup and C# code, combined in a single file with the .razor extension.
+    The markup defines the structure and layout of the component, while the C# code provides the logic and behavior.
+Syntax:
+    Components use a combination of HTML-like syntax and Razor syntax for embedding C# code within the markup.
+    Razor syntax is denoted by @ followed by C# code, allowing seamless integration of C# logic into the markup.
+Reusability:
+    Components are designed for reusability.
+    Developers can create components for specific UI elements, such as buttons, forms, or custom widgets,
+    and reuse them across different pages or layouts.
+Lifecycle Methods:
+    Components have a lifecycle with various methods that can be overridden to perform actions at specific points in the component's life,
+    such as initialization, rendering, and disposal.
+    Examples of lifecycle methods include OnInitialized, OnParametersSet, OnAfterRender, and others.
+Parameters:
+    Components can accept parameters, which are values passed from a parent component or page.
+    Parameters enable communication between components and make it possible to create dynamic and interactive user interfaces.
+Event Handling:
+    Components can handle user interactions and events, such as button clicks or form submissions, using event handlers.
+    Event handling in Blazor is similar to handling events in traditional web development.
+Child Components:
+    Components can contain other components as child components, forming a hierarchical structure.
+    This enables the creation of complex user interfaces by composing smaller, reusable pieces.
+Code-Behind Model:
+    Components follow a code-behind model where the HTML markup and C# code are combined in a single file.
+    The C# code contains the logic for the component, and it can include methods, properties, and other members.
+
+Here is a simple example of a Blazor component:
+    
+    htmlCopy code
+    <!-- MyComponent.razor -->
+    <h3>@title</h3>
+
+    <button @onclick="ButtonClick">Click me</button>
+
+    @code {
+        private string title = "Welcome to MyComponent";
+
+        private void ButtonClick()
+        {
+            title = "Button Clicked!";
+        }
+    }
+
+In this example, MyComponent is a Blazor component that displays a title and a button.
+When the button is clicked, the ButtonClick method is called, updating the title.
+This is just a basic illustration, and Blazor components can become more complex as they handle parameters, events,
+and interact with other components within an application.
