@@ -1,0 +1,135 @@
+Question - What are the main Components of a Blazor WebAssembly applications?
+
+
+A Blazor WebAssembly application is composed of several key components that work together to enable the development of
+interactive web applications using C# and .NET.
+
+Here are the main components of a Blazor WebAssembly application:
+Blazor Components:
+    Definition:
+        Blazor components are self-contained, reusable building blocks that define the UI and behavior of parts of a web application.
+        Components can include both HTML and C# code.
+    File Extension:
+        Components are typically defined in .razor files.
+    Example:
+    htmlCopy code
+    <button @onclick="ClickHandler">Click me</button>
+
+    @code {
+        private void ClickHandler()
+        {
+            // C# code
+        }
+    }
+
+Pages:
+    Definition:
+        Pages in a Blazor application represent different views or sections of the application.
+        Each page is associated with a URL route and can contain one or more components.
+    Location:
+        Pages are typically placed in the Pages folder.
+    Example:
+    htmlCopy code
+    @page "/counter"
+
+    <h3>Counter</h3>
+
+    <p>Current count: @currentCount</p>
+
+    <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+    @code {
+        private int currentCount = 0;
+
+        private void IncrementCount()
+        {
+            currentCount++;
+        }
+    }
+
+Router:
+    Definition:
+        The router in a Blazor application is responsible for determining which page to display based on the current URL.
+        It maps URLs to specific components or pages.
+    Usage:
+        The <Router> component is typically used in the App.razor file to define the application's routing configuration.
+    Example (App.razor):
+    htmlCopy code
+    <Router AppAssembly="@typeof(Program).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        </Found>
+        <NotFound>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p>Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+
+MainLayout:
+    Definition:
+        The MainLayout component serves as the layout template for the entire application.
+        It typically contains elements that are common across multiple pages, such as headers, navigation menus, and footers.
+    Location:
+        The MainLayout component is usually defined in the Shared folder.
+    Example:
+    htmlCopy code
+    <div class="sidebar">
+        <!-- Sidebar content -->
+    </div>
+
+    <div class="main">
+        <div class="content">
+            @Body
+        </div>
+
+        <footer>
+            <!-- Footer content -->
+        </footer>
+    </div>
+
+Startup Class:
+    Definition:
+        The Startup class is used to configure services and middleware during the application's startup.
+        It is similar to the Startup.cs class in ASP.NET Core applications.
+    Location: 
+        The Startup class is typically defined in the Startup.cs file.
+    Example:
+    csharpCopy code
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            // Configure services
+        }
+
+        public void Configure(IBlazorApplicationBuilder app)
+        {
+            // Configure middleware
+        }
+    }
+
+Program Class:
+    Definition:
+        The Program class contains the Main method, which is the entry point for the application.
+        It configures and runs the Blazor WebAssembly application.
+    Location:
+        The Program class is typically defined in the Program.cs file.
+    Example:
+    csharpCopy code
+    public class Program
+    {
+        public static async Task Main(string[] args)
+        {
+            var builder = WebAssemblyHostBuilder.CreateDefault(args);
+            builder.RootComponents.Add<App>("#app");
+
+            // Configure services and add components
+
+            await builder.Build().RunAsync();
+        }
+    }
+
+These components work together to create a Blazor WebAssembly application.
+Developers define pages and components, configure routing, create layout templates, and set up the startup configuration.
+The application's entry point is the Program class, which configures the hosting environment and runs the application.
