@@ -1,0 +1,40 @@
+Question - How does Blazor WebAssembly enable running C-Sharp code in the browser?
+
+
+Blazor WebAssembly enables running C# code in the browser by leveraging WebAssembly (Wasm),
+a binary instruction format designed to be executed at near-native speed in web browsers.
+WebAssembly allows developers to run code written in languages other than JavaScript in the browser,
+providing a more diverse set of languages for web development.
+
+Here's an overview of how Blazor WebAssembly achieves running C# code in the browser:
+Compilation to WebAssembly:
+    The C# code of a Blazor WebAssembly application is compiled to WebAssembly bytecode during the build process.
+    This compilation is performed by the .NET Core runtime and toolchain.
+Intermediate Language (IL) and .NET Runtime:
+    The C# code is initially compiled into Intermediate Language (IL) by the .NET compiler.
+    The IL is then processed by the .NET runtime, which includes the Common Language Runtime (CLR).
+Mono Runtime for WebAssembly:
+    For Blazor WebAssembly, the Mono runtime (an open-source implementation of the .NET runtime) is used specifically
+    for targeting WebAssembly.
+    Mono has been extended to support the WebAssembly execution environment.
+WebAssembly Binary:
+    The Mono runtime, along with the application's IL, is compiled into a WebAssembly binary (.wasm file).
+    This binary contains the instructions that can be executed by the WebAssembly engine in the browser.
+JavaScript Interoperability:
+    Blazor WebAssembly uses JavaScript interoperability to bridge the gap between the .NET runtime running in WebAssembly 
+    and the JavaScript environment of the browser.
+    This allows communication between C# and JavaScript code.
+Execution in the Browser:
+    The WebAssembly binary is loaded into the browser along with the necessary JavaScript runtime.
+    When the application is accessed in a web browser, the browser's JavaScript engine executes the WebAssembly binary.
+Rendering in the Browser:
+    Blazor WebAssembly utilizes the browser's rendering capabilities to display the user interface.
+    The rendering is achieved through the manipulation of the Document Object Model (DOM) using JavaScript interop.
+Full .NET Runtime Experience:
+    Once the application is loaded and running in the browser, users experience a full .NET runtime environment.
+    The C# code runs on the client side, and the application can make use of .NET libraries and features,
+    just as it would in a server-side Blazor application.
+
+By utilizing WebAssembly and the Mono runtime, Blazor WebAssembly extends the reach of .NET applications to the client-side,
+allowing developers to build interactive web applications using C# and .NET technologies.
+This approach provides a unified development experience for both server-side and client-side code within the .NET ecosystem.
