@@ -1,0 +1,68 @@
+Question - What is the purpose of the @code block in a Blazor component?
+
+
+The @code block in a Blazor component is used to include C# code that is associated with the component.
+This block is where you can define fields, properties, methods, and other C# code that is specific to the behavior and logic of the component.
+
+Here are some key aspects of the @code block:
+Fields and Properties:
+    You can declare fields and properties within the @code block.
+    These fields and properties are accessible within the component,
+    allowing you to store and manage data that is specific to the component's instance.
+    razorCopy code
+    @code {
+        private string message = "Hello from the component!";
+    }
+
+Component Parameters:
+    If your component accepts parameters, you can define them within the @code block.
+    Parameters are used to pass data into the component from its parent.
+    razorCopy code
+    @code {
+        [Parameter]
+        public string Title { get; set; }
+    }
+
+Methods:
+    You can define methods within the @code block to encapsulate the component's logic.
+    These methods can be called from the component's markup or from other methods within the @code block.
+    razorCopy code
+    @code {
+        private void DisplayMessage()
+        {
+            Console.WriteLine("Displaying the message");
+        }
+    }
+
+Lifecycle Methods:
+    Blazor components have lifecycle methods that are automatically called at different stages of the component's lifecycle.
+    These methods can be defined in the @code block to perform actions during specific lifecycle events.
+    razorCopy code
+    @code {
+        protected override void OnInitialized()
+        {
+            // Initialization logic
+        }
+
+        protected override void OnParametersSet()
+        {
+            // Parameter setting logic
+        }
+
+        // Other lifecycle methods...
+    }
+
+Code-Behind:
+    The @code block can be complemented with a code-behind file (.cs file) to separate the markup and C# code.
+    This is useful for maintaining clean and organized code, especially for larger components.
+    csharpCopy code
+    // ExampleComponent.razor.cs
+
+    public partial class ExampleComponent
+    {
+        // Code-behind logic can be placed here
+    }
+
+the @code block is a crucial part of a Blazor component where you define the C# code associated with the component's behavior,
+logic, and data management.
+It allows you to create dynamic and interactive components by incorporating C# functionality directly into the Razor markup.
