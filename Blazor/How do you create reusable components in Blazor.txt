@@ -1,0 +1,78 @@
+Question - How do you create reusable components in Blazor?
+
+
+In Blazor, you can create reusable components to encapsulate UI and logic for use in different parts of your application.
+
+Here's a basic guide on how to create reusable components in Blazor:
+Create a New Component:
+    Create a new Razor component file (.razor) in your Blazor project.
+    You can do this by right-clicking on the desired folder in your project and selecting "Add" > "New Item," then choosing "Razor Component."
+Define the Component Structure:
+    Open the newly created component file, and define the component structure using Razor syntax.
+    You can include HTML markup, C# code, and Blazor components within this file.
+    razorCopy code
+    <!-- ExampleComponent.razor -->
+    <div>
+        <h3>@Title</h3>
+        <p>@Content</p>
+    </div>
+
+    @code {
+        [Parameter]
+        public string Title { get; set; }
+
+        [Parameter]
+        public string Content { get; set; }
+    }
+
+Use the Component in Other Pages:
+    To use the component in other Blazor pages or components, you can reference it by its tag name and provide values for any parameters
+    you defined.
+    razorCopy code
+    <!-- ExamplePage.razor -->
+    <ExampleComponent Title="Example Title" Content="This is some content." />
+
+Parameterize the Component:
+    If you want your component to be more flexible, you can define parameters using the @code block.
+    Parameters allow you to pass data into the component from its parent.
+
+Child Content:
+    You can also create components that accept nested content using the @ChildContent parameter.
+    This allows you to use your component like a container for other elements.
+    razorCopy code
+    <!-- ContainerComponent.razor -->
+
+    <div>
+        <h3>@Title</h3>
+        <div class="container-content">
+            @ChildContent
+        </div>
+    </div>
+
+    @code {
+        [Parameter]
+        public string Title { get; set; }
+
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
+    }
+    razorCopy code
+    <!-- ParentPage.razor -->
+
+    <ContainerComponent Title="Container Title">
+        <p>This is nested content within the container.</p>
+    </ContainerComponent>
+
+Code-Behind Files:
+    Optionally, you can create code-behind files (.cs) for your components to separate the markup and C# code.
+    The code-behind file should have the same name as the Razor component file with a .cs extension.
+    csharpCopy code
+    // ExampleComponent.razor.cs
+
+    public partial class ExampleComponent
+    {
+        // Additional logic can be placed here
+    }
+
+By following these steps, you can create reusable components in Blazor and use them across different parts of your application.
+This helps in promoting code reusability and maintainability.
