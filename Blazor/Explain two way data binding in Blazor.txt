@@ -1,0 +1,55 @@
+Question - Explain two-way data binding in Blazor.
+
+
+Two-way data binding in Blazor allows you to establish a synchronization between the values of a property in the component's
+C# code (in the @code block) and the corresponding value in the component's Razor markup.
+When the property value changes in either the C# code or the Razor markup, the change is automatically reflected in the other,
+ensuring a two-way communication of data.
+
+Blazor achieves two-way data binding through a combination of the @bind directive and the use of properties with a specific naming convention.
+
+Here's how two-way data binding works in Blazor:
+Declare a Property with the Appropriate Naming Convention:
+    To enable two-way data binding, declare a property in the @code block with the same name as the property in the Razor markup,
+    but with an additional @ symbol as a prefix.
+    razorCopy code
+    <!-- ExampleComponent.razor -->
+    <input type="text" @bind="@inputValue" />
+
+    @code {
+        private string inputValue = "Initial Value";
+
+        // Property with the same name as in the Razor markup, prefixed with @
+        private string @bind-InputValue
+        {
+            get { return inputValue; }
+            set { inputValue = value; }
+        }
+    }
+
+
+Use the @bind Directive in the Razor Markup:
+    In the Razor markup, use the @bind directive to bind the property to the corresponding HTML element.
+    This establishes the two-way data binding.
+    razorCopy code
+    <!-- ExampleComponent.razor -->
+
+    <input type="text" @bind="@inputValue" />
+    The @bind directive tells Blazor to create a two-way binding between the property (inputValue in this case)
+    and the value of the HTML element (input field in this case).
+
+Update in Either Direction:
+    Now, changes to the value of the inputValue property in the C# code will automatically update the value in the associated
+    input field in the Razor markup, and vice versa.
+    This two-way synchronization happens seamlessly.
+    razorCopy code
+    <!-- ExampleComponent.razor -->
+
+    <input type="text" @bind="@inputValue" />
+
+    <p>Value in C# code: @inputValue</p>
+    Any changes made to the input field in the browser will be reflected in the inputValue property in the C# code,
+    and any changes made to inputValue in the C# code will be reflected in the input field.
+
+Two-way data binding simplifies the management of data flow between the UI and the underlying C# code,
+making it more convenient to handle user input and maintain a synchronized state between different parts of the component.
