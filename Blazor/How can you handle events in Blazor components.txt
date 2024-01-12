@@ -1,0 +1,78 @@
+Question - How can you handle events in Blazor Components?
+
+
+Blazor components allow you to handle events in a way similar to how you handle events in other web development frameworks.
+Events in Blazor components can be handled through event handlers in the component's code-behind file (C#) or directly in the Razor markup.
+
+Here are the key steps:
+Handling Events in Blazor Components:
+Define Event Handler Method:
+    In the code-behind file (or within the Razor markup), define a method that will handle the event.
+    This method should have the appropriate parameters based on the event you're handling.
+    csharpCopy code
+    @code {
+        void HandleButtonClick()
+        {
+            // Your event handling logic here
+            Console.WriteLine("Button clicked!");
+        }
+    }
+
+Attach Event Handler in Razor Markup:
+    In the Razor markup, attach the event handler to the HTML element that generates the event.
+    Use the @on{Event} directive to specify the event and the associated method.
+    htmlCopy code
+    <button @onclick="HandleButtonClick">Click me</button>
+
+Parameterized Event Handlers:
+    Some events provide additional information, like the MouseEventArgs for mouse-related events.
+    You can include parameters in the event handler method to access this information.
+    csharpCopy code
+    @code {
+        void HandleMouseOver(MouseEventArgs e)
+        {
+            Console.WriteLine($"Mouse over at ({e.ClientX}, {e.ClientY})");
+        }
+    }
+    htmlCopy code
+    <div @onmouseover="@(e => HandleMouseOver(e))">Hover over me</div>
+    
+Event Handler Reference:
+    Alternatively, you can use a delegate to reference the event handler directly.
+    htmlCopy code
+    <button onclick="HandleButtonClick">Click me</button>
+
+Handling Child Component Events:
+    If you have child components and want to handle their events in the parent component,
+    you can use the @ref directive to create a reference to the child component and then access its events.
+
+    htmlCopy code
+    <!-- ParentComponent.razor -->
+    <ChildComponent @ref="childComponent">
+    </ChildComponent>
+
+    @code {
+        private ChildComponent childComponent;
+
+        private void HandleChildEvent()
+        {
+            // Handle the event from the child component
+        }
+    }
+
+    <!-- ChildComponent.razor -->
+    <button @onclick="OnButtonClick">
+        Click me
+    </button>
+
+    @code {
+        [Parameter] public EventCallback OnChildEvent { get; set; }
+
+        private async Task OnButtonClick()
+        {
+            await OnChildEvent.InvokeAsync();
+        }
+    }
+
+    In this example, when the button in the ChildComponent is clicked,
+    the OnButtonClick method is invoked, and it triggers the OnChildEvent in the parent component.
