@@ -1,0 +1,61 @@
+Question - How do you navigate between pages in a Blazor application?
+
+
+In a Blazor application, you can navigate between pages using the NavigationManager service
+or by leveraging anchor tags (<a>) with the href attribute.
+
+
+Here are two common methods for navigating between pages in a Blazor application:
+Method 1: Using NavigationManager
+    Inject NavigationManager:
+        First, inject the NavigationManager service into your component or page.
+
+        csharpCopy code
+        @inject NavigationManager NavigationManager
+    
+    Programmatic Navigation:
+        Use the NavigateTo method of NavigationManager to navigate to the desired page.
+
+        csharpCopy code
+        <button @onclick="NavigateToCounter">Go to Counter</button>
+
+        @code {
+            private void NavigateToCounter()
+            {
+                NavigationManager.NavigateTo("/counter");
+            }
+        }
+
+        In this example, clicking the button triggers the NavigateToCounter method, which navigates to the "/counter" page.
+
+Method 2: Using Anchor Tags
+    Create a Link:
+        Use an anchor tag (<a>) with the href attribute to create a link to the desired page.
+
+        htmlCopy code
+        <a href="/counter">Go to Counter</a>
+        Clicking on the link triggers navigation to the "/counter" page.
+
+    Navigating with Parameters
+        Navigate with Parameters:
+            When navigating to a page with parameters, you can include the parameter values in the URL.
+
+            csharpCopy code
+            <button @onclick="() => NavigateToUser(123)">Go to User 123</button>
+
+            @code {
+                private void NavigateToUser(int userId)
+                {
+                    NavigationManager.NavigateTo($"/user/{userId}");
+                }
+            }
+
+            In this example, the NavigateToUser method navigates to the "/user/123" page with the parameter value 123.
+
+    Important Note:
+        When using programmatic navigation with the NavigationManager, make sure to include the leading "/" in the URL,
+        indicating an absolute path.
+        If you omit the "/", it will be treated as a relative path within the current route.
+
+    Anchor tags (<a>) can be used for simple navigation, but if you need to perform more complex navigation, handle events,
+    or pass parameters, using the NavigationManager provides more flexibility.
