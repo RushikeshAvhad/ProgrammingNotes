@@ -1,0 +1,108 @@
+Question - How does routing work in a Blazor WebAssembly application?
+
+
+Routing in a Blazor WebAssembly application is responsible for navigating between different pages or components within the application.
+Blazor uses the client-side routing system to achieve this, allowing you to define routes, associate them with components,
+and navigate between them using URLs.
+
+
+Here's an overview of how routing works in a Blazor WebAssembly application:
+    Configure Routes:
+        Routing is typically configured in the Startup.cs file.
+        In the ConfigureServices method, you add routing services:
+        
+        csharpCopy code
+        services.AddRouting();
+        
+        In the Configure method, you configure the routes:
+        csharpCopy code
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapBlazorHub();
+            endpoints.MapFallbackToPage("/_Host");
+        });
+
+        The MapBlazorHub method adds the Blazor hub endpoint, and MapFallbackToPage sets up a fallback route that points to the _Host.cshtml page.
+        This page acts as the entry point for your Blazor WebAssembly app and handles the client-side routing.
+
+    Define Components and Pages:
+        Components and pages are associated with specific routes.
+        You can define a component or page and specify its route using the @page directive:
+
+        csharpCopy code
+        @page "/counter"
+        In this example, the Counter component is associated with the "/counter" route.
+
+    Navigate Between Routes:
+        To navigate between routes, you can use the NavigationManager service provided by Blazor.
+        It provides methods like NavigateTo:
+
+        csharpCopy code
+        @inject NavigationManager NavigationManager
+
+        <button @onclick="GoToCounter">Go to Counter</button>
+
+        @code {
+            private void GoToCounter()
+            {
+                NavigationManager.NavigateTo("/counter");
+            }
+        }
+        
+        In this example, clicking the button triggers the GoToCounter method, which uses NavigateTo to navigate to the "/counter" route.
+
+    Parameterized Routes:
+        You can define parameterized routes to pass parameters to components/pages.
+        For example:
+        
+        csharpCopy code
+        @page "/user/{id}"
+
+        <h3>User Details</h3>
+        <p>User ID: @id</p>
+
+        @code {
+            [Parameter]
+            public string id { get; set; }
+        }
+
+        In this example, the route "/user/{id}" expects a parameter, and the User component receives it as a parameter.
+
+    Navigation from Links:
+        You can also use anchor tags (<a>) with the href attribute to create links for navigation:
+        htmlCopy code
+        <a href="/counter">Counter</a>
+        Clicking on the link triggers navigation to the "/counter" route.
+
+    Routing and Layouts:
+        You can use layouts to define a common structure for your pages.
+        Layouts are shared components that include common elements such as headers, footers, etc.
+
+        csharpCopy code
+        @inherits LayoutComponentBase
+
+        <div>
+            <header>
+                <!-- Header content -->
+            </header>
+
+            <div class="content">
+                @Body
+            </div>
+
+            <footer>
+                <!-- Footer content -->
+            </footer>
+        </div>
+
+    Pages and components can specify a layout using the @layout directive:
+        csharpCopy code
+        @layout MainLayout
+        
+        <h3>Counter</h3>
+        <!-- Counter component content -->
+        In this example, the Counter component uses the MainLayout as its layout.
+
+This is a basic overview of how routing works in a Blazor WebAssembly application.
+By configuring routes, associating components/pages with routes, and using the NavigationManager, 
+you can create a navigation structure for your application.
