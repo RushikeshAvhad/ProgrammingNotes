@@ -1,0 +1,41 @@
+Question - What is the difference between @onclick and @onclick:event in Blazor?
+
+@onclick is a concise syntax for simple click event handling,
+while @onclick:event provides more control when you need access to event arguments and additional event details.
+
+In Blazor, both @onclick and @onclick:event are used for handling click events,
+but they have different use cases.
+
+@onclick:
+    This is a shorthand syntax for handling the onclick event in Blazor components.
+    It is typically used for simple scenarios where you want to provide a single line of code to be executed when the element is clicked.
+    
+    Example:
+    htmlCopy code
+    <button @onclick="HandleButtonClick">Click me</button>
+
+    @code {
+        private void HandleButtonClick()
+        {
+            // Code to be executed on button click
+        }
+    }
+
+@onclick:event:
+    This syntax is used when you need to handle the event and pass additional information to the event handler.
+    It allows you to explicitly specify the event to handle and pass event arguments to the associated method.
+
+    Example:
+    htmlCopy code
+    <button @onclick:event="HandleButtonClickWithArgs">Click me</button>
+
+    @code {
+        private void HandleButtonClickWithArgs(MouseEventArgs e)
+        {
+            // Code to be executed on button click with event arguments
+            // You have access to event details like e.Button, e.ClientX, e.ClientY, etc.
+        }
+    }
+
+    In this example,
+    MouseEventArgs provides information about the mouse event, such as the button pressed, client coordinates, etc.
