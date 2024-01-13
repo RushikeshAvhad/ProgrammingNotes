@@ -1,0 +1,48 @@
+Question - Explain the role of the @page directive in Blazor routing?
+
+
+This directive is used to define the route template for a Blazor component or page.
+In Blazor, the @page directive plays a crucial role in associating a component or page with a specific route.
+The route template specifies the URL at which the component should be accessible.
+
+
+Here's how the @page directive works in the context of Blazor routing:
+Defining Routes:
+    The @page directive is placed at the top of a Blazor component or page file.
+    It specifies the route template for that component, indicating the URL path that should activate and display the component.
+
+    csharpCopy code
+    @page "/counter"
+    In this example, the Counter component is associated with the "/counter" route.
+    When a user navigates to the "/counter" URL, the Counter component will be rendered.
+
+Parameterized Routes:
+    The @page directive also supports parameterized routes, allowing you to define routes with dynamic parameters.
+
+    csharpCopy code
+    @page "/user/{id}"
+    In this example, the User component is associated with the "/user/{id}" route.
+    The {id} part indicates a parameter, and the actual value will be provided in the URL.
+
+Implicit Route Handling:
+    If a component does not have a @page directive, it won't be directly accessible via a URL.
+    Instead, it must be included within another component or page that has a @page directive.
+    
+    Components without a @page directive are typically used as child components within a layout or another component.
+    They are not directly navigable through the URL, but they can receive parameters or data from their parent components.
+
+Route Parameters and Component Parameters:
+    When using parameterized routes, the parameters defined in the route template are often matched to corresponding parameters in the component.
+
+    csharpCopy code
+    @page "/user/{id}"
+
+    <h3>User Details</h3>
+    <p>User ID: @id</p>
+
+    @code {
+        [Parameter]
+        public string id { get; set; }
+    }
+
+    In this example, the id parameter in the User component is bound to the value provided in the URL.
