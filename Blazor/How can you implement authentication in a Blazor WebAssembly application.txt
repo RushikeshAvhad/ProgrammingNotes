@@ -1,0 +1,87 @@
+Question - How can you implement authentication in a Blazor WebAssembly application?
+
+
+Implementing authentication in a Blazor WebAssembly (Wasm) application involves integrating authentication mechanisms provided by ASP.NET Core
+with the Blazor framework.
+ASP.NET Core Identity is commonly used for user management and authentication.
+
+
+Here's a step-by-step guide on how you can implement authentication in a Blazor WebAssembly application:
+1.  Create a new Blazor WebAssembly Project:
+    Use the following command to create a new Blazor WebAssembly project:
+
+    dotnet new blazorwasm -n YourProjectName
+
+2.  Configure Authentication:
+    In the Startup.cs file, configure authentication services.
+    Add the necessary authentication and authorization middleware to the ConfigureServices method:
+    
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // Other services...
+
+        services.AddAuthentication(options =>
+        {
+            options.DefaultScheme = "Cookies";
+            options.DefaultChallengeScheme = "oidc";
+        })
+        .AddCookie("Cookies")
+        .AddOpenIdConnect("oidc", options =>
+        {
+            options.Authority = "https://your-identity-server";
+            options.ClientId = "your-client-id";
+            options.ResponseType = "code";
+            options.UsePkce = true;
+        });
+
+        // Authorization policies...
+    }
+    (Make sure to replace placeholder values with your actual identity server information.)
+
+3.  Configure Authorization Policies:
+    You can configure authorization policies based on roles or other criteria.
+    Add the policies in the ConfigureServices method:
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // Other services...
+
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy("AdminOnly",
+                policy => policy.RequireRole("Admin"));
+            // Add other policies as needed...
+        });
+    }
+
+4.  Use Authentication in Components:
+    Now, you can use authentication in your Blazor components. 
+    For example, you can check if a user is authenticated and display content conditionally:
+
+    @page "/securepage"
+
+    <AuthorizeView>
+        <Authorized>
+            <h3>Welcome, @context.User.Identity.Name!</h3>
+        </Authorized>
+        <NotAuthorized>
+            <p>You are not authorized to view this page.</p>
+        </NotAuthorized>
+    </AuthorizeView>
+
+5.  Secure API Calls:
+    If your application communicates with APIs, you may need to secure API calls.
+    You can use the HttpClient with an access token obtained during the authentication process.
+    Configure the HttpClient in Program.cs:
+
+    builder.Services.AddScoped(sp => new HttpClient 
+            { 
+                BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+            })
+            .AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
+    builder.Services.AddTransient(sp => 
+                sp.GetRequiredService<IHttpClientFactory>()
+                    .CreateClient("YourAPIName"));
+
+6.  Run the Application:
+    Run your Blazor WebAssembly application and test the authentication and authorization features.
