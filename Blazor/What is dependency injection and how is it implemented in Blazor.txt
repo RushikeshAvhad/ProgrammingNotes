@@ -1,0 +1,75 @@
+Question - What is dependency injection and how it is implemented in Blazor?
+
+
+Dependency Injection (DI) is a design pattern and a technique widely used in software development to achieve Inversion of Control (IoC). 
+In simple terms, it is a way to provide the necessary dependencies (objects or services) to a component rather than letting the
+component create or manage those dependencies itself.
+
+This helps in making the code modular, testable, and maintainable.
+In the context of Blazor, which is a web framework developed by Microsoft, dependency injection is used to manage the dependencies of components.
+Blazor allows you to use dependency injection to inject services into your components,
+making it easy to access shared functionality or data across different parts of your application.
+
+Here's a basic example of how dependency injection works in Blazor:
+Service Definition:
+    You start by defining a service interface and its implementation.
+    This could be a class providing some functionality that you want to use across multiple components.
+
+    csharpCopy code
+    public interface IMyService
+    {
+        void DoSomething();
+    }
+
+    public class MyService : IMyService
+    {
+        public void DoSomething()
+        {
+            // Implementation code
+        }
+    }
+
+Service Registration:
+    Next, you register your service in the Startup class.
+    This tells the Blazor application how to create and manage instances of your service.
+
+    csharpCopy code
+    services.AddSingleton<IMyService, MyService>();
+    This registration is typically done in the ConfigureServices method within the Startup class.
+
+Service Injection:
+    Now, you can inject your service into Blazor components.
+    This is typically done through the component's constructor.
+
+    csharpCopy code
+    @inject IMyService MyService
+
+    <h3>My Component</h3>
+
+    @code {
+        protected override void OnInitialized()
+        {
+            MyService.DoSomething();
+        }
+    }
+
+    In this example, the IMyService is injected into the component, and you can use its methods or properties within the component.
+
+Using Services:
+    Finally, you can use the injected service within your component's logic.
+
+    csharpCopy code
+    @page "/mycomponent"
+
+    <h3>My Component</h3>
+
+    @code {
+        protected override void OnInitialized()
+        {
+            MyService.DoSomething();
+        }
+    }
+    Now, whenever the component is initialized, it can use the functionality provided by the injected service.
+
+This pattern makes it easy to replace or modify services without changing the components that use them.
+It also facilitates testing, as you can easily substitute real services with mock implementations for testing purposes.
