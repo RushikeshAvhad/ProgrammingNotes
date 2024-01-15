@@ -1,0 +1,86 @@
+Question - How do you implement authorization in Blazor WebAssembly?
+
+
+Implementing authorization in Blazor WebAssembly involves checking and controlling access to various parts of your application based
+on the user's roles, claims, or other criteria.
+
+Here are the general steps to implement authorization in a Blazor WebAssembly application:
+Define Roles and Claims:
+    Determine the roles and claims that you want to use for authorization.
+    Roles represent different levels of access, while claims are additional pieces of information associated with a user.
+Configure Authentication and Authorization in Startup:
+    Open the Startup.cs file in your server project.
+    Configure authentication services and set up authorization policies.
+    You can use the AddAuthorization method to configure policies based on roles or claims.
+    
+    csharpCopy code
+    services.AddAuthorization(options =>
+    {
+        options.AddPolicy("RequireAdmin", policy => policy.RequireRole("Admin"));
+        options.AddPolicy("RequireUser", policy => policy.RequireRole("User"));
+    });
+
+Apply Authorization Policies to Components:
+    In your Blazor components, you can use the AuthorizeView component or the Authorize attribute to apply authorization policies.
+    
+    csharpCopy code
+    @page "/admin"
+
+    <AuthorizeView Policy="RequireAdmin">
+        <Authorized>
+            <p>Welcome, Admin!</p>
+        </Authorized>
+        <NotAuthorized>
+            <p>Access Denied. You must be an Admin to view this page.</p>
+        </NotAuthorized>
+    </AuthorizeView>
+
+    Alternatively, you can use the Authorize attribute directly on a component or a route:
+
+    csharpCopy code
+    @attribute [Authorize(Policy = "RequireAdmin")]
+    @page "/admin"
+
+    <p>Welcome, Admin!</p>
+
+Check Authorization Programmatically:
+    You can also check authorization programmatically in your code-behind or code blocks using the CascadingAuthenticationState component.
+
+    csharpCopy code
+    @inject AuthenticationStateProvider AuthenticationStateProvider
+    @inject IAuthorizationService AuthorizationService
+
+    @code {
+        private bool isAuthorized;
+
+        protected override async Task OnInitializedAsync()
+        {
+            var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            isAuthorized = (await AuthorizationService.AuthorizeAsync(authenticationState.User, "RequireAdmin")).Succeeded;
+        }
+
+Handle Authorization Events:
+    You can handle authorization events, such as when a user is denied access.
+    For example, you can use the OnForbidden event handler in the AuthorizeView component.
+    
+    csharpCopy code
+    <AuthorizeView Policy="RequireAdmin" OnForbidden="HandleForbidden">
+        <Authorized>
+            <!-- Content for authorized users -->
+        </Authorized>
+    </AuthorizeView>
+
+    @code {
+        private void HandleForbidden()
+        {
+            // Handle forbidden access
+            // Redirect, show a message, etc.
+        }
+    }
+
+Test Authorization:
+    Run your application and test the authorization by logging in with different user roles or claims.
+    Ensure that users can access or are denied access to specific parts of the application based on the defined authorization policies.
+
+By following these steps, you can implement authorization in a Blazor WebAssembly application, 
+controlling access to different areas based on roles, claims, or other criteria.
