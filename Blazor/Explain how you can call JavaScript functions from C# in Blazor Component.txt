@@ -1,0 +1,59 @@
+Question - Explain how you can call JavaScript functions from C# in a Blazor component?
+
+
+In Blazor, you can call JavaScript functions from C# using JavaScript Interoperability.
+Blazor provides the JSRuntime service to facilitate communication between C# and JavaScript.
+
+Here's a step-by-step guide on how you can call JavaScript functions from C# in a Blazor component:
+Inject IJSRuntime into your component:
+    Start by injecting the IJSRuntime service into your Blazor component.
+    You can do this by adding it as a parameter to your component's constructor or using the @inject directive.
+
+    csharpCopy code
+    @inject IJSRuntime JSRuntime
+
+Call JavaScript functions using InvokeAsync:
+    Once you have the IJSRuntime injected, you can use the InvokeAsync method to call JavaScript functions.
+    The InvokeAsync method is asynchronous, and it allows you to call JavaScript functions with arguments and receive results.
+
+    csharpCopy code
+    @page "/example"
+
+    <h3>Calling JavaScript from C# Example</h3>
+
+    <button @onclick="CallJavaScriptFunction">Call JavaScript Function</button>
+
+    <script>
+        // Define a JavaScript function that the C# code will call
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+
+    @code {
+        // Inject IJSRuntime
+        [Inject]
+        private IJSRuntime JSRuntime { get; set; }
+
+        // Method to call the JavaScript function
+        private async Task CallJavaScriptFunction()
+        {
+            // Call the JavaScript function using JSRuntime
+            await JSRuntime.InvokeAsync<object>("showAlert", "Hello from Blazor!");
+        }
+    }
+
+Handle JavaScript function parameters and return values:
+    You can pass parameters to the JavaScript function by providing them as additional arguments to the InvokeAsync method.
+    If the JavaScript function has a return value, you can capture it in the C# code.
+
+    csharpCopy code
+    // Call JavaScript function with parameters and capture return value
+    var result = await JSRuntime.InvokeAsync<string>("getGreeting", "John");
+    
+    In this example, the JavaScript function getGreeting takes a parameter ("John") and returns a greeting string.
+    The InvokeAsync method is used to call the function and capture the result.
+
+Ensure the JavaScript function is available:
+    Make sure that the JavaScript function you are trying to call is defined and available in the same HTML file or a referenced script file.
+    In the example above, the showAlert function is defined within the <script> block of the Blazor component.
