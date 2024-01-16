@@ -1,0 +1,100 @@
+Question - How does error handling work in Blazor?
+
+
+In Blazor, error handling is an essential aspect of building robust web applications.
+There are several mechanisms in place to handle errors, ranging from handling exceptions in C# code to managing errors during component
+lifecycle events.
+
+Here's an overview of how error handling works in Blazor:
+C# Exception Handling:
+    Blazor components are written in C#, and you can use standard C# exception handling mechanisms to handle errors within your component code.
+    This includes try-catch blocks to catch and handle exceptions.
+
+    csharpCopy code
+    @page "/example"
+
+    <h3>Error Handling in Blazor</h3>
+
+    <button @onclick="TriggerError">Trigger Error</button>
+
+    @code {
+        private void TriggerError()
+        {
+            try
+            {
+                // Code that might throw an exception
+                throw new InvalidOperationException("Simulated exception");
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception
+                Console.WriteLine($"Exception caught: {ex.Message}");
+            }
+        }
+    }
+
+    In this example, clicking the "Trigger Error" button will invoke the TriggerError method, which intentionally throws an exception.
+    The exception is then caught and handled within the catch block.
+
+Error Boundary Components:
+    Blazor introduces the concept of error boundary components, which are components specifically designed to catch and handle errors that occur within their subtree. You can create an error boundary component by implementing the IErrorBoundary interface and handling errors in the OnError method.
+
+    csharpCopy code
+    @code {
+        private void TriggerError()
+        {
+            // Code that might throw an exception
+            throw new InvalidOperationException("Simulated exception");
+        }
+    }
+
+    @implements IErrorBoundary
+
+    <h3>Error Boundary Example</h3>
+
+    @if (hasError)
+    {
+        <p>An error occurred within the component.</p>
+    }
+    else
+    {
+        <button @onclick="TriggerError">Trigger Error</button>
+    }
+
+    @code {
+        private bool hasError = false;
+
+        // IErrorBoundary implementation
+        public Task OnErrorAsync(Exception exception)
+        {
+            // Handle the error
+            hasError = true;
+            return Task.CompletedTask;
+        }
+    }
+    
+    In this example, the component implements the IErrorBoundary interface and provides an OnErrorAsync method to handle errors.
+    If an error occurs within the component or its children, the OnErrorAsync method is called.
+
+Global Error Handling:
+    Blazor also supports global error handling by subscribing to the OnUnhandledException event.
+    This event is triggered whenever an unhandled exception occurs within the application.
+
+    csharpCopy code
+    protected override void OnInitialized()
+    {
+        // Subscribe to the global error handling event
+        JSRuntime.UnhandledException += OnUnhandledException;
+    }
+
+    private void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
+    {
+        // Handle the unhandled exception
+        Console.WriteLine($"Unhandled exception: {e.Exception.Message}");
+    }
+    
+    In this example, the OnUnhandledException method is called whenever there is an unhandled exception.
+    This can be useful for logging or displaying a global error message.
+
+These mechanisms combined provide a comprehensive approach to error handling in Blazor,
+allowing developers to catch and manage errors at different levels within the application.
