@@ -1,0 +1,44 @@
+Question - What is the purpose of the <ErrorBoundary> component in Blazor?
+
+
+An error boundary in Blazor is a custom component that implements the IErrorBoundary interface.
+The purpose of an error boundary is to handle exceptions that occur within the component itself or its descendant components.
+When an error occurs within the subtree of an error boundary, the OnErrorAsync method of the error boundary is invoked,
+allowing you to handle the error gracefully.
+
+Here's an example of how you might implement an error boundary component in Blazor:
+    csharpCopy code
+    @implements IErrorBoundary
+
+    @if (hasError)
+    {
+        <p>An error occurred within the component.</p>
+    }
+    else
+    {
+        @ChildContent
+    }
+
+    @code {
+        private bool hasError = false;
+
+        [Parameter]
+        public RenderFragment ChildContent { get; set; }
+
+        // IErrorBoundary implementation
+        public Task OnErrorAsync(Exception exception)
+        {
+            // Handle the error
+            hasError = true;
+            return Task.CompletedTask;
+        }
+    }
+    
+    In this example, the error boundary component (ErrorBoundary.razor) implements the IErrorBoundary interface and provides an
+    OnErrorAsync method to handle errors.
+    The ChildContent parameter allows you to include any content within the error boundary.
+    If an error occurs within the ChildContent or its descendants, the error is caught by the error boundary,
+    and the OnErrorAsync method is called to handle the error.
+
+Error boundaries are useful for creating a more robust and fault-tolerant application by isolating errors and providing 
+a controlled way to handle them within specific components.
