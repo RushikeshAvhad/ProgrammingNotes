@@ -1,0 +1,64 @@
+Question - How do you call C# functions from JavaScript in a Blazor component?
+
+
+Calling C# functions from JavaScript in a Blazor component involves using JavaScript Interoperability.
+Blazor provides a way to expose C# methods to JavaScript so that they can be invoked from within your JavaScript code.
+
+Here are the steps to call C# functions from JavaScript in a Blazor component:
+Inject IJSRuntime into your component:
+    Just like when calling JavaScript functions from C#, you need to inject the IJSRuntime service into your Blazor component.
+    You can do this by adding it as a parameter to your component's constructor or using the @inject directive.
+
+    csharpCopy code
+    @inject IJSRuntime JSRuntime
+
+Expose C# methods to JavaScript:
+    Use the JSRuntime.InvokeAsync method to expose C# methods to JavaScript.
+    This is done using the window object in the browser's global scope.
+    You can achieve this in the OnInitialized method or any other suitable lifecycle method.
+
+    csharpCopy code
+    @page "/example"
+
+    <h3>Calling C# from JavaScript Example</h3>
+
+    <script>
+        // Expose C# method to JavaScript
+        window.showGreeting = (message) => {
+            DotNet.invokeMethodAsync('YourAssemblyName', 'ShowGreeting', message);
+        };
+    </script>
+
+    @code {
+        // Inject IJSRuntime
+        [Inject]
+        private IJSRuntime JSRuntime { get; set; }
+
+        // C# method to be called from JavaScript
+        private void ShowGreeting(string message)
+        {
+            // Do something with the message
+            Console.WriteLine($"Received greeting from JavaScript: {message}");
+        }
+    }
+    
+    In this example, the window.showGreeting function in JavaScript is created to invoke the C# method ShowGreeting.
+    The DotNet.invokeMethodAsync function is used to call the C# method asynchronously.
+
+Call the exposed C# method from JavaScript:
+    Now, you can call the C# method from your JavaScript code, for example, in response to a user action or some other event.
+
+    javascriptCopy code
+    // Call the exposed C# method from JavaScript
+    window.showGreeting("Hello from JavaScript!");
+    
+Handle C# method parameters and return values:
+    If your C# method takes parameters or returns values, you can handle them in the JavaScript code accordingly.
+
+    javascriptCopy code
+    // Call C# method with parameters and handle the result
+    window.showGreeting("Hello from JavaScript!").then(result => {
+        console.log(result);
+    });
+
+    In this example, the ShowGreeting method is assumed to return a promise, and the result is logged to the console.
