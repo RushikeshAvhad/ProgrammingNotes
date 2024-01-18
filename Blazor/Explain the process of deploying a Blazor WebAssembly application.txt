@@ -1,0 +1,44 @@
+Question - Explain the process of deploying a Blazor WebAssembly application.
+
+
+Deploying a Blazor WebAssembly application involves several steps,
+including building the application, preparing it for deployment, and hosting it on a web server.
+
+Here's a general guide to the process:
+Build your Blazor WebAssembly application:
+    Use the command-line interface or an integrated development environment (IDE) to build your Blazor WebAssembly application.
+    You can use the following command in the terminal:
+
+    dotnet publish -c Release
+    
+    This command compiles your application and creates a publishable version in the bin/Release/{TARGET FRAMEWORK}/publish directory.
+
+Configure your application for deployment:
+    Open the wwwroot folder in the publish directory and ensure that it contains all the necessary static files (HTML, CSS, images, etc.).
+    Check the _wwwroot folder to verify that the necessary JavaScript files are present.
+    These files are required for the WebAssembly runtime.
+
+Choose a hosting option:
+    Decide where you want to host your Blazor WebAssembly application.
+    You can use various hosting options, including static file hosting, Azure Static Web Apps, GitHub Pages, AWS S3, or traditional web servers
+    like Apache or Nginx.
+
+Deploy to a static file host (e.g., GitHub Pages):
+    If you're deploying to a static file host, you can simply copy the contents of the publish directory to your hosting provider.
+    For GitHub Pages, you can push the contents to a GitHub repository and configure the repository settings to serve the index.html file.
+
+Deploy to a server:
+    If you're deploying to a web server, copy the contents of the publish directory to the server.
+    You may need to configure the web server to handle Blazor WebAssembly MIME types correctly.
+    Ensure that the server supports hosting static files and has the necessary permissions.
+
+Configure server-side routing (optional):
+    If your application uses server-side routing, make sure your web server is configured to redirect requests to the index.html file
+    so that the Blazor WebAssembly runtime can handle the routing.
+
+Set up HTTPS (recommended):
+    If you are deploying to a production environment, it's recommended to use HTTPS for secure communication.
+    Configure your web server to use an SSL certificate.
+
+Test the deployed application:
+    Once deployed, test your application to ensure that it works correctly in the production environment.
