@@ -1,0 +1,36 @@
+Question - Explain DotNet Versions
+
+.NET is a software framework developed by Microsoft that primarily runs on Windows.
+It provides a large library of pre-coded solutions to common programming problems and a runtime environment for executing applications. 
+.NET has evolved over the years, with each version bringing new features, improvements, and updates.
+
+Here's a brief overview of the different versions of .NET:
+
+.NET Framework:
+    The first version of .NET, released in 2002.
+    It's a software development platform for building and running Windows applications.
+    Initially focused on desktop applications and later expanded to web and server applications.
+    Versions up to 4.8 were released, with each version introducing new features and improvements.
+
+.NET Core:
+    Announced in 2014, .NET Core is a cross-platform, open-source framework designed for developing modern, high-performance applications.
+    It can run on Windows, macOS, and Linux.
+    .NET Core was built from scratch, offering better performance, scalability, and flexibility compared to the .NET Framework.
+    It also introduced support for containerized applications.
+    The versioning of .NET Core started from 1.0 and continued to 2.1, 2.2, and 3.0, with 3.1 being a long-term support (LTS) release.
+    .NET Core 3.x is the last release under the name ".NET Core."
+
+.NET 5:
+    Announced in 2019, .NET 5 is the successor to both .NET Core and .NET Framework.
+    It unifies the .NET platform, merging .NET Core and Mono (an open-source implementation of .NET) into a single framework.
+    .NET 5 supports a wider range of platforms, including Windows, macOS, Linux, iOS, Android, and more.
+    It's not just cross-platform, but also cross-application type, meaning it can be used for desktop, web, cloud, mobile, and IoT applications.
+    .NET 5 is not an LTS release; instead, it's part of the new release cadence where new versions are released every year.
+
+.NET 6 and beyond:
+    .NET 6 was released in November 2021 and is another major release in the new .NET unification effort.
+    It continues the journey of making .NET more versatile, performant, and developer-friendly.
+    .NET 6 is an LTS (Long-Term Support) release, with support for three years.
+    Subsequent versions will continue this yearly release cadence, with new features, improvements, and support for more platforms and scenarios.
+
+Each version of .NET brings improvements in performance, features, and platform support, aiming to make .NET a competitive and versatile framework for modern software development.
