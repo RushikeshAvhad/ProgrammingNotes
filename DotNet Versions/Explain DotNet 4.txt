@@ -1,0 +1,78 @@
+Question - Explain .NET 4
+
+
+.NET 4.0 is the fourth major release of the.NET Framework, which is a software framework developed by Microsoft.
+It was released in April 2010, about three and a half years after the release of.NET 3.5.
+
+.NET 4.0 is a significant update to the.NET Framework, and it includes several new features and improvements over.NET 3.5. 
+
+Here are some of the key features of.NET 4.0:
+    Dynamic Language Runtime (DLR): 
+        The DLR is a new runtime environment that allows dynamic languages to be hosted on the.NET Framework.
+        The DLR provides a common infrastructure for dynamic language interoperability, and it supports a variety of dynamic languages, 
+        including IronPython, IronRuby, and managed JScript.
+    Parallel Programming:
+        .NET 4.0 includes new features for parallel programming, such as the Task Parallel Library (TPL) and Parallel LINQ (PLINQ). 
+        The TPL provides a simple and efficient way to write parallel code, and PLINQ provides a parallel version of LINQ
+        that can take advantage of multiple cores and processors.
+    Code Contracts: 
+        Code contracts are a new feature that allows you to specify preconditions, postconditions, and object invariants in your code.
+        Code contracts can help you write more reliable and maintainable code, and they can be used to generate runtime checks and 
+        static analysis warnings.
+    Memory-Mapped Files: 
+        Memory-mapped files are a new feature that allows you to access large files as if they were memory.
+        Memory-mapped files can improve performance and reduce memory usage, especially when working with large data sets.
+    Coverage Collection: 
+        Coverage collection is a new feature that allows you to collect code coverage data during testing.
+        Coverage collection can help you identify which parts of your code are being tested, and it can help you improve your test coverage 
+        and code quality.
+    New Visual Basic and C# Features:
+        .NET 4.0 includes several new features for Visual Basic and C#, such as dynamic lookup, optional parameters, and named arguments.
+        These features can make your code more concise and easier to read and write.
+    ASP.NET 4.0: 
+        ASP.NET 4.0 is a major update to the ASP.NET web framework. 
+        It includes several new features, such as URL routing, output caching, and client-side validation. 
+        ASP.NET 4.0 also includes a new deployment model that allows you to precompile your web applications for better performance.
+    Windows Communication Foundation (WCF): 
+        WCF is a framework for building service-oriented applications. 
+        In.NET 4.0, WCF includes several new features, such as support for RESTful services, JSON encoding, and web sockets.
+    Windows Presentation Foundation (WPF): 
+        WPF is a framework for building rich client applications with a modern user interface.
+        In.NET 4.0, WPF includes several new features, such as support for multi-touch input, improved text rendering, and a new layout system.
+    Enhancements to the Base Class Library (BCL):
+        .NET 4 included several improvements and additions to the BCL:
+            Dynamically ExpandoObject: 
+                A dynamic object that allows properties and methods to be dynamically added and removed at runtime.
+            BigInteger and Complex Types:  
+                Support for arbitrary-precision integers and complex numbers.
+            Improved Collections: 
+                New collections like HashSet<T>, Tuple<T1, T2>, and Lazy<T>.
+            Improved Numerics: 
+                Enhanced support for numerical computations with classes like Decimal and Math.
+    Entity Framework 4:
+        .NET 4 included Entity Framework 4, a significant update to Microsoft's object-relational mapping (ORM) framework.
+        EF 4 introduced features like:
+            POCO (Plain Old CLR Object) Support: 
+                Allows developers to use custom domain classes with Entity Framework without coupling them to EF.
+            Code-First Development: 
+                Enables database schema creation based on code conventions and configuration.
+            Better Performance and SQL Generation:
+                Enhanced query performance and improved SQL generation.
+    Web Enhancements:
+        .NET 4 included improvements to ASP.NET and Web development:
+        ASP.NET MVC 2: A major update to the ASP.NET MVC framework, including features like areas, client validation, 
+        and asynchronous controllers.
+        ASP.NET Chart Controls: Built-in support for creating charts and graphs in ASP.NET applications.
+        Web.config Transformations: Allows web.config files to be transformed based on build configurations, simplifying deployment.
+    Visual Studio 2010 Integration:
+        Visual Studio 2010 was released alongside .NET 4, providing integrated development tools and support for building applications
+        using the new features introduced in .NET 4.
+        Features include enhanced IntelliSense, debugging tools, WPF and WCF designers, and support for targeting multiple versions of 
+        the .NET Framework.
+        .NET 4 was a significant release that brought numerous enhancements and new features, 
+        making it easier for developers to build high-performance, scalable, and feature-rich applications across various domains,
+        including desktop, web, and cloud.
+
+Overall,.NET 4.0 was a significant release that introduced several new features and improvements to the.NET Framework. 
+These features and improvements have since become core parts of the.NET ecosystem, 
+and they continue to be used and extended in later versions of the.NET Framework.
