@@ -1,0 +1,68 @@
+Question - Explain .NET 1.0
+
+
+.NET is a software framework developed by Microsoft. 
+It provides a controlled programming environment where software can be developed, installed, and executed on Windows-based operating systems. 
+The first version of.NET, known as.NET 1.0, was released in February 2002.
+
+.NET 1.0 introduced the Common Language Runtime (CLR), which is the core runtime engine that manages executing.NET applications. 
+The CLR provides services such as memory management, type safety, exception handling, garbage collection, security, and thread management. 
+These services are available to any.NET application, regardless of the language it's written in.
+
+.NET 1.0 also introduced the.NET Framework Class Library, which is a large library of pre-built code that developers can use in their applications.
+The class library provides a wide range of functionality, including support for networking, data access, file I/O, graphics, and more. 
+The class library is organized into namespaces, which are logical groupings of related classes and interfaces.
+
+Another key feature of.NET 1.0 is the Common Type System (CTS), which defines how types are declared, used, and managed in the.NET Framework.
+The CTS ensures that all.NET languages use a consistent type system, 
+which makes it easier to develop and integrate code written in different.NET languages.
+
+.NET 1.0 also introduced the concept of "assemblies," which are the fundamental unit of deployment and versioning in the.NET Framework.
+An assembly is a collection of one or more files that are deployed and versioned as a single unit.
+Assemblies can contain code, resources, or both.
+
+Finally,.NET 1.0 introduced several languages that target the.NET Framework, including C#, Visual Basic.NET, and JScript.NET.
+These languages share a common set of features and capabilities, thanks to the CLR and the.NET Framework Class Library.
+
+
+Here are some key points about .NET 1:
+    Common Language Runtime (CLR): 
+        One of the core components of .NET is the CLR. 
+        It provides the runtime environment for executing .NET applications. 
+        It manages memory, handles exceptions, and provides various other services like security and threading.
+
+    Base Class Library (BCL): 
+        .NET comes with a large class library known as the Base Class Library.
+        This library provides a wide range of functionality for common programming tasks, such as file I/O, networking, data access, and more.
+
+    Languages: 
+        .NET 1 supported several programming languages, including C#, Visual Basic .NET, and Managed C++.
+        These languages could interoperate seamlessly within the .NET Framework.
+
+    ASP.NET:
+        .NET 1 included ASP.NET, a framework for building dynamic web applications and services.
+        ASP.NET provided a model for creating web forms, handling events, and managing state, simplifying web development.
+
+    Windows Forms: 
+        For desktop application development, .NET 1 included Windows Forms, which provided a rich set of controls and 
+        an event-driven programming model for building Windows-based applications.
+
+    XML Web Services: 
+        .NET 1 introduced support for XML Web Services, allowing applications to communicate with each other over the internet using
+        standard XML-based protocols like SOAP (Simple Object Access Protocol).
+
+    Integrated Development Environment (IDE): 
+        Visual Studio .NET was the primary IDE for developing .NET applications.
+        It offered a range of tools for code editing, debugging, and designing user interfaces.
+
+    Security:
+        .NET 1 introduced a robust security model that included code access security, role-based security, 
+        and encryption services to help developers build secure applications.
+
+    Interoperability:
+        .NET 1 supported interoperability with existing COM components, allowing developers to integrate legacy code into new .NET applications.
+
+Overall, .NET 1 laid the foundation for the .NET ecosystem, providing developers with a powerful and versatile platform 
+for building modern applications across various domains. 
+Though subsequent versions of .NET have brought many improvements and enhancements, 
+.NET 1 marked a significant milestone in the evolution of Microsoft's development frameworks.
