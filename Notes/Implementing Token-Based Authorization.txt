@@ -1,0 +1,175 @@
+** Implementing Token-based Authorization **
+
+Introduction
+    Token-based authorization is a popular method of authentication and authorization in web applications.
+    It is a process of verifying the identity of a user and granting them access to specific resources or functionality.
+    Token-based authorization is a widely adopted approach for securing web applications and APIs, particularly in the context of modern,
+    distributed architectures. JSON Web tokens (JWT) provide a standardized and secure way to represent and transmit authorization credentials
+    between a client and a server.
+
+Step 1 - Install the required packages
+    Microsoft.AspNetCore.Authentication.JwtBearer
+    Microsoft.AspNetCore.Identity.EntityFrameworkCore
+    Microsoft.EntityFrameworkCore.InMemory
+    Microsoft.IdentityModel.JsonWebTokens
+
+Step 2 - Create a DbContext class to manage the Identity-related data
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
+
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {}
+    }
+
+Step 3 - Set the JWT configuration in the appsetting.json File
+    "JWT": {
+        "ValidIssuer": "nader-app",
+        "ValidAudience": "nader-app",
+        "SecretKey": "YourSecretKey"
+    }
+
+Step 4 - Configure the Identity Service in the Program.cs File
+
+Step 5 - Apply the database migration to create the neccessary tables
+    builder.Services.AddDbContext<ApplicationDbContext>(options = >
+    {
+        options.UseInMemoryDatabase("tokenAuthDB");
+    });
+
+
+    builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => 
+    {
+        options.SignIn.RequireConfirmedPhoneNumber = false;
+        options.User.RequireUniqueEmail = false;
+        options.Password.RequiredLength = 3;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireDigit = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireUppercase = false;
+    }).AddEntityFrameworkStores<ApplicationDbContext>();
+
+Step 6 - Configure JWT schema in Program.cs File
+    builder.Services
+        .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new()
+            {
+                ValidateIssuer = true,
+                ValidAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = builder.Configuration["JWT:ValidIssuer"]!,
+                ValidAudience = builder.Configuration["JWT:ValidAudience"]!,
+                IssuerSigningKey = new SymmetricSecurityKey(
+                    Encoding.UTF8.GetBytes(
+                        builder.Configuration["JWT:SecretKey"]!
+                    )
+                )
+            };
+        });
+
+Step 7 - Create minimal API for creating default user.
+    app.MapPost("/create-default-user", async (RoleManager<IdentityRole> roleManager,
+                                            UserManager<IdentityUser> userManager) =>
+    {
+        var roleCreationResult = await roleManager.CreateAsync(new(adminRole));
+        IdentityUser identityUser = new(adminUserName);
+        identityUser.Email = adminEmail;
+        var userCreationResult = await userManager.CreateAsync(identityUser, adminPassword);
+        var userAddToRoleResult = await userManager.AddToRoleAsync(identityUser, adminRole);
+
+        return new {roleCreationResult, userCreationResult, userAddToRoleResult };
+    });
+
+Step 8 - Create minimal API for getting JWT token
+    app.MapPost("/get-token", async (UserManager<IdentityUser> userManager, IConfiguration configuration) =>
+    {
+        IdentityUser? identityUser = await userManager.FindByNameAsync(adminUserName);
+        if (identityUser is null) return Results.Ok("User not found!!");
+        var result = await userManager.PasswordValidators[0].ValidateAsync(userManager, identityUser, adminPassword);
+        if (!result.Succeded) return Result.Ok("Username or Password combination is wrong!!");
+        var claims = new List<Claim> { new(JwtRegisteredClaimNames.Sub, identityUser.Id.ToString()),
+                                        new(JwtRegisteredClaimNames.Email, identityUser.Email!),
+                                        new(JwtRegisteredClaimNames.Name, identityUser.UserName!),};
+
+        foreach (var role in await userManager.GetRolesAsync(identityUser))
+            claims.Add(new(ClaimTypes.Role, role));
+        
+        var secretKey = configuration["JWT:SecretKey"];
+        var validIssuer = configuration["JWT:ValidIssuer"];
+        var validAudience = configuration["JWT:ValidAudience"];
+
+        SymmetricSecurityKey symmetricSecurityKey = new(Encoding.UTF8.GetBytes(secretKey!));
+        SigningCredentials signingCredentials = new(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
+        JwtSecurityToken jwtSecurityToken = new(validIssuer, validAudience, claims, null, DateTime.utcNow.AddHours(1), signingCredentials);
+        JWTSecurityTokenHandler jwtSecurityTokenHandler = new JWTSecurityTokenHandler();
+        string tokenValue = jwtSecurityTokenHandler.WriteToken(jwtSecurityToken);
+        return Result.Ok(tokenValue);
+    });
+
+Step 9 - Create minimal API for checking schema and role
+    app.MapGet("/secure", [Authorize(AuthenticationSchemes =
+            JwtBearerDefaults.AuthenticationScheme,
+            Roles = adminRole)]
+            () =>
+            {
+                return "I'm authorized!!";
+            });
+
+Step 10 - Create minimal API for creating default user.
+    app.MapPost("/create-default-user", async (RoleManager<IdentityRole> roleManager,
+        UserManager<IdentityUser> userManager) =>
+        {
+            var roleCreationResult = await roleManager.CreateAsync(new(adminRole));
+            IdentityUser identityUser = new(adminUserName);
+            identityUser.Email = adminEmail;
+            var userCreationResult = await userManager.CreateAsync(identityUser, adminPassword);
+            var userAddToRoleResult = await userManager.AddToRoleAsync(identityUser, adminRole);
+
+            return new { roleCreationResult, userCreationResult, userAddToRoleResult };
+        });
+
+Step 11 - Call the API '/secure'
+    curl -X 'GET' \ 'https://localhost:7004/secure' \ -H 'accesspt:text/plain'
+
+    Error: response status is 401
+    response body = you're not authenticated!!
+
+Step 12 - Then you need to register first
+    curl -X 'POST' \ 'https://localhost:7004/create-default-user' \
+    -H 'accept: application/json' \
+    -d ''
+    response body = 
+    { 
+        "roleCreationResult": {
+            "succeeded": true,
+            "errors": []
+        },
+        "userCreationResult": {
+            "succeeded": true,
+            "errors": []
+        },
+        "addingToRoleResult": {
+            "succeeded": true,
+            "errors": []
+        }
+    }
+
+    Now you created user "admin" with "admin" role lets login
+
+Step 13 - Call '/token' API and get token
+    curl -x 'POST' \
+    'https://localhost:7004/token' \
+    -H 'accept: */*' \
+    -d ''
+
+    Response Body = "JWT Token Here"
+
+Step 14 - Call '/secure' API with authorization header
+    Send request | Debug
+    Get https://localhost:7004/secure
+    [Authorization: bearer eyJhbCi................]
