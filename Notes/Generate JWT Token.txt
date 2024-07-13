@@ -1,0 +1,163 @@
+## Creating a minimal API using ASP.NET Core Web API to create a user and generate a JWT token for login
+
+Step 1: Set up the project:
+    Open a terminal or command prompt. 
+    Create a new ASP.NET Core Web API project: dotnet new webapi -n JwtAuthApi cd JwtAuthApi
+
+    Install necessary packages: Install the following NuGet packages: 
+    dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer 
+    dotnet add package Microsoft.IdentityModel.Tokens 
+    dotnet add package Swashbuckle.AspNetCore
+
+Step 2: Update Program.cs to configure services and middleware:
+
+    using Microsoft.AspNetCore.Authentication.JwtBearer; 
+    using Microsoft.IdentityModel.Tokens; 
+    using Microsoft.OpenApi.Models; 
+    using System.Text;
+
+    var builder = WebApplication.CreateBuilder(args);
+    var key = Encoding.ASCII.GetBytes("your_secret_key_here");
+    // Add services to the container. 
+    builder.Services.AddControllers(); 
+    builder.Services.AddAuthentication(options => 
+    { 
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; 
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme; 
+    }) 
+    .AddJwtBearer(options => 
+    { 
+        options.TokenValidationParameters = new TokenValidationParameters 
+        {
+            ValidateIssuer = false, 
+            ValidateAudience = false, 
+            ValidateLifetime = true, 
+            ValidateIssuerSigningKey = true, 
+            IssuerSigningKey = new SymmetricSecurityKey(key) 
+        }; 
+    });
+
+    builder.Services.AddSwaggerGen(c => 
+    { 
+        c.SwaggerDoc("v1", new OpenApiInfo 
+        { 
+            Title = "JwtAuthApi", Version = "v1" 
+        }); 
+        c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme 
+        { 
+            Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer 12345abcdef')", 
+            Name = "Authorization", 
+            In = ParameterLocation.Header, 
+            Type = SecuritySchemeType.ApiKey, 
+            Scheme = "Bearer" 
+        }); 
+        c.AddSecurityRequirement(new OpenApiSecurityRequirement 
+        { 
+            { 
+                new OpenApiSecurityScheme 
+                { 
+                    Reference = new OpenApiReference 
+                    { 
+                        Type = ReferenceType.SecurityScheme, 
+                        Id = "Bearer" 
+                    } 
+                }, 
+                Array.Empty() 
+            } 
+        }); 
+    });
+
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline. 
+    if (app.Environment.IsDevelopment()) 
+    { 
+        app.UseDeveloperExceptionPage(); 
+        app.UseSwagger(); 
+        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JwtAuthApi v1")); 
+    }
+
+    app.UseAuthentication(); 
+    app.UseAuthorization();
+
+    app.MapControllers();
+
+    app.Run(); 
+    
+Step 3: Create a User model and a UserController:
+
+    using Microsoft.AspNetCore.Mvc; 
+    using Microsoft.IdentityModel.Tokens; 
+    using System.IdentityModel.Tokens.Jwt; 
+    using System.Security.Claims; 
+    using System.Text;
+
+    namespace JwtAuthApi.Controllers 
+    { 
+        [ApiController] 
+        [Route("[controller]")] 
+        public class UserController : ControllerBase 
+        { 
+            private static List Users = new List();
+
+            [HttpPost("register")]
+            public IActionResult Register(User user)
+            {
+                if (Users.Any(u => u.Username == user.Username))
+                    return BadRequest("User already exists");
+
+                Users.Add(user);
+                return Ok();
+            }
+
+            [HttpPost("login")]
+            public IActionResult Login(User user)
+            {
+                var existingUser = Users.FirstOrDefault(u => u.Username == user.Username && u.Password == user.Password);
+                if (existingUser == null)
+                    return Unauthorized();
+
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes("your_secret_key_here");
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim(ClaimTypes.Name, user.Username)
+                    }),
+                    Expires = DateTime.UtcNow.AddHours(1),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                var tokenString = tokenHandler.WriteToken(token);
+
+                return Ok(new { Token = tokenString });
+            }
+        }
+
+        public class User
+        {
+            public string Username { get; set; }
+            public string Password { get; set; }
+        }
+    }
+
+Step 4: Run the application:
+    
+    In the terminal or command prompt, run the following command: 
+        dotnet run 
+    This will start the application, and you can navigate to http://localhost:5000/swagger to access the Swagger UI for testing the endpoints.
+
+Endpoints: Register a new user:
+    URL: POST /user/register 
+    Body: { "username": "testuser", "password": "password123" }
+
+Login to get a JWT token: 
+    URL: POST /user/login 
+    Body: { "username": "testuser", "password": "password123" }
+
+Use the JWT token:
+    Include the JWT token in the Authorization header for requests to protected endpoints: 
+    Authorization: Bearer <your_token_here>
+
+This minimal API allows you to create users and authenticate them using JWT tokens, with Swagger for testing the endpoints.
