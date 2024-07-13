@@ -1,0 +1,65 @@
+# I Have Student database table and I want to seed some fake data using bogus package in student table
+
+Step 1 : Create SeedData class
+    using Bogus;
+    using Microsoft.EntityFrameworkCore;
+    using WebAPI_BogusPackage.Model;
+
+    namespace WebAPI_BogusPackage
+    {
+        public static class SeedData
+        {
+            public static void Initialize(IServiceProvider serviceProvider)
+            {
+                using var context = new ApplicationDbContext(
+                    serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>());
+
+                // Look for any students.
+                if (context.Students.Any())
+                {
+                    return;   // DB has been seeded
+                }
+
+                var faker = new Faker<Student>()
+                    .RuleFor(s => s.Name, f => f.Name.FirstName())
+                    .RuleFor(s => s.MiddleName, f => f.Name.LastName())
+                    .RuleFor(s => s.LastName, f => f.Name.LastName())
+                    .RuleFor(s => s.Class, f => f.Random.Word())
+                    .RuleFor(s => s.Division, f => f.Random.AlphaNumeric(1))
+                    .RuleFor(s => s.Year, f => f.Date.Past(20).Year)
+                    .RuleFor(s => s.MobileNumber, f => f.Phone.PhoneNumber())
+                    .RuleFor(s => s.StudentId, f => f.Random.AlphaNumeric(10));
+
+                var students = faker.Generate(50);
+
+                context.Students.AddRange(students);
+                context.SaveChanges();
+            }
+        }
+    }
+
+Step 2 : Add fake data in database when application runs (Modify Program.cs file)
+
+    var app = builder.Build();
+
+    // Seed the database.
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+
+        try
+        {
+            SeedData.Initialize(services);
+        }
+        catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogError(ex, "An error occurred seeding the DB.");
+        }
+    }
+
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+    }
