@@ -1,0 +1,120 @@
+Here’s a comprehensive list of common Docker commands along with their uses:
+Use docker <command> --help for more information and options about a specific command.
+Combine Docker commands with various options and flags to customize behavior based on your needs.
+These commands cover most common Docker tasks for managing images, containers, networks, and volumes, 
+and using Docker Compose for multi-container applications.
+
+Basic Docker Commands
+docker --version
+    Displays the Docker version installed on your system.
+docker info
+    Shows system-wide information about Docker, including the number of containers, images, and other configuration details.
+
+Images
+docker pull <image>
+    Downloads an image from a Docker registry (e.g., Docker Hub) to your local machine.
+        exa - docker pull ubuntu
+docker build -t <tag> <path>
+    Builds an image from a Dockerfile located in the specified path and tags it with the given tag.
+        exa - docker build -t my-image:latest .
+docker images
+    Lists all Docker images on your local machine.
+        exa - docker images
+docker rmi <image>
+    Removes an image from your local machine.
+        exa - docker rmi my-image
+docker tag <source-image> <target-image>
+    Tags an image with a new name.
+        exa - docker tag my-image my-image:latest
+
+Containers
+docker run <options> <image>
+    Creates and starts a new container from an image. Options can include port mappings, environment variables, and more.
+    exa - docker run -d -p 80:80 --name my-container nginx
+docker ps
+    Lists all running containers.
+    exa - docker ps
+docker ps -a
+    Lists all containers, including those that are stopped.
+    exa - docker ps -a
+docker stop <container>
+    Stops a running container.
+    exa - docker stop my-container
+docker start <container>
+    Starts a stopped container.
+    exa - docker start my-container
+docker restart <container>
+    Restarts a running or stopped container.
+    exa - docker restart my-container
+docker rm <container>
+    Removes a stopped container.
+    exa - docker rm my-container
+docker exec -it <container> <command>
+    Executes a command inside a running container.
+    exa - docker exec -it my-container /bin/bash
+
+Volumes
+docker volume create <volume>
+    Creates a new volume that can be used to persist data between container runs.
+    exa - docker volume create my-volume
+docker volume ls
+    Lists all Docker volumes on your machine.
+    exa - docker volume ls
+docker volume inspect <volume>
+    Displays detailed information about a specific volume.
+    exa - docker volume inspect my-volume
+docker volume rm <volume>
+    Removes a volume from your system.
+    exa - docker volume rm my-volume
+
+Networks
+docker network create <network>
+    Creates a new Docker network.
+    exa - docker network create my-network
+docker network ls
+    Lists all Docker networks.
+    exa - docker network ls
+docker network inspect <network>
+    Displays detailed information about a specific network.
+    exa - docker network inspect my-network
+docker network rm <network>
+    Removes a network from Docker.
+    exa - docker network rm my-network
+
+Docker Compose Commands
+Docker Compose is a tool for defining and running multi-container Docker applications.
+docker-compose up
+    Starts up all containers defined in the docker-compose.yml file.
+    exa - docker-compose up
+docker-compose down
+    Stops and removes all containers defined in the docker-compose.yml file.
+    exa - docker-compose down
+docker-compose build
+    Builds or rebuilds services defined in the docker-compose.yml file.
+    exa - docker-compose build
+docker-compose logs
+    Displays logs for services defined in the docker-compose.yml file.
+    exa - docker-compose logs
+docker-compose exec <service> <command>
+    Executes a command in a running service container.
+    exa - docker-compose exec web /bin/bash
+
+
+Image Management
+docker history <image>
+    Shows the history of an image, including its layers.
+    exa - docker history my-image
+docker save -o <file> <image>
+    Saves an image to a tar archive file.
+    exa - docker save -o my-image.tar my-image
+docker load -i <file>
+    Loads an image from a tar archive file.
+    exa - docker load -i my-image.tar
+
+System Management
+docker system df
+    Displays disk usage information for Docker.
+    exa - docker system df
+docker system prune
+    Removes unused data, including stopped containers, unused networks, dangling images, and build caches.
+    exa - docker system prune

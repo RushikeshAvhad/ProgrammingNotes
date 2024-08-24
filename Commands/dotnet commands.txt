@@ -126,6 +126,9 @@ dotnet new
         npx create-react-app nameOfApplication (create a new React application using the Create React App (CRA) tool.)
             npx is a package runner tool that comes with npm (Node Package Manager) and allows you to run commands from packages 
             without installing them globally.
+            After creating the app, navigate to the project directory and start the development server with:
+                cd nameOfApplication
+                npm start
 
 dotnet build
     Purpose: Builds a .NET project or solution and its dependencies.
@@ -196,13 +199,15 @@ dotnet add
         dotnet add reference ../MyOtherProject/MyOtherProject.csproj (Adds a project reference)
         dotnet add package NUnit (Install the NUnit Test Adapter)
         dotnet add package NUnit3TestAdapter (Install the NUnit Test Adapter)
+        dotnet ef migrations add MigrationName (Add Migration)
 
 dotnet remove
     Purpose: Removes a package or reference from a project.
     Usage:
         dotnet remove package Newtonsoft.Json (Removes a NuGet package)
         dotnet remove reference ../MyOtherProject/MyOtherProject.csproj (Removes a project reference)
-        
+        dotnet ef migrations remove (Remove Migration (To remove/delete last migration))
+
 dotnet list
     Purpose: Lists project and solution references, installed packages, etc.
     Usage:
@@ -247,6 +252,7 @@ dotnet info
     Purpose: Displays .NET SDKs and runtimes installed on the machine.
     Usage:
         dotnet --info (Displays information about the .NET environment)
+        dotnet ef (Check if entity framework is installed)
 
 dotnet nuget
     Purpose: Manages NuGet packages.
