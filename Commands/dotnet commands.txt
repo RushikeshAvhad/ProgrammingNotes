@@ -1,0 +1,302 @@
+This list covers the most commonly used dotnet commands and their purposes. 
+The .NET CLI provides a powerful and flexible way to manage .NET applications, projects, solutions, and tools from the command line.
+
+
+1. General Commands
+dotnet new
+    Purpose: Creates a new project, configuration file, or solution based on a specified template.
+    Usage:
+        dotnet new console -n MyConsoleApp (Creates a new console application)
+        dotnet new webapi -n MyWebAPI (Creates a new ASP.NET Core Web API project)
+        dotnet new sln -n MySolution (Creates a new solution file)
+        dotnet new classlib -n MyLibrary (Class library)
+        dotnet new wpf -n MyWPFApplication (WPF Application)
+        dotnet new winforms -n MyWinFormsApp (Windows Forms (WinForms) Application)
+        dotnet new winformslib -n MyWinFormLibrary (Windows Forms (WinForms) Class library)
+
+        dotnet new wpflib -n YourLibraryName (create a new WPF (Windows Presentation Foundation) class library project)
+            This project type is intended for building reusable WPF components or libraries that can be referenced in other WPF applications.
+
+        dotnet new wpfcustomcontrollib -n YourCustomControlLibraryName (create a new WPF Custom Control Library project)
+            This type of project is designed for creating custom controls that can be reused across multiple WPF applications. 
+            Custom controls are typically more complex than user controls and are used when you need to create controls with rich 
+            functionality or when you need to override existing WPF controls.
+
+        dotnet new wpfusercontrollib -n YourUserControlLibraryName (create a new WPF User Control Library project)
+            User controls are composite controls made up of other existing controls and can be used to encapsulate common UI elements and logic.
+
+        dotnet new worker -n YourWorkerServiceName (create a new .NET Worker Service project)
+            A Worker Service is a type of project designed for long-running background services or tasks 
+            that can run as a Windows Service or a Linux daemon. 
+            It's commonly used for background processing, such as handling message queues, running scheduled tasks, 
+            or performing continuous processing.
+
+        dotnet new mstest -n YourTestProjectName (create a new MSTest project)
+            MSTest is a testing framework provided by Microsoft for writing and running unit tests in .NET applications. 
+            The MSTest project template sets up a test project with everything needed to start writing and running unit tests.
+        
+        dotnet new razorcomponent -n MyRazorComponent (create a new Razor Component project in .NET)
+            Razor Components are part of Blazor, a framework for building interactive web UIs using C# instead of JavaScript. 
+            This command generates a project structure for building reusable UI components in a Blazor application.
+
+        dotnet new page -n MyNewPage (create a new Razor page in a Blazor application.)
+            Razor pages are components used in Blazor applications to build interactive web pages with a combination of C# and HTML.
+
+        dotnet new viewimports -n MyApp.Views (create a _ViewImports.cshtml file in an ASP.NET Core MVC or Razor Pages application.)
+            This file is used to specify directives that should be available to all Razor views in a particular folder or the entire application.
+
+        dotnet new viewstart (creates a _ViewStart.cshtml file in an ASP.NET Core MVC or Razor Pages application.)
+            This file is used to define settings and layouts that should be applied to all Razor views within a specific directory or application.
+        
+        dotnet new blazorserver -n MyBlazorApp (creates a new Blazor Server application. )
+            Blazor Server is a hosting model in which the application runs on the server, and UI updates are sent to the client via SignalR. 
+            This model allows for rich, interactive web applications with real-time updates while keeping most of the application logic on the server.
+        
+        dotnet new blazorwasm -n MyBlazorWasmApp (create a new Blazor WebAssembly application named MyBlazorWasmApp)
+            Blazor WebAssembly allows you to build interactive web applications using C# and .NET that run directly 
+            in the browser via WebAssembly, which means the application logic is executed client-side.
+
+        dotnet new web -n MyWebApp (creates a new ASP.NET Core Web Application with a basic setup for a web application.)
+            This template provides a starting point for creating a web application with ASP.NET Core, 
+            allowing you to choose between different project configurations such as MVC, Razor Pages, or empty setups.
+
+        dotnet new mvc -n MyMvcApp (creates a new ASP.NET Core MVC (Model-View-Controller) application.)
+            MVC is a design pattern used to separate an application into three main components: 
+            Models, Views, and Controllers, promoting a clean separation of concerns and easier maintenance.
+
+        dotnet new mvc -au None (ASP.NET Core MVC in current directory without authentication)
+        dotnet new webapp -n MyWebApp (creates a new ASP.NET Core web application with Razor Pages.)
+            Razor Pages is a simplified way to build web applications that focuses on page-based programming 
+            and is particularly suited for scenarios where a traditional MVC pattern might be overkill.
+
+        dotnet new razor -n MyRazorLibrary (create a new Razor Class Library (RCL) project.)
+            A Razor Class Library allows you to build reusable UI components and pages using Razor syntax, 
+            which can be shared across different applications.
+
+        dotnet new angular -n MyAngularApp (creates a new ASP.NET Core application with an Angular frontend.)
+            This template sets up an ASP.NET Core backend and an Angular frontend in a single project, 
+            providing a full-stack development environment with both client-side and server-side components.
+            
+        dotnet new react -n MyReactApp (creates a new ASP.NET Core application with a React frontend.)
+            This template sets up an ASP.NET Core backend and a React frontend in a single project, 
+            providing a full-stack development environment where you can build modern web applications with React for the client-side and 
+            ASP.NET Core for the server-side.
+
+        dotnet new reactredux -n MyReactReduxApp (creates a new ASP.NET Core application that includes a React frontend with Redux for state management)
+            This template sets up an ASP.NET Core backend and a React frontend configured with Redux, 
+            providing a full-stack development environment for building modern web applications.
+
+        dotnet new razorclasslib -n MyRazorLibrary (creates a new Razor Class Library (RCL) project.)
+            A Razor Class Library allows you to build reusable UI components, pages, 
+            and views using Razor syntax that can be shared across different ASP.NET Core applications.
+
+        dotnet new grpc -n MyGrpcApp (creates a new ASP.NET Core application with gRPC (gRPC Remote Procedure Calls) support.)
+            gRPC is a high-performance, open-source RPC framework developed by Google 
+            that uses HTTP/2 for transport and Protocol Buffers for serialization.
+
+        dotnet new gitignore (creates a new .gitignore file for a .NET project.)
+            The .gitignore file specifies which files and directories should be ignored by Git when tracking changes. 
+            This is useful for excluding build artifacts, temporary files, and other non-essential files from version control.
+
+        dotnet new globaljson -sdk-version <version> / dotnet new globaljson -sdk-version 7.0.100 (creates a global.json file.)
+            This file is used to define the .NET SDK version that your project or solution should use. 
+            It allows you to ensure consistency in the SDK version across different environments and teams.
+
+        dotnet new nugetconfig (creates a new nuget.config file.)
+            This file is used to configure NuGet settings for your project or solution, including package sources, 
+            credentials, and other settings related to NuGet package management.
+
+        dotnet new tool-manifest (creates a new .config/dotnet-tools.json file in your project or solution directory.)
+            This file is used to manage .NET global and local tools, 
+            allowing you to define and manage tools that are installed and used within your project or development environment.
+
+        dotnet new webconfig (creates a web.config file)
+            a web.config file, which is used to configure settings for ASP.NET applications hosted on IIS (Internet Information Services). 
+            This file includes settings for the application's behavior, such as authentication, session state, and custom error pages.
+
+        dotnet new proto -n YourProtoFileName (creates a new Protocol Buffers (.proto) file.)
+            Protocol Buffers, developed by Google, is a language-agnostic serialization format used to define data structures and services 
+            for communication between systems. This command helps you create .proto files to define the structure of your gRPC services 
+            or other Protocol Buffers-based applications.
+
+        dotnet new editorconfig (creates a .editorconfig file in your project.)
+            This file is used to define and maintain consistent coding styles and formatting rules across your codebase. 
+            It helps ensure that your code adheres to specified formatting rules, making it more readable and maintainable.
+
+        npx create-react-app nameOfApplication (create a new React application using the Create React App (CRA) tool.)
+            npx is a package runner tool that comes with npm (Node Package Manager) and allows you to run commands from packages 
+            without installing them globally.
+
+dotnet build
+    Purpose: Builds a .NET project or solution and its dependencies.
+    Usage:
+        dotnet build (Builds the project or solution in the current directory)
+        dotnet build MyProject.csproj (Builds a specific project)
+
+dotnet run
+    Purpose: Compiles and runs the application from source code.
+    Usage:
+        dotnet run (Runs the project in the current directory)
+        dotnet run --project MyProject.csproj (Runs a specific project)
+
+dotnet publish
+    Purpose: Publishes the application and its dependencies to a folder for deployment.
+    Usage:
+        dotnet publish (Publishes the project in the current directory)
+        dotnet publish -c Release -o ./publish (Publishes in Release mode to a specified output folder)
+
+dotnet restore
+    Purpose: Restores the dependencies and tools of a project.
+    Usage:
+        dotnet restore (Restores the project in the current directory)
+        dotnet restore MySolution.sln (Restores all projects in a solution)
+
+dotnet clean
+    Purpose: Cleans the output of the previous build.
+    Usage:
+        dotnet clean (Cleans the project in the current directory)
+        dotnet clean MySolution.sln (Cleans all projects in a solution)
+
+dotnet test
+    Purpose: Runs unit tests using the test runner specified in the project.
+    Usage:
+        dotnet test (Runs tests in the current directory)
+        dotnet test MyTests.csproj (Runs tests in a specific project)
+        dotnet test --filter "FullyQualifiedName~Namespace.ClassName.MethodName" (--filter: Runs tests based on a filter expression.)
+        dotnet test --logger "trx" (--logger: Specifies the logger to use for test results.)
+        dotnet test --results-directory ./TestResults (--results-directory: Specifies the directory where test results will be output.)
+
+        nunit-test (The nunit-test command is used to run tests in a .NET project that uses the NUnit testing framework.)
+            Install the NUnit Test Adapter:
+                dotnet add package NUnit
+                dotnet add package NUnit3TestAdapter
+        nunit3-console MyTests.dll (run unit tests for .NET projects that use the NUnit testing framework.)
+            NUnit is a popular open-source testing framework for .NET, 
+            the nunit-console command-line tool allows you to execute tests and generate test results from the command line.
+        nunit3-console MyTests.dll --result=TestResult.xml
+            --result=<file>: Specifies the file to which the test results should be written.
+        nunit3-console MyTests.dll --where "cat == 'SmokeTests'"
+            --where=<expression>: Filters which tests to run based on a condition.
+        nunit3-console MyTests.dll --noresult
+            --noresult: Suppresses the result file output.
+        nunit3-console MyTests.dll --work=TestWorkDirectory
+            --work=<directory>: Specifies the working directory for test execution.
+        
+        
+        xunit (The xunit command is used to run unit tests for .NET projects that use the xUnit testing framework.)
+            Install xUnit and xUnit Test Adapter:
+                dotnet add package xunit
+                dotnet add package xunit.runner.visualstudio
+        
+
+dotnet add
+    Purpose: Adds a package or reference to a project.
+    Usage:
+        dotnet add package Newtonsoft.Json (Adds a NuGet package to the project)
+        dotnet add reference ../MyOtherProject/MyOtherProject.csproj (Adds a project reference)
+        dotnet add package NUnit (Install the NUnit Test Adapter)
+        dotnet add package NUnit3TestAdapter (Install the NUnit Test Adapter)
+
+dotnet remove
+    Purpose: Removes a package or reference from a project.
+    Usage:
+        dotnet remove package Newtonsoft.Json (Removes a NuGet package)
+        dotnet remove reference ../MyOtherProject/MyOtherProject.csproj (Removes a project reference)
+        
+dotnet list
+    Purpose: Lists project and solution references, installed packages, etc.
+    Usage:
+        dotnet list package (Lists installed NuGet packages)
+        dotnet list reference (Lists project references)
+
+
+2. Solution Commands
+dotnet sln
+    Purpose: Manages solution files.
+    Usage:
+        dotnet sln add MyProject.csproj (Adds a project to the solution)
+        dotnet sln remove MyProject.csproj (Removes a project from the solution)
+        dotnet sln list (Lists all projects in the solution)
+
+
+3. Global Tool Commands
+dotnet tool install
+    Purpose: Installs a .NET global tool.
+    Usage:
+        dotnet tool install -g dotnet-ef (Installs the Entity Framework Core CLI as a global tool)
+        dotnet tool install --global NUnit.ConsoleRunner (Install NUnit Console Runner (if not already installed))
+
+dotnet tool uninstall
+    Purpose: Uninstalls a .NET global tool.
+    Usage:
+        dotnet tool uninstall -g dotnet-ef (Uninstalls a global tool)
+
+dotnet tool update
+    Purpose: Updates a .NET global tool.
+    Usage:
+        dotnet tool update -g dotnet-ef (Updates a global tool)
+
+dotnet tool list
+    Purpose: Lists installed .NET tools.
+    Usage:
+        dotnet tool list -g (Lists all globally installed tools)
+
+
+4. Project and SDK Management
+dotnet info
+    Purpose: Displays .NET SDKs and runtimes installed on the machine.
+    Usage:
+        dotnet --info (Displays information about the .NET environment)
+
+dotnet nuget
+    Purpose: Manages NuGet packages.
+    Usage:
+        dotnet nuget locals all --clear (Clears local NuGet caches)
+
+dotnet pack
+    Purpose: Creates a NuGet package from the project.
+    Usage:
+        dotnet pack (Packages the project into a NuGet package)
+
+
+5. Development and Diagnostics
+dotnet watch
+    Purpose: Runs a command when source files change.
+    Usage:
+        dotnet watch run (Runs the project and automatically restarts it when files change)
+        dotnet watch test (Runs tests and reruns them when files change)
+
+dotnet user-secrets
+    Purpose: Manages user secrets for development.
+    Usage:
+        dotnet user-secrets init (Initializes user secrets in a project)
+        dotnet user-secrets set "ApiKey" "12345" (Sets a secret)
+
+dotnet dev-certs
+    Purpose: Manages development certificates.
+    Usage:
+        dotnet dev-certs https --trust (Trusts the HTTPS development certificate)
+
+
+6. Deployment and Publishing
+dotnet publish
+    Purpose: Publishes the application and its dependencies for deployment.
+    Usage:
+        dotnet publish -c Release -r win-x64 --self-contained (Publishes a self-contained application)
+
+dotnet msbuild
+    Purpose: Provides access to the underlying MSBuild commands and options.
+    Usage:
+        dotnet msbuild /t:Clean,Build (Cleans and builds a project)
+
+
+7. Diagnostics and Performance
+dotnet trace
+    Purpose: Collects diagnostic traces for .NET applications.
+    Usage:
+        dotnet trace collect -p 12345 (Collects traces for a running process)
+
+dotnet-counters
+    Purpose: Collects performance metrics for .NET applications.
+    Usage:
+        dotnet-counters monitor --process-id 12345 (Monitors performance metrics for a running process)
