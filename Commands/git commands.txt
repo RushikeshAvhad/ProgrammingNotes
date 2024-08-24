@@ -2,146 +2,269 @@ Here’s a comprehensive list of common Git commands along with their uses:
 This list covers many of the common Git commands you'll use in day-to-day development. 
 Each command has various options and flags that can further refine its behavior.
 
+# Configuration and Help
+    git --version 
+        Check installed git version
+    git config --global user.name "Your Name"
+        Sets the global username for Git commits.
+    git config --global user.email "you@example.com"
+        Sets the global email for Git commits.
+    git config --list
+        Lists all Git configuration settings.    
+    git help <command>
+        Displays help information for the specified Git command.
+
 # Basic Commands
-git init
-    Initializes a new Git repository in the current directory.
-git clone <repository-url>
-    Creates a copy of a remote repository on your local machine.
-git status
-    Shows the status of changes in your working directory and staging area.
-git add <file>
-    Stages changes (adds) to the specified file(s) for the next commit.
-git commit -m "message"
-    Commits the staged changes with a descriptive message.
-git log
-    Shows the commit history for the current branch.
-git diff
-    Displays changes between commits, working directory, and staging area.
-git reset <file>
-    Unstages a file, but keeps the changes in the working directory.
-git rm <file>
-    Removes a file from the working directory and stages the removal for commit.
+    git init
+        Initializes a new Git repository in the current directory.    
+    git add <file.extension>
+        Add Single file to Staging Area
+        add specified file for the next commit.
+    git add -A 
+        Stages files are commited to your local working branch
+    git add . 
+        Add All Files to Staging Area for next commit
+    git commit -m "message"
+        Commits the staged changes with a descriptive message.        
+    git checkout [CommitId] 
+        Switch to the commit using ID / (detached head)
+    git checkout initial-commit.txt 
+        To Undo the changes
+        will show message as updated 1 path from the index and that changes will be undo
+    git reflog 
+        Show all History All repository log or all project changes made including deleted commits. 
+        used to bring lost or deleted data back - used to restore any branch or commit or directory using checkout refloghash or reflog_id
+        (Show all the changes with id 
+        - copy any id and say git reset hard reflogId(commit head) will remove it from commit staging area and directory and will change git head).
+    git rebase
+        change the base (i.e. the parent commit)of commits in another branch
+    git rebase branchname 
+        New commits in master branch while working in feature branch.
+        Rebase master into feature branch + merge feature branch into feature. 
+        take the changes from other branch at its base and dont change the head
+    git rebase --continue 
+        Used to continue with the changes you made. 
+    git rebase --skip 
+        to skip the change 
+    git tag tagName CommitID
+        can add tag anywhere in the project and can come back there anytime using git checkout tagName
+        To exit git switch BranchName
+    git tag -d tagName
+        Remove tag
+    git show tagName
+        can check tag information
+        display the tag description
+    git tag -a tagName -m "meassage"
+        Annotated tag (Annotated tags are tags that store extra Metadata like developer name, email, date, and more.)
+        create a tag with a message.
 
 # Branching and Merging
-git branch
-    Lists all branches in the repository. Adding a branch name creates a new branch.
-git branch <branch-name>
-    Creates a new branch with the specified name.
-git checkout <branch-name>
-    Switches to the specified branch.
-git checkout -b <branch-name>
-    Creates a new branch and switches to it.
-git merge <branch-name>
-    Merges the specified branch into the current branch.
-git rebase <branch-name>
-    Reapplies commits from the current branch on top of another branch.
-git branch -d <branch-name>
-    Deletes the specified branch (must be fully merged).
-git branch -D <branch-name>
-    Forcefully deletes the specified branch (even if not fully merged).
+    git branch
+        Lists all branches in the repository. Adding a branch name creates a new branch.
+    git branch <branch-name>
+        Creates a new branch with the specified name.
+    git checkout <branch-name>
+        Switches to the specified branch.
+    git checkout -b <branch-name>
+        Create & switch branch
+    git merge <branch-name>
+        Merges the specified branch into the current branch.
+    git rebase <branch-name>
+        Reapplies commits from the current branch on top of another branch.
+    git branch -d <branch-name>
+        Deletes the specified branch (must be fully merged).
+    git branch -D <branch-name>
+        Forcefully deletes the specified branch (even if not fully merged).
+    git branch -M [NewBranchName]
+        Rename current Branch name
+    git swith BranchName 
+        Switches to the specified branch.
+    git switch -c BranchName 
+        Create & switch branch
+    git branch -d BranchName BranchName 
+        Delete Multiple Branches
+    git merge 
+        Combining commits from different branches by creating a new merge_commit 
+        commit(recursive(non fast forward) or by moving the head (fast forward))
+        Merge all branches to current Branch - Bring all changes from other branch's to current brach
+    git merge branchname 
+        Merge branch and change head
+    git merge --squash branchname 
+        Add into staging area without commit. 
+        If change branch without commit and again come back on branch it will be gone from staging area too.
+    git merge --no-ff branchName 
+        merge made by recursive strategy (Non fast forward merge)
+    git merge --abort
+        Git merge tool command is used to resolve the conflict. 
+        To abort/undone the merge (undo merge)
+    git cherry-Pick	CommitID
+        Fixed the issue in branch1 from branch2 without switching to branch1 and commit.
+        From branch one use command cherry-pick commitID it will take only changes in fixed file / Exacly Pick Specific Commit to merge
 
 # Remote Repositories
-git remote add <name> <url>
-    Adds a new remote repository with the specified name and URL.
-git remote -v
-    Lists the remote repositories and their URLs.
-    View / Verify the current remote URL (This will display the current remote url for both fetch and push)
-git fetch <remote>
-    Fetches changes from the specified remote repository without merging.
-git pull <remote> <branch>
-    Fetches changes from the remote repository and merges them into the current branch.
-git push <remote> <branch>
-    Pushes commits from the local branch to the specified remote branch.
-git push --set-upstream <remote> <branch>
-    Pushes a new branch to the remote and sets the upstream branch for tracking.
-git push --force
-    Forcefully pushes changes to the remote repository, overwriting remote changes.
-git remote set-url origin new_remote_url 
-    Update the remote URL (Replace new_remote_url with correct URL for your remote repository)
-git remote add origin URL 
-    Create Repository on Git Hub and get the URL from there
-git branch -M main 
-    Change Branch Name to Main
-git push origin master 
-    This sends your commited files to your remote repository
-git push -u origin BranchName(Main/Feature) 
-    Push The Commit to GitHub
-git branch -a
-    list all branches /list the all local branch Name
-git branch -r 
-    View remote tracking branches
-git remote show origin 
-    show detail configuration
-git branch --Track BranchName origin/branchName 
-    Create Local Tracking Branch
-git branch --Track origin/feature remote/origin/feature(branchName) 
-    Tracking remote branch in clone repository
-git push origin BranchName(feature)
-    clone change and push using branchname on particular branch
-git branch -vv 
-    list local tracking branches and their remote /get more detail about branch
-git ls-remote 
-    list the remote branch
-git fetch origin 
-    fetch the remote branch in project
-    get the changes made in remote branch into local repository
-git pull BranchName
-    Fetch and Merge Branch (It is a combination of git fetch and git merge command)
-git branch --delete --remotes origin/BranchName 
-    Deleting Remote tracking Branch
-git push origin --delete BranchName 
-    deleting remote branch
-git branch -r
-    The git branch -r command is used to list all remote branches in a Git repository
-git reset --hard head~1
-    delete commit by 1
-git push origin master
-    after deleting commit run the command to push to the remote
-git push --force origin master 
-    push to the remote forecly
-git pull remote master 
-    get latest version from git hub repository
-git pull 
-    pull the latest code from the github to local branch (merge code to master branch)
-    When you've finished making changes to someone else's code, you can share them with the original owner via a "PULL request"
-    retrives & downloads content from a remote repository & updates the local repository as soon as it has been downloaded
-git merge <branch> 
-    The git merge command is used to integrate changes from one branch into another. 
-    It combines the commits from two branches, creating a new commit that incorporates the changes from both branches.
+    git remote add <name> <url>
+        Adds a new remote repository with the specified name and URL.
+    git remote -v
+        Lists the remote repositories and their URLs.
+        View / Verify the current remote URL (This will display the current remote url for both fetch and push)
+    git fetch <remote>
+        Fetches changes from the specified remote repository without merging.
+    git pull <remote> <branch>
+        Fetches changes from the remote repository and merges them into the current branch.
+    git push <remote> <branch>
+        Pushes commits from the local branch to the specified remote branch.
+    git push --set-upstream <remote> <branch>
+        Pushes a new branch to the remote and sets the upstream branch for tracking.
+    git push --force
+        Forcefully pushes changes to the remote repository, overwriting remote changes.
+    git remote set-url origin new_remote_url 
+        Update the remote URL (Replace new_remote_url with correct URL for your remote repository)
+    git remote add origin URL 
+        Create Repository on Git Hub and get the URL from there
+    git clone <repository-url>
+        Creates a copy of a remote repository on your local machine.
+    git clone /path/to/repository 
+        This creates a working copy of a local repository
+    git clone user@host:/repository 
+        This creates a working copy of a remote repository
+    git branch -M main 
+        Change Branch Name to Main
+    git push origin master 
+        This sends your commited files to your remote repository
+    git push -u origin BranchName(Main/Feature) 
+        Push The Commit to GitHub
+    git branch -a
+        list all branches /list the all local branch Name
+    git branch -r 
+        View remote tracking branches
+    git remote show origin 
+        show detail configuration
+    git branch --Track BranchName origin/branchName 
+        Create Local Tracking Branch
+    git branch --Track origin/feature remote/origin/feature(branchName) 
+        Tracking remote branch in clone repository
+    git push origin BranchName(feature)
+        clone change and push using branchname on particular branch
+    git branch -vv 
+        list local tracking branches and their remote /get more detail about branch
+    git ls-remote 
+        list the remote branch
+    git fetch origin 
+        fetch the remote branch in project
+        get the changes made in remote branch into local repository
+    git pull BranchName
+        Fetch and Merge Branch (It is a combination of git fetch and git merge command)
+    git branch --delete --remotes origin/BranchName 
+        Deleting Remote tracking Branch
+    git push origin --delete BranchName 
+        deleting remote branch
+    git branch -r
+        The git branch -r command is used to list all remote branches in a Git repository
+    git reset --hard head~1
+        delete commit by 1
+    git push origin master
+        after deleting commit run the command to push to the remote
+    git push --force origin master 
+        push to the remote forecly
+    git pull remote master 
+        get latest version from git hub repository
+    git pull 
+        pull the latest code from the github to local branch (merge code to master branch)
+        When you've finished making changes to someone else's code, you can share them with the original owner via a "PULL request"
+        retrives & downloads content from a remote repository & updates the local repository as soon as it has been downloaded
+    git merge <branch> 
+        The git merge command is used to integrate changes from one branch into another. 
+        It combines the commits from two branches, creating a new commit that incorporates the changes from both branches.
 
 # Stashing Changes
-git stash
-    Stashes (temporarily shelves) changes in the working directory.
-git stash list
-    Lists all stashed changes.
-git stash apply
-    Applies the most recent stash without removing it from the stash list.
-git stash pop
-    Applies the most recent stash and removes it from the stash list.
-git stash drop
-    Removes the most recent stash from the stash list.
+    git stash
+        Stashes (temporarily shelves) changes in the working directory.
+        Temporary storage for unstaged and uncommited changes.
+        Save directory in stash if want to switch branch without add in staging area and without commit then save here
+    git stash list  
+        Lists all stashed changes.
+    git stash apply
+        Applies the most recent stash without removing it from the stash list.
+    git stash apply stashId 
+        To get particular stash in return if more than one stash is saved with stash index number
+    git stash pop
+        Applies the most recent stash and removes it from the stash list.
+    git stash drop
+        Removes the most recent stash from the stash list.
+    git stash save "Stashing Message" 
+        Saving Stashes with the message
+    git stash push -m "Message" 
+        To send in stash with message / Add in stash with message
+    git stash show 
+        Command will show the file that is stashed and changes made on them
+    git stash pop 
+        Command will re-apply the previous commits to the repository
+        Works like git stash apply stashID but remove from stash list
+    git stash drop
+        Delete a stash from the queue. Generally, it deletes the most recent stash
+    git stash drop <stash id>
+        Delete a particular stash from the queue
+    git stash clear
+        Delete all the stashes that exist in the repository.
+    git stash branch <Branch Name> 
+        Create a new branch and transfer the stashed work on that
 
 # Viewing Changes
-git show <commit>
-    Displays the changes made in the specified commit.
-git blame <file>
-    Shows the last modification for each line in a file and who made the change.
+    git show <commit>
+        Displays the changes made in the specified commit.
+    git blame <file>
+        Shows the last modification for each line in a file and who made the change.
+    git log --merge 
+        Get log of merge
+    git diff
+        Displays changes between commits, working directory, and staging area.
+    git log
+        Shows the commit history for the current branch.
+    git log --oneline
+        show all commit id
+    git status
+        Shows the status of changes in your working directory and staging area.
+    git show HEAD 
+        Show The last commit in Branch
+    git ls-file 
+        Check commited file list in branch
+        List data in staging area
 
 # Undoing Changes
-git reset <commit>
-    Resets the current branch to the specified commit. The --hard option will also discard changes in the working directory.
-git revert <commit>
-    Creates a new commit that undoes the changes made in the specified commit.
-
-# Configuration and Help
-git config --global user.name "Your Name"
-    Sets the global username for Git commits.
-git config --global user.email "you@example.com"
-    Sets the global email for Git commits.
-git config --list
-    Lists all Git configuration settings.
-git help <command>
-    Displays help information for the specified Git command.
+    git reset <commit>
+        Resets the current branch to the specified commit. The --hard option will also discard changes in the working directory.
+    git revert <commit>
+        Creates a new commit that undoes the changes made in the specified commit.
+    git reset
+        Reset current HEAD to the specified state
+    git reset [filename] 
+        Remove file from staging area
+        Unstages a file, but keeps the changes in the working directory.
+    git reset --soft HEAD~1
+        Delete the last commit from commit history but keep in staging area and working directory
+        Undo latest (~1) commmit, by git ls-file we can see this file in staging area as well as in working directory
+    git reset HEAD~1
+        Remove last commit from commit history and staging area but keeps in working directory
+    git reset --hard HEAD~1 
+        Remove latest commit from commit history, staging area and working directory
+        useful to undo latest merge, switch to head
+    git rm <file>
+        Removes a file from the working directory and stages the removal for commit.
+        Remove file from staging area
+    git restore [filename]
+        Revert changes in tracked files
+    git restore . 
+        Remove all files from staging area
+    git restore --staged [filename] 
+        Remove file from staging area
+    git checkout (--) .
+        Revert changes in tracked files
+    git checkout -- [filename] 
+        Remove file from staging area
+    git clean -df 
+        Delete untracked files (d for delete,f for forecefully) 
+    git restore
+        Restore (deleted) commit or branch
 
 
 collaborater 
@@ -156,3 +279,11 @@ Fork
 personal access token 
     need at the time of push commit from local
     To create go to (GitHub > Settings > Developer Setting Personal Access Token)
+.gitignore 
+    What to ignore from commit and staging area
+    To ignore all .log file except test.txt -  (*.log & to the new line !test.log) here git will ignore all .log file except test.log file. 
+    If we want to ignore folder -- foldername/*
+git conflict 
+    When two branches are trying to merge & both are edited at the same time in the same file,
+    Git won't be able to identify which version is to take for changes. 
+    Such Situation is called merge conflict.
