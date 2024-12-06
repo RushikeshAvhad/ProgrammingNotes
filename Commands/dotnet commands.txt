@@ -306,3 +306,8 @@ dotnet-counters
     Purpose: Collects performance metrics for .NET applications.
     Usage:
         dotnet-counters monitor --process-id 12345 (Monitors performance metrics for a running process)
+
+
+dotnet dev-certs https --trust
+  purpose: trust the dev certificate
+  usage - when you will open the application in any browser you will not get the warning message - this connection is not secured
